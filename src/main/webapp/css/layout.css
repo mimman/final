@@ -1,0 +1,80 @@
+@charset "utf-8";
+.wrapper {width:100%;height:191px;overflow:hidden;}
+/* header */
+.header{position: absolute; width: 100%;/* left:0; top:0;*/}
+.header-container { text-align: center; z-index:999; position:relative;border-bottom:1px solid #d8d0cd;background:#eee;}
+.header-container h1 {display:block;width:100%;height:29px;margin:0 auto;padding:54px 0 53px 0;background:#fff;}
+.header-container h1 a { display: block; }
+.header-side { position: relative;width:1140px; margin:0 auto; }
+.header-side-container ul, .header-side-container li, .header-side-container button { float: left; }
+.header-search-container { display: none; }
+.header-side-container { position: absolute; right:0; top:-70px; }
+.header-side-container li{padding:0 14px;background-image: url('/content/dam/happybath/images/common/bg-header-side-li.png');
+background-position: right 7px;background-repeat: no-repeat;}
+.header-side-container li a{color:#6f574d;}
+.header-side-container button {margin-left:14px;margin-top: 2px;padding:0;width:18px;height:18px;background-image: url('/content/dam/happybath/images/common/bg-header-searchbtn.png');
+background-position: 0 0;background-repeat: no-repeat;-webkit-background-size: contain;background-size: contain;text-indent: -999em;}
+.header-menu {}
+.header-gnb {background:url(../img/main/bg_gnb.jpg) repeat 0 0;}
+.gnb {position: relative; width:1140px; margin:0 auto; display: table; padding-left: 33px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+.gnb ul:after{content:" "; display:block; clear:both;}
+.gnb li {display:inline-block; width: 200px; position: relative; text-align: left;float:left;line-height: 1;}
+.gnb li a {display:inline-block;padding:0 0 31px 0;font-size:18px;letter-spacing:-1px;text-align:left;font-weight:500;}
+.gnb>ul>li:hover a.menu{color:#f83030;padding:0 0 29px 0;border-bottom:2px solid #f83030;}
+.gnb li a strong{font-weight: 600;}
+.gnb ul ul {width:100%;padding:25px 0;margin:0;}
+.gnb ul ul li {display:block; width:100%;}
+.gnb ul>li{margin-top:10px}
+.gnb>ul>li>ul{display:none;height:100%;}
+.gnb ul ul li a {display:block;text-align:left;font-size:16px;padding:8px 0;color:#333;font-weight:normal;}
+.gnb ul ul li a:hover{font-weight:500;}
+.gnb ul ul ul {padding-top:8px;}
+.gnb ul ul ul li{padding-bottom: 4px;}
+.gnb ul ul ul li a { padding: 0 0 0 20px; font-size: 14px; background: url('/content/dam/happybath/images/common/gnb_3depth_bullet.png') no-repeat 10px 4px;}
+.gnb>ul>li>a:hover {background:url("/content/dam/happybath/images/common/header-gnb-active.png") repeat-x center bottom;}
+.header-mobgnb-open{background: url('/content/dam/happybath/images/common/mgnb-open.png') no-repeat left top; width: 46px; height: 31px; position: absolute; top: 58px; left: 15px; z-index: 4;display: none;}
+.header-mobgnb-open span { top: 14px; text-indent:-9999em;font-size: 0;}
+.js-dimd { display: none; position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);opacity:0; transition:opacity .5s;z-index:100;}
+.wrapper.dimd { overflow: hidden;}
+.wrapper.dimd .js-dimd { display: block; opacity:1; transition:opacity .5s;z-index:100;}
+
+nav>ul{list-style:none;list-style-image:none;margin:21px 0 0;}
+
+/* container */
+.container {margin:0 auto;float:none;}
+/* footer 
+.foot-sns { width: 100%; height: 58px; line-height: 58px; background-color: #f8f8f8; text-align: center;}
+.foot-container { position: relative; width: 100%; max-width: 1000px; margin:0 auto 80px; padding-top: 30px;}
+.foot-logo {position: relative; float: left; padding-top: 5px; z-index:2;}
+.foot-mark {position: relative; float: right;z-index: 1; width:86px;}
+.foot-mark a{display: block;}
+.foot-mark img{width:100%;}
+.foot-siteinfo { position: absolute; left:0; top:30px; font-size:14px; color:#666; padding:0 105px 0 172px; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;z-index: 1;}
+.foot-sitelnk li { float: left; padding:0 10px; background: url('/content/dam/happybath/images/common/bg-sitelnk.png') 0 50% no-repeat;}
+.foot-sitelnk li:first-child {padding-left:0; background:none;}
+.foot-sitelnk li strong {font-weight:700;}
+.foot-siteinfo>p{ padding-top: 5px;}
+.foot-copyright { padding-top: 10px;}*/
+ul.f_menu:after{content:" "; display:block; clear:both;}
+ul.f_menu li{float:left;display:inline-block;}
+ul.f_menu li a{display:inline-block;padding:0 12px;border-right:1px solid #dddbd9;color:#333;line-height:15px;font-size:15px;}
+ul.f_menu li:first-child a{padding:0 12px 0 0;}
+ul.f_menu li:last-child a{border-right:0;}
+
+div#footer_w div.footer{background:#eee;border-top:1px solid #e5e5e5;padding:20px 0 30px;margin-top:20px;}
+div#footer_w div.footer div.copy_w{width:1140px;margin:0 auto;color:#666;font-size:14px;line-height:28px;}
+div#footer_w div.footer div.copy_w p.logo{font-weight:600;}
+div#footer_w ul.f_menu{width:1140px;margin:0 auto;padding:0 !important;}
+
+/* TOP BUTTON */
+.topbtn{position:fixed; right:30px; bottom: 30px; width:70px; height: 59px; background: url('/content/dam/happybath/images/common/topbtn-bg.png') left top no-repeat; z-index: 99; }
+.topbtn a{display:block; width:100%; height: 100%;}
+/* 리본팝업 */
+.ribbon-slider-box {margin:0 auto; overflow: hidden; position: relative; max-width:1600px;}
+.ribbon-close-btn{position: absolute;z-index:2;top:50%;margin-top: -30px;right:2%;}
+.ribbon-slider-box .opacity-con li a img {width:100%;}
+.ribbon-slider-box .ri-indicates .indicate-lists li button{height:10px; width:10px;  background:url('/content/dam/happybath/images/common/ribbon-indicate.png') no-repeat left center;}
+.ribbon-slider-box .ri-indicates .indicate-lists li.active button {background:url('/content/dam/happybath/images/common/ribbon-indicate-active.png') no-repeat left center; width:24px; }
+.ribbon-slider-box .opacity-slide .ri-controller button.pause {background:url('/content/dam/happybath/images/common/ribbon-pause.png') no-repeat left center; width:11px; height:9px;}
+.ribbon-slider-box .opacity-slide .control-area {bottom:2px;}
+.ribbon-slider-box .opacity-slide .all-controll button {top:4px;}

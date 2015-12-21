@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: 'Nanum Gothic';
+	font-style: normal;
+	font-weight: 400;
+	src: url('webfont/NanumGothic-Regular.eot');
+	src: url('webfont/NanumGothic-Regular.eot?#iefix') format('embedded-opentype'),
+	url('webfont/NanumGothic-Regular.woff') format('woff'),
+	url('webfont/NanumGothic-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Nanum Gothic';
+	font-style: normal;
+	font-weight: 700;
+	src: url('webfont/NanumGothic-Bold.eot');
+	src: url('webfont/NanumGothic-Bold.eot?#iefix') format('embedded-opentype'),
+	url('webfont/NanumGothic-Bold.woff') format('woff'),
+	url('webfont/NanumGothic-Bold.ttf') format('truetype');
+}
+
+
+html {margin:0;padding:0; }
+body {margin:0; padding:0;font-family:'Nanum Gothic', '나눔고딕', '맑은 고딕',Malgun Gothic,'돋움',Dotum,AppleGothic,sans-serif;font-size:16px;line-height:1.5;color:#666666;letter-spacing:0;-webkit-text-size-adjust:none;}
+div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,p,form,fieldset,input,table,tr,th,td,button,textarea,select {margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6{font-size:100%;font-weight:normal}
+img {border:0;vertical-align:top;}
+hr { display: none;}
+ul,ol,dl,dt,dd,li {list-style:none;}
+table, th, td {border-collapse:collapse;border-spacing:0;font-weight: normal;}
+caption {display:block;text-indent:-9999em;overflow:hidden;height:0;font-size:0;line-height:0;}
+fieldset, blockquote, iframe, button {border:none;}
+i, em, u, cite {font-style:normal;}
+strong,em, b {font-weight:normal;}
+a {color:#341c17;text-decoration:none;}
+input {font-family: sans-serif;}
+button {background:transparent;cursor:pointer;vertical-align:middle;margin:0;padding:0;font-family:'Nanum Gothic', '나눔고딕', '맑은 고딕',Malgun Gothic,'돋움',Dotum,AppleGothic,sans-serif;font-size:14px;line-height:1.5;color:#341c17;letter-spacing:0;-webkit-text-size-adjust:none;}
+button,input[type="submit"], input[type="button"], input[type="reset"] {cursor:pointer;-webkit-appearance:none;}
+section, nav, article, aside, header, footer, main {display:block;}
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-inner-spin-button {display:none;}
+input[type="text"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+input[type="password"]{-webkit-appearance:none;border-radius:0}
+::-webkit-input-placeholder {color: #aaa;}
+::-moz-placeholder {color: #aaa;}
+:-ms-input-placeholder {color: #aaa;}
+:-moz-placeholder {color: #aaa;}
+::-ms-clear,
+::-ms-reveal {display: none;}
+select, textarea, button {-webkit-appearance: none;border-radius: 0}
+input[type="text"],input[type="search"] {-webkit-appearance: none;border-radius: 0}
+.skip {position:fixed;top:0;left:0;width:100%;z-index:2000;}
+.skip a{display:block;width:0;height:0;font-size:0;}
+.skip a:hover, .skip a:focus,.skip a:active {display:block;padding:9px 0;height:16px;width:100%;text-align:center;font-size:14px;color:#fff;background:#341d17;}
+
+.blind{display:none;}
+
+/* IR */
+.screen_out {overflow:hidden;position:absolute;top:-9999px;left:-9999px;width:1px;height:1px;font-size:1px;}
+
+/* float clear */
+.clearfix:after { clear:both; display:block; content:""; height:0; visibility:hidden;  }
+* html .fclear { height:1px; }
+.clearfix { display:block; min-height:1px; }
+
+
+/* box align */
+.fl{float:left;}
+.fr{float:right;}
+.fc{clear:both;}
+
+/* text align */
+.tl{text-align:left;}
+.tr{text-align:right;}
+.tc{text-align:center;}
+
+/* position align */
+.poss { position: static;}
+.posr { position: relative;}
+.posa { position: absolute;}
+.posf { position: fixed;}
+
+/* dvice show/hide */
+.deskshow { display: block;}
+.mobshow { display: none;}
+.tabletshow { display: none;}
+
+/* slider prev next arrow */
+.slider-btn {text-indent:-9999em; display:block; position:absolute; top:35%; width:23px; height:45px; background:url('/content/dam/happybath/images/main/item-arrow.gif') no-repeat left top;}
+.slider-btn.prev {left:0; }
+.slider-btn.prev:hover {background-position:left -45px;}
+.slider-btn.next {right:0; background-position:-25px top}
+.slider-btn.next:hover {background-position:-25px -45px;}
+
+/* 공통 페이지 상단 타이틀 */
+.page-top {text-align:center;}
+.page-top-tit {font-size:24px; padding-top:48px; text-align:center;font-weight: bold;line-height: 1; color:#341c17;}
+.page-top-txt {padding-top:15px; font-size:16px;line-height: 1;}
+.common-con-wrap strong{font-weight:700; color:#341c17;}
+
+/* 슬라이드 css */
+.responsive-slide {position:relative; padding-top:50px; z-index: 1;}
+.responsive-slide .responsive-slide-wrap .direction {position:absolute; top:50%; margin-top:-20px; background:url('/content/dam/happybath/images/main/item-arrow.gif') no-repeat; text-indent:-9999em; z-index:1; width:23px; height:45px;}
+.responsive-slide .responsive-slide-wrap .direction.prev {left:0; margin-left:-40px; background-position:left top;}
+.responsive-slide .responsive-slide-wrap .direction.prev:hover {background-position:left -45px;;}
+.responsive-slide .responsive-slide-wrap .direction.next {right:0; margin-right:-40px; background-position:right top;}
+.responsive-slide .responsive-slide-wrap .direction.next:hover {background-position:right -45px;}
+.responsive-slide .responsive-slide-wrap .view {width:100%; overflow:hidden;}
+.responsive-slide .responsive-slide-wrap .view .responsive-list {display:table; table-layout:fixed;}
+.responsive-slide .responsive-slide-wrap .view .responsive-list .wrap {display:table-cell;}
+.responsive-slide .icons {width:100%; display:table; table-layout:fixed;}
+.responsive-slide .icons li.item {display:table-cell; text-align:center; position:relative;}
+.responsive-slide .icons li.item img {display:inline-block;}
+.responsive-slide .indicate-list {text-align:center; padding-top:5px;}
+.responsive-slide .indicate-list li {display:inline-block; margin:5px;}
+.responsive-slide .responsive-slide-wrap .item span {display:block; text-align:center; padding-top:15px; font-size:16px; line-height:20px; min-height:20px; max-height:40px; overflow:hidden; letter-spacing:-1px;}
+.responsive-slide .responsive-slide-wrap .item a:hover span {font-weight:700;}
+.responsive-slide .indicate-list li button{width:12px; height:15px; text-indent:-9999em; background:url("/content/dam/happybath/images/main/slider-indicator.png") no-repeat right top;}
+.responsive-slide .indicate-list li.active button {background-position:left top;}
+
+.responsive-slide.slide-tab {padding-top:0px;}
+.responsive-slide.slide-tab .responsive-slide-wrap .view {width:90%; margin:0 auto;}
+.responsive-slide.slide-tab .responsive-slide-wrap .direction.next {margin-right:0px;}
+.responsive-slide.slide-tab .responsive-slide-wrap .direction.prev {margin-left:0px;}
+
+/*.related-product .responsive-slide .icons {width:100%; display:table; table-layout:fixed;}*/
+.related-product .responsive-list .item{padding:0 10px;}
+.related-product .responsive-list .item img{max-width:100%;}
+
+/*.natural-related .related-product .responsive-list .item {max-width:none; width:195px;}*/
+
+.no-data{text-align:center;padding:30px 0;}
