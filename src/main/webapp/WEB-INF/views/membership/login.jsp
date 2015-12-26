@@ -38,7 +38,7 @@
 
                         <tr>
                            <td><label for="inputPw">비밀번호</label>&nbsp;&nbsp;&nbsp;</td>
-                           <td><input type="password" name="log_pw"
+                           <td><input type="password" name="log_password"
                               placeholder="비밀번호" /></td>
                         </tr>
                         <tr>

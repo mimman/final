@@ -8,9 +8,21 @@
 	<bean class="com.mimman.membership.controller.LoginController">
 		<property name="memberService" ref="memberService"></property>
 	</bean>
+	
+	<bean class="com.mimman.membership.controller.LogoutController">
+	</bean>
+	
+	<bean class="com.mimman.membership.controller.updateUserController">
+			<property name="memberService" ref="memberService"></property>
+	</bean>
 	<bean class="com.mimman.membership.controller.RegUserController">
 		<property name="memberService" ref="memberService"></property>
 	</bean>
+	
+	<bean class="com.mimman.membership.controller.withdrawController">
+		<property name="memberService" ref="memberService"></property>
+	</bean>
+	
 	<bean class="com.mimman.main.controller.MainController"/>
 	<bean id="memberService" class="com.mimman.membership.service.MemberServiceImpl"/>
 	

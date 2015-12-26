@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <jsp:include page="/inc/header1.jsp" flush="true" />
-<title>마이페이지 &gt; 회원탈퇴</title>
-
+<title>MIRACLE AIR &gt; 대메뉴 &gt; 중메뉴 &gt; 소메뉴</title>
 <jsp:include page="/inc/header2.jsp" flush="true" />
 </head>
 <body id="sub">
@@ -29,12 +28,12 @@
 
 
             <!-- 내용 -->
-			<div class="join">
-			<form method="post" action="withdraw.action">
-				정말 탈퇴하시겠습니까?
-				<input type="submit" value="확인">
-			</form>
 
+<div class="join">
+업데이트 완료
+<br/>
+<a href="index.action">흠으로</a>
+</div>
             <!-- //내용 -->
 
             </div>

@@ -9,4 +9,22 @@
 		values(#{id},#{name},#{birth},#{email},#{address},#{nation},#{phone},
 		#{password},0)
 	</insert>
+	
+	<select id="selectByEmail" parameterType="Login" resultType="Member">
+		select * from tbluser where id=#{log_id} and password=#{log_password}
+	</select>
+	
+	<select id="updateUser" parameterType="String" resultType="Member">
+		select * from tbluser where id=#{id}
+	</select>
+	
+	
+	<update id="update" parameterType="Update">
+		update tbluser set name=#{name},birth=#{birth},email=#{email},address=#{address}
+		,nation=#{nation},phone=#{phone} where id=#{id}
+	</update>
+	
+	<delete id="drop" parameterType="String">
+		delete from tbluser where id =#{id}
+	</delete>
 </mapper>

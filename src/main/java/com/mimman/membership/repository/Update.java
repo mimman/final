@@ -1,8 +1,6 @@
 package com.mimman.membership.repository;
 
-import java.util.Date;
-
-public class Member {
+public class Update {
 	private String id;
 	private String name;
 	private String birth;
@@ -10,21 +8,6 @@ public class Member {
 	private String address;
 	private String nation;
 	private String phone;
-	private String password;
-	private int mileage;
-	
-	public Member(){}
-	public Member(String id,String password,String name,String birth,
-			String email,String address,String nation,String phone){
-		this.id = id;
-		this.password = password;
-		this.name = name;
-		this.birth = birth;
-		this.email = email;
-		this.address = address;
-		this.nation = nation;
-		this.phone = phone;
-	}
 	public String getId() {
 		return id;
 	}
@@ -67,21 +50,5 @@ public class Member {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public int getMileage() {
-		return mileage;
-	}
-	public void setMileage(int mileage) {
-		this.mileage = mileage;
-	}
-	
-	public boolean matchPassword(String password){
-		return this.password.equals(password);
-	}
-	
+
 }

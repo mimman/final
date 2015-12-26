@@ -74,8 +74,6 @@ function emailCheck(){
 	return true;
 }
 
-
-
 </script>
 <jsp:include page="/inc/header2.jsp" flush="true" />
 </head>
