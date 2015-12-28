@@ -26,4 +26,12 @@
 	<bean class="com.mimman.main.controller.MainController"/>
 	<bean id="memberService" class="com.mimman.membership.service.MemberServiceImpl"/>
 	
+	<bean class="com.mimman.community.controller.EventBoardController">
+	
+	</bean>
+	
+	<bean class="com.mimman.community.controller.EventWriteController">
+	
+	</bean>
+	
 </beans>
