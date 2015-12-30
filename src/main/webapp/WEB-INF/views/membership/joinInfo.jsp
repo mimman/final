@@ -52,7 +52,7 @@ function pwCheck(){
 	var pwConf = document.getElementById("password_confirm")
 
 	
-	if(pw.value.length <= 6 ){
+	if(pw.value.length < 6 ){
 		alert("비밀번호는 6자 이상을 입력해주세요");
 		return false;
 	}

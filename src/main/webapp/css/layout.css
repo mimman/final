@@ -78,3 +78,17 @@ div#footer_w ul.f_menu{width:1140px;margin:0 auto;padding:0 !important;}
 .ribbon-slider-box .opacity-slide .ri-controller button.pause {background:url('/content/dam/happybath/images/common/ribbon-pause.png') no-repeat left center; width:11px; height:9px;}
 .ribbon-slider-box .opacity-slide .control-area {bottom:2px;}
 .ribbon-slider-box .opacity-slide .all-controll button {top:4px;}
+
+/* adminㅁㅁㅁㅁ */
+
+.container.adm{padding:20px 0}
+
+.container.adm select{width:150px;}
+
+.container.adm div.form-group{margin-bottom:0;}
+.container.adm div.form-group input[type="text"]{height:30px;line-height:30px;margin-bottom:0;}
+.container.adm div.form-group textarea{width:100%;}
+.container.adm .table>tbody>tr>th{line-height:47px;padding:0 8px;}
+
+.container.adm div.form-group.file>p{display:inline;font-weight:700;margin-right:30px;}
+.container.adm div.form-group.file>input{display:inline;}

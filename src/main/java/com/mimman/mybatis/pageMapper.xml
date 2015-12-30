@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.memberMapper">
+	<select id="getList" resultType="EventDto">
+		select * from article order by articleno desc
+	</select>
+	<insert id="EventboardWrite" parameterType="EventDto">
+		insert into article values(seq_article.nextval,#{boardcd},
+		#{title},#{boardpw},#{content},sysdate,0, 0,#{img},#{writer}
+		)
+	</insert>
+	<select id="EventBoardRead" parameterType="int" resultType="EventDto">
+		select * from article where articleno=#{articleno}
+	</select>
+	<delete id="EventBoardDelete" parameterType="int">
+		delete from article where articleno=#{articleno}
+	</delete>
+</mapper>

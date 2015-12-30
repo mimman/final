@@ -26,12 +26,28 @@
 	<bean class="com.mimman.main.controller.MainController"/>
 	<bean id="memberService" class="com.mimman.membership.service.MemberServiceImpl"/>
 	
+	<bean id="pageDto" class="com.mimman.page.repository.PageDto" />
+	<bean id="pageService" class="com.mimman.page.service.pageServiceImpl" />
 	<bean class="com.mimman.community.controller.EventBoardController">
-	
+		<property name="pageDto" ref="pageDto"></property>
+		<property name="pageService" ref="pageService"></property>
 	</bean>
 	
 	<bean class="com.mimman.community.controller.EventWriteController">
-	
+		<property name="pageService" ref="pageService"></property>
 	</bean>
+	
+	<bean class="com.mimman.community.controller.EventReadController">
+		<property name="pageService" ref="pageService"></property>
+	</bean>
+	
+	<bean class="com.mimman.community.controller.EventDeleteController">
+		<property name="pageService" ref="pageService"></property>
+	</bean>
+	
+	<bean class="com.mimman.community.controller.EventModifyController">
+		<property name="pageService" ref="pageService"></property>
+	</bean>
+	
 	
 </beans>

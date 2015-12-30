@@ -9,26 +9,18 @@ import com.mimman.board.event.repository.EventBoardDto;
 import com.mimman.page.service.PageService;
 
 @Controller
-public class EventWriteController {
+public class EventReadController {
 	private PageService pageService;
 
 	public void setPageService(PageService pageService) {
 		this.pageService = pageService;
 	}
 	
-	@RequestMapping("eventWrite.action")
-	public String eventWrite(){
+	@RequestMapping("eventRead.action")
+	public String eventRead(int articleno,HttpSession session){
 		
-		return "/WEB-INF/views/community/eventWrite.jsp";
-	}
-	
-	@RequestMapping("eventWriteOk.action")
-	public String eventWriteOk(EventBoardDto dto,HttpSession session){
-		String id = (String)session.getAttribute("id");
-		dto.setWriter(id);
-		System.out.println(dto.getWriter());
-	pageService.BoardWrite(dto);
-	
-		return "eventBoard.action";
+		EventBoardDto dto = pageService.BoardRead(articleno);
+		session.setAttribute("boardDto", dto);
+		return "/WEB-INF/views/community/eventRead.jsp";
 	}
 }

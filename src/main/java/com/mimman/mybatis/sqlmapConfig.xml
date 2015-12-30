@@ -13,6 +13,8 @@
 		<typeAlias type="com.mimman.membership.repository.Member" alias="Member" />
 		<typeAlias type="com.mimman.membership.repository.Login" alias ="Login"/>
 		<typeAlias type="com.mimman.membership.repository.Update" alias="Update"/>
+		<typeAlias type="com.mimman.board.event.repository.EventBoardDto" alias="EventDto"/>
+		
 	</typeAliases>
 	
 	<environments default="development">
@@ -28,5 +30,6 @@
 	</environments>
 	<mappers>
 		<mapper resource="com/mimman/mybatis/memberMapper.xml" />
+		<mapper resource="com/mimman/mybatis/pageMapper.xml" />
 	</mappers>
 </configuration>

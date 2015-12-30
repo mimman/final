@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="/inc/header1.jsp" flush="true" />
 <title>커뮤니티 &gt; 이벤트</title>
+
 <jsp:include page="/inc/header2.jsp" flush="true" />
 </head>
 <body id="sub">
@@ -51,15 +52,15 @@
    
    <tbody>
       
-         
+         <c:forEach var="dto" items="${list}">
          <tr>
-            <td class=""></td>
-            <td class=""></td> 
-            <td class=""></td>
-            <td class=""></td>
-            <td class=""></td>
+            <td class="">${dto.getArticleno()}</td>
+            <td class=><a href="eventRead.action?articleno=${dto.getArticleno()}">${dto.getTitle()}</td> 
+            <td class="">${dto.getWriter()}</td>
+            <td class="">${dto.getRegdate()}</td>
+            <td class="">${dto.getHit()}</td>
          </tr>
-   
+   </c:forEach>
       
       </tbody>
       </table>

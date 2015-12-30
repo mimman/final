@@ -5,30 +5,32 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mimman.board.event.repository.EventBoardDto;
 import com.mimman.page.service.PageService;
 
 @Controller
-public class EventWriteController {
+public class EventDeleteController {
 	private PageService pageService;
 
 	public void setPageService(PageService pageService) {
 		this.pageService = pageService;
 	}
 	
-	@RequestMapping("eventWrite.action")
-	public String eventWrite(){
-		
-		return "/WEB-INF/views/community/eventWrite.jsp";
-	}
+	@RequestMapping("evevBoardDelete.action")
+	public String EventDelete(int articleno,String writer,HttpSession session){
 	
-	@RequestMapping("eventWriteOk.action")
-	public String eventWriteOk(EventBoardDto dto,HttpSession session){
 		String id = (String)session.getAttribute("id");
-		dto.setWriter(id);
-		System.out.println(dto.getWriter());
-	pageService.BoardWrite(dto);
-	
+		System.out.println(articleno+"//"+writer);
+		System.out.println(id);
+		
+		if(writer.equals(id)){
+			pageService.BoardDelete(articleno);
+		}
+		else{
+			System.out.println("권한이 없는 사용자입니다");
+		}
+		
+		
 		return "eventBoard.action";
 	}
+
 }

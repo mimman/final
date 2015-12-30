@@ -180,14 +180,12 @@ function test(){
 </div>
 </div>
 
-</div>
 
 <form name="agree" method="post" action="agree.action">
 <div>이용약관에 동의합니다. <input type="checkbox" name="agree"></div>
 <input type="button" value="약관 동의" onClick="test()" >
 </form>
-</body>
-</html>
+
             <!-- //내용 -->
 
             </div>

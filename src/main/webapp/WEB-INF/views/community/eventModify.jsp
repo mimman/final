@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <jsp:include page="/inc/header1.jsp" flush="true" />
-<title>커뮤니티 &gt; 이벤트</title>
+<title>MIRACLE AIR &gt; 대메뉴 &gt; 중메뉴 &gt; 소메뉴</title>
 <jsp:include page="/inc/header2.jsp" flush="true" />
 </head>
 <body id="sub">
@@ -29,21 +29,18 @@
 
             <!-- 내용 -->
 
-<div class="join">
-이벤트 게시판 글쓰기 페이지
-</div>
-<form method="post" action="eventWriteOk.action">
-<div>카테고리<select name="boardcd">
+<form method="post" action="eventBoardModify.action">
+	분류<select name="boardcd">
 		<option>공지사항</option>
 		<option>이벤트</option>
 		<option>Q&A</option>
-	</select></div>
-	<div>제목<input type="text" name="title"></div>
-	<div>내용<textarea rows="10" cols="50" name="content"></textarea>
-	<div>첨부파일<input type="file" name="img" ></div>
-	<div>비밀번호<input type="password" name="boardpw"></div>
+	</select>
+	제목<input type="text" name="b_name">
+	내용<textarea rows="10" cols="50" name="content"></textarea>
+	첨부파일<input type="file" name="img" >
+	비밀번호<input type="password" name="boardpw">
+	
 	<input type="submit" value="확인">
-
 </form>
             <!-- //내용 -->
 
