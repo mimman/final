@@ -7,6 +7,7 @@ import java.util.Vector;
 import javax.servlet.http.HttpSession;
 
 import com.mimman.board.event.repository.EventBoardDto;
+import com.mimman.board.event.repository.EventModifyDto;
 import com.mimman.mybatis.pageManager;
 import com.mimman.page.repository.PageDto;
 
@@ -30,6 +31,11 @@ public class pageServiceImpl implements PageService {
 
 	public void BoardDelete(int articleno) {
 		pageManager.boardDelete(articleno);
+		
+	}
+
+	public void BoardModify(EventModifyDto dto) {
+		pageManager.boardModify(dto);
 		
 	}
 

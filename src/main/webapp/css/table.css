@@ -1,0 +1,44 @@
+@CHARSET "utf-8";
+/* 게시판(일반) list (★) */
+div.tbl_sch_box:after{display:block;clear:both;content:''}
+div.tbl_sch_box{width:100%;font-size:13px}
+table.tbl_sch{width:100%;border-collapse:collapse;border-top:2px solid #c9c9c9;}
+table.tbl_sch th,table.tbl_sch td{text-align:center}
+table.tbl_sch thead th{color:#535353;font-weight:500;background:#fff;border-bottom:1px solid #c9c9c9;border-right:0 solid #e2e2e2}
+table.tbl_sch tbody th, table.tbl_sch tbody td{color:#222;font-size:13px}
+table.tbl_sch td a{color:#222 ;text-decoration:none;font-style:normal;font-weight:normal}
+table.tbl_sch td.title{text-align:left;padding-left:15px;}
+table.tbl_sch td.title_v2{text-align:left;padding-left:15px;padding-right:25px;}
+table.tbl_sch tbody th, table.tbl_sch tbody td{border-bottom:1px dashed #e2e2e2;border-right:0 solid #e2e2e2}
+table.tbl_sch .end{border-right:0 none !important}
+table.tbl_sch th{padding:9px 0}
+table.tbl_sch td{padding:12px 0}
+table.tbl_sch td.pd_10{padding:10px 0;}
+
+table.tbl_sch a.btn_tax{display:inline-block;width:52px;height:22px;background:url(../img/reservation/btn_reser.gif) no-repeat 0 0 !important;;font-weight:500;line-height:22px;}
+table.tbl_sch a.btn_reser{display:inline-block;width:52px;height:22px;background:url(../img/reservation/btn_reser.gif) no-repeat 0 0 !important;;color:red;font-weight:500;line-height:22px;}
+
+/*  박스 2 / list / COL 세로형식 */
+div.tableBC2_box.reser_l:after{display:block;clear:both;content:''}
+div.tableBC2_box.reser_l{width:709px;font-size:12px;margin-left:30px;}
+div.tableBC2_box.reser_r:after{display:block;clear:both;content:''}
+div.tableBC2_box.reser_r{width:411px;font-size:12px;margin-left:20px;}
+table.tableBC2_reser{width:100%;margin-bottom:0;border-collapse:collapse}
+table.tableBC2_reser th,table.tableBC2_reser td{text-align:left;color:#c8c8c8}
+table.tableBC2_reser th{background:#3c3c3b;font-size:13px;}
+table.tableBC2_reser thead th{border-top:1px solid #e5e5e5;color:#333}
+table.tableBC2_reser th,table.tableBC2_reser td{border-bottom:1px solid #535353;font-size:14px;}
+table.tableBC2_reser .end{border-right:0 none}
+table.tableBC2_reser th{padding:13px 0 13px 20px;}
+table.tableBC2_reser td{padding:13px 0 13px 30px;background:#444;border-bottom:1px solid #444;}
+table.tableBC2_reser td.price{font-size:12px;}
+table.tableBC2_reser td.price em{font-family:'NanumGothicBold';font-size:14px;color:#a68e60;}
+table.tableBC2_reser td.bg_4c{background:#4c4c4c;border-bottom:1px solid #4c4c4c;}
+table.tableBC2_reser td.sel{padding: 0 0 0 30px;}
+table.tableBC2_reser.v1 td{padding-left:18px;padding-right:18px;}
+table.tableBC2_reser.lineno th,table.tableBC2_reser.lineno td{border-right:0 none !important}
+table.tableBC2_reser td.address{text-align:left;padding-left:15px}
+table.tableBC2_reser th p{font-size:22px;color:#c8c8c8;}
+table.tableBC2_reser th p em{font-size:12px;color:#a2854c;}
+table.tableBC2_reser th.tit{background:#303030;border-bottom:1px solid #303030;}
+

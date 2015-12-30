@@ -17,4 +17,7 @@
 	<delete id="EventBoardDelete" parameterType="int">
 		delete from article where articleno=#{articleno}
 	</delete>
+	<update id="EventBoardModify" parameterType="EventModifyDto">
+		update article set title=#{title},content=#{content} where articleno=#{articleno}
+	</update>
 </mapper>

@@ -1,10 +1,11 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html; charset=EUC-KR"%>
 <jsp:include page="/inc/header1.jsp" flush="true" />
-<title>ÌöåÏõêÏÑúÎπÑÏä§ &gt; Î°úÍ∑∏Ïù∏</title>
+<title>»∏ø¯º≠∫ÒΩ∫ &gt; ∑Œ±◊¿Œ</title>
 <jsp:include page="/inc/header2.jsp" flush="true" />
 </head>
 <body id="sub">
-<jsp:include page="/inc/header2_1.jsp" flush="true" />
+<div class="wrapG_all">
+   <div class="wrapG">
    <!-- gnb -->
  <jsp:include page="/inc/gnb.jsp" flush="true" /> 
    <!-- //gnb -->
@@ -13,54 +14,88 @@
 
    <!-- containerG_w -->
    <div id="containerG_w" class="sub01">      
-     
+      <h2 class="blind">∫ªπÆ øµø™</h2>
 
-        
-         <!-- //contentG_title -->
+      <div class="sub_tit_w blind">
+         <p>»∏ø¯º≠∫ÒΩ∫</p>         
+         <span class="mt_16">∑Œ±◊¿Œ</span>
+      </div>
+      <!-- //contentG_title -->
 
-  
+      <h3 class="blind">∑Œ±◊¿Œ</h3>
 
-      <!-- contentG -->
-      <div id="contentG">
+         <!-- ∫ªπÆøµø™ -->
+         <div id="contentG">
+         
+         <!-- ≥ªøÎ -->
+         
+         <div class="login_box_w">
 
-         <!-- Î≥∏Î¨∏ÏòÅÏó≠ -->
-         <div id="contentG_w">
+            <div class="login_box clear">
+               <div class="left fl"></div>
 
+               <div class="right fl">
+                  <h4>login <em>»∏ø¯∑Œ±◊¿Œ</em></h4>
 
-            <!-- ÎÇ¥Ïö© -->
- <div class="join">
-                  <form method="post" action="login.action">
-                     <table>
-                        <tr>
-                           <td><label for="inputId">ÏïÑÏù¥Îîî</label>&nbsp;&nbsp;&nbsp;</td>
-                           <td><input type="text" name="log_id" placeholder="ÏïÑÏù¥Îîî" /></td>
-                        </tr>
+                  <div class="txt">¿Ã∏ﬁ¿œ¡÷º“øÕ ∫Òπ–π¯»£∏¶ ¿‘∑¬«ÿ¡÷ººø‰.<br />
+                  ∑Œ±◊¿Œ «œΩ√∏È ¥ıøÌ ∆Ì∏Æ«œ∞‘ ø¬∂Û¿Œ º≠∫ÒΩ∫∏¶ ¿ÃøÎ«œΩ« ºˆ ¿÷Ω¿¥œ¥Ÿ.</div>
+                  
+                  <!-- ∑Œ±◊¿Œ -->
+                  <div class="login_form mt_10">
+                     
+                     <div class="email_w clear">
+                     <form method="post" action="login.action">
+                        <ul class="fl">
+                        <li>
+                           <em class="item1">
+                           <label class="i_label" for="userid">æ∆¿Ãµ</label>                           
+                           <input name="log_id" class="i_text userid" style="width:273px;" id="log_id" type="text" value="" title="*¿Ã∏ﬁ¿œ¡÷º“∏¶ ¿‘∑¬«œººø‰." />
+                           </em>
+                        </li>
+                        <li>
+                           <em class="item1 mt_5">
+                              <label class="i_label" for="userpw">∫Òπ–π¯»£</label>
+                              <input name="log_password" class="i_text userpw" style="width:273px;" id="log_password" type="password" value="" title="*∫Òπ–π¯»£∏¶ ¿‘∑¬«œººø‰." />
+                           </em>
+                        </li>
+                        </ul>
+                        <span class="btn fl">
+                           <input type="submit" class="btn" value="∑Œ±◊¿Œ" />
+                        </span>
+                     </form>
+                     </div>
+                     
+                     <input type="checkbox" id="save_id" name="save_id" class="ch_id" /><label for="save_id" class="ch_id">&nbsp; æ∆¿Ãµ ¿˙¿Â</label>
 
-                        <tr>
-                           <td><label for="inputPw">ÎπÑÎ∞ÄÎ≤àÌò∏</label>&nbsp;&nbsp;&nbsp;</td>
-                           <td><input type="password" name="log_password"
-                              placeholder="ÎπÑÎ∞ÄÎ≤àÌò∏" /></td>
-                        </tr>
-                        <tr>
-                           <td colspan="2"><button type="submit">ÌôïÏù∏</button></td>
-                        </tr>
+                  </div>
+                  <!-- //∑Œ±◊¿Œ -->               
 
-                     </table>
+                  <!-- πˆ∆∞ -->
+                  <div class="login_menu">
+                     <ul class="btn clear">
+                        <li><a href="membership.action">»∏ø¯∞°¿‘</a></li>
+                        <li><a class="id" href="">æ∆¿Ãµ√£±‚</a></li>
+                        <li class="last"><a href="">∫Òπ–π¯»£√£±‚</a></li>
+                     </ul>
+                  </div>
+                  <!-- //πˆ∆∞ -->
 
-
-                  </form>
                </div>
-
-            <!-- //ÎÇ¥Ïö© -->
+               <!-- //left -->
 
             </div>
-            <!-- //contentG_w -->
+            <!-- //login_box -->
+         </div>
+         <!-- //login_box_w -->
+         
+         <!-- //≥ªøÎ -->
+
+            </div>
+            <!-- //contentG -->
 
             <hr />
 
 
-         </div>
-         <!-- //contentG -->
          </div>
       <!-- //containerG_w -->
 

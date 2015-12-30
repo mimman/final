@@ -1,10 +1,11 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html; charset=EUC-KR"%>
 <jsp:include page="/inc/header1.jsp" flush="true" />
-<title>М ▄Л⌡░Л└°К╧└Л┼╓ &gt; М ▄Л⌡░Й╟─Л·┘ &gt; Й╟─Л·┘Л≥└Кё▄</title>
+<title>х╦©Ь╪╜╨Я╫╨ &gt; х╦©Ь╟║ют &gt; ╟║ют©о╥А</title>
 <jsp:include page="/inc/header2.jsp" flush="true" />
 </head>
 <body id="sub">
-<jsp:include page="/inc/header2_1.jsp" flush="true" />
+<div class="wrapG_all">
+   <div class="wrapG">
    <!-- gnb -->
  <jsp:include page="/inc/gnb.jsp" flush="true" /> 
    <!-- //gnb -->
@@ -13,36 +14,36 @@
 
    <!-- containerG_w -->
    <div id="containerG_w" class="sub01">      
-     
+      <h2 class="blind">╨╩╧╝ ©╣©╙</h2>
+         
+      <div class="tab_w clearfix v2">
+         <ul>
+            <li class=""><a class="" href="">╬Ю╟Э╣©юг</a></li>
+            <li class=""><a class="" href="">х╦©Ь╟║ют</a></li>
+            <li class="current"><a class="" href="">╟║ют©о╥А</a></li>
+         </ul>
+      </div>
+      <!-- //tab_w -->
 
-        
-         <!-- //contentG_title -->
+      <h3 class="blind">╟║ют©о╥А</h3>
 
-  
+         <!-- ╨╩╧╝©╣©╙ -->
+         <div id="contentG">
+         
+            <!-- Ё╩©К -->
+            
+         <div class="join">
+         <h2>х╦©Ь╟║ют ©о╥А</h2>
+         <a href="index.action">х╗ю╦╥н </a>
+         </div>
 
-      <!-- contentG -->
-      <div id="contentG">
-
-         <!-- КЁ╦К╛╦Л≤│Л≈╜ -->
-         <div id="contentG_w">
-
-
-            <!-- К┌╢Л ╘ -->
-	<div class="join">
-	<h2>М ▄Л⌡░Й╟─Л·┘ Л≥└Кё▄</h2>
-	<a href="index.action">М≥┬Л°╪К║° </a>
-	</div>
-		
-            <!-- //К┌╢Л ╘ -->
+            <!-- //Ё╩©К -->
 
             </div>
-            <!-- //contentG_w -->
+            <!-- //contentG -->
 
             <hr />
-
-
-         </div>
-         <!-- //contentG -->
+            
          </div>
       <!-- //containerG_w -->
 

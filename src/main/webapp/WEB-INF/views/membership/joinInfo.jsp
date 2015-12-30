@@ -1,84 +1,84 @@
-<%@ page contentType="text/html; charset=EUC-KR"%>
+<%@ page contentType="text/html; charset=utf-8"%>
 <jsp:include page="/inc/header1.jsp" flush="true" />
-<title>MIRACLE AIR &gt; ´ë¸Ş´º &gt; Áß¸Ş´º &gt; ¼Ò¸Ş´º</title>
+<title>íšŒì›ì„œë¹„ìŠ¤ &gt; íšŒì›ê°€ì… &gt; ì •ë³´ì…ë ¥</title>
+<jsp:include page="/inc/header2.jsp" flush="true" />
 <script>
 function nullCheck(){
-	var id = document.getElementById("id");
-	var pw = document.getElementById("password");
-	var pwConf = document.getElementById("password_confirm");
-	var name = document.getElementById("name");
-	var birth = document.getElementById("birth");
-	var email = document.getElementById("email");
-	var add = document.getElementById("address");
-	var nation = document.getElementById("nation");
-	var cell = document.getElementById("phone");
-	
+   var id = document.getElementById("id");
+   var pw = document.getElementById("password");
+   var pwConf = document.getElementById("password_confirm");
+   var name = document.getElementById("name");
+   var birth = document.getElementById("birth");
+   var email = document.getElementById("email");
+   var add = document.getElementById("address");
+   var nation = document.getElementById("nation");
+   var cell = document.getElementById("phone");
 
-	//alert(id.value+pw.value+pwConf.value+name.value+birth.value+email.value+add.value+nation.value+cell.value);
-	if(id == null ||id == undefined || id.value ==""){
-		alert("¾ÆÀÌµğ¸¦  ÀÔ·ÂÇØÁÖ¼¼¿ä");
-	}
-	else if((pw == null ||pw == undefined ||pw.value =="")  
-			|| (pwConf == null ||pwConf == undefined ||pwConf.value =="")){
-		alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä")
-	}
-	else if(name == null  ||name == undefined ||name.value ==""){
-		alert("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä")
-	}
-	else if(birth == null  ||birth == undefined ||birth.value ==""){
-		alert("»ı³â ¿ùÀÏ À» ÀÔ·ÂÇØÁÖ¼¼¿ä")
-	}
-	else if(email == null ||email == undefined ||email.value ==""){
-		alert("ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä")
-	}
-	else if(add == null ||add == undefined ||add.value ==""){
-		alert("ÁÖ¼Ò¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä")
-	}
-	else if(nation == null ||nation == undefined ||nation.value ==""){
-		alert("±¹°¡¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä")
-	}
-	else if(cell == null ||cell == undefined ||cell.value ==""){
-		alert("ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä")
-	}
-	else{
-		if(pwCheck() && emailCheck())
-		document.join.submit();
-	}
+   //alert(id.value+pw.value+pwConf.value+name.value+birth.value+email.value+add.value+nation.value+cell.value);
+   if(id == null ||id == undefined || id.value ==""){
+      alert("ì•„ì´ë””ë¥¼  ì…ë ¥í•´ì£¼ì„¸ìš”");
+   }
+   else if((pw == null ||pw == undefined ||pw.value =="")  
+         || (pwConf == null ||pwConf == undefined ||pwConf.value =="")){
+      alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”")
+   }
+   else if(name == null  ||name == undefined ||name.value ==""){
+      alert("ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”")
+   }
+   else if(birth == null  ||birth == undefined ||birth.value ==""){
+      alert("ìƒë…„ ì›”ì¼ ì„ ì…ë ¥í•´ì£¼ì„¸ìš”")
+   }
+   else if(email == null ||email == undefined ||email.value ==""){
+      alert("ì´ë©”ì¼ì„ ì…ë ¥í•´ì£¼ì„¸ìš”")
+   }
+   else if(add == null ||add == undefined ||add.value ==""){
+      alert("ì£¼ì†Œë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”")
+   }
+   else if(nation == null ||nation == undefined ||nation.value ==""){
+      alert("êµ­ê°€ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”")
+   }
+   else if(cell == null ||cell == undefined ||cell.value ==""){
+      alert("ì „í™”ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”")
+   }
+   else{
+      if(pwCheck() && emailCheck())
+      document.join.submit();
+   }
 
 }
 
 function pwCheck(){
-	var pw = document.getElementById("password");
-	var pwConf = document.getElementById("password_confirm")
+   var pw = document.getElementById("password");
+   var pwConf = document.getElementById("password_confirm")
 
-	
-	if(pw.value.length < 6 ){
-		alert("ºñ¹Ğ¹øÈ£´Â 6ÀÚ ÀÌ»óÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä");
-		return false;
-	}
-	else if(pw.value != pwConf.value){
-		alert("ºñ¹Ğ¹øÈ£°¡ ´Ù¸¨´Ï´Ù")
-		return false;
-	}
-	return true;
+   
+   if(pw.value.length <= 6 ){
+      alert("ë¹„ë°€ë²ˆí˜¸ëŠ” 6ì ì´ìƒì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
+      return false;
+   }
+   else if(pw.value != pwConf.value){
+      alert("ë¹„ë°€ë²ˆí˜¸ê°€ ë‹¤ë¦…ë‹ˆë‹¤")
+      return false;
+   }
+   return true;
 }
 function emailCheck(){
-	var email = document.getElementById("email");
-	var format  = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-	
-	if(email.value.search(format)==-1){
-		alert("ÀÌ¸ŞÀÏ Çü½Ä¿¡ ¸Â°Ô ÀÔ·ÂÇØ ÁÖ¼¼¿ä");
-		$("#email").focus();
-		return false;
-	}
-	return true;
+   var email = document.getElementById("email");
+   var format  = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+   
+   if(email.value.search(format)==-1){
+      alert("ì´ë©”ì¼ í˜•ì‹ì— ë§ê²Œ ì…ë ¥í•´ ì£¼ì„¸ìš”");
+      $("#email").focus();
+      return false;
+   }
+   return true;
 }
 
 </script>
-<jsp:include page="/inc/header2.jsp" flush="true" />
 </head>
 <body id="sub">
-<jsp:include page="/inc/header2_1.jsp" flush="true" />
+<div class="wrapG_all">
+   <div class="wrapG">
    <!-- gnb -->
  <jsp:include page="/inc/gnb.jsp" flush="true" /> 
    <!-- //gnb -->
@@ -87,108 +87,74 @@ function emailCheck(){
 
    <!-- containerG_w -->
    <div id="containerG_w" class="sub01">      
-      <h2 class="blind">º»¹® ¿µ¿ª</h2>
+      <h2 class="blind">ë³¸ë¬¸ ì˜ì—­</h2>
 
-         <!-- //contentG_title -->
+      <div class="tab_w clearfix v2">
+         <ul>
+            <li class=""><a class="" href="">ì•½ê´€ë™ì˜</a></li>
+            <li class="current"><a class="" href="">íšŒì›ê°€ì…</a></li>
+            <li class=""><a class="" href="">ê°€ì…ì™„ë£Œ</a></li>
+         </ul>
+      </div>
+      <!-- //tab_w -->
 
-      <h3 class="blind">½Ã¼³ÇöÈ²</h3>
+      <h3 class="blind">ì‹œì„¤í˜„í™©</h3>
 
-      <!-- contentG -->
+      <!-- ë³¸ë¬¸ì˜ì—­ -->
       <div id="contentG">
-
-         <!-- º»¹®¿µ¿ª -->
-         <div id="contentG_w">
-
-
-            <!-- ³»¿ë -->
-<form action="joinCheck.action" method="post" class="join" name="join">
-		<h2>È¸¿ø°¡ÀÔ<br/><br/><br/></h2>
-		<div>
-			<div>
-				<label for="inputId">¾ÆÀÌµğ</label> 
-				<input type="text" id="id" name="id">
-			</div>
-  
-
-		</div>
-
-		<div>
-			<div>
-				<label for="inputPassword">ºñ¹Ğ¹øÈ£</label>
-				<input type="password"  id="password" name="password" placeholder="ºñ¹Ğ¹øÈ£">
-					
-			</div>
-
-		</div>
-
-		<div>
-			<div>
-				<label for="inputConfirPw">ºñ¹Ğ¹øÈ£ È®ÀÎ</label> 
-				<input type="password" id="password_confirm" id="password_confirm" name="password_confirm" placeholder="ºñ¹Ğ¹øÈ£ È®ÀÎ">
-			</div>
-
-		</div>
-
-		<div>
-			<div>
-				<label for="inputName">ÀÌ¸§</label> <input type="text" id="name" name="name" placeholder="ÀÌ¸§" >
-			</div>
-			<div></div>
-		</div>
-		<div>
-			<div>
-				<label for="inputBirth">»ı³â ¿ù ÀÏ</label> <input type="text" id="birth" name="birth" placeholder="0000-00-00">
-			</div>
-			<div></div>
-		</div>
-
-
-		<div>
-			<div>
-				<label for="inputEmail">ÀÌ¸ŞÀÏ</label> <input type="email" id="email" name="email" placeholder="ÀÌ¸ŞÀÏ">
-			</div>
-
-		</div>
-		<div>
-			<div>
-				<label for="inputAddress">ÁÖ¼Ò</label> <input type="text" id="address" name="address" placeholder="ÁÖ¼Ò">
-			</div>
-
-		</div>
-		<div>
-			<div>
-				<label for="inputNation">±¹°¡</label> <input type="text" id="nation" name="nation" placeholder="±¹°¡">
-					
-			</div>
-
-		</div>
-		<div>
-			<div>
-				<label for="inputPhone">phone</label> <input type="text" id="phone" name="phone" placeholder="ÀüÈ­¹øÈ£">
-			</div>
-
-		</div>
-		
-
-		<div>
-			<label for="inputName"></label>
-
-			<div>
-				<input type="button" value="È®ÀÎ" onclick="nullCheck()">
-			</div>
-		</div>
-	</form>
-
-            <!-- //³»¿ë -->
-
-            </div>
-            <!-- //contentG_w -->
+      
+         <!-- ë‚´ìš© -->
+         <form action="joinCheck.action" method="post" class="join" name="join">
+         <div class="joininfo">
+            
+            <h3>íšŒì›ê°€ì…</h3>
+            
+            <ul class="mt_30">
+               <li>
+                  <label for="inputId">ì•„ì´ë””</label>
+                  <input type="text" id="id" name="id" placeholder="ì•„ì´ë””" />
+               </li>
+               <li>
+                  <label for="inputPassword">ë¹„ë°€ë²ˆí˜¸</label>
+                  <input type="password"  id="password" name="password" placeholder="ë¹„ë°€ë²ˆí˜¸" />
+               </li>
+               <li>
+                  <label for="inputConfirPw">ë¹„ë°€ë²ˆí˜¸ í™•ì¸</label>
+                  <input type="password" id="password_confirm" id="password_confirm" name="password_confirm" placeholder="ë¹„ë°€ë²ˆí˜¸ í™•ì¸" />
+               </li>
+               <li>
+                  <label for="inputName">ì´ë¦„</label><input type="text" id="name" name="name" placeholder="ì´ë¦„" />
+               </li>
+               <li>
+                  <label for="inputBirth">ìƒë…„ì›”ì¼</label><input type="text" id="birth" name="birth" placeholder="0000-00-00" />
+               </li>
+               <li>
+                  <label for="inputEmail">ì´ë©”ì¼</label><input type="email" id="email" name="email" placeholder="ì´ë©”ì¼" />
+               </li>
+               <li>
+                  <label for="inputAddress">ì£¼ì†Œ</label><input type="text" id="address" name="address" placeholder="ì£¼ì†Œ" />
+               </li>
+               <li>
+                  <label for="inputNation">êµ­ê°€</label><input type="text" id="nation" name="nation" placeholder="êµ­ê°€" />
+               </li>
+               <li>
+                  <label for="inputPhone">phone</label><input type="text" id="phone" name="phone" placeholder="ì „í™”ë²ˆí˜¸" />
+               </li>
+            </ul>
+            
+            <input type="button" value="í™•ì¸" onclick="nullCheck()" class="mt_20" />
+      
+         </div>
+         </form>
+         
+            <!-- //ë‚´ìš© -->
+      
+          </div>
+            <!-- //contentG -->
 
             <hr />
 
 
-         </div>
-         <!-- //contentG -->
          </div>
       <!-- //containerG_w -->
 

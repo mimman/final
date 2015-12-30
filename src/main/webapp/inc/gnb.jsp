@@ -34,10 +34,10 @@
 						<nav class="gnb">
 							<ul>
 								<li>
-									<a class="menu" href="">항공권 예매</a>
+									<a class="menu" href="domestic.action">항공권 예매</a>
 									<ul>
-										<li><a href="">국내선 항공권</a></li>
-										<li><a href="">국제선 항공권</a></li>
+										<li><a href="domestic.action">국내선 항공권</a></li>
+										<li><a href="inter.action">국제선 항공권</a></li>
 									</ul>
 								</li>
 

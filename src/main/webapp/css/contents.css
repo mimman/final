@@ -1,0 +1,126 @@
+@CHARSET "utf-8";
+div#contentG_w{width:1140px;margin:0 auto;}
+/* tab */
+div.tab_w ul li{display:inline-block;float:left;}
+div.tab_w ul li a{display:inline-block;width:160px;height:60px;line-height:60px;text-align:center;font-size:15px;color:#fff;font-weight:600;}
+div.tab_w ul li.current a{color:#2c2c2c;}
+div.tab_w ul li.tab1.current{background:url(../img/reservation/tab1_on.jpg) no-repeat 0 0;}
+div.tab_w ul li.tab1{background:url(../img/reservation/tab1_off.jpg) no-repeat 0 0;}
+div.tab_w ul li.tab2.current{background:url(../img/reservation/tab2_on.jpg) no-repeat 0 0;}
+div.tab_w ul li.tab2{background:url(../img/reservation/tab2_off.jpg) no-repeat 0 0;}
+div.tab_w.v2{height:49px;border-bottom:1px solid #cdcdcd;}
+div.tab_w.v2 ul li{background:url(../img/common/tab_off.gif) no-repeat 0 0;}
+div.tab_w.v2 ul li a{width:200px;height:50px;line-height:50px;color:#545454;}
+div.tab_w.v2 ul li.current{background:url(../img/common/tab_on.gif) no-repeat 0 0;}
+div.tab_w.v2 ul li.current a{color:#f53838;}
+
+/* 항공권 예매 */
+div.con_box{border:2px solid #dfdfdf;margin-top:-2px;padding:50px;font-size:15px;}
+div.con_box ul.radio_w li{position:relative;display:inline-block;float:left;margin-right:25px;}
+div.con_box ul.radio_w li label{margin-left:10px;font-weight:500;}
+div.con_box i.fa-compass{color:#f53838;font-size:23px;}
+ul.flight_list li{float:left;}
+div.top_con div.city_w ul li{padding:10px 0 25px;position:relative;}
+div.top_con div.city_w ul li label{padding-right:30px;font-weight:500;}
+div.top_con div.city_w ul li a.compass{text-indent:-9999px;display:inline-block;width:18px;height:22px;background:url(../img/reservation/img_compass.png) no-repeat 0 0;position:absolute;left:240px;top:14px;}
+div.top_con div.city_w{width:300px;}
+div.top_con div.city_w ul li input{width:140px;border:1px solid #ececec;height:30px;padding:0 28px 0 5px;}
+div.top_con div.flight_w{width:736px;}
+div.top_con div.flight_w ul.flight_list li{float:left;margin:10px 30px 10px 10px;color:#5b5b5b;}
+/*div.top_con div.flight_w ul.flight_list.in{border-bottom:1px solid #d1d1d1;}*/
+div.top_con div.flight_w ul.flight_list.out li{padding-right:15px;margin:13px 0 13px 15px;border-right:1px solid #d1d1d1;}
+div.top_con div.flight_w ul.flight_list.out li.end{border-right:0;}
+div.bot_con h4{font-size:18px;color:#2c2c2c;font-weight:500;}
+div.bot_con div.fl{margin-right:40px;}
+div.bot_con div.fl ul.radio_w2{width:140px;}
+div.bot_con div.fl ul.radio_w2 li{line-height:40px;}
+div.bot_con div.fl ul.radio_w2 li:after{clear:both;display:block;content:"";height:0;visibility:hidden;}
+div.bot_con div.fl ul.radio_w2 li label{margin-left:5px;}
+div.bot_con div.fl ul.radio_w2 li p{display:inline-block;float:left;margin-right:10px;}
+div.bot_con div.fl ul.radio_w2 li input[type="button"]{border:1px solid #d1d1d1;background:#f1f2f4 !important;width:25px;height:25px;line-height:18px;color:#969696;float:left;margin-top:7px;}
+div.bot_con div.fl ul.radio_w2 li input.count{width:25px;height:23px;border:1px solid #fff;border-color:#d1d1d1 #fff #d1d1d1 #fff;text-align:center;line-height:23px;float:left;margin-top:7px;}
+div.bot_con div.fl.ta_c, div.bot_con div.fl.clearfix{width:450px;margin-right:0;}
+div.bot_con div.fl input.btn_sch{display:inline-block;width:220px;height:46px;background:url(../img/reservation/btn_sch.jpg) no-repeat 0 0 !important;border:0;color:#fff;font-weight:600;font-size:20px;}
+
+/* datepicker */
+.ll-skin-santiago { font-size: 90%; }
+.ll-skin-santiago .ui-widget { font-family: Helvetica Trebuchet MS,Tahoma,Verdana,Arial,sans-serif; }
+.ll-skin-santiago .ui-datepicker { padding: 0; }
+.ll-skin-santiago .ui-widget-content { border: none; background: #fff; -moz-box-shadow: 0 1px 3px rgba(0,0,0,.19); -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.19); box-shadow: 0 1px 3px rgba(0,0,0,.19); }
+.ll-skin-santiago .ui-datepicker-header {color:#fff;border:0;background:#255788;text-transform: uppercase;border-radius: 4px 4px 0 0; text-shadow: 0 -1px 0 rgba(0,0,0,.35); font-family: "Myriad Pro", sans-serif; }
+.ll-skin-santiago .ui-datepicker-header .ui-state-hover { background: transparent; border-color: transparent; cursor: pointer; }
+.ll-skin-santiago .ui-datepicker .ui-datepicker-title { line-height: 2.2em; font-weight: normal; }
+.ll-skin-santiago .ui-datepicker .ui-datepicker-prev, .ll-skin-santiago .ui-datepicker .ui-datepicker-next {background:none; top: -1px; /*background: #d33e13;*/ border-radius: 0; font-weight: normal; border: none; height: 2.2em; width: 1.4em; }
+.ll-skin-santiago .ui-datepicker .ui-datepicker-prev.ui-state-hover, .ll-skin-santiago .ui-datepicker .ui-datepicker-next.ui-state-hover { /*background: #ba2c0c;*/ }
+.ll-skin-santiago .ui-datepicker .ui-datepicker-prev { left: 0; /*border-right: 1px solid #a6280b;*/ } .ll-skin-santiago .ui-datepicker .ui-datepicker-next { right: 0; /*border-left: 1px solid #a6280b;*/ }
+.ll-skin-santiago .ui-datepicker .ui-datepicker-prev span, .ll-skin-santiago .ui-datepicker .ui-datepicker-next span { margin-top: -4px; top: 40%; }
+.ll-skin-santiago .ui-icon-circle-triangle-e { background-image: url(images/ui-icons_ffffff_256x240.png); background-position: -32px 0; }
+.ll-skin-santiago .ui-icon-circle-triangle-w { background-image: url(images/ui-icons_ffffff_256x240.png); background-position: -96px 0; }
+.ll-skin-santiago .ui-datepicker table { margin: 0; }
+.ll-skin-santiago .ui-datepicker th { padding: .6em 0 .4em; text-transform: uppercase; color: #bbb; font-family: "Myriad Pro"; font-weight: normal; font-size: .8em; border-top: 1px solid #e6e6e6; }
+.ll-skin-santiago .ui-datepicker td { border: none; border-top: 1px solid #e6e6e6; border-right: 1px solid #e6e6e6; padding: 0; }
+.ll-skin-santiago td:last-child { border-right: 0; }
+.ll-skin-santiago td .ui-state-default{ background: transparent; border: none; color: #2b2b2b; padding:7px; margin: 0; font-family: "Myriad Pro", sans-serif; font-weight: normal; text-align: center; }
+.ll-skin-santiago .ui-datepicker-calendar .ui-state-hover { background: #ededed; color: #b2b2b2; }
+.ll-skin-santiago td a.ui-state-active, .ll-skin-santiago td a.ui-state-active.ui-state-hover {background:#1a4a78; color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.45); }
+.ll-skin-santiago .ui-datepicker .ui-datepicker-next span { background-image: url(../img/common/ui-icons_ffffff_256x240.png); background-position: -32px -16px; }
+.ll-skin-santiago .ui-datepicker .ui-datepicker-prev span { background-image: url(../img/common/ui-icons_ffffff_256x240.png); background-position: -96px -16px; }
+
+
+/* membership */
+div.login_box_w{width:auto;height:auto;background:#fff;position:relative;margin:0 auto;padding:56px;}
+div.login_box{border:2px solid #dcdcdc;position:relative;}
+div.login_box div.left{width:514px;height:418px;overflow:hidden;background:url(../img/membership/login_title.gif) no-repeat 20px 34px;}
+div.login_box div.right{width:auto;padding:80px 50px;height:258px;}
+div.login_box div.right h4{display:block;font-size:35px;color:#222;}
+div.login_box div.right h4 em{display:inline-block;font-size:12px;color:#666;}
+div.login_box div.right div.txt{display:inline-block;margin-left:1px;font-size:12px;color:#888;line-height:1.6;padding-top:10px;}
+div.login_box div.right div.login_form{border-bottom:1px solid #444;padding-bottom:15px;}
+div.login_box div.login_form:after{display:block;clear:both;content:''}
+div.login_box div.right div.login_form ul{display:inline-block;width:300px;float:left;position:relative;}
+div.login_box div.right.idpw div.login_form ul{display:inline-block;width:331px;position:relative;}
+div.login_box div.right div.login_form span input.btn{display:inline-block;padding:0 21px 0 20px;background:#5d5d5d !important;border-radius:4px;font-size:18px;line-height:72px;color:#fff;font-weight:500;}
+div.login_box div.right div.login_form input.ch_id{margin-top:11px;vertical-align:bottom;margin:11px 0 0 2px;}
+div.login_box div.right div.login_form label.ch_id{font-size:12px;color:#888;}
+div.login_box div.right div.login_menu{display:inline-block;width:100%;border-top:1px solid #202020;padding-top:18px;}
+div.login_box div.right div.login_menu ul li{float:left;padding:0 10px;border-right:1px solid #ddd;}
+div.login_box div.right div.login_menu ul li.last{border-right:0;}
+
+div.login_box div.right{float:right;}
+div.login_box div.right:after{display:block;clear:both;content:''}
+div.login_box div.right.nonmember{width:336px;float:left;padding:24px 53px 91px 54px;border-left:1px solid #303030;}
+div.login_box div.right.nonmember div.login_form ul{display:inline-block;width:auto;float:left;position:relative;}
+div.login_box div.right.nonmember div.login_form span{display:inline-block;float:right;background:url(../img/membership/btn_login.png) no-repeat 0 0;}
+div.login_box div.right.nonmember div.login_form span a{display:inline-block;padding:25px 30px;font-size:18px;color:#cac5be;font-family:'NanumGothicBold';}
+div.login_box div.right.nonmember p.txt{display:inline-block;margin-left:1px;font-size:12px;color:#888;line-height:1.6;padding-top:12px;}
+div.login_box div.right.nonmember p.txt em{color:#a2854c;}
+
+/* 20151229 contents.css 추가 */
+.sub_tit_w {margin-top:5px;line-height:24px;padding-left:10px;background:url(/html/images/common/blt_tt.png) no-repeat 0 2px;border-bottom:0px;padding-bottom:15px;font-weight:700;color:#414a68;font-size:18px;}
+div.agree_w h5{margin-bottom:15px;font-size:18px;color:#333;font-weight:600;}
+div.agree_w p{color:#333;}
+div.agree_w textarea{width:100% !important;border:1px solid #c1c1c1;line-height:1.75em;}
+
+div.joininfo h3{font-size:21px;color:#333;font-weight:600;text-align:center;}
+div.joininfo ul{padding:0;width:480px;margin:0 auto;}
+div.joininfo ul li:after{content:" "; display:block; clear:both;}
+div.joininfo ul li, div.joininfo ul li input{font-size:14px;}
+div.joininfo ul li label{display:inline-block;float:left;margin-right:10px;line-height:36px;color:#333;}
+div.joininfo ul li input{display:inline-block;float:right;width:300px;padding:3px 10px;line-height:28px;margin-bottom:20px;letter-spacing:0.05em;border:1px solid #d6d6d6;}
+div.joininfo input[type="button"]{display:block;width:100px;height: 30px;margin:0 auto;background:#6B6B6B !important;border:none;border-radius:5px;color:#fff;}
+
+.find_box{border: 1px solid #dcdcdc; border-top:2px solid #676767;padding:30px 0;margin-bottom:50px}
+.find_box p{width:385px;margin:0 auto;padding-left:90px;margin-bottom:5px}
+.find_box .find_id{width:475px;margin:0 auto}
+.find_box .find_id li{overflow:hidden;margin-bottom:5px}
+.find_box .find_id li strong{display:block;float:left;width:90px;line-height:24px}
+.find_box .find_id li div{float:left;width:385px}
+
+.find_box .find_id li input.w70{width:70px}
+.find_box .find_id li input.w90{width:90px}
+.find_box .find_id li input.w120{width:120px}
+.find_box .find_id li input.w150{width:150px}
+
+
+
+

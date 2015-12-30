@@ -1,10 +1,11 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html; charset=EUC-KR"%>
 <jsp:include page="/inc/header1.jsp" flush="true" />
-<title>MIRACLE AIR &gt; ëŒ€ë©”ë‰´ &gt; ì¤‘ë©”ë‰´ &gt; ì†Œë©”ë‰´</title>
+<title>MIRACLE AIR &gt; ´ë¸Þ´º &gt; Áß¸Þ´º &gt; ¼Ò¸Þ´º</title>
 <jsp:include page="/inc/header2.jsp" flush="true" />
 </head>
 <body id="sub">
-<jsp:include page="/inc/header2_1.jsp" flush="true" />
+<div class="wrapG_all">
+   <div class="wrapG">
    <!-- gnb -->
  <jsp:include page="/inc/gnb.jsp" flush="true" /> 
    <!-- //gnb -->
@@ -13,33 +14,30 @@
 
    <!-- containerG_w -->
    <div id="containerG_w" class="sub01">      
-     
+      <h2 class="blind">º»¹® ¿µ¿ª</h2>
 
-        
-         <!-- //contentG_title -->
+      <div class="tab_w clearfix v2">
+         <ul>
+            <li class="current"><a class="" href="domesticSearch.jsp">È¸¿ø°¡ÀÔ</a></li>
+            <li class=""><a class="" href="interSearch.jsp">±¹Á¦¼± Ç×°ø±Ç</a></li>
+         </ul>
+      </div>
 
-  
+      <h3 class="blind">½Ã¼³ÇöÈ²</h3>
 
-      <!-- contentG -->
-      <div id="contentG">
-
-         <!-- ë³¸ë¬¸ì˜ì—­ -->
-         <div id="contentG_w">
-
-
-            <!-- ë‚´ìš© -->
+         <!-- º»¹®¿µ¿ª -->
+         <div id="contentG">
+         
+            <!-- ³»¿ë -->
 
 
-            <!-- //ë‚´ìš© -->
+            <!-- //³»¿ë -->
 
             </div>
-            <!-- //contentG_w -->
+            <!-- //contentG -->
 
             <hr />
-
-
-         </div>
-         <!-- //contentG -->
+            
          </div>
       <!-- //containerG_w -->
 

@@ -28,8 +28,9 @@ html, button, input, select, textarea { color: #666; }
 h1, h2, h3, h4, h5, h6 { font-family: Novecento, sans-serif; }
 */
 /* Select styles */
+/*
 ::-moz-selection { background: #4d4d4d; color: #fff; text-shadow: -1px -1px 0 #222; }
-::selection { background: #4d4d4d; color: #fff; text-shadow: -1px -1px 0 #222; }
+::selection { background: #4d4d4d; color: #fff; text-shadow: -1px -1px 0 #222; }*/
 
 /* Element styles *//*
 hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }*/
@@ -39,9 +40,9 @@ form { margin: 0 0 25px; }
 fieldset { padding: 0; margin: 0; border: 0; }
 legend { display: block; width: 100%; padding: 0; margin-bottom: 25px; font-size: 21px; line-height: 40px; border: 0; border-bottom: 1px solid #e5e5e5; }
 legend small { font-size: 15px; color: #999999; }
-
-label, input, button, select, textarea { font-weight: normal; }
-
+/*
+label, input, button, select, textarea { font-weight: normal; }*/
+/*
 label { display: block; margin-bottom: 5px; }
 
 select, textarea,
@@ -49,8 +50,8 @@ input[type="text"], input[type="password"], input[type="datetime"], input[type="
 input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"],
 input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
 	display: inline-block; height: 20px; padding: 8px 10px; margin-bottom: 10px; line-height: 1.6; vertical-align: middle; border: 0; border-bottom: 1px solid #ddd;
-}
-
+}*/
+/*
 input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] { width: auto; }
 
 select, input[type="file"] { height: 37px; *margin-top: 4px; line-height: 37px; }
@@ -61,7 +62,7 @@ textarea:focus,
 input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus,
 input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus,
 input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus {
-	outline: 0; outline: thin dotted \9; /* IE6-9 */ color: #fff; background: #3a3c47;
+	outline: 0; outline: thin dotted \9; /* IE6-9 *//* color: #fff; background: #3a3c47;
 }
 
 input, textarea { width: 200px; }
@@ -79,7 +80,7 @@ kbd { display: inline-block; margin: 0 0.1em; padding: 0.1em 0.6em; font-size: 1
 }
 
 script { display: none !important; width: 0 !important; height: 0 !important; overflow: hidden !important; }
-
+*/
 /* ==========================================================================
    Components
    ========================================================================== */

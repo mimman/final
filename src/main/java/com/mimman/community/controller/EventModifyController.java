@@ -8,6 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.mimman.board.event.repository.EventModifyDto;
 import com.mimman.page.service.PageService;
 
 @Controller
@@ -19,24 +20,23 @@ public class EventModifyController {
 	}
 	
 	@RequestMapping("eventModifyPage.action")
-	public String EventModify(int articleno,String writer,HttpSession session){
-		
-		String id = (String)session.getAttribute("id");
-		System.out.println(articleno+"//"+writer+"//"+ id);
+	public String EventModify(){
 		return "/WEB-INF/views/community/eventModify.jsp";
 	}
 	
 	@RequestMapping("eventBoardModify.action")
-	public String Modify(int articleno,String writer,HttpSession session){
+	public String Modify(){
 		
-		String id = (String)session.getAttribute("id");
-		System.out.println(articleno+"//"+writer+"//"+ id);
+		//String id = (String)session.getAttribute("id");
+		//System.out.println(dto.getArticleno()+"//"+writer+"//"+ id);
+	/*
 		if(writer.equals(id)){
-			pageService.BoardDelete(articleno);
+			pageService.BoardModify(dto);
 		}
 		else{
 			System.out.println("권한이 없는 사용자입니다");
 		}
+	*/
 		
 		return "eventBoard.action";
 	}

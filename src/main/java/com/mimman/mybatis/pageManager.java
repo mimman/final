@@ -12,6 +12,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.mimman.board.event.repository.EventBoardDto;
+import com.mimman.board.event.repository.EventModifyDto;
 import com.mimman.membership.repository.Member;
 import com.mimman.page.repository.PageDto;
 
@@ -56,6 +57,11 @@ public class pageManager {
 		SqlSession session = sqlFactory.openSession();
 		session.delete("EventBoardDelete",articleno);
 		session.commit();
-		
+	}
+	
+	public static void boardModify(EventModifyDto dto){
+		SqlSession session = sqlFactory.openSession();
+		session.update("EventBoardModify",dto);
+		session.commit();
 	}
 }

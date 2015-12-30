@@ -49,5 +49,9 @@
 		<property name="pageService" ref="pageService"></property>
 	</bean>
 	
+	<bean class="com.mimman.reservation.controller.domesticController">
+	</bean>
 	
+	<bean class="com.mimman.reservation.controller.interController">
+	</bean>
 </beans>

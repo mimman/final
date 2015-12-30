@@ -1,6 +1,6 @@
 @CHARSET "utf-8";
 
-h2{font-size:21px;color:#333;font-weight:500;}
+h2{font-size:21px;color:#333;font-weight:500;margin-bottom:10px;}
 h2 span{font-size:13px;color:#727272;padding-left:10px;}
 /* Controls */
 .controls {position:absolute;top:7px;right:10px;}
@@ -15,10 +15,13 @@ h2 span{font-size:13px;color:#727272;padding-left:10px;}
 .frame ul{list-style:none;margin:0;padding:0;height:100%;font-size:50px;}
 .frame ul li{position:relative;float:left;width:227px;height:100%;margin:0 1px 0 0;padding:0;background:#333;color:#ddd;text-align:center;cursor:pointer;}
 .frame ul li.active{color:#fff;background:#a03232;}
+.frame ul li img{position:absolute;top:0;left:0;}
 
-#cycleitems.frame ul li p{position:absolute;bottom:-70px;left:0;display:inline-block;width:227px;height:70px;background:url(../img/main/bg_hover.png) repeat 0 0;line-height:normal;}
-#cycleitems.frame ul li.active p{bottom:0px;}
-#cycleitems.frame ul li:hover p{bottom:0px;}
+#cycleitems.frame ul li p{position:absolute;bottom:0px;left:0;display:inline-block;width:227px;height:70px;background:url(../img/main/bg_hover.png) repeat 0 0;line-height:normal;}
+/*#cycleitems.frame ul li.active{border:4px solid #000;width:219px;height:242px}
+#cycleitems.frame ul li.active img{width:219px;height:242px}
+#cycleitems.frame ul li:hover{border:4px solid #000;width:219px;height:242px}
+#cycleitems.frame ul li:hover img{width:219px;height:242px}*/
 #cycleitems.frame ul li p span{color:#919090;font-size:13px;position:absolute;bottom:39px;right:10px;}
 #cycleitems.frame ul li p em{color:#fefefe;font-size:16px;position:absolute;bottom:16px;right:10px;}
 
@@ -50,9 +53,9 @@ div.essay div.contents a.txt_w em.date{border-right:2px solid #ddd;padding-right
 div.essay div.contents a.txt_w em.name{padding-left:10px;}
 div.essay div.contents a.txt_w span.txt{color:#585858;line-height:1.5em;display:inline-block;margin-top:10px;}
 div.notice{position:relative;}
-div.notice div.contents{border:1px solid #ddd;padding:0 10px;margin-top:15px;}
+div.notice div.contents{border:1px solid #ddd;padding:22px 10px;margin-top:15px;}
 div.notice div.contents ul.list_v1{padding:0 0 0 10px;}
-div.notice div.contents ul.list_v1 li{background:url(../img/common/bu_01.gif) no-repeat 0 11px;text-indent:10px;line-height:1.5em;}
+div.notice div.contents ul.list_v1 li{background:url(../img/common/bu_01.gif) no-repeat 0 11px;text-indent:10px;line-height:1.75em;}
 div.notice div.contents ul.list_v1 li a{color:#585858;}
 div.notice div.contents ul.list_v1 li span{position:absolute;right:15px;}
 div.notice.v2{margin-top:25px;}

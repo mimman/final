@@ -287,13 +287,13 @@ sub {
 /**
  * Address margins set differently in IE 6/7.
  */
-
+/*
 dl,
 menu,
 ol,
 ul {
     margin: 1em 0;
-}
+}*/
 
 dd {
     margin: 0 0 0 40px;
@@ -302,13 +302,13 @@ dd {
 /**
  * Address paddings set differently in IE 6/7.
  */
-
+/*
 menu,
 ol,
 ul {
     padding: 0 0 0 40px;
 }
-
+*/
 /**
  * Correct list images handled incorrectly in IE 7.
  */
@@ -395,17 +395,17 @@ legend {
  *    and Chrome.
  * 3. Improve appearance and consistency in all browsers.
  */
-
+/*
 button,
 input,
 select,
 textarea {
-    font-size: 100%; /* 1 */
-    margin: 0; /* 2 */
-    vertical-align: baseline; /* 3 */
-    *vertical-align: middle; /* 3 */
+    font-size: 100%; 
+    margin: 0; 
+    vertical-align: baseline;
+    *vertical-align: middle;
 }
-
+*/
 /**
  * Address Firefox 3+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
