@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <jsp:include page="/inc/header1.jsp" flush="true" />
 <title>MIRACLE AIR &gt; 대메뉴 &gt; 중메뉴 &gt; 소메뉴</title>
 <jsp:include page="/inc/header2.jsp" flush="true" />
@@ -30,13 +32,8 @@
             <!-- 내용 -->
 
 <form method="post" action="eventBoardModify.action">
-	<input type="hidden" name="articleno" value="${boarDto.getArticleno() }" >
-	
-	분류<select name="boardcd">
-		<option>공지사항</option>
-		<option>이벤트</option>
-		<option>Q&A</option>
-	</select>
+	<input type="hidden" name="articleno" value="${boardDto.getArticleno() }" >
+	<input type="hidden" name="writer" value="${boardDto.getWriter() }">
 	제목<input type="text" name="title" value="${boardDto.getTitle() }">
 	내용<textarea rows="10" cols="50" name="content" >${boardDto.getContent() }</textarea>
 	

@@ -1,3 +1,17 @@
+create table tbluser(
+   id    varchar2(50),
+   name   varchar2(30),
+   birth   date,
+   email   varchar2(60),
+   address   varchar2(100),
+   nation   varchar2(40),
+   phone   varchar2(30),
+   password varchar2(30),
+   mileage   number(10)
+
+);
+alter table article modify(img default null)
+alter table tbluser add constraint pk_id primary key(id)
 select * from tbluser
 
 select * from tbluser where id='1' and password='1111111'
@@ -22,7 +36,7 @@ create table article(
 	img varchar2(20),
 	writer varchar2(30)
 );
-alter table tbluser drop(writer)
+
 alter table article add(writer varchar2(30))
 commit
 select * from article 

@@ -25,18 +25,18 @@ public class EventModifyController {
 	}
 	
 	@RequestMapping("eventBoardModify.action")
-	public String Modify(){
+	public String Modify(HttpSession session,EventModifyDto dto){
 		
-		//String id = (String)session.getAttribute("id");
-		//System.out.println(dto.getArticleno()+"//"+writer+"//"+ id);
-	/*
-		if(writer.equals(id)){
+		String id = (String)session.getAttribute("id");
+		System.out.println(dto.getArticleno()+"//"+dto.getWriter()+"//"+ id);
+	
+		if(dto.getWriter().equals(id)){
 			pageService.BoardModify(dto);
 		}
 		else{
 			System.out.println("권한이 없는 사용자입니다");
 		}
-	*/
+	
 		
 		return "eventBoard.action";
 	}
