@@ -2,7 +2,7 @@ package com.mimman.page.repository;
 
 public class PageDto {
 	   private int totalRecord = 0;
-	   private int numPerPage = 10;
+	   private int numPerPage = 5;
 	   private int totalPage = 0;
 	   private int nowPage = 0;
 	   private int beginPerPage = 0;

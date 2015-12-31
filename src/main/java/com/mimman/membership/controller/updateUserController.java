@@ -33,7 +33,6 @@ private MemberService memberService;
 	
 	@RequestMapping(value="updateUser.action", method=RequestMethod.POST)
 	public String update(HttpSession session,Update update){
-		System.out.println(update.getAddress());
 		
 		memberService.update(update);
 		return "/WEB-INF/views/mypage/updateOk.jsp";

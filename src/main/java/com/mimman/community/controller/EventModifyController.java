@@ -28,7 +28,6 @@ public class EventModifyController {
 	public String Modify(HttpSession session,EventModifyDto dto){
 		
 		String id = (String)session.getAttribute("id");
-		System.out.println(dto.getArticleno()+"//"+dto.getWriter()+"//"+ id);
 	
 		if(dto.getWriter().equals(id)){
 			pageService.BoardModify(dto);

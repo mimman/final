@@ -28,7 +28,7 @@ public class LoginController {
 	public String pageHandler(Login login, HttpSession session){
 		Member result=
 				memberService.authenticate(login);
-		System.out.println(result.getId());
+		
 		if(result != null){
 			session.setAttribute("id", result.getId());
 			return "/index.jsp";

@@ -61,7 +61,7 @@ input{background:#fff !important}
 .mt_10{margin-top:10px;}
 .mt_20{margin-top:20px;}
 .mt_25{margin-top:25px;}
-.mt_30{margin-top:30px;}
+.mt_30{margin-top:30px !important;}
 
 .ml_75{margin-left:75px;}
 
@@ -139,8 +139,13 @@ input{background:#fff !important}
 
 .item1 .i_text2{display:inline-block;position:relative;width:150px;margin:0;height:25px;padding:2px 8px 1px 10px;border:1px solid #B5B5B5;line-height:25px;font-size:13px;letter-spacing:-0.02em;color:#333;letter-spacing:0.05em}
 
+.item1 select{height:30px;line-height:30px;width:80px;}
+
 div.joinagree input.i_text#i_address1, div.joinagree input.i_text#i_address2{margin-top:0;}
 div.joinagree input.i_text{display:inline-block;position:relative;width:30px;height:25px;line-height:25px;font-size:11px;letter-spacing:-0.02em;color:#c8c8c8;padding:2px 10px 1px;border:0;}
 
 
 .btn_m{border:1px solid #ddd;background:#4C4C4C !important;color:#fff;border-radius:5px;height:30px;padding:0px 20px;line-height:28px;}
+
+ul.pagination:after{display:block;visibility:hidden;clear:both;height:0;font-size:0;line-height:0;content:'.'}
+ul.pagination li{display:inline-block;float:left;margin-right:10px;line-height: 20px;}

@@ -4,6 +4,9 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Vector;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -26,12 +29,50 @@ public class EventBoardController {
 	}
 
 	@RequestMapping("eventBoard.action")
-	public ModelAndView eventPage(){
+	public ModelAndView eventPage(HttpServletRequest req,HttpSession session){
 		
 		ModelAndView mav = new ModelAndView("/WEB-INF/views/community/eventBoard.jsp");
 		List list = pageService.getBoardList();
+		int totalRecord = list.size();
+		System.out.println(totalRecord);
+		pageDto.setTotalRecord(totalRecord);
 		
-		mav.addObject("list",list);
+		int totalPage = (int)Math.ceil(((double)pageDto.getTotalRecord()/pageDto.getNumPerPage()));
+		pageDto.setTotalPage(totalPage);
+		int nowPage = pageDto.getNowPage();
+		int nowBlock = pageDto.getNowBlock();
+		int beginPerPage = pageDto.getBeginPerPage();
+		int totalBlock = pageDto.getTotalBlock();
+		int numPerPage = pageDto.getNumPerPage();
+		int pagePerBlock = pageDto.getPagePerBlock();
+		
+		if(req.getParameter("nowPage") == null || req.getParameter("nowPage").equals("")){
+	         nowPage = 0;
+	      }
+	      else{
+	         nowPage = Integer.parseInt(req.getParameter("nowPage"));
+	      }
+	      
+	      if(req.getParameter("nowBlock") == null || req.getParameter("nowBlock").equals("")){
+	         nowBlock = 0;
+	      }
+	      else{
+	         nowBlock = Integer.parseInt(req.getParameter("nowBlock"));
+	      }
+	      
+	      
+	      beginPerPage = nowPage * numPerPage;
+	      totalBlock = (int)Math.ceil(((double)pageDto.getTotalPage()/pageDto.getPagePerBlock()));
+	      
+	      pageDto.setBeginPerPage(beginPerPage);
+	      pageDto.setNowBlock(nowBlock);
+	      pageDto.setNowPage(nowPage);
+	      pageDto.setNumPerPage(numPerPage);
+	      pageDto.setPagePerBlock(pagePerBlock);
+	      pageDto.setTotalBlock(totalBlock);
+	      
+	      session.setAttribute("list", list);
+	      session.setAttribute("pagedto", pageDto);
 		return mav;
 		
 		

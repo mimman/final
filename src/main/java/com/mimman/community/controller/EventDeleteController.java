@@ -19,8 +19,7 @@ public class EventDeleteController {
 	public String EventDelete(int articleno,String writer,HttpSession session){
 	
 		String id = (String)session.getAttribute("id");
-		System.out.println(articleno+"//"+writer);
-		System.out.println(id);
+	
 		
 		if(writer.equals(id)){
 			pageService.BoardDelete(articleno);

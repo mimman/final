@@ -30,31 +30,34 @@
 
 
             <!-- 내용 -->
-   <table class="table">
+   <table class="table" style="border-top:1px solid #ccc">
       <caption>글보기</caption>
       <colgroup>
-      <col width="25%" />
-      <col width="75%" />
+      <col width="15%" />
+      <col width="*" />
+      <col width="15%" />
+      <col width="15%" />
+      <col width="15%" />
+      <col width="15%" />
       </colgroup>
-      <tr>
-         <td colspan="6" bgcolor=#dddddd height=25 align=left class=m colspan=2></td>
-      </tr>
        <tr> 
-         <td align=left bgcolor=#dddddd width=10%> 제목 </td>
-         <td>${boardDto.getTitle() } </td>
-         <td align=left bgcolor=#dddddd width=10%> 등록날짜 </td>
+         <td align=left bgcolor=#dddddd>제목 </td>
+         <td colspan="5">${boardDto.getTitle() } </td>
+        </tr>
+        <tr>
+         <td align=left bgcolor=#dddddd>등록날짜 </td>
          <td>${boardDto.getRegdate() }</td>
-         <td align=left bgcolor=#dddddd width=10%> 글쓴이</td>
+         <td align=left bgcolor=#dddddd>글쓴이</td>
          <td>${boardDto.getWriter() }</td>
-          <td align=left bgcolor=#dddddd width=10%> 조회수 </td>
+         <td align=left bgcolor=#dddddd>조회수 </td>
          <td>${boardDto.getHit() }</td>
       </tr>
       <tr> 
-         <td>${boardDto.getContent() }</td>
+         <td colspan="6" style="padding:20px 10px">${boardDto.getContent() }</td>
          
       </tr>
       <tr>
-         <td colspan=4 align=right></td>
+         <td colspan="6" align=right></td>
       </tr>
   
    </table>
