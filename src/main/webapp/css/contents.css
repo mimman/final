@@ -68,7 +68,7 @@ div.bot_con div.fl input.btn_sch{display:inline-block;width:220px;height:46px;ba
 
 
 /* membership */
-div.login_box_w{width:auto;height:auto;background:#fff;position:relative;margin:0 auto;padding:56px;}
+div.login_box_w{width:auto;height:auto;background:#fff;position:relative;margin:0 auto;padding:0 56px;}
 div.login_box{border:2px solid #dcdcdc;position:relative;}
 div.login_box div.left{width:514px;height:418px;overflow:hidden;background:url(../img/membership/login_title.gif) no-repeat 20px 34px;}
 div.login_box div.right{width:auto;padding:80px 50px;height:258px;}
@@ -109,18 +109,18 @@ div.joininfo ul li label{display:inline-block;float:left;margin-right:10px;line-
 div.joininfo ul li input{display:inline-block;float:right;width:300px;padding:3px 10px;line-height:28px;margin-bottom:20px;letter-spacing:0.05em;border:1px solid #d6d6d6;}
 div.joininfo input[type="button"]{display:block;width:100px;height: 30px;margin:0 auto;background:#6B6B6B !important;border:none;border-radius:5px;color:#fff;}
 
-.find_box{border: 1px solid #dcdcdc; border-top:2px solid #676767;padding:30px 0;margin-bottom:50px}
-.find_box p{width:385px;margin:0 auto;padding-left:90px;margin-bottom:5px}
-.find_box .find_id{width:475px;margin:0 auto}
-.find_box .find_id li{overflow:hidden;margin-bottom:5px}
-.find_box .find_id li strong{display:block;float:left;width:90px;line-height:24px}
-.find_box .find_id li div{float:left;width:385px}
+.sch_box{border:1px solid #dcdcdc;border-top:2px solid #676767;padding:60px 0;margin-bottom:50px}
+.sch_box p{width:385px;margin:0 auto;padding-left:90px;margin-bottom:5px}
+.sch_box .sch_id{width:475px;margin:0 auto}
+.sch_box .sch_id li{overflow:hidden;margin-bottom:5px}
+.sch_box .sch_id li strong{display:block;float:left;width:90px;line-height:30px}
+.sch_box .sch_id li div{float:left;width:385px}
+.sch_box select{height:30px;}
 
-.find_box .find_id li input.w70{width:70px}
-.find_box .find_id li input.w90{width:90px}
-.find_box .find_id li input.w120{width:120px}
-.find_box .find_id li input.w150{width:150px}
-
+.sch_box .sch_id li input.w70{width:70px}
+.sch_box .sch_id li input.w90{width:90px}
+.sch_box .sch_id li input.w120{width:120px}
+.sch_box .sch_id li input.w150{width:150px}
 
 
 

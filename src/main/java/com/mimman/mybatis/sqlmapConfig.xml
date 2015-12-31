@@ -13,6 +13,7 @@
 		<typeAlias type="com.mimman.membership.repository.Member" alias="Member" />
 		<typeAlias type="com.mimman.membership.repository.Login" alias ="Login"/>
 		<typeAlias type="com.mimman.membership.repository.Update" alias="Update"/>
+		<typeAlias type="com.mimman.membership.repository.Search" alias="Search" />
 		<typeAlias type="com.mimman.board.event.repository.EventBoardDto" alias="EventDto"/>
 		<typeAlias type="com.mimman.board.event.repository.EventModifyDto" alias="EventModifyDto"/>
 	</typeAliases>

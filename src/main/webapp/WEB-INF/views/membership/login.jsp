@@ -74,8 +74,8 @@
                   <div class="login_menu">
                      <ul class="btn clear">
                         <li><a href="membership.action">회원가입</a></li>
-                        <li><a class="id" href="">아이디찾기</a></li>
-                        <li class="last"><a href="">비밀번호찾기</a></li>
+                        <li><a class="id" href="idSearch.action">아이디찾기</a></li>
+                        <li class="last"><a href="pwSearch.action">비밀번호찾기</a></li>
                      </ul>
                   </div>
                   <!-- //버튼 -->

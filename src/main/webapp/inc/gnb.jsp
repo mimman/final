@@ -70,9 +70,8 @@
 									<a class="menu" href="">마이페이지</a>
 									<ul>
 										<li><a href="updateUser.action">회원정보 수정</a></li>
-										<li><a href="withdraw.action">탈퇴</a></li>
 										<li><a href="">예약 관리</a></li>
-										<li><a href="">항공권 조회</a></li>
+										<li><a href="withdraw.action">회원 탈퇴</a></li>
 									</ul>
 								</li>
 							</ul>

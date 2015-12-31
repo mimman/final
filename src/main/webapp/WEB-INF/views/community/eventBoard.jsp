@@ -77,8 +77,8 @@
 			</select>
 
 			<input type="text" size="16" name="keyWord"  />
-			<input type="button" value="찾기" onClick="check()" />
-			<input type="submit" value="글쓰기" >
+			<input class="btn_m" type="button" value="찾기" onClick="check()" />
+			<input class="btn_m" type="submit" value="글쓰기" >
 		</td>
 	</tr>
 	</table>

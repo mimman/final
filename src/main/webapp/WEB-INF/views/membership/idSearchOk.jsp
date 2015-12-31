@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html; charset=utf-8" isELIgnored="false"%>
 <jsp:include page="/inc/header1.jsp" flush="true" />
 <title>회원서비스 &gt; 아이디 찾기 완료</title>
 <jsp:include page="/inc/header2.jsp" flush="true" />
@@ -16,22 +16,15 @@
    <div id="containerG_w" class="sub01">      
       <h2 class="blind">본문 영역</h2>
 
-         <div class="sub_tit_w">
-            <p>항공권 예매</p>         
-            <span class="mt_16">국내선 항공권</span>
-         </div>
+         <div class="tab_w clearfix v2">
+         <ul>
+            <li class="current"><a href="idSearch.action">아이디 찾기</a></li>
+            <li class=""><a href="pwSearch.action">비밀번호 찾기</a></li>
+         </ul>
+      </div>
+      <!-- //tab_w -->
 
-         <div id="title2" class="sub">
-            <div class="tab_w">
-               <ul>
-               <li class="current"><a class="" href="">국내선 항공권</a></li>
-               <li><a class="" href="">국제선 항공권</a></li>
-               </ul>
-            </div>
-         </div>
-         <!-- //contentG_title -->
-
-         <h3 class="blind">시설현황</h3>
+      <h3 class="blind">회원가입</h3>
    
          <!-- contentG -->
          <div id="contentG">
@@ -40,7 +33,7 @@
          <div id="contentG_w">
          
             <!-- 내용 -->
-            
+            회원님의 아이디는 ${searchid} 입니다.
             
             <!-- //내용 -->
          

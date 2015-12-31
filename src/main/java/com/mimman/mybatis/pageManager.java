@@ -42,7 +42,16 @@ public class pageManager {
 	public static void boardWrite(EventBoardDto dto) {
 		SqlSession session = sqlFactory.openSession();
 		
-		session.insert("EventboardWrite",dto); 
+		session.insert("EventboardWrite",dto);
+		session.update("EventBoardInsert",dto);
+		session.commit();
+	}
+	
+	public static void boardReply(EventBoardDto dto){
+		SqlSession session = sqlFactory.openSession();
+		
+		session.update("EventBoardReplyUpdate",dto);
+		session.insert("EventboardReply",dto);
 		session.commit();
 	}
 	
@@ -62,6 +71,12 @@ public class pageManager {
 	public static void boardModify(EventModifyDto dto){
 		SqlSession session = sqlFactory.openSession();
 		session.update("EventBoardModify",dto);
+		session.commit();
+	}
+	
+	public static void boardCount(int articleno){
+		SqlSession session = sqlFactory.openSession();
+		session.update("EventBoardCount",articleno);
 		session.commit();
 	}
 }

@@ -1,61 +1,57 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html; charset=EUC-KR"%>
 <jsp:include page="/inc/header1.jsp" flush="true" />
-<title>ë§ˆì´íŽ˜ì´ì§€ &gt; íšŒì›íƒˆí‡´</title>
-
+<title>MIRACLE AIR &gt; ´ë¸Þ´º &gt; Áß¸Þ´º &gt; ¼Ò¸Þ´º</title>
 <jsp:include page="/inc/header2.jsp" flush="true" />
 </head>
 <body id="sub">
-<jsp:include page="/inc/header2_1.jsp" flush="true" />
-   <!-- gnb -->
- <jsp:include page="/inc/gnb.jsp" flush="true" /> 
-   <!-- //gnb -->
+	<div class="wrapG_all">
+		<div class="wrapG">
+			<!-- gnb -->
+			<jsp:include page="/inc/gnb.jsp" flush="true" />
+			<!-- //gnb -->
 
-      <hr />
+			<hr />
 
-   <!-- containerG_w -->
-   <div id="containerG_w" class="sub01">      
-     
+			<!-- containerG_w -->
+			<div id="containerG_w" class="sub01">
+				<h2 class="blind">º»¹® ¿µ¿ª</h2>
 
-        
-         <!-- //contentG_title -->
+				<div class="tab_w clearfix v2">
+					<ul>
+						<li class=""><a class="" href="updateUser.action">È¸¿øÁ¤º¸ ¼öÁ¤</a></li>
+						<li class="current"><a class="" href="">¿¹¾à °ü¸®</a></li>
+						<li class=""><a class="" href="withdraw.action">È¸¿ø Å»Åð</a></li>
+					</ul>
+				</div>
 
-  
+				<h3 class="blind">½Ã¼³ÇöÈ²</h3>
 
-      <!-- contentG -->
-      <div id="contentG">
+				<!-- º»¹®¿µ¿ª -->
+				<div id="contentG">
 
-         <!-- ë³¸ë¬¸ì˜ì—­ -->
-         <div id="contentG_w">
+					<!-- ³»¿ë -->
+					<form method="post" action="withdraw.action">
+						Á¤¸» Å»ÅðÇÏ½Ã°Ú½À´Ï±î? <input class="btn_m" type="submit" value="È®ÀÎ">
+					</form>
 
+					<!-- //³»¿ë -->
 
-            <!-- ë‚´ìš© -->
-			<div class="join">
-			<form method="post" action="withdraw.action">
-				ì •ë§ íƒˆí‡´í•˜ì‹œê² ìŠµë‹ˆê¹Œ?
-				<input type="submit" value="í™•ì¸">
-			</form>
+				</div>
+				<!-- //contentG -->
 
-            <!-- //ë‚´ìš© -->
+				<hr />
 
-            </div>
-            <!-- //contentG_w -->
+			</div>
+			<!-- //containerG_w -->
 
-            <hr />
+		</div>
+		<!-- //wrapG -->
+	</div>
+	<!-- //wrapG_all -->
 
+	<hr />
 
-         </div>
-         <!-- //contentG -->
-         </div>
-      <!-- //containerG_w -->
+	<jsp:include page="/inc/footer.jsp" flush="true" />
 
-   </div>
-   <!-- //wrapG -->
-</div>
-<!-- //wrapG_all -->
-
-<hr />
-
-<jsp:include page="/inc/footer.jsp" flush="true" />
- 
 </body>
 </html>

@@ -19,8 +19,12 @@ public class EventReadController {
 	@RequestMapping("eventRead.action")
 	public String eventRead(int articleno,HttpSession session){
 		
+		pageService.BoardCount(articleno);
 		EventBoardDto dto = pageService.BoardRead(articleno);
+		
+	
 		session.setAttribute("boardDto", dto);
+		System.out.println("pos:"+dto.getPos());
 		return "/WEB-INF/views/community/eventRead.jsp";
 	}
 }

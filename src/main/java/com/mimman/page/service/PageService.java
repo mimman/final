@@ -12,5 +12,6 @@ public interface PageService {
 	public EventBoardDto BoardRead(int articleno);
 	public void BoardDelete(int articleno);
 	public void BoardModify(EventModifyDto dto);
-	
+	public void BoardReply(EventBoardDto dto);
+	public void BoardCount(int articleno);
 }

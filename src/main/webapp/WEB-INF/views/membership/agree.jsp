@@ -174,7 +174,7 @@ function testCheck(){
 
          <form name="agree" method="post" action="agree.action">
             <div class="mt_20 ta_c"><input type="checkbox" name="agree" id="agree" /> <label for="agree">이용약관에 동의합니다.</label></div>
-            <div class="mt_20 ta_c"><input type="button" value="약관 동의" onClick="test()" /></div>
+            <div class="mt_20 ta_c"><input class="btn_m" type="button" value="약관 동의" onClick="test()" /></div>
          </form>
          
          </div>

@@ -11,7 +11,15 @@ public class EventBoardDto {
 	private int dept;
 	private String img;
 	private String writer;
+	private int pos;
 	
+	
+	public int getPos() {
+		return pos;
+	}
+	public void setPos(int pos) {
+		this.pos = pos;
+	}
 	public String getWriter() {
 		return writer;
 	}

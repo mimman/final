@@ -39,6 +39,17 @@ public class pageServiceImpl implements PageService {
 		
 	}
 
+	public void BoardReply(EventBoardDto dto) {
+		
+		pageManager.boardReply(dto);
+		
+	}
+
+	public void BoardCount(int articleno) {
+		pageManager.boardCount(articleno);
+		
+	}
+
 	
 
 }

@@ -3,6 +3,8 @@ package com.mimman.membership.service;
 import com.mimman.exception.IdPasswordNotMachingException;
 import com.mimman.membership.repository.Login;
 import com.mimman.membership.repository.Member;
+import com.mimman.membership.repository.Search;
+import com.mimman.membership.repository.pwSearch;
 import com.mimman.membership.repository.Update;
 import com.mimman.mybatis.memberManager;
 
@@ -46,4 +48,17 @@ public class MemberServiceImpl implements MemberService {
 		memberManager.drop(id);
 		
 	}
+	
+	 public String idSearch(Search search) {
+	      System.out.println(search.getUser_nm()+search.getEmail1());
+	      
+	      String dto=memberManager.idSearch(search);
+	      
+	      return dto;
+	   }
+
+	   public String pwSearch(pwSearch search) {
+	      String dto=memberManager.pwSearch(search);
+	      return dto;
+	   }
 }

@@ -4,11 +4,16 @@
 
 <mapper namespace="mybatis.memberMapper">
 	<select id="getList" resultType="EventDto">
-		select * from article order by articleno desc
+		select * from article order by pos asc,dept asc
 	</select>
 	<insert id="EventboardWrite" parameterType="EventDto">
 		insert into article values(seq_article.nextval,#{boardcd},
-		#{title},#{boardpw},#{content},sysdate,0, 0,#{img},#{writer}
+		#{title},#{boardpw},#{content},sysdate,0, 0,#{img},#{writer},0
+		)
+	</insert>
+	<insert id="EventboardReply" parameterType="EventDto">
+	insert into article values(seq_article.nextval,#{boardcd},
+		#{title},#{boardpw},#{content},sysdate,0, #{dept}+1,#{img},#{writer},#{pos}
 		)
 	</insert>
 	<select id="EventBoardRead" parameterType="int" resultType="EventDto">
@@ -20,4 +25,16 @@
 	<update id="EventBoardModify" parameterType="EventModifyDto">
 		update article set title=#{title},content=#{content} where articleno=#{articleno}
 	</update>
+	<update id="EventBoardInsert">
+		update article set pos=pos+1 where pos >= #{pos}
+	</update>
+	
+	<update id="EventBoardReplyUpdate">
+		update article set pos=pos+1 where pos > #{pos}
+	</update>
+	
+	<update id="EventBoardCount" parameterType="int">
+		update article set hit=hit+1 where articleno=#{articleno}
+	</update>
+	
 </mapper>

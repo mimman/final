@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=utf-8" isELIgnored="false"%>
 <jsp:include page="/inc/header1.jsp" flush="true" />
-<title>MIRACLE AIR &gt; 대메뉴 &gt; 중메뉴 &gt; 소메뉴</title>
+<title>회원서비스 &gt; 회원가입 &gt; 정보입력</title>
+
+<jsp:include page="/inc/header2.jsp" flush="true" />
 <script>
 function nullCheck(){
 	
@@ -51,10 +53,10 @@ function emailCheck(){
 }
 
 </script>
-<jsp:include page="/inc/header2.jsp" flush="true" />
 </head>
 <body id="sub">
-<jsp:include page="/inc/header2_1.jsp" flush="true" />
+<div class="wrapG_all">
+   <div class="wrapG">
    <!-- gnb -->
  <jsp:include page="/inc/gnb.jsp" flush="true" /> 
    <!-- //gnb -->
@@ -63,90 +65,64 @@ function emailCheck(){
 
    <!-- containerG_w -->
    <div id="containerG_w" class="sub01">      
-     
+      <h2 class="blind">본문 영역</h2>
 
-        
-         <!-- //contentG_title -->
+      <div class="tab_w clearfix v2">
+         <ul>
+            <li class=""><a class="" href="updateUser.action">회원정보 수정</a></li>
+            <li class="current"><a class="" href="">예약 관리</a></li>
+            <li class=""><a class="" href="withdraw.action">회원 탈퇴</a></li>
+         </ul>
+      </div>
+      <!-- //tab_w -->
 
-  
+      <h3 class="blind">시설현황</h3>
 
-      <!-- contentG -->
+      <!-- 본문영역 -->
       <div id="contentG">
-
-         <!-- 본문영역 -->
-         <div id="contentG_w">
-
-
-            <!-- 내용 -->
-
-
-<form action="updateUser.action" method="post" class="join" name="join">
-	<input type="hidden" name="id" value="${id}" >
-		<h2>회원정보 수정<br/><br/><br/></h2>
-		
-		
-		
-		<div>
-			<div>
-				<label for="inputName">이름</label> <input type="text" id="name" name="name" value="${dto.getName() }" >
-			</div>
-			<div></div>
-		</div>
-		<div>
-			<div>
-				<label for="inputBirth">생년 월 일</label> <input type="text" id="birth" name="birth" value="${dto.getBirth() }">
-			</div>
-			<div></div>
-		</div>
-
-
-		<div>
-			<div>
-				<label for="inputEmail">이메일</label> <input type="email" id="email" name="email" value="${dto.getEmail() }">
-			</div>
-
-		</div>
-		<div>
-			<div>
-				<label for="inputAddress">주소</label> <input type="text" id="address" name="address" value="${dto.getAddress() }">
-			</div>
-
-		</div>
-		<div>
-			<div>
-				<label for="inputNation">국가</label> <input type="text" id="nation" name="nation" value="${dto.getNation() }">
-					
-			</div>
-
-		</div>
-		<div>
-			<div>
-				<label for="inputPhone">phone</label> <input type="text" id="phone" name="phone" value="${dto.getPhone() }">
-			</div>
-
-		</div>
-		
-
-		<div>
-			<label for="inputName"></label>
-
-			<div>
-				<input type="button" value="확인" onclick="nullCheck()">
-			</div>
-		</div>
-	</form>
-
-
+      
+         <!-- 내용 -->
+         <form action="joinCheck.action" method="post" class="join" name="join">
+         <div class="joininfo">
+            
+            <h3>회원 수정</h3>
+            
+            <ul class="mt_30">
+               
+              
+               <li>
+                  <label for="inputName">이름</label><input type="text" id="name" name="name" value="${dto.getName() }" >
+               </li>
+               <li>
+                  <label for="inputBirth">생년월일</label><input type="text" id="birth" name="birth" value="${dto.getBirth() }">
+               </li>
+               <li>
+                  <label for="inputEmail">이메일</label><input type="email" id="email" name="email" value="${dto.getEmail() }">
+               </li>
+               <li>
+                  <label for="inputAddress">주소</label><input type="text" id="address" name="address" value="${dto.getAddress() }">
+               </li>
+               <li>
+                  <label for="inputNation">국가</label><input type="text" id="nation" name="nation" value="${dto.getNation() }">
+               </li>
+               <li>
+                  <label for="inputPhone">phone</label><input type="text" id="phone" name="phone" value="${dto.getPhone() }">
+               </li>
+            </ul>
+            
+            <input type="button" value="확인" onclick="nullCheck()" class="mt_20" />
+      
+         </div>
+         </form>
+         
             <!-- //내용 -->
-
-            </div>
-            <!-- //contentG_w -->
+      
+          </div>
+            <!-- //contentG -->
 
             <hr />
 
 
-         </div>
-         <!-- //contentG -->
          </div>
       <!-- //containerG_w -->
 

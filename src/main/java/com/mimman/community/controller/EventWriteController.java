@@ -26,7 +26,7 @@ public class EventWriteController {
 	public String eventWriteOk(EventBoardDto dto,HttpSession session){
 		String id = (String)session.getAttribute("id");
 		dto.setWriter(id);
-		System.out.println(dto.getWriter());
+		
 	pageService.BoardWrite(dto);
 	
 		return "eventBoard.action";

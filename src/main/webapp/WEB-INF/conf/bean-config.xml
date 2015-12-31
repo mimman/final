@@ -54,4 +54,12 @@
 	
 	<bean class="com.mimman.reservation.controller.interController">
 	</bean>
+	
+	<bean class="com.mimman.community.controller.EventReplyController">
+		<property name="pageService" ref="pageService"></property>
+	</bean>
+	
+	<bean class="com.mimman.membership.controller.SearchController">
+      <property name="memberService" ref="memberService"></property>
+   </bean>
 </beans>

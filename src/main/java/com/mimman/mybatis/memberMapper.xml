@@ -27,4 +27,12 @@
 	<delete id="drop" parameterType="String">
 		delete from tbluser where id =#{id}
 	</delete>
+	
+	<select id="idSearch" parameterType="Search" resultType="String">
+      select id from tbluser where name=#{user_nm} and email=#{email1} 
+   </select>
+   
+   <select id="pwSearch" parameterType="Search" resultType="String">
+      select password from tbluser where id=#{user_id} and name=#{user_nm} and email=#{email1}
+   </select>
 </mapper>

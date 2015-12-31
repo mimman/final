@@ -60,8 +60,8 @@
    </table>
  
    <hr size=1>
-    <a href="eventBoard.action">목 록</a> 
-   <a href="">답 변</a> 
+   <a href="eventBoard.action">목 록</a> 
+   <a href="eventReply.action?pos=${boardDto.getPos()}">답 변</a> 
    <a href="eventModifyPage.action?articleno=${boardDto.getArticleno()}&writer=${boardDto.getWriter() }">수 정</a> 
    <a href="evevBoardDelete.action?articleno=${boardDto.getArticleno()}&writer=${boardDto.getWriter() }">삭 제</a> <br>
 
