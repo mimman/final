@@ -25,7 +25,7 @@ public class EventModifyController {
 	}
 	
 	@RequestMapping("eventBoardModify.action")
-	public String Modify(HttpSession session,EventModifyDto dto){
+	public String Modify(HttpSession session,EventModifyDto dto,String boardcd){
 		
 		String id = (String)session.getAttribute("id");
 	
@@ -37,6 +37,6 @@ public class EventModifyController {
 		}
 	
 		
-		return "eventBoard.action";
+		return "eventBoard.action?"+boardcd;
 	}
 }

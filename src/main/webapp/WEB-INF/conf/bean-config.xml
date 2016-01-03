@@ -62,4 +62,12 @@
 	<bean class="com.mimman.membership.controller.SearchController">
       <property name="memberService" ref="memberService"></property>
    </bean>
+   
+   <bean class="com.mimman.membership.controller.MypageController">
+   </bean>
+   
+   <bean class="com.mimman.community.controller.EventBoardSearchController">
+  		<property name="pageDto" ref="pageDto"></property>
+   		<property name="pageService" ref="pageService"></property>
+   </bean>
 </beans>

@@ -7,14 +7,15 @@ import java.util.Vector;
 import javax.servlet.http.HttpSession;
 
 import com.mimman.board.event.repository.EventBoardDto;
+import com.mimman.board.event.repository.EventBoardSearch;
 import com.mimman.board.event.repository.EventModifyDto;
 import com.mimman.mybatis.pageManager;
 import com.mimman.page.repository.PageDto;
 
 public class pageServiceImpl implements PageService {
 
-	public List getBoardList() {
-		return pageManager.getList();
+	public List getBoardList(String boardcd) {
+		return pageManager.getList(boardcd);
 	}
 
 	public void BoardWrite(EventBoardDto dto) {
@@ -48,6 +49,11 @@ public class pageServiceImpl implements PageService {
 	public void BoardCount(int articleno) {
 		pageManager.boardCount(articleno);
 		
+	}
+
+	public List getBoardSearch(EventBoardSearch ebSearch) {
+		
+		return pageManager.boardSearch(ebSearch);
 	}
 
 	

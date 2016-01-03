@@ -12,6 +12,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.mimman.board.event.repository.EventBoardDto;
+import com.mimman.board.event.repository.EventBoardSearch;
 import com.mimman.board.event.repository.EventModifyDto;
 import com.mimman.membership.repository.Member;
 import com.mimman.page.repository.PageDto;
@@ -30,11 +31,11 @@ public class pageManager {
 		}
 	}
 	
-	public static List getList(){
+	public static List getList(String boardcd){
 		
 		List list = null;
 		SqlSession session = sqlFactory.openSession();
-		list = session.selectList("getList");
+		list = session.selectList("getList",boardcd);
 		return list;
 		
 	}
@@ -78,5 +79,14 @@ public class pageManager {
 		SqlSession session = sqlFactory.openSession();
 		session.update("EventBoardCount",articleno);
 		session.commit();
+	}
+	
+	public static List boardSearch(EventBoardSearch ebSearch){
+		System.out.println(ebSearch.getBoardcd()+ebSearch.getKeyField()+ebSearch.getKeyWord());
+		List list = null;
+		SqlSession session = sqlFactory.openSession();
+		list = session.selectList("getSearchList",ebSearch);
+		System.out.println("list ªÁ¿Ã¡Ó: "+list.size());
+		return list;
 	}
 }

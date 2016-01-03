@@ -18,11 +18,27 @@
       <h2 class="blind">본문 영역</h2>
 
       <div class="tab_w clearfix v2">
-         <ul>
-            <li class=""><a href="">공지사항</a></li>
-            <li class="current"><a href="">이벤트</a></li>
-            <li class=""><a href="">Q&A</a></li>
+      <c:if test="${boardcd eq 'notice'}">
+      <ul>
+            <li class="current"><a href="eventBoard.action?boardcd=notice">공지사항</a></li>
+            <li class=""><a href="eventBoard.action?boardcd=event">이벤트</a></li>
+            <li class=""><a href="eventBoard.action?boardcd=qna">Q&A</a></li>
          </ul>
+      </c:if>
+      <c:if test="${boardcd eq 'event'}">
+      <ul>
+            <li class=""><a href="eventBoard.action?boardcd=notice">공지사항</a></li>
+            <li class="current"><a href="eventBoard.action?boardcd=event">이벤트</a></li>
+            <li class=""><a href="eventBoard.action?boardcd=qna">Q&A</a></li>
+         </ul>
+      </c:if>
+        <c:if test="${boardcd eq 'qna'}">
+      <ul>
+            <li class=""><a href="eventBoard.action?boardcd=notice">공지사항</a></li>
+            <li class=""><a href="eventBoard.action?boardcd=event">이벤트</a></li>
+            <li class="current"><a href="eventBoard.action?boardcd=qna">Q&A</a></li>
+         </ul>
+      </c:if>
       </div>
 
       <!-- 본문영역 -->
@@ -42,13 +58,16 @@
 
 	<div class="ta_r">
       <div class="item1 clear mt_30">
+      <form method="post" action="boardSearch.action?boardcd=${boardcd}">
+      
          <select name="keyField" size="1">
-         <option value="id">이름</option>
-         <option value="noticetitle" >제목</option>
-         <option value="noticecontext" >내용</option>
+         <option value="writer">이름</option>
+         <option value="title" >제목</option>
+         <option value="content" >내용</option>
          </select>
          <input type="text" class="i_text2" name="keyWord" />
-         <input class="btn_m" type="button" value="찾기" onClick="check()" />
+         <input class="btn_m" type="submit" value="찾기" />
+        </form>
       </div>
       </div>
       <!-- //ta_r -->
@@ -114,7 +133,7 @@
 	<ul class="pagination">
 
       <c:if test="${nowBlock > 0}">
-         <li><a href="eventBoard.action?nowBlock=${nowBlock-1}&nowPage=${pagePerBlock*(nowBlock-1)}">이전 ${pagePerBlock}개</a></li>
+         <li><a href="eventBoard.action?boardcd=${boardcd}&nowBlock=${nowBlock-1}&nowPage=${pagePerBlock*(nowBlock-1)}">이전 ${pagePerBlock}개</a></li>
       </c:if>
       
       <c:forEach begin="1" end="${sessionScope.pagedto.getPagePerBlock()}" varStatus="status">
@@ -123,13 +142,13 @@
          <c:if test="${(nowBlock*pagePerBlock)+status.index == totalPage}">
              <c:set var="doneLoop" value="true"/>
          </c:if>
-         <li><a href="eventBoard.action?nowPage=${(nowBlock*pagePerBlock)+status.index-1}&nowBlock=${nowBlock}">${(nowBlock*pagePerBlock)+status.index}</a></li>
+         <li><a href="eventBoard.action?boardcd=${boardcd}&nowPage=${(nowBlock*pagePerBlock)+status.index-1}&nowBlock=${nowBlock}">${(nowBlock*pagePerBlock)+status.index}</a></li>
          
       </c:if>
       </c:forEach>      
       
       <c:if test="${totalBlock > nowBlock+1 }">
-         <li><a href="eventBoard.action?nowBlock=${nowBlock+1}&nowPage=${pagePerBlock*(nowBlock+1)}">다음 ${pagePerBlock} 개</a></li>
+         <li><a href="eventBoard.action?boardcd=${boardcd}&nowBlock=${nowBlock+1}&nowPage=${pagePerBlock*(nowBlock+1)}">다음 ${pagePerBlock} 개</a></li>
       </c:if>
 
       

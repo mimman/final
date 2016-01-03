@@ -47,6 +47,10 @@ commit
 select * from article 
 create sequence seq_article
 delete from article
+delete from article where articleno = 131
 insert into article values(seq_article.nextval,'이벤트','두번째 이벤트','1111','테스트...',sysdate,0,0,0,'이종수')
 
 delete from article where title='빠빠셍'
+
+select * from article where boardcd='event' and title LIKE '%'||'답'||'%' order by pos asc,dept asc, articleno desc
+select * from article where boardcd='event' and writer LIKE '%'||1||'%' order by pos asc,dept asc, articleno desc

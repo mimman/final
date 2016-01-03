@@ -23,7 +23,7 @@
 html{overflow-y:scroll}
 body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0;font-weight:normal;}
 html:first-child select{height:20px}
-body,input,textarea,button,table{font-family:"NanumGothic", Gulim, '굴림', Dotum, '돋움', Helvetica, Arial, sans-serif;font-size:13px;color:#222;}
+body,input,textarea,button,table{font-family:"NanumGothic",/* Gulim, '굴림',*/ Dotum, '돋움', Helvetica, Arial, sans-serif;font-size:13px;color:#222;}
 table{font-size:1em;}
 img,fieldset{border:0}
 ul,ol,li{list-style:none;}
@@ -42,6 +42,7 @@ em{font-style:normal}
 address,caption,strong,em,cite{font-weight:normal;font-style:normal}
 img,input,button,textarea,select{vertical-align:middle}
 
+body{font-family:'NanumGothic' !important;}
 .clear{clear:both}
 .clear:after{display:block;visibility:hidden;clear:both;height:0;font-size:0;line-height:0;content:'.'}
 
@@ -60,8 +61,9 @@ input{background:#fff !important}
 .mt_5{margin-top:5px;}
 .mt_10{margin-top:10px;}
 .mt_20{margin-top:20px;}
-.mt_25{margin-top:25px;}
+.mt_25{margin-top:25px !important;}
 .mt_30{margin-top:30px !important;}
+.mt_50{margin-top:50px !important;}
 
 .ml_75{margin-left:75px;}
 
@@ -147,5 +149,10 @@ div.joinagree input.i_text{display:inline-block;position:relative;width:30px;hei
 
 .btn_m{border:1px solid #ddd;background:#4C4C4C !important;color:#fff;border-radius:5px;height:30px;padding:0px 20px;line-height:28px;}
 
+
 ul.pagination:after{display:block;visibility:hidden;clear:both;height:0;font-size:0;line-height:0;content:'.'}
-ul.pagination li{display:inline-block;float:left;margin-right:10px;line-height: 20px;}
+ul.pagination li{display:inline-block;float:left;}
+
+
+
+

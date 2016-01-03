@@ -18,9 +18,9 @@
 
 				<div class="tab_w clearfix v2">
 					<ul>
+						<li class=""><a class="" href="mypage.action">회원 정보</a></li>
 						<li class=""><a class="" href="updateUser.action">회원정보 수정</a></li>
-						<li class="current"><a class="" href="">예약 관리</a></li>
-						<li class=""><a class="" href="withdraw.action">회원 탈퇴</a></li>
+						<li class="current"><a class="" href="withdraw.action">회원 탈퇴</a></li>
 					</ul>
 				</div>
 

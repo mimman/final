@@ -1,5 +1,6 @@
 package com.mimman.community.controller;
 
+import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Vector;
@@ -29,12 +30,13 @@ public class EventBoardController {
 	}
 
 	@RequestMapping("eventBoard.action")
-	public ModelAndView eventPage(HttpServletRequest req,HttpSession session){
+	public ModelAndView eventPage(String boardcd,HttpServletRequest req,HttpSession session){
 		
+		System.out.println("보드리스트 동작"+boardcd);
 		ModelAndView mav = new ModelAndView("/WEB-INF/views/community/eventBoard.jsp");
-		List list = pageService.getBoardList();
+		List list = pageService.getBoardList(boardcd);
 		int totalRecord = list.size();
-		System.out.println(totalRecord);
+		
 		pageDto.setTotalRecord(totalRecord);
 		
 		int totalPage = (int)Math.ceil(((double)pageDto.getTotalRecord()/pageDto.getNumPerPage()));
@@ -73,6 +75,7 @@ public class EventBoardController {
 	      
 	      session.setAttribute("list", list);
 	      session.setAttribute("pagedto", pageDto);
+	      session.setAttribute("boardcd", boardcd);
 		return mav;
 		
 		

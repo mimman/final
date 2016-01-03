@@ -122,5 +122,25 @@ div.joininfo input[type="button"]{display:block;width:100px;height: 30px;margin:
 .sch_box .sch_id li input.w120{width:120px}
 .sch_box .sch_id li input.w150{width:150px}
 
+/* 마이페이지 */
+h3{font-size:50px;font-weight:600;}
+.my_txt{border-left:5px solid #c1c1c1;padding-left:10px;line-height:1.8;}
+.quick_w{width:1032px;height:340px;margin:0 auto;background:url(../img/mypage/bg_quick.png) no-repeat 0 0;padding:64px 4px 4px;}
+.quick_w ul.quick>li{display:inline-block;float:left;margin-right:5px;width:254px;height:339px;background:url(../img/mypage/bg_con.png) no-repeat 0 0;text-align:center;}
+.quick_w ul.quick>li:last-child{margin-right:0;}
+.quick_w ul.quick li i{display:block;margin-top:30px;}
+.quick_w ul.quick li i.fa-user{color:#F53739;}
+.quick_w ul.quick li i.fa-plane{color:#13bae4;}
+.quick_w ul.quick li i.fa-pencil-square-o{color:#02b99b;}
+.quick_w ul.quick li i.fa-money{color:#194169;}
+.quick_w ul.quick li em{display:inline-block;font-size:28px;font-weight:600;color:#333;margin:22px 0 29px}
+.quick_w ul.quick li span{display:inline-block;line-height:1.8;font-size:13px;color:#545454;}
+
+/* list_v1 ( ㆍ ) */
+ul.list_v1{color:#222;font-size:13px;margin:25px 80px;}
+ul.list_v1:after{display:block;clear:both;content:''}
+ul.list_v1 li{display:block;clear:both;width:auto;padding-left:10px;line-height:1.8;background:url(../img/common/bu_dot01.gif) no-repeat 0 12px;text-align:left;}
+
+
 
 

@@ -44,6 +44,7 @@ nav>ul{list-style:none;list-style-image:none;/*margin:21px 0 0;*/}
 
 /* container */
 #containerG_w{width:1140px;margin:0 auto;padding:50px 0 70px;}
+#containerG_w.mypage{width:1040px;}
 .container{margin:0 auto;float:none;}
 div#contentG{padding:80px 0;}
 div#contentG_v2{padding:0 0 80px;}

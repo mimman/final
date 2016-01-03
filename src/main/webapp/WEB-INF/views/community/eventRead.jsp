@@ -63,10 +63,12 @@
    </table>
  
    <hr size=1>
-   <a href="eventBoard.action">목 록</a> 
-   <a href="eventReply.action?pos=${boardDto.getPos()}">답 변</a> 
+   <a href="eventBoard.action?boardcd=event">목 록</a> 
+   <c:if test="${boardcd eq 'qna'}">
+   <a href="eventReply.action?pos=${boardDto.getPos()}&boardcd=${boardDto.getBoardcd()}">답 변</a> 
+   </c:if>
    <a href="eventModifyPage.action?articleno=${boardDto.getArticleno()}&writer=${boardDto.getWriter() }">수 정</a> 
-   <a href="evevBoardDelete.action?articleno=${boardDto.getArticleno()}&writer=${boardDto.getWriter() }">삭 제</a> <br>
+   <a href="evevBoardDelete.action?articleno=${boardDto.getArticleno()}&writer=${boardDto.getWriter() }&boardcd=${boardDto.getBoardcd()}">삭 제</a> <br>
 
             <!-- //내용 -->
 

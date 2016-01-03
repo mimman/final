@@ -55,85 +55,87 @@ function emailCheck(){
 </script>
 </head>
 <body id="sub">
-<div class="wrapG_all">
-   <div class="wrapG">
-   <!-- gnb -->
- <jsp:include page="/inc/gnb.jsp" flush="true" /> 
-   <!-- //gnb -->
+	<div class="wrapG_all">
+		<div class="wrapG">
+			<!-- gnb -->
+			<jsp:include page="/inc/gnb.jsp" flush="true" />
+			<!-- //gnb -->
 
-      <hr />
+			<hr />
 
-   <!-- containerG_w -->
-   <div id="containerG_w" class="sub01">      
-      <h2 class="blind">본문 영역</h2>
+			<!-- containerG_w -->
+			<div id="containerG_w" class="sub01">
+				<h2 class="blind">본문 영역</h2>
 
-      <div class="tab_w clearfix v2">
-         <ul>
-            <li class=""><a class="" href="updateUser.action">회원정보 수정</a></li>
-            <li class="current"><a class="" href="">예약 관리</a></li>
-            <li class=""><a class="" href="withdraw.action">회원 탈퇴</a></li>
-         </ul>
-      </div>
-      <!-- //tab_w -->
+				<div class="tab_w clearfix v2">
 
-      <h3 class="blind">시설현황</h3>
+					<ul>
+						<li class=""><a class="" href="mypage.action">회원 정보</a></li>
+						<li class="current"><a class="" href="updateUser.action">회원정보 수정</a></li>
+						<li class=""><a class="" href="withdraw.action">회원
+								탈퇴</a></li>
+					</ul>
+				</div>
+				<!-- //tab_w -->
 
-      <!-- 본문영역 -->
-      <div id="contentG">
-      
-         <!-- 내용 -->
-         <form action="joinCheck.action" method="post" class="join" name="join">
-         <div class="joininfo">
-            
-            <h3>회원 수정</h3>
-            
-            <ul class="mt_30">
-               
-              
-               <li>
-                  <label for="inputName">이름</label><input type="text" id="name" name="name" value="${dto.getName() }" >
-               </li>
-               <li>
-                  <label for="inputBirth">생년월일</label><input type="text" id="birth" name="birth" value="${dto.getBirth() }">
-               </li>
-               <li>
-                  <label for="inputEmail">이메일</label><input type="email" id="email" name="email" value="${dto.getEmail() }">
-               </li>
-               <li>
-                  <label for="inputAddress">주소</label><input type="text" id="address" name="address" value="${dto.getAddress() }">
-               </li>
-               <li>
-                  <label for="inputNation">국가</label><input type="text" id="nation" name="nation" value="${dto.getNation() }">
-               </li>
-               <li>
-                  <label for="inputPhone">phone</label><input type="text" id="phone" name="phone" value="${dto.getPhone() }">
-               </li>
-            </ul>
-            
-            <input type="button" value="확인" onclick="nullCheck()" class="mt_20" />
-      
-         </div>
-         </form>
-         
-            <!-- //내용 -->
-      
-          </div>
-            <!-- //contentG -->
+				<h3 class="blind">시설현황</h3>
 
-            <hr />
+				<!-- 본문영역 -->
+				<div id="contentG">
+
+					<!-- 내용 -->
+					<form action="updateUser.action" method="post" class="join"
+						name="join">
+						<input type="hidden" name="id" value="${id}">
+						
+						<div class="joininfo">
+
+							<h3>회원 수정</h3>
+
+							<ul class="mt_30">
 
 
-         </div>
-      <!-- //containerG_w -->
+								<li><label for="inputName">이름</label><input type="text"
+									id="name" name="name" value="${dto.getName() }"></li>
+								<li><label for="inputBirth">생년월일</label><input type="text"
+									id="birth" name="birth" value="${dto.getBirth() }"></li>
+								<li><label for="inputEmail">이메일</label><input type="email"
+									id="email" name="email" value="${dto.getEmail() }"></li>
+								<li><label for="inputAddress">주소</label><input type="text"
+									id="address" name="address" value="${dto.getAddress() }">
+								</li>
+								<li><label for="inputNation">국가</label><input type="text"
+									id="nation" name="nation" value="${dto.getNation() }">
+								</li>
+								<li><label for="inputPhone">phone</label><input type="text"
+									id="phone" name="phone" value="${dto.getPhone() }"></li>
+							</ul>
 
-   </div>
-   <!-- //wrapG -->
-</div>
-<!-- //wrapG_all -->
+							<input type="button" value="확인" onclick="nullCheck()"
+								class="mt_20" />
 
-<hr />
+						</div>
+					</form>
 
-<jsp:include page="/inc/footer.jsp" flush="true" />
- 
+					<!-- //내용 -->
+
+				</div>
+				<!-- //contentG -->
+
+				<hr />
+
+
+			</div>
+			<!-- //containerG_w -->
+
+		</div>
+		<!-- //wrapG -->
+	</div>
+	<!-- //wrapG_all -->
+
+	<hr />
+
+	<jsp:include page="/inc/footer.jsp" flush="true" />
+
 </body>
 </html>

@@ -15,6 +15,9 @@ table.tbl_sch th{padding:9px 0}
 table.tbl_sch td{padding:12px 0}
 table.tbl_sch td.pd_10{padding:10px 0;}
 
+table.tbl_sch.v2 thead th{background:#f3f3f3}
+table.tbl_sch.v2 tbody td{border-bottom:1px solid #c9c9c9;}
+
 table.tbl_sch a.btn_tax{display:inline-block;width:52px;height:22px;background:url(../img/reservation/btn_reser.gif) no-repeat 0 0 !important;;font-weight:500;line-height:22px;}
 table.tbl_sch a.btn_reser{display:inline-block;width:52px;height:22px;background:url(../img/reservation/btn_reser.gif) no-repeat 0 0 !important;;color:red;font-weight:500;line-height:22px;}
 

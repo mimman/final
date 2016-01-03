@@ -32,6 +32,7 @@
             <!-- 내용 -->
 
 <form method="post" action="eventBoardModify.action">
+	<input type="hidden" name="boardcd" value="${boardDto.getBoardcd() }" >
 	<input type="hidden" name="articleno" value="${boardDto.getArticleno() }" >
 	<input type="hidden" name="writer" value="${boardDto.getWriter() }">
 	제목<input type="text" name="title" value="${boardDto.getTitle() }">
