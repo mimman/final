@@ -89,4 +89,13 @@ public class pageManager {
 		System.out.println("list 사이즈: "+list.size());
 		return list;
 	}
+	
+	public static List boardMypage(String id){
+		
+		List list = null;
+		SqlSession session = sqlFactory.openSession();
+		list = session.selectList("getMypageList",id);
+		System.out.println("manager-list 사이즈: "+list.size());
+		return list;
+	}
 }

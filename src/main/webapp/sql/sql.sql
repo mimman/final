@@ -54,3 +54,6 @@ delete from article where title='ºüºü¼Ä'
 
 select * from article where boardcd='event' and title LIKE '%'||'´ä'||'%' order by pos asc,dept asc, articleno desc
 select * from article where boardcd='event' and writer LIKE '%'||1||'%' order by pos asc,dept asc, articleno desc
+
+
+update article set img=null where img is null

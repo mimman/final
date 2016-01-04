@@ -21,9 +21,10 @@ public class EventReplyController {
 		EventBoardDto dto = (EventBoardDto) session.getAttribute("boardDto");
 		String id = (String)session.getAttribute("id");
 		
+		/*
 		if(dto.getImg() == null){
 			dto.setImg("");
-		}
+		}*/
 		dto.setPos(pos);
 		dto.setWriter(id);
 		dto.setBoardcd(boardcd);

@@ -1,5 +1,5 @@
-<%@ page contentType="text/html; charset=utf-8"%>
-
+<%@ page contentType="text/html; charset=utf-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="/inc/header1.jsp" flush="true" />
 <title>커뮤니티 &gt; 이벤트</title>
 <jsp:include page="/inc/header2.jsp" flush="true" />
@@ -42,14 +42,13 @@
       
             <tbody>
                <tr>
-                  <th scope="row"><label for="g_cate">카테고리</label></th>
-                   
+                  <th scope="row"><label for="g_cate">카테고리</label></th>     
+                             
                   <td><select class="form-control" id="boardcd" name="boardcd">
                         <option value="notice" selected="selected">공지사항</option>
                         <option value="event" >이벤트</option>
                         <option value="qna">Q&A</option>
                    
-               
                   </select></td>
                  
                
@@ -76,7 +75,7 @@
                   <td>
                      <div class="form-group file">
                         <p>
-                           <label for="img">제품이미지</label>
+                          
                         </p>
                         <input type="file" id="img" name="img" />
                      </div>

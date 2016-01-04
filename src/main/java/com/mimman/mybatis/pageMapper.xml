@@ -6,8 +6,11 @@
 	<select id="getList" resultType="EventDto">
 		select * from article where boardcd=#{boardcd} order by pos asc,dept asc, articleno desc
 	</select>
-	<select id="getSearchList" resultType="EventDto" parameterType="EventSearch">
-		select * from article where boardcd=#{boardcd} and title LIKE '%'||#{keyWord}||'%' order by pos asc,dept asc, articleno desc
+	<select id="getSearchList"  resultType="EventDto" parameterType="EventSearch">
+		select * from article where boardcd=#{boardcd} and ${keyField} LIKE '%'||#{keyWord}||'%' order by pos asc,dept asc, articleno desc
+	</select>
+	<select id="getMypageList" resultType="EventDto" parameterType="String">
+		select * from article where writer=#{id} order by pos asc,dept asc, articleno desc
 	</select>
 	<insert id="EventboardWrite" parameterType="EventDto">
 		insert into article values(seq_article.nextval,#{boardcd},

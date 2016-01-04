@@ -25,6 +25,9 @@ private MemberService memberService;
 			return "/WEB-INF/views/membership/login.jsp";
 		}
 		Member result = memberService.updateUser(id);
+		System.out.println("result °ª :"+result.getBirth());
+		String[] sp = result.getBirth().split(" ");
+		System.out.println("result °ª :"+ sp);
 		
 		session.setAttribute("dto",result );
 		return "/WEB-INF/views/mypage/updateUser.jsp";

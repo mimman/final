@@ -70,4 +70,8 @@
   		<property name="pageDto" ref="pageDto"></property>
    		<property name="pageService" ref="pageService"></property>
    </bean>
+   <bean class="com.mimman.community.controller.MyBoardViewController">
+  		 <property name="pageDto" ref="pageDto"></property>
+   		<property name="pageService" ref="pageService"></property>
+   </bean>
 </beans>

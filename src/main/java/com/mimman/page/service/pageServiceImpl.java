@@ -56,6 +56,11 @@ public class pageServiceImpl implements PageService {
 		return pageManager.boardSearch(ebSearch);
 	}
 
+	public List myBoardView(String id) {
+		
+		return pageManager.boardMypage(id);
+	}
+
 	
 
 }

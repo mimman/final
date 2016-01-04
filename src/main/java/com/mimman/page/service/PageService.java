@@ -16,4 +16,5 @@ public interface PageService {
 	public void BoardReply(EventBoardDto dto);
 	public void BoardCount(int articleno);
 	public List getBoardSearch(EventBoardSearch ebSearch);
+	public List myBoardView(String id);
 }

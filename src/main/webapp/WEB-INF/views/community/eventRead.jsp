@@ -3,6 +3,13 @@
 
 <jsp:include page="/inc/header1.jsp" flush="true" />
 <title>커뮤니티 &gt; 이벤트 </title>
+<script>
+function BoardDelete(){
+	if(confirm("글을 삭제하시겠습니까?")){
+		location.href="evevBoardDelete.action?articleno=${boardDto.getArticleno()}&writer=${boardDto.getWriter() }&boardcd=${boardDto.getBoardcd()}";
+	}
+}
+</script>
 <jsp:include page="/inc/header2.jsp" flush="true" />
 </head>
 <body id="sub">
@@ -68,8 +75,7 @@
    <a href="eventReply.action?pos=${boardDto.getPos()}&boardcd=${boardDto.getBoardcd()}">답 변</a> 
    </c:if>
    <a href="eventModifyPage.action?articleno=${boardDto.getArticleno()}&writer=${boardDto.getWriter() }">수 정</a> 
-   <a href="evevBoardDelete.action?articleno=${boardDto.getArticleno()}&writer=${boardDto.getWriter() }&boardcd=${boardDto.getBoardcd()}">삭 제</a> <br>
-
+   <a href="#" onclick="BoardDelete(); return false;">삭제 </a>
             <!-- //내용 -->
 
             </div>

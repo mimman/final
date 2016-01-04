@@ -1,5 +1,7 @@
 package com.mimman.board.event.repository;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class EventBoardDto {
 	private int articleno;
 	private String boardcd;
@@ -81,5 +83,5 @@ public class EventBoardDto {
 		this.img = img;
 	}
 	
-	
+
 }
