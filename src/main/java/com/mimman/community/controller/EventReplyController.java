@@ -20,7 +20,7 @@ public class EventReplyController {
 	public String EventReplyPage(int pos,String boardcd,HttpSession session){
 		EventBoardDto dto = (EventBoardDto) session.getAttribute("boardDto");
 		String id = (String)session.getAttribute("id");
-		
+		System.out.println("컨트롤러 포스"+pos);
 		/*
 		if(dto.getImg() == null){
 			dto.setImg("");

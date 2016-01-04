@@ -59,13 +59,14 @@ $(document).ready(function(){
             <!-- 내용 -->
 
             <div class="tab_w clearfix">
+            
                <ul>
                   <li class="tab1 current"><a href="domestic.action">국내선 항공권</a></li>
                   <li class="tab2"><a href="inter.action">국제선 항공권</a></li>
                </ul>
             </div>
             <!-- //tab_w -->
-            
+            <form method="post" action="reserSearch.action">
             <div class="con_box">
                
                <ul class="radio_w clearfix">
@@ -78,8 +79,8 @@ $(document).ready(function(){
                <div class="top_con clearfix mt_25">
                   <div class="fl city_w">
                      <ul>
-                        <li><label for="">출발도시</label><input type="text" name="" id="" /><a class="compass">출발도시 선택</a></li>
-                        <li><label for="">도착도시</label><input type="text" name="" id="" /><a class="compass">도착도시 선택</a></li>
+                        <li><label for="">출발도시</label><input type="text" name="startCity" id="" /><a class="compass">출발도시 선택</a></li>
+                        <li><label for="">도착도시</label><input type="text" name="endCity" id="" /><a class="compass">도착도시 선택</a></li>
                      </ul>
                   </div>
                   <!-- //city_w -->
@@ -129,12 +130,12 @@ $(document).ready(function(){
                <div class="bot_con clearfix mt_25">
                   <div class="fl">
                      <h4>출발일</h4>
-                     <div id="datepicker" class="ll-skin-santiago mt_10"></div>
+                     <div id="datepicker" class="ll-skin-santiago mt_10" name="startDate"></div>
                   </div>
                   
                   <div class="fl">
                      <h4>귀국일</h4>
-                     <div id="datepicker2" class="ll-skin-santiago mt_10"></div>
+                     <div id="datepicker2" class="ll-skin-santiago mt_10" name="endDate"></div>
                   </div>
                   
                   
@@ -143,9 +144,9 @@ $(document).ready(function(){
                      <div class="fl ml_75">
                         <h4>좌석선택</h4>
                         <ul class="radio_w2 mt_10">
-                           <li><input type="radio" name="seat" id="general" value="" checked="checked" /><label for="general">일반석</label></li>
-                           <li><input type="radio" name="seat" id="business" value="" /><label for="business">비즈니스석</label></li>
-                           <li><input type="radio" name="seat" id="firstclass" value="" /><label for="firstclass">일등석</label></li>
+                           <li><input type="radio" name="seat" id="seat"  checked="checked" /><label for="general">일반석</label></li>
+                           <li><input type="radio" name="seat" id="seat"  /><label for="business">비즈니스석</label></li>
+                           <li><input type="radio" name="seat" id="seat"  /><label for="firstclass">일등석</label></li>
                         </ul>
                      </div>
                      
@@ -155,7 +156,7 @@ $(document).ready(function(){
                            <li class="count_range">
                               <p>성인</p>
                               <input value="-" type="button" count_range="m">
-                              <input class="count" value="1" readonly="" name="">
+                              <input class="count" value="1" readonly="" name="adult">
                               <input value="+" type="button" count_range="p">
                            </li>
                            <li class="count_range">
@@ -184,6 +185,7 @@ $(document).ready(function(){
                <!-- //clearfix -->
                
             </div>
+            <form>
             <!-- //con_box -->
             
             

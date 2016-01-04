@@ -56,4 +56,4 @@ select * from article where boardcd='event' and title LIKE '%'||'´ä'||'%' order 
 select * from article where boardcd='event' and writer LIKE '%'||1||'%' order by pos asc,dept asc, articleno desc
 
 
-update article set img=null where img is null
+update article set img='abc' where img is null

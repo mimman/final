@@ -43,14 +43,15 @@ public class pageManager {
 	public static void boardWrite(EventBoardDto dto) {
 		SqlSession session = sqlFactory.openSession();
 		
-		session.insert("EventboardWrite",dto);
 		session.update("EventBoardInsert",dto);
+		session.insert("EventboardWrite",dto);
+		
 		session.commit();
 	}
 	
 	public static void boardReply(EventBoardDto dto){
 		SqlSession session = sqlFactory.openSession();
-		
+		System.out.println("´äº¯ POS:"+dto.getPos());
 		session.update("EventBoardReplyUpdate",dto);
 		session.insert("EventboardReply",dto);
 		session.commit();

@@ -18,11 +18,27 @@
       <h2 class="blind">본문 영역</h2>
 
       <div class="tab_w clearfix v2">
-         <ul>
-            <li class=""><a href="">공지사항</a></li>
-            <li class="current"><a href="">이벤트</a></li>
-            <li class=""><a href="">Q&A</a></li>
+         <c:if test="${boardcd eq 'notice'}">
+      <ul>
+            <li class="current"><a href="eventBoard.action?boardcd=notice">공지사항</a></li>
+            <li class=""><a href="eventBoard.action?boardcd=event">이벤트</a></li>
+            <li class=""><a href="eventBoard.action?boardcd=qna">Q&A</a></li>
          </ul>
+      </c:if>
+      <c:if test="${boardcd eq 'event'}">
+      <ul>
+            <li class=""><a href="eventBoard.action?boardcd=notice">공지사항</a></li>
+            <li class="current"><a href="eventBoard.action?boardcd=event">이벤트</a></li>
+            <li class=""><a href="eventBoard.action?boardcd=qna">Q&A</a></li>
+         </ul>
+      </c:if>
+        <c:if test="${boardcd eq 'qna'}">
+      <ul>
+            <li class=""><a href="eventBoard.action?boardcd=notice">공지사항</a></li>
+            <li class=""><a href="eventBoard.action?boardcd=event">이벤트</a></li>
+            <li class="current"><a href="eventBoard.action?boardcd=qna">Q&A</a></li>
+         </ul>
+      </c:if>
       </div>
 
       <!-- 본문영역 -->
@@ -43,11 +59,17 @@
             <tbody>
                <tr>
                   <th scope="row"><label for="g_cate">카테고리</label></th>     
-                             
+                           
                   <td><select class="form-control" id="boardcd" name="boardcd">
-                        <option value="notice" selected="selected">공지사항</option>
-                        <option value="event" >이벤트</option>
-                        <option value="qna">Q&A</option>
+                        <c:if test="${boardcd eq 'notice'}">
+								<option value="notice">공지사항</option>
+							</c:if>
+							<c:if test="${boardcd eq 'event'}">
+								<option value="event">이벤트</option>
+							</c:if>
+							<c:if test="${boardcd eq 'qna'}">
+								<option value="qna">Q&A</option>
+							</c:if>
                    
                   </select></td>
                  

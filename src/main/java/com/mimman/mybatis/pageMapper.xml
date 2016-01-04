@@ -4,7 +4,7 @@
 
 <mapper namespace="mybatis.memberMapper">
 	<select id="getList" resultType="EventDto">
-		select * from article where boardcd=#{boardcd} order by pos asc,dept asc, articleno desc
+		select * from article where boardcd=#{boardcd} order by pos asc,dept asc, articleno asc
 	</select>
 	<select id="getSearchList"  resultType="EventDto" parameterType="EventSearch">
 		select * from article where boardcd=#{boardcd} and ${keyField} LIKE '%'||#{keyWord}||'%' order by pos asc,dept asc, articleno desc
@@ -19,7 +19,7 @@
 	</insert>
 	<insert id="EventboardReply" parameterType="EventDto">
 	insert into article values(seq_article.nextval,#{boardcd},
-		#{title},#{boardpw},#{content},sysdate,0, #{dept}+1,#{img},#{writer},#{pos}
+		#{title},#{boardpw},#{content},sysdate,0, #{dept}+1,#{img},#{writer},#{pos}+1
 		)
 	</insert>
 	<select id="EventBoardRead" parameterType="int" resultType="EventDto">
@@ -32,11 +32,11 @@
 		update article set title=#{title},content=#{content} where articleno=#{articleno}
 	</update>
 	<update id="EventBoardInsert">
-		update article set pos=pos+1 where pos >= #{pos}
+		update article set pos=pos+1 where pos <![CDATA[>=]]> #{pos}
 	</update>
 	
 	<update id="EventBoardReplyUpdate">
-		update article set pos=pos+1 where pos > #{pos}
+		update article set pos=pos+1 where pos <![CDATA[>]]> #{pos}
 	</update>
 	
 	<update id="EventBoardCount" parameterType="int">

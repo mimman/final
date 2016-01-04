@@ -70,7 +70,7 @@ function BoardDelete(){
    </table>
  
    <hr size=1>
-   <a href="eventBoard.action?boardcd=event">목 록</a> 
+   <a href="eventBoard.action?boardcd=${boardDto.getBoardcd()}">목 록</a> 
    <c:if test="${boardcd eq 'qna'}">
    <a href="eventReply.action?pos=${boardDto.getPos()}&boardcd=${boardDto.getBoardcd()}">답 변</a> 
    </c:if>

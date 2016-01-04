@@ -16,6 +16,13 @@ public class EventBoardDto {
 	private int pos;
 	
 	
+	
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
 	public int getPos() {
 		return pos;
 	}
@@ -76,12 +83,7 @@ public class EventBoardDto {
 	public void setDept(int dept) {
 		this.dept = dept;
 	}
-	public String getImg() {
-		return img;
-	}
-	public void setImg(String img) {
-		this.img = img;
-	}
+
 	
 
 }
