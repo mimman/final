@@ -17,6 +17,7 @@
 		<typeAlias type="com.mimman.board.event.repository.EventBoardDto" alias="EventDto"/>
 		<typeAlias type="com.mimman.board.event.repository.EventModifyDto" alias="EventModifyDto"/>
 		<typeAlias type="com.mimman.board.event.repository.EventBoardSearch" alias="EventSearch"/>
+		<typeAlias type="com.mimman.comment.repository.commentDto" alias="commentDto"/>
 	</typeAliases>
 	
 	<environments default="development">

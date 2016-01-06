@@ -144,9 +144,9 @@ $(document).ready(function(){
                      <div class="fl ml_75">
                         <h4>좌석선택</h4>
                         <ul class="radio_w2 mt_10">
-                           <li><input type="radio" name="seat" id="seat"  checked="checked" /><label for="general">일반석</label></li>
-                           <li><input type="radio" name="seat" id="seat"  /><label for="business">비즈니스석</label></li>
-                           <li><input type="radio" name="seat" id="seat"  /><label for="firstclass">일등석</label></li>
+                           <li><input type="radio" name="seat" id="seat" checked="checked" value="일반석" /><label for="general">일반석</label></li>
+                           <li><input type="radio" name="seat" id="seat" value="비즈니스석" /><label for="business">비즈니스석</label></li>
+                           <li><input type="radio" name="seat" id="seat" value="일등석" /><label for="firstclass">일등석</label></li>
                         </ul>
                      </div>
                      

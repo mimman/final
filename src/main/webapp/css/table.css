@@ -14,6 +14,7 @@ table.tbl_sch .end{border-right:0 none !important}
 table.tbl_sch th{padding:9px 0}
 table.tbl_sch td{padding:12px 0}
 table.tbl_sch td.pd_10{padding:10px 0;}
+table.tbl_sch.ta_l th,table.tbl_sch.ta_l td{text-align:left;padding:13px 0 13px 20px;border-bottom:1px solid #e2e2e2;}
 
 table.tbl_sch.v2 thead th{background:#f3f3f3}
 table.tbl_sch.v2 tbody td{border-bottom:1px solid #c9c9c9;}
@@ -44,4 +45,3 @@ table.tableBC2_reser td.address{text-align:left;padding-left:15px}
 table.tableBC2_reser th p{font-size:22px;color:#c8c8c8;}
 table.tableBC2_reser th p em{font-size:12px;color:#a2854c;}
 table.tableBC2_reser th.tit{background:#303030;border-bottom:1px solid #303030;}
-

@@ -74,4 +74,18 @@
   		 <property name="pageDto" ref="pageDto"></property>
    		<property name="pageService" ref="pageService"></property>
    </bean>
+   
+   <bean id="commentDto" class="com.mimman.comment.repository.commentDto"/>
+   <bean class="com.mimman.comment.controller.commentController">
+   		<property name="pageService" ref="pageService"></property>
+   		<property name="commentDto" ref="commentDto"></property>
+   </bean>
+   
+   <bean class="com.mimman.comment.controller.DeleteCommentController">
+   		<property name="pageService" ref="pageService"></property>
+   </bean>
+   
+      <bean class="com.mimman.comment.controller.commentReplyController">
+   
+   </bean>
 </beans>

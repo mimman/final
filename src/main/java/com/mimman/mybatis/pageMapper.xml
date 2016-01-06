@@ -12,6 +12,12 @@
 	<select id="getMypageList" resultType="EventDto" parameterType="String">
 		select * from article where writer=#{id} order by pos asc,dept asc, articleno desc
 	</select>
+	<select id="getComment" parameterType="commentDto" resultType="commentDto">
+		select * from tblcomment where articleno = #{articleno} order by pos desc, dept desc
+	</select>
+	<select id="getCommentList" parameterType="int" resultType="commentDto">
+		select * from tblcomment where articleno = #{articleno} order by pos desc, dept desc
+	</select>
 	<insert id="EventboardWrite" parameterType="EventDto">
 		insert into article values(seq_article.nextval,#{boardcd},
 		#{title},#{boardpw},#{content},sysdate,0, 0,#{img},#{writer},0
@@ -22,12 +28,19 @@
 		#{title},#{boardpw},#{content},sysdate,0, #{dept}+1,#{img},#{writer},#{pos}+1
 		)
 	</insert>
+	<insert id="setComment" parameterType="commentDto">
+		insert into tblcomment values(seq_com.nextval,#{articleno},#{boardcd}
+		,#{content},#{writer},0,0,sysdate)
+	</insert>
 	<select id="EventBoardRead" parameterType="int" resultType="EventDto">
 		select * from article where articleno=#{articleno}
 	</select>
 	<delete id="EventBoardDelete" parameterType="int">
 		delete from article where articleno=#{articleno}
 	</delete>
+	<delete id="deleteComment" parameterType="int">
+		delete from tblcomment where commentno=#{commentno}
+		</delete>
 	<update id="EventBoardModify" parameterType="EventModifyDto">
 		update article set title=#{title},content=#{content} where articleno=#{articleno}
 	</update>
@@ -41,6 +54,13 @@
 	
 	<update id="EventBoardCount" parameterType="int">
 		update article set hit=hit+1 where articleno=#{articleno}
+	</update>
+	
+	<update id="commentUpdate" parameterType="commentDto">
+		update tblcomment set pos=pos+1 where pos <![CDATA[>=]]> #{pos}
+	</update>
+	<update id="commentReplyUpdate" parameterType="commentDto">
+	update tblcomment set pos=pos+1 where pos <![CDATA[>]]> #{pos}
 	</update>
 	
 </mapper>

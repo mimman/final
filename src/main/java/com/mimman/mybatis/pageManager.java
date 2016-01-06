@@ -14,6 +14,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import com.mimman.board.event.repository.EventBoardDto;
 import com.mimman.board.event.repository.EventBoardSearch;
 import com.mimman.board.event.repository.EventModifyDto;
+import com.mimman.comment.repository.commentDto;
 import com.mimman.membership.repository.Member;
 import com.mimman.page.repository.PageDto;
 
@@ -97,6 +98,43 @@ public class pageManager {
 		SqlSession session = sqlFactory.openSession();
 		list = session.selectList("getMypageList",id);
 		System.out.println("manager-list ªÁ¿Ã¡Ó: "+list.size());
+		return list;
+	}
+	
+	public static List setComment(commentDto commentDto,String param){
+		List list = null;
+		SqlSession session = sqlFactory.openSession();
+		if(param.equals("comment")){
+			session.update("commentUpdate",commentDto);
+			session.insert("setComment",commentDto);
+			list = session.selectList("getComment",commentDto);
+		}
+		
+		else if(param.equals("reply")){
+			session.update("commentReplyUpdate",commentDto);
+			session.insert("setComment",commentDto);
+			list = session.selectList("getComment",commentDto);
+		}
+		session.commit();
+		
+		return list;
+		
+		
+	}
+	public static List getCommentList(int articleno){
+		List list = null;
+		SqlSession session = sqlFactory.openSession();
+		list = session.selectList("getCommentList",articleno);
+		return list;
+	}
+	
+	public static List deleteComment(int commentno,int articleno){
+		System.out.println("comment: "+commentno);
+		List list = null;
+		SqlSession session = sqlFactory.openSession();
+		session.delete("deleteComment",commentno);
+		session.commit();
+		list = session.selectList("getCommentList",articleno);
 		return list;
 	}
 }

@@ -10,8 +10,8 @@ public class domesticController {
 		return "/WEB-INF/views/reservation/domesticSearch.jsp";
 	}
 	@RequestMapping("reserSearch.action")
-	public String Search(String startDate){
-		System.out.println("°ª:"+startDate);
+	public String Search(String seat){
+		System.out.println("°ª:"+seat);
 		return "/WEB-INF/views/reservation/domesticSearch.jsp";
 	}
 

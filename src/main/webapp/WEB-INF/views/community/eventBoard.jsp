@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <jsp:include page="/inc/header1.jsp" flush="true" />
 <title>커뮤니티 &gt; 이벤트</title>
 <jsp:include page="/inc/header2.jsp" flush="true" />
@@ -135,7 +137,7 @@
       <c:if test="${nowBlock > 0}">
          <li><a href="eventBoard.action?boardcd=${boardcd}&nowBlock=${nowBlock-1}&nowPage=${pagePerBlock*(nowBlock-1)}">이전 ${pagePerBlock}개</a></li>
       </c:if>
-      
+      <c:if test="${sessionScope.pagedto.getTotalRecord() > 0}">
       <c:forEach begin="1" end="${sessionScope.pagedto.getPagePerBlock()}" varStatus="status">
       <c:if test="${not doneLoop}">
       
@@ -145,7 +147,8 @@
          <li><a href="eventBoard.action?boardcd=${boardcd}&nowPage=${(nowBlock*pagePerBlock)+status.index-1}&nowBlock=${nowBlock}">${(nowBlock*pagePerBlock)+status.index}</a></li>
          
       </c:if>
-      </c:forEach>      
+      </c:forEach>  
+      </c:if>    
       
       <c:if test="${totalBlock > nowBlock+1 }">
          <li><a href="eventBoard.action?boardcd=${boardcd}&nowBlock=${nowBlock+1}&nowPage=${pagePerBlock*(nowBlock+1)}">다음 ${pagePerBlock} 개</a></li>
@@ -153,15 +156,8 @@
 
       
    </ul>
-   <%if(session.getAttribute("id") != null){
-               %>
-   <ul class="btn_r">
-      
    
-   <%
-            }
-            %>
-   </ul>
+
 
             <!-- //내용 -->
 

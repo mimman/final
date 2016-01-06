@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import com.mimman.board.event.repository.EventBoardDto;
 import com.mimman.board.event.repository.EventBoardSearch;
 import com.mimman.board.event.repository.EventModifyDto;
+import com.mimman.comment.repository.commentDto;
 import com.mimman.mybatis.pageManager;
 import com.mimman.page.repository.PageDto;
 
@@ -59,6 +60,22 @@ public class pageServiceImpl implements PageService {
 	public List myBoardView(String id) {
 		
 		return pageManager.boardMypage(id);
+	}
+
+	public List setComment(commentDto commentDto,String param) {
+		
+		return pageManager.setComment(commentDto,param);
+		
+	}
+
+	public List getCommentList(int articleno) {
+		
+		return pageManager.getCommentList(articleno);
+	}
+
+	public List deleteComment(int commentno,int articleno) {
+		return pageManager.deleteComment(commentno,articleno);
+		
 	}
 
 	

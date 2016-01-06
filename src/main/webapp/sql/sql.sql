@@ -22,6 +22,7 @@ create table board(
 	boardnm varchar2(40) not null,
 	constraint pk_board primary key(boardcd)
 );
+drop table board
 
 select * from board
 
@@ -57,3 +58,28 @@ select * from article where boardcd='event' and writer LIKE '%'||1||'%' order by
 
 
 update article set img='abc' where img is null
+
+create table tblcomment(
+commentno number primary key,
+	articleno number not null,
+	boardcd varchar2(20)not null,
+	content varchar2(200)not null,
+	writer varchar2(30) not null,
+	pos number not null,
+	dept number not null,
+	regdate date not null
+);
+
+drop table tblcomment;
+create sequence seq_com
+
+select * from tblcomment
+alter table reply add 
+(
+constraint fk_reply
+foreign key(articleno) 
+	references article(articleno)
+	);
+
+
+alter table tblcomment modify(regdate date not null)
