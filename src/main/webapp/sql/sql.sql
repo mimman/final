@@ -14,7 +14,7 @@ alter table article modify(img default null)
 
 alter table tbluser add constraint pk_id primary key(id)
 select * from tbluser
-
+delete from TBLUSER where id= 'mimman2'
 select * from tbluser where id='1' and password='1111111'
 
 create table board(
@@ -83,3 +83,25 @@ foreign key(articleno)
 
 
 alter table tblcomment modify(regdate date not null)
+
+CREATE TABLE reserve
+(
+   reserNum             NUMBER NOT NULL PRIMARY KEY,
+   reserveCode          VARCHAR2(20) NULL,
+   reserveLine          VARCHAR2(20) NULL,
+   startCity            VARCHAR2(30) NULL,
+   endCity              VARCHAR(30) NULL,
+   startDate            DATE NULL,
+   endDate              DATE NULL,
+   exDate               DATE NULL,
+   seat                 NUMBER NULL,
+   num                  NUMBER NULL,
+   airLine              VARCHAR2(30) NULL,
+   adultTax             NUMBER NULL,
+   childTax             NUMBER NULL,
+   toddleTax            NUMBER NULL
+);
+
+CREATE SEQUENCE SEQ_RESERNUM;
+
+select * from reserve

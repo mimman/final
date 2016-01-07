@@ -78,6 +78,12 @@ public class pageServiceImpl implements PageService {
 		
 	}
 
+
+	public void BoardAllCommentDelete(int articleno) {
+		pageManager.BoardAllDeleteComment(articleno);
+		
+	}
+
 	
 
 }

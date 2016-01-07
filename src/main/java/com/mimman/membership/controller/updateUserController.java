@@ -24,11 +24,10 @@ private MemberService memberService;
 		if(id == null){
 			return "/WEB-INF/views/membership/login.jsp";
 		}
-		Member result = memberService.updateUser(id);
-		System.out.println("result °ª :"+result.getBirth());
-		String[] sp = result.getBirth().split(" ");
-		System.out.println("result °ª :"+ sp);
 		
+		Member result = memberService.updateUser(id);
+		String[] sp = result.getBirth().split(" ");
+		result.setBirth(sp[0]);
 		session.setAttribute("dto",result );
 		return "/WEB-INF/views/mypage/updateUser.jsp";
 		

@@ -31,8 +31,13 @@ public class SearchController {
       //System.out.println(search.getUser_nm()+search.getEmail1()+search.getEmail2());
       
       String id = memberService.idSearch(search);
+      if(id != null){
       session.setAttribute("searchid", id);
       return "/WEB-INF/views/membership/idSearchOk.jsp";
+      }
+      else{
+    	  return "/WEB-INF/views/membership/noIdSearch.jsp";
+      }
    }
 
    

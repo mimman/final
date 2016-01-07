@@ -1,4 +1,6 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html; charset=utf-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <jsp:include page="/inc/header1.jsp" flush="true" />
 <title>항공권예매 &gt; 국내선항공 &gt; 항공편 조회</title>
 <jsp:include page="/inc/header2.jsp" flush="true" />
@@ -9,10 +11,47 @@
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script>
 $(function() {
-     $( "#datepicker" ).datepicker();
-     $( "#datepicker2" ).datepicker();
+    $( "#datepicker" ).datepicker({
+	   dateFormat:'yy-mm-dd', //선택된 날짜 포맷(yyyy.mm.dd)
+	   monthNamesShort: ['1월','2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+	   monthNames: ['1월','2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+	   dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],   
+	   dayNamesShot: ['일', '월', '화', '수', '목', '금', '토'],
+	   dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
+	   firstDay: 1, //0: 일요일 부터 시작, 1:월요일 부터 시작
+	   autoSize: true, //default: false, input 사이즈를 자동으로 리사이즈.
+	   showAnim: "fold", //default: show
+	   showWeek: false, //주차 보이기
+	   weekHeader: "주차", //default: Wk, 주차 헤드 부분의 명칭 설정
+	   changeMonth: true, //월 변경가능
+	   changeYear: true, //년 변경가능
+	   showMonthAfterYear: true, //년 뒤에 월 표시
+	   yearRange: "1900:2016",
+	   gotoCurrent: false //default: false, true일 경우에는 Today버튼 클릭 시 현재 일자로 이동하지 못함. false는 가능.
+	   
+	  });
+    $( "#datepicker2" ).datepicker({
+	   dateFormat:'yy-mm-dd', //선택된 날짜 포맷(yyyy.mm.dd)
+	   monthNamesShort: ['1월','2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+	   monthNames: ['1월','2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+	   dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],   
+	   dayNamesShot: ['일', '월', '화', '수', '목', '금', '토'],
+	   dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
+	   firstDay: 1, //0: 일요일 부터 시작, 1:월요일 부터 시작
+	   autoSize: true, //default: false, input 사이즈를 자동으로 리사이즈.
+	   showAnim: "fold", //default: show
+	   showWeek: false, //주차 보이기
+	   weekHeader: "주차", //default: Wk, 주차 헤드 부분의 명칭 설정
+	   changeMonth: true, //월 변경가능
+	   changeYear: true, //년 변경가능
+	   showMonthAfterYear: true, //년 뒤에 월 표시
+	   yearRange: "1900:2016",
+	   gotoCurrent: false //default: false, true일 경우에는 Today버튼 클릭 시 현재 일자로 이동하지 못함. false는 가능.
+	   
+	  });
 });
 
+ 
 $(document).ready(function(){
     $('.count_range input[count_range]').click(function(e){
         e.preventDefault();
@@ -67,12 +106,13 @@ $(document).ready(function(){
             </div>
             <!-- //tab_w -->
             <form method="post" action="reserSearch.action">
+             	<input type="hidden" id="sDate" name="sDate">
             <div class="con_box">
                
                <ul class="radio_w clearfix">
-                  <li><input type="radio" name="way" id="oneWay" value="" checked="checked" /><label for="oneWay">편도</label></li>
-                  <li><input type="radio" name="way" id="roundTrip" value="" /><label for="roundTrip">왕복</label></li>
-                  <li><input type="radio" name="way" id="manyWay" value="" /><label for="manyWay">다구간여정</label></li>
+                  <li><input type="radio" name="reserveLine" id="oneWay" value="편도" checked="checked" /><label for="oneWay">편도</label></li>
+                  <li><input type="radio" name="reserveLine" id="roundTrip" value="왕복" /><label for="roundTrip">왕복</label></li>
+                  <li><input type="radio" name="reserveLine" id="manyWay" value="다구간여정" /><label for="manyWay">다구간여정</label></li>
                </ul>
                <!-- //radio_w -->
                
@@ -130,11 +170,14 @@ $(document).ready(function(){
                <div class="bot_con clearfix mt_25">
                   <div class="fl">
                      <h4>출발일</h4>
+                     <input type="text" name="startDate" >
+                    
                      <div id="datepicker" class="ll-skin-santiago mt_10" name="startDate"></div>
                   </div>
                   
                   <div class="fl">
                      <h4>귀국일</h4>
+                      <input type="text" name="endDate" >
                      <div id="datepicker2" class="ll-skin-santiago mt_10" name="endDate"></div>
                   </div>
                   
@@ -162,13 +205,13 @@ $(document).ready(function(){
                            <li class="count_range">
                               <p>소아</p>
                               <input value="-" type="button" count_range="m">
-                              <input class="count" value="0" readonly="" name="">
+                              <input class="count" value="0" readonly="" name="child">
                               <input value="+" type="button" count_range="p">
                            </li>
                            <li class="count_range">
                               <p>유아</p>
                               <input value="-" type="button" count_range="m">
-                              <input class="count" value="0" readonly="" name="">
+                              <input class="count" value="0" readonly="" name="toddle">
                               <input value="+" type="button" count_range="p">
                            </li>
                         </ul>
@@ -178,7 +221,7 @@ $(document).ready(function(){
                   <!-- //clearfix -->
                   
                   <div class="fl ta_c mt_20">
-                     <input type="submit" class="btn_sch clearfix" value="항공편 조회" />
+                     <input type="submit" class="btn_sch clearfix" value="항공편 조회" onclick="getDate();" />
                   </div>
                   
                </div>
@@ -204,7 +247,7 @@ $(document).ready(function(){
                <thead>
                <tr>
                <th scope="col" class="first">도시</th>
-               <th scope="col">항공사</th>
+               <th scope="col">항공사 </th>
                <th scope="col">출발기간</th>
                <th scope="col">총요금</th>
                <th scope="col">유효기간</th>
@@ -213,36 +256,19 @@ $(document).ready(function(){
                </tr>
                </thead>
                <tbody>
-               
+            	
+               <c:forEach var="dto" items="${reserSearchList }">
                <tr>
-               <td class="first">타이페이(타오위안)</td>
-               <td>제주항공</td>
-               <td>2015/12/23~2016/04/30</td>
-               <td>141,000원</td>
-               <td>매일출발</td>
+               <td class="first">${dto.getEndCity()}</td>
+               <td>${dto.getAirLine() }</td>
+               <td>${dto.getStartDate()}~${dto.getEndDate() }</td>
+               <td>${dto.getAdultTax() }</td>
+               <td>${dto.getExDate() }</td>
                <td class="pd_10"><a href="" class="btn_tax">TAX</a></td>
                <td class="pd_10 end"><a href="" class="btn_reser">예약</a></td>
                </tr>
-               
-               <tr>
-               <td class="first">마카오</td>
-               <td>중국동방항공</td>
-               <td>2015/12/23~2016/03/31</td>
-               <td>315,000원</td>
-               <td>매일출발</td>
-               <td class="pd_10"><a href="" class="btn_tax">TAX</a></td>
-               <td class="pd_10 end"><a href="" class="btn_reser">예약</a></td>
-               </tr>
-               
-               <tr>
-               <td class="first">타이페이(타오위안)</td>
-               <td>중국동방항공</td>
-               <td>2015/12/23~2016/03/31</td>
-               <td>308,300원</td>
-               <td>매일출발</td>
-               <td class="pd_10"><a href="" class="btn_tax">TAX</a></td>
-               <td class="pd_10 end"><a href="" class="btn_reser">예약</a></td>
-               </tr>
+               </c:forEach>
+              
                
                </tbody>
                </table>

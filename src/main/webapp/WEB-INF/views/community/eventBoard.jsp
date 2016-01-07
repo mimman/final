@@ -125,7 +125,9 @@
          
          <form action="eventWrite.action" name="board" method="post">
          <div class="ta_r mt_10">
-            <input class="btn_m" type="submit" value="글쓰기" >            
+         <c:if test="${id ne null }">
+            <input class="btn_m" type="submit" value="글쓰기" >     
+          </c:if>       
          </div>
          <!-- //ta_r -->
          </form>

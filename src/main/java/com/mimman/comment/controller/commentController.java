@@ -28,8 +28,19 @@ public class commentController {
 
 		
 			List list = pageService.setComment(commentDto,param);
+			
+			/*List commentList = null;
+			for(int i =0; i<list.size(); i++){
+				commentDto dto = (com.mimman.comment.repository.commentDto) list.get(i);
+				System.out.println("i:"+dto.getRegdate());
+				String[] date = dto.getRegdate().split(" ");
+				dto.setRegdate(date[0]);
+				commentList.add(i, dto);
+			}
+			*/
 			session.setAttribute("commentList", list);
-		
+			session.setAttribute("param", param);
+			System.out.println(param);
 		
 		
 		return "/WEB-INF/views/community/eventRead.jsp";

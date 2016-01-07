@@ -10,7 +10,7 @@ public class commentDto {
 	private String writer;
 	private int pos;
 	private int dept;
-	private Date regdate;
+	private String regdate;
 	
 	public int getCommentno() {
 		return commentno;
@@ -18,10 +18,10 @@ public class commentDto {
 	public void setCommentno(int commentno) {
 		this.commentno = commentno;
 	}
-	public Date getRegdate() {
+	public String getRegdate() {
 		return regdate;
 	}
-	public void setRegdate(Date regdate) {
+	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
 	public int getArticleno() {

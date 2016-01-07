@@ -2,6 +2,7 @@
 <jsp:include page="/inc/header1.jsp" flush="true" />
 <title>회원서비스 &gt; 회원가입 &gt; 가입완료</title>
 <jsp:include page="/inc/header2.jsp" flush="true" />
+
 </head>
 <body id="sub">
 <div class="wrapG_all">
@@ -32,9 +33,10 @@
          
             <!-- 내용 -->
             
-         <div class="join">
-         <h2>회원가입 완료</h2>
-         <a href="index.action">홈으로 </a>
+         <div class="ta_c">
+         <img src="/Air/img/membership/member_ok.jpg">
+         
+         <div></div><a class="v2 btn_m" href="index.action">홈으로 </a></div>
          </div>
 
             <!-- //내용 -->

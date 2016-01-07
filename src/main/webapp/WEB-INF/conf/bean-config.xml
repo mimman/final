@@ -1,91 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	
+
 	<bean class="com.mimman.membership.controller.LoginController">
 		<property name="memberService" ref="memberService"></property>
 	</bean>
-	
+
 	<bean class="com.mimman.membership.controller.LogoutController">
 	</bean>
-	
+
 	<bean class="com.mimman.membership.controller.updateUserController">
-			<property name="memberService" ref="memberService"></property>
+		<property name="memberService" ref="memberService"></property>
 	</bean>
 	<bean class="com.mimman.membership.controller.RegUserController">
 		<property name="memberService" ref="memberService"></property>
 	</bean>
-	
+
 	<bean class="com.mimman.membership.controller.withdrawController">
 		<property name="memberService" ref="memberService"></property>
 	</bean>
-	
-	<bean class="com.mimman.main.controller.MainController"/>
-	<bean id="memberService" class="com.mimman.membership.service.MemberServiceImpl"/>
-	
+
+	<bean class="com.mimman.main.controller.MainController" />
+	<bean id="memberService" class="com.mimman.membership.service.MemberServiceImpl" />
+
 	<bean id="pageDto" class="com.mimman.page.repository.PageDto" />
 	<bean id="pageService" class="com.mimman.page.service.pageServiceImpl" />
 	<bean class="com.mimman.community.controller.EventBoardController">
 		<property name="pageDto" ref="pageDto"></property>
 		<property name="pageService" ref="pageService"></property>
 	</bean>
-	
+
 	<bean class="com.mimman.community.controller.EventWriteController">
 		<property name="pageService" ref="pageService"></property>
 	</bean>
-	
+
 	<bean class="com.mimman.community.controller.EventReadController">
 		<property name="pageService" ref="pageService"></property>
 	</bean>
-	
+
 	<bean class="com.mimman.community.controller.EventDeleteController">
 		<property name="pageService" ref="pageService"></property>
 	</bean>
-	
+
 	<bean class="com.mimman.community.controller.EventModifyController">
 		<property name="pageService" ref="pageService"></property>
 	</bean>
-	
-	<bean class="com.mimman.reservation.controller.domesticController">
-	</bean>
-	
-	<bean class="com.mimman.reservation.controller.interController">
-	</bean>
-	
+
+
 	<bean class="com.mimman.community.controller.EventReplyController">
 		<property name="pageService" ref="pageService"></property>
 	</bean>
-	
+
 	<bean class="com.mimman.membership.controller.SearchController">
-      <property name="memberService" ref="memberService"></property>
-   </bean>
-   
-   <bean class="com.mimman.membership.controller.MypageController">
-   </bean>
-   
-   <bean class="com.mimman.community.controller.EventBoardSearchController">
-  		<property name="pageDto" ref="pageDto"></property>
-   		<property name="pageService" ref="pageService"></property>
-   </bean>
-   <bean class="com.mimman.community.controller.MyBoardViewController">
-  		 <property name="pageDto" ref="pageDto"></property>
-   		<property name="pageService" ref="pageService"></property>
-   </bean>
-   
-   <bean id="commentDto" class="com.mimman.comment.repository.commentDto"/>
-   <bean class="com.mimman.comment.controller.commentController">
-   		<property name="pageService" ref="pageService"></property>
-   		<property name="commentDto" ref="commentDto"></property>
-   </bean>
-   
-   <bean class="com.mimman.comment.controller.DeleteCommentController">
-   		<property name="pageService" ref="pageService"></property>
-   </bean>
-   
-      <bean class="com.mimman.comment.controller.commentReplyController">
-   
-   </bean>
+		<property name="memberService" ref="memberService"></property>
+	</bean>
+
+	<bean class="com.mimman.membership.controller.MypageController">
+	</bean>
+
+	<bean class="com.mimman.community.controller.EventBoardSearchController">
+		<property name="pageDto" ref="pageDto"></property>
+		<property name="pageService" ref="pageService"></property>
+	</bean>
+	<bean class="com.mimman.community.controller.MyBoardViewController">
+		<property name="pageDto" ref="pageDto"></property>
+		<property name="pageService" ref="pageService"></property>
+	</bean>
+
+	<bean id="commentDto" class="com.mimman.comment.repository.commentDto" />
+	<bean class="com.mimman.comment.controller.commentController">
+		<property name="pageService" ref="pageService"></property>
+		<property name="commentDto" ref="commentDto"></property>
+	</bean>
+
+	<bean class="com.mimman.comment.controller.DeleteCommentController">
+		<property name="pageService" ref="pageService"></property>
+	</bean>
+
+	<bean id="reservationService" class="com.mimman.reservation.service.ReservationServiceImpl" />
+	<bean class="com.mimman.reservation.controller.InsertReserveController">
+		<property name="reservationService" ref="reservationService"></property>
+	</bean>
+
+	<bean class="com.mimman.reservation.controller.DeleteReserveController">
+		<property name="reservationService" ref="reservationService"></property>
+	</bean>
+
+	<bean class="com.mimman.reservation.controller.boardReserController">
+		<property name="reservationService" ref="reservationService"></property>
+	</bean>
+
+	<bean class="com.mimman.reservation.controller.domesticController">
+		<property name="reservationService" ref="reservationService"></property>
+	</bean>
+
+	<bean class="com.mimman.reservation.controller.interController">
+		
+	</bean>
 </beans>

@@ -32,6 +32,7 @@ private MemberService memberService;
 		String id = (String)session.getAttribute("id");
 	
 		memberService.withdraw(id);
-		return "logout.action";
+		session.removeAttribute("id");
+		return "/WEB-INF/views/mypage/withdrawOk.jsp";
 	}
 }

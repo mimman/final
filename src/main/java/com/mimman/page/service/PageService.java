@@ -21,4 +21,5 @@ public interface PageService {
 	public List setComment(commentDto commentDto,String param);
 	public List getCommentList(int articleno);
 	public List deleteComment(int commentno,int articleno);
+	public void BoardAllCommentDelete(int articleno);
 }

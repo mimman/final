@@ -23,6 +23,7 @@ public class EventDeleteController {
 		
 		if(writer.equals(id)){
 			pageService.BoardDelete(articleno);
+			pageService.BoardAllCommentDelete(articleno);
 		}
 		else{
 			System.out.println("권한이 없는 사용자입니다");

@@ -137,4 +137,10 @@ public class pageManager {
 		list = session.selectList("getCommentList",articleno);
 		return list;
 	}
+	
+	public static void BoardAllDeleteComment(int articleno){
+		SqlSession session = sqlFactory.openSession();
+		session.delete("BoardAllCommentDelete",articleno);
+		session.commit();
+	}
 }
