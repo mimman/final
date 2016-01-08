@@ -59,6 +59,11 @@
    		<exception-type>com.mimman.exception.IdPasswordNotMachingException</exception-type>
    		<location>/WEB-INF/views/err/IdPasswordNotMaching.jsp</location>
    </error-page>
+    <error-page>
+   		<exception-type>com.mimman.exception.NullListException</exception-type>
+   		<location>/WEB-INF/views/err/nullList.jsp</location>
+   </error-page>
+   
    <!--  
     <error-page>
     	<error-code>400</error-code>

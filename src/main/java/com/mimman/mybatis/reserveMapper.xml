@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.reserveMapper">
+	<insert id="addReserve" parameterType="reserDto">
+		insert into reserve values(seq_resernum.nextval,#{reserveCode},#{reserveLine},
+		#{startCity},#{endCity},#{startDate},#{endDate},#{exDate},#{seat},#{num},#{airLine},
+		#{adultTax},#{childTax},#{toddleTax})
+	</insert>
+	
+	<select id="getListReser" resultType="reserDto">
+		select * from reserve order by resernum asc
+	</select>
+	<select id="searchReser" parameterType="userReserDto" resultType="reserDto">
+		select * from reserve where reserveLine=#{reserveLine} and startCity=#{startCity}
+		and endCity=#{endCity}
+	</select>
+	
+	
+</mapper>

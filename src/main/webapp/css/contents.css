@@ -27,6 +27,7 @@ div.top_con div.city_w{width:300px;}
 div.top_con div.city_w ul li input{width:140px;border:1px solid #ececec;height:30px;padding:0 28px 0 5px;}
 div.top_con div.flight_w{width:736px;}
 div.top_con div.flight_w ul.flight_list li{float:left;margin:10px 30px 10px 10px;color:#5b5b5b;}
+
 /*div.top_con div.flight_w ul.flight_list.in{border-bottom:1px solid #d1d1d1;}*/
 div.top_con div.flight_w ul.flight_list.out li{padding-right:15px;margin:13px 0 13px 15px;border-right:1px solid #d1d1d1;}
 div.top_con div.flight_w ul.flight_list.out li.end{border-right:0;}
@@ -41,7 +42,12 @@ div.bot_con div.fl ul.radio_w2 li input[type="button"]{border:1px solid #d1d1d1;
 div.bot_con div.fl ul.radio_w2 li input.count{width:25px;height:23px;border:1px solid #fff;border-color:#d1d1d1 #fff #d1d1d1 #fff;text-align:center;line-height:23px;float:left;margin-top:7px;}
 div.bot_con div.fl.ta_c, div.bot_con div.fl.clearfix{width:450px;margin-right:0;}
 div.bot_con div.fl input.btn_sch{display:inline-block;width:220px;height:46px;background:url(../img/reservation/btn_sch.jpg) no-repeat 0 0 !important;border:0;color:#fff;font-weight:600;font-size:20px;}
-
+div.bot_con div.city_w ul li{padding:10px 0 25px;position:relative;}
+div.bot_con div.city_w ul li label{padding-right:30px;font-weight:500;}
+div.bot_con div.city_w{width:300px;}
+div.bot_con div.city_w ul li input{width:140px;border:1px solid #ececec;height:30px;padding:0 28px 0 5px;margin-left: 14px;}
+div.bot_con div.flight_w{width:736px;}
+div.bot_con div.flight_w ul.flight_list li{float:left;margin:10px 30px 10px 10px;color:#5b5b5b;}
 /* datepicker */
 .ll-skin-santiago { font-size: 90%; }
 .ll-skin-santiago .ui-widget { font-family: Helvetica Trebuchet MS,Tahoma,Verdana,Arial,sans-serif; }

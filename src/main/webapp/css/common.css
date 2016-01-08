@@ -56,7 +56,7 @@ input{background:#fff !important}
 .clearfix:after{clear:both;display:block;content:"";height:0;visibility:hidden;}
 * html .fclear{height:1px;}
 .clearfix{display:block;min-height:1px;}
-
+.margin23{margin-top:23px}
 /* margin */
 .mt_5{margin-top:5px;}
 .mt_10{margin-top:10px;}

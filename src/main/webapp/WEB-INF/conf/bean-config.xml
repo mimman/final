@@ -92,8 +92,10 @@
 		<property name="reservationService" ref="reservationService"></property>
 	</bean>
 
+	<bean id="arrayList" class="java.util.ArrayList"></bean>
 	<bean class="com.mimman.reservation.controller.domesticController">
 		<property name="reservationService" ref="reservationService"></property>
+		<property name="domesitList" ref="arrayList"></property>
 	</bean>
 
 	<bean class="com.mimman.reservation.controller.interController">
