@@ -45,3 +45,13 @@ table.tableBC2_reser td.address{text-align:left;padding-left:15px}
 table.tableBC2_reser th p{font-size:22px;color:#c8c8c8;}
 table.tableBC2_reser th p em{font-size:12px;color:#a2854c;}
 table.tableBC2_reser th.tit{background:#303030;border-bottom:1px solid #303030;}
+/* 페이징 */
+div.bbsP{height:26px;text-align:center}
+div.bbsP a img{border:none;vertical-align:middle;}
+div.bbsP a,div.bbsP strong{display:inline-block;width:28px;color:#07569b;font-size:12px;line-height:normal;font-weight:normal;text-decoration:none;vertical-align:middle;background:#fff;}
+div.bbsP a:hover{color:#1a4a78 !important;text-decoration:none}
+div.bbsP a{display:inline-block;width:26px;padding:5px 0;border:1px solid #e8e8e8;background:#fff;font-weight:700;color:#1a4a78}
+div.bbsP strong{font-weight:700;color:#737373 !important;display:inline-block;width:26px;padding:5px 0;border:1px solid #e8e8e8;background:#f5f5f5;font-weight:600}
+div.bbsP a.btn_prev, div.bbsP a.btn_next{width:28px;padding:0;border:0;}
+div.bbsP ul{display:inline-block;}
+div.bbsP ul li{float:left;}

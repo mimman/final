@@ -11,23 +11,27 @@
 
 	<table>
 		<colgroup>
-			<col width="7%" />
-			<col width="7%" />
-			<col width="7%" />
-			<col width="7%" />
-			<col width="7%" />
-			<col width="7%" />
-			<col width="7%" />
-			<col width="7%" />
-			<col width="7%" />
-			<col width="7%" />
-			<col width="7%" />
-			<col width="7%" />
-			<col width="7%" />
-			<col width="7%" />
+			<col width="6%" />
+			<col width="6%" />
+			<col width="6%" />
+			<col width="6%" />
+			<col width="6%" />
+			<col width="6%" />
+			<col width="6%" />
+			<col width="6%" />
+			<col width="6%" />
+			<col width="6%" />
+			<col width="6%" />
+			<col width="6%" />
+			<col width="6%" />
+			<col width="6%" />
+			<col width="6%" />
+			<col width="6%" />
+			<col width="6%" />
 		</colgroup>
 		 <thead>
 		<tr>
+			<th scope="col">항공기 코드</th>
 			<th scope="col">예약 번호</th>
 			<th scope="col">국내/국제선</th>
 			<th scope="col">예약 라인</th>
@@ -35,6 +39,8 @@
 			<th scope="col">도착 도시</th>
 			<th scope="col">출발일</th>
 			<th scope="col">도착일</th>
+			<th scope="col">출발시각</th>
+			<th scope="col">도착시각</th>
 			<th scope="col">유효기간</th>
 			<th scope="col">예약된  좌석</th>
 			<th scope="col">총 좌석</th>
@@ -48,6 +54,7 @@
 	 	<tbody>
 	 	<c:forEach var="dto" items="${reserList}">
 	 	<tr  style="text-align:center;">
+	 		<td>${dto.getAircraftCode() }</td>
 	 		<td>${dto.getReserNum() }</td>
 	 		<td>${dto.getReserveCode()}</td>
 	 		<td>${dto.getReserveLine()}</td>
@@ -55,6 +62,8 @@
 	 		<td>${dto.getEndCity() }</td>
 	 		<td>${dto.getStartDate() }</td>
 	 		<td>${dto.getEndDate() }</td>
+	 		<td>${dto.getStartTime() }</td>
+	 		<td>${dto.getEndTime() }</td>
 	 		<td>${dto.getExDate() }</td>
 	 		<td>${dto.getSeat() }</td>
 	 		<td>${dto.getNum() }</td>

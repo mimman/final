@@ -1,6 +1,7 @@
 package com.mimman.reservation.repository;
 
 public class ReserveDto {
+	private String aircraftCode;
 	private int reserNum;
 	private String reserveCode;
 	private String reserveLine;
@@ -8,6 +9,8 @@ public class ReserveDto {
 	private String endCity;
 	private String startDate;
 	private String endDate;
+	private String startTime;
+	private String endTime;
 	private String exDate;
 	private int seat;
 	private int num;
@@ -17,6 +20,25 @@ public class ReserveDto {
 	private int toddleTax;
 	
 	
+
+	public String getAircraftCode() {
+		return aircraftCode;
+	}
+	public void setAircraftCode(String aircraftCode) {
+		this.aircraftCode = aircraftCode;
+	}
+	public String getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+	public String getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
 	public int getReserNum() {
 		return reserNum;
 	}

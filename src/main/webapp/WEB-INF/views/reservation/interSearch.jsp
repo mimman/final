@@ -8,6 +8,11 @@
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script>
+/* 팝업 */
+function openWin(_url, _width, _height) { 
+           window.open(_url, "popup", "width="+_width+", height="+_height+", resizable=no, scrollbars=no") ; 
+}
+
 /* 달력 */
 $(function() {
      $( "#datepicker" ).datepicker();
@@ -242,7 +247,7 @@ $(document).ready(function(){
                <td>2015/12/23~2016/03/31</td>
                <td>308,300원</td>
                <td>매일출발</td>
-               <td class="pd_10 end"><a href="" class="btn_reser">예약</a></td>
+               <td class="pd_10 end"><a href="javascript:openWin('pop_tax.jsp','600','800')" class="btn_reser">예약</a></td>
                </tr>
                
                </tbody>

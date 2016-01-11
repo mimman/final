@@ -144,7 +144,7 @@ h3{font-size:50px;font-weight:600;}
 .quick_w ul.quick li span{display:inline-block;line-height:1.8;font-size:13px;color:#545454;}
 
 /* list_v1 ( ㆍ ) */
-ul.list_v1{color:#222;font-size:13px;margin:25px 80px;}
+ul.list_v1{color:#222;font-size:13px;/*margin:25px 80px;*/}
 ul.list_v1:after{display:block;clear:both;content:''}
 ul.list_v1 li{display:block;clear:both;width:auto;padding-left:10px;line-height:1.8;background:url(../img/common/bu_dot01.gif) no-repeat 0 12px;text-align:left;}
 
@@ -164,4 +164,15 @@ div.reply.child ul li.txt{margin-left:31px;}
 
 a.btn_comment{position:absolute;right:20px;top:20px;}
 
+/* 팝업 */
+div.pop_wrap_h h1{font-size:25px}
+div.pop_wrap_b div.taxbox_w{background:#fbfbfb;border-top:2px solid #c9c9c9;padding:10px 15px}
+div.pop_wrap_b div.taxbox_w p:nth-child(1){border:1px solid #f83030;display:inline-block;background:#fff;padding:5px;margin-right:10px;color:#f83030;font-weight:600;}
+div.pop_wrap_b div.taxbox_w p:nth-child(2){line-height:1.8em;font-weight:600;}
+div.pop_wrap_b div.taxbox_w p:nth-child(2) em{font-size:16px;font-weight:600;}
+div.pop_wrap_b div.taxbox_w p:nth-child(2) span{color:#3a3a3a}
+div.pop_wrap_b div.taxbox_w p:nth-child(3){line-height:47px;color:#f83030;}
+div.pop_wrap_b div.taxbox_w p:nth-child(3) em{font-size:20px;font-weight:600;}
+
+div.pop_wrap_b div.taxbox_w.v2 p:nth-child(1){border:1px solid #1a4a78;display:inline-block;background:#fff;padding:5px;margin-right:10px;color:#1a4a78;font-weight:600;}
 

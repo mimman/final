@@ -72,7 +72,7 @@ commentno number primary key,
 
 drop table tblcomment;
 create sequence seq_com
-
+delete from tblcomment
 select * from tblcomment
 alter table reply add 
 (
@@ -103,5 +103,12 @@ CREATE TABLE reserve
 );
 
 CREATE SEQUENCE SEQ_RESERNUM;
+alter table reserve add(startTime varchar2(15));
+alter table reserve add(endTime varchar2(15));
+alter table reserve add(aircraftCode varchar2(30));
+alter table reserve drop(comebackDate);
+select distinct airline from reserve
 
-select * from reserve
+select DISTINCT airline,resernum,reservecode,reserveline,startcity,endcity,startdate,enddate,exdate,seat,num,adulttax,childtax,toddletax,starttime,endtime,aircraftcode from reserve where reserveLine='祈档' and startCity='力林' and endCity='措备'
+select DISTINCT airline,resernum from reserve where reserveLine='祈档' and startCity='力林' and endCity='措备'
+SELECT * from reserve where rowid in (select max(rowid) from reserve group by airline) and reserveLine='祈档' and startCity='力林' and endCity='措备'

@@ -155,5 +155,5 @@ textarea.textarea_s1{padding:3px 5px 3px;border:1px solid #eaeaea;border-color:#
 ul.pagination:after{display:block;visibility:hidden;clear:both;height:0;font-size:0;line-height:0;content:'.'}
 ul.pagination li{display:inline-block;float:left;}
 
-
+.pl_15{display:inline-block;padding-left:50px;}
 

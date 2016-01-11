@@ -49,14 +49,19 @@ public class reserveManager {
 	public static List searchReser(userReservationDto userReserDto) {
 		List list = null;
 		SqlSession session = sqlFactory.openSession();
-		if(userReserDto.getReserveLine().equals("편도")){
+		if("편도".equals(userReserDto.getReserveLine())){
 			list = session.selectList("searchReser", userReserDto);
 		}
-		
-		
-		
+
 		return list;
 		
+	}
+
+	public static List reservePop(int reserNum) {
+		List list = null;
+		SqlSession session = sqlFactory.openSession();
+		list = session.selectList("searchReser", reserNum);
+		return list;
 	}
 
 		   

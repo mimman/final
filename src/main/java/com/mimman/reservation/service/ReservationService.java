@@ -12,4 +12,6 @@ public interface ReservationService {
 	public List getListReser();
 
 	public List searchReser(userReservationDto userReserDto);
+
+	public List reservePop(int reserNum);
 }

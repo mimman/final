@@ -27,10 +27,8 @@ $(document).ready(function () {
 		isRTL: false,
 		showMonthAfterYear: true,
 		yearSuffix: '',
-		showOn: 'both',
 		changeMonth: true,
 		changeYear: true,
-		showButtonPanel: true,
 		yearRange: 'c-99:c+99',
 	};
 	$.datepicker.setDefaults($.datepicker.regional['ko']);
@@ -80,6 +78,10 @@ $(document).ready(function () {
             <h3>항공예매 추가</h3>
             
             <ul class="mt_30">
+             <li>
+                  <label for="aircraftCode">항공기 코드</label>
+                  <input  type="text"  id="aircraftCode" name="aircraftCode" placeholder="항공기 코드" />
+               </li>
                <li>
                   <label for="reserCode">국내/국제선</label>
                   <select id="reserveCode" name="reserveCode">
@@ -139,6 +141,15 @@ $(document).ready(function () {
                   <label for="endDateLabel">도착시간</label>
                   <input  type="text"  id="endDate" name="endDate" placeholder="도착시간" />
                </li>
+                <li>
+                  <label for="endDateLabel">출발시각</label>
+                  <input  type="text"  id="startTime" name="startTime" placeholder="출발시각" />
+               </li>
+               <li>
+                  <label for="endDateLabel">도착시각</label>
+                  <input  type="text"  id="endTime" name="endTime" placeholder="도착시각" />
+               </li>
+               
                <li>
                   <label for="exDateLabel">유효기간</label>
                   <input  type="text" id="exDate" name="exDate" placeholder="유효기간" />

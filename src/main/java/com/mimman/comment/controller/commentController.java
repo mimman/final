@@ -45,4 +45,7 @@ public class commentController {
 		
 		return "/WEB-INF/views/community/eventRead.jsp";
 	}
+	
+	
+	
 }

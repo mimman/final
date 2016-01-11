@@ -101,4 +101,8 @@
 	<bean class="com.mimman.reservation.controller.interController">
 		
 	</bean>
+	
+	<bean class="com.mimman.reservation.controller.reservePopController">
+		
+	</bean>
 </beans>

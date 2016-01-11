@@ -58,8 +58,7 @@ private List domesitList;
 		List domesitList = new ArrayList();
 		for(int i =0; i<list.size(); i++){
 			ReserveDto dto =  (ReserveDto) list.get(i);
-			System.out.println("i:"+dto.getStartDate());
-			System.out.println("i:"+dto.getEndDate());
+			
 			String[] date = dto.getStartDate().split(" ");
 			String[] endDate = dto.getEndDate().split(" ");
 			String[] exDate = dto.getExDate().split(" ");
@@ -67,7 +66,9 @@ private List domesitList;
 			dto.setEndDate(endDate[0]);
 			dto.setExDate(exDate[0]);
 			domesitList.add(i, dto);
+			
 		}
+		
 		session.setAttribute("userReserDto", userReserDto);
 		session.setAttribute("reserSearchList", domesitList);
 		}

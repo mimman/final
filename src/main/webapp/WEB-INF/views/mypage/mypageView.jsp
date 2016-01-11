@@ -112,38 +112,52 @@
 
 
       
-	<ul class="pagination">
+	 <div class="bbsP mt_10">
+                  <ul class="clear">
+                  
+                     <c:if test="${nowBlock eq 0 }">
+                        <li><img src="/Air/img/board/btn_prev.gif" alt="이전" /></li>
+                     </c:if>
+                 
+
 
       <c:if test="${nowBlock > 0}">
-         <li><a href="mypageView.action?nowBlock=${nowBlock-1}&nowPage=${pagePerBlock*(nowBlock-1)}">이전 ${pagePerBlock}개</a></li>
+         <li><a href="eventBoard.action?boardcd=${boardcd}&nowBlock=${nowBlock-1}&nowPage=${pagePerBlock*(nowBlock-1)}">
+         <img src="/Air/img/board/btn_prev.gif" alt="이전" /></a></li>
       </c:if>
-      
+      <c:if test="${sessionScope.pagedto.getTotalRecord() > 0}">
       <c:forEach begin="1" end="${sessionScope.pagedto.getPagePerBlock()}" varStatus="status">
       <c:if test="${not doneLoop}">
       
          <c:if test="${(nowBlock*pagePerBlock)+status.index == totalPage}">
              <c:set var="doneLoop" value="true"/>
          </c:if>
-         <li><a href="mypageView.action?nowPage=${(nowBlock*pagePerBlock)+status.index-1}&nowBlock=${nowBlock}">${(nowBlock*pagePerBlock)+status.index}</a></li>
+         <c:if test="${(nowBlock*pagePerBlock)+status.index eq nowPage +1}">
+          <li><strong>${(nowBlock*pagePerBlock)+status.index}</strong></li>
+         </c:if>
          
+         <c:if
+                                 test="${(nowBlock*pagePerBlock)+status.index ne nowPage +1}">
+                                 <li><a
+                                    href="eventBoard.action?boardcd=${boardcd}&nowPage=${(nowBlock*pagePerBlock)+status.index-1}&nowBlock=${nowBlock}">${(nowBlock*pagePerBlock)+status.index}</a></li>
+                              </c:if>
+
       </c:if>
-      </c:forEach>      
-      
+      </c:forEach>  
+      </c:if>    
+       <c:if test="${totalBlock eq nowBlock+1 }">
+                        <li><img src="/Air/img/board/btn_next.gif" alt="다음" /></li>
+                     </c:if>
       <c:if test="${totalBlock > nowBlock+1 }">
-         <li><a href="mypageView.action?nowBlock=${nowBlock+1}&nowPage=${pagePerBlock*(nowBlock+1)}">다음 ${pagePerBlock} 개</a></li>
+         <li><a  class="btn_next"
+          href="eventBoard.action?boardcd=${boardcd}&nowBlock=${nowBlock+1}&nowPage=${pagePerBlock*(nowBlock+1)}">
+          <img src="/Air/img/board/btn_next.gif" alt="다음" /></a></li>
       </c:if>
 
       
    </ul>
-   <%if(session.getAttribute("id") != null){
-               %>
-   <ul class="btn_r">
-      
-   
-   <%
-            }
-            %>
-   </ul>
+   </div>
+
 
             <!-- //내용 -->
 

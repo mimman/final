@@ -121,12 +121,13 @@ $(document).ready(function () {
 	<c:forEach var="dto" items="${commentList}">
 
 	<div class="reply_w">
-	<c:if test="${param ne 'reply' }">
+	  <c:if test="${dto.getDept() > 0 }">
+            	<c:forEach  begin="1" end="${dto.getDept()}"><p class="pl_15"></p></c:forEach>
+            	<img src="/Air/img/common/re.gif">
+            </c:if>
 		<div class="reply">
-	</c:if>
-	<c:if test="${param eq 'reply' }">
-	<div class="reply child">
-	</c:if>
+	
+	
 			<ul class="clear">
 				<li class="profile fl"></li>
 				<li class="txt fl">
@@ -139,19 +140,23 @@ $(document).ready(function () {
 					<div>${dto.getContent()}</div>
 				</li>
 			</ul>	
-			
-			<!-- <a class="btn_comment" href="javascript:;">댓글달기</a> -->
-		
+			<c:if test="${param eq comment }">
+				<a class="btn_comment" href="javascript:;">댓글달기</a>
+			</c:if>
 			<div class="comment">
 				<form method="post" action="comment.action">
 				<input type="hidden" name="param" value="reply" >
+				<input type="hidden" name="pos" value="${boardDto.getPos() }" >
+				<input type="hidden" name="dept" value="${boardDto.getDept() }" >
 				<input type="hidden" name="articleno" value="${boardDto.getArticleno() }" >
 				<input type="hidden" name="writer" value="${boardDto.getWriter() }">
 				<input type="hidden" name="boardcd" value="${boardDto.getBoardcd()}">
 				<label for="t_comment" class="blind">의견등록</label>
 				<textarea cols="70" rows="23" id="t_comment" name="content" class="textarea_s1" style="width:608px;height:45px;"></textarea>
 				<input type="submit" value="등록" class="btn_cmt" />
+				
 				</form>
+				
 			</div>
 			<!-- //comment -->
 		</div>		

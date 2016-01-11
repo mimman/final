@@ -102,6 +102,9 @@ public class pageManager {
 	}
 	
 	public static List setComment(commentDto commentDto,String param){
+		System.out.println("setComment:"+param);
+		System.out.println("pos"+commentDto.getPos());
+		System.out.println("dept"+commentDto.getDept());
 		List list = null;
 		SqlSession session = sqlFactory.openSession();
 		if(param.equals("comment")){
@@ -112,7 +115,7 @@ public class pageManager {
 		
 		else if(param.equals("reply")){
 			session.update("commentReplyUpdate",commentDto);
-			session.insert("setComment",commentDto);
+			session.insert("setCommentReply",commentDto);
 			list = session.selectList("getComment",commentDto);
 		}
 		session.commit();

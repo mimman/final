@@ -12,6 +12,7 @@
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script>
+
 function blockEndDate(){
 	var bl = document.getElementById("bl")
 	
@@ -99,10 +100,8 @@ $(document).ready(function () {
 		isRTL: false,
 		showMonthAfterYear: true,
 		yearSuffix: '',
-		showOn: 'both',
 		changeMonth: true,
 		changeYear: true,
-		showButtonPanel: true,
 		yearRange: 'c-99:c+99',
 	};
 	$.datepicker.setDefaults($.datepicker.regional['ko']);
@@ -340,25 +339,23 @@ $(document).ready(function(){
 									summary="도시,항공사,출발기간,총요금,유효기간,예상TAX,예약하기 정보 전달" width="100%"
 									cellpadding="0" class="tbl_sch">
 									<caption>항공편 글목록</caption>
-									<colgroup>
-										<col width="15%">
-										<col width="13%">
-										<col width="*">
-										<col width="15%">
-										<col width="15%">
-										<col width="13%">
-										<col width="13%">
-									</colgroup>
-									<thead>
-										<tr>
-											<th scope="col" class="first">도시</th>
-											<th scope="col">항공사</th>
-											<th scope="col">출발기간</th>
-											<th scope="col">총요금</th>
-											<th scope="col">유효기간</th>
-											<th scope="col">예상TAX</th>
-											<th scope="col" class="end">예약하기</th>
-										</tr>
+								     <colgroup>
+               <col width="15%">
+               <col width="15%">
+               <col width="*">
+               <col width="15%">
+               <col width="15%">
+               <col width="15%">
+               </colgroup>
+               <thead>
+               <tr>
+               <th scope="col" class="first">도시</th>
+               <th scope="col">항공사</th>
+               <th scope="col">출발기간</th>
+               <th scope="col">총요금</th>
+               <th scope="col">유효기간</th>
+               <th scope="col" class="end">예약하기</th>
+               </tr>
 									</thead>
 									<tbody>
 
@@ -369,17 +366,18 @@ $(document).ready(function(){
 											<tr>
 												<td class="first">${dto.getEndCity()}</td>
 												<td>${dto.getAirLine() }</td>
-												<td>${dto.getStartDate()}~${dto.getEndDate() }</td>
+												<td>${dto.getStartDate()}</td>
 												<td>${adult+child+toddle}</td>
 												<td>${dto.getExDate() }</td>
-												<td class="pd_10"><a href="" class="btn_tax">TAX</a></td>
-												<td class="pd_10 end"><a href="" class="btn_reser">예약</a></td>
+												<td class="pd_10 end"><a href="reservePop.action?reserNum=${dto.getReserNum()}&aircraftCode=${dto.getAircraftCode()}"  class="btn_reser">예약</a></td>
 											</tr>
 										</c:forEach>
 
 
 									</tbody>
 								</table>
+								
+								
 							</div>
 							<!-- //tbl_sch -->
 

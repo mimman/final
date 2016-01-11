@@ -24,4 +24,9 @@ public class ReservationServiceImpl implements ReservationService {
 		
 	}
 
+	public List reservePop(int reserNum) {
+		
+		return reserveManager.reservePop(reserNum);
+	}
+
 }

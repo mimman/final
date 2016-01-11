@@ -13,10 +13,10 @@
 		select * from article where writer=#{id} order by pos asc,dept asc, articleno desc
 	</select>
 	<select id="getComment" parameterType="commentDto" resultType="commentDto">
-		select * from tblcomment where articleno = #{articleno} order by pos desc, dept desc
+		select * from tblcomment where articleno = #{articleno} order by pos desc, dept asc
 	</select>
 	<select id="getCommentList" parameterType="int" resultType="commentDto">
-		select * from tblcomment where articleno = #{articleno} order by pos desc, dept desc
+		select * from tblcomment where articleno = #{articleno} order by pos desc, dept asc
 	</select>
 	<insert id="EventboardWrite" parameterType="EventDto">
 		insert into article values(seq_article.nextval,#{boardcd},
@@ -32,6 +32,11 @@
 		insert into tblcomment values(seq_com.nextval,#{articleno},#{boardcd}
 		,#{content},#{writer},0,0,sysdate)
 	</insert>
+	<insert id="setCommentReply" parameterType="commentDto">
+		insert into tblcomment values(seq_com.nextval,#{articleno},#{boardcd}
+		,#{content},#{writer},#{pos}+1,#{dept}+1,sysdate)
+	</insert>
+	
 	<select id="EventBoardRead" parameterType="int" resultType="EventDto">
 		select * from article where articleno=#{articleno}
 	</select>

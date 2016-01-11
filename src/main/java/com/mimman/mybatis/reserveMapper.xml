@@ -6,16 +6,16 @@
 	<insert id="addReserve" parameterType="reserDto">
 		insert into reserve values(seq_resernum.nextval,#{reserveCode},#{reserveLine},
 		#{startCity},#{endCity},#{startDate},#{endDate},#{exDate},#{seat},#{num},#{airLine},
-		#{adultTax},#{childTax},#{toddleTax})
+		#{adultTax},#{childTax},#{toddleTax},#{startTime},#{endTime},#{aircraftCode})
 	</insert>
 	
 	<select id="getListReser" resultType="reserDto">
 		select * from reserve order by resernum asc
 	</select>
 	<select id="searchReser" parameterType="userReserDto" resultType="reserDto">
-		select * from reserve where reserveLine=#{reserveLine} and startCity=#{startCity}
+		SELECT * from reserve where rowid in (select max(rowid) from reserve group by airline) and reserveLine=#{reserveLine} and startCity=#{startCity}
 		and endCity=#{endCity}
 	</select>
 	
-	
+
 </mapper>
