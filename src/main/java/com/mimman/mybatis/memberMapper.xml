@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.memberMapper">
+	<insert id="addUser" parameterType="Member">
+		insert into tbluser(id,name,birth,email,address,nation,phone,
+		password,mileage) 
+		values(#{id},#{name},#{birth},#{email},#{address},#{nation},#{phone},
+		#{password},0)
+	</insert>
+	
+	<select id="selectByEmail" parameterType="Login" resultType="Member">
+		select * from tbluser where id=#{log_id} and password=#{log_password}
+	</select>
+	
+	<select id="updateUser" parameterType="String" resultType="Member">
+		select * from tbluser where id=#{id}
+	</select>
+	
+	
+	<update id="update" parameterType="Update">
+		update tbluser set name=#{name},birth=#{birth},email=#{email},address=#{address}
+		,nation=#{nation},phone=#{phone} where id=#{id}
+	</update>
+	
+	<delete id="drop" parameterType="String">
+		delete from tbluser where id =#{id}
+	</delete>
+	
+	<select id="idSearch" parameterType="Search" resultType="String">
+      select id from tbluser where name=#{user_nm} and email=#{email1} 
+   </select>
+   
+   <select id="pwSearch" parameterType="Search" resultType="String">
+      select password from tbluser where id=#{user_id} and name=#{user_nm} and email=#{email1}
+   </select>
+</mapper>
