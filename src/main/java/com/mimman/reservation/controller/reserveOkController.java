@@ -39,6 +39,7 @@ private ReservationService reservationService;
 		
 		reserComDto.setId(id);
 		reserComDto.setStartCity(userDto.getStartCity());
+		reserComDto.setEndCity(userDto.getEndCity());
 		reserComDto.setAdult(userDto.getAdult());
 		reserComDto.setChild(userDto.getChild());
 		reserComDto.setToddle(userDto.getToddle());

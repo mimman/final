@@ -4,9 +4,21 @@
 
 <mapper namespace="mybatis.reserveMapper">
 	<insert id="addReserve" parameterType="reserDto">
-		insert into reserve values(seq_resernum.nextval,#{reserveCode},#{reserveLine},
+		insert into reserve(resernum,reservecode,reserveline,startcity,endcity,startdate,enddate,exdate,seat,num,airline,adulttax,childtax,toddletax,starttime,endtime,aircraftcode) values(seq_resernum.nextval,#{reserveCode},#{reserveLine},
 		#{startCity},#{endCity},#{startDate},#{endDate},#{exDate},#{seat},#{num},#{airLine},
 		#{adultTax},#{childTax},#{toddleTax},#{startTime},#{endTime},#{aircraftCode})
+	</insert>
+	
+	<insert id="addReserveShuttle" parameterType="reserDto">
+		insert into reserve(resernum,reservecode,reserveline,startcity,endcity,startdate,enddate,exdate,seat,num,airline,adulttax,childtax,toddletax,starttime,endtime,aircraftcode,
+		resernum2,reservecode2,reserveline2,startcity2,endcity2,startdate2,enddate2,exdate2,seat2,num2,airline2,adulttax2,childtax2,toddletax2,starttime2,endtime2,aircraftcode2) 
+		values(seq_resernum.nextval,#{reserveCode},#{reserveLine},
+		#{startCity},#{endCity},#{startDate},#{endDate},#{exDate},#{seat},#{num},#{airLine},
+		#{adultTax},#{childTax},#{toddleTax},#{startTime},#{endTime},#{aircraftCode},
+		
+		seq_resernum.nextval,#{reserveCode},#{reserveLine},
+		#{startCity2},#{endCity2},#{startDate2},#{endDate2},#{exDate2},#{seat2},#{num2},#{airLine2},
+		#{adultTax2},#{childTax2},#{toddleTax2},#{startTime2},#{endTime2},#{aircraftCode2})
 	</insert>
 	
 	<select id="getListReser" resultType="reserDto">
@@ -19,8 +31,8 @@
 	</select>
 	
 	<select id="searchReserShuttle" parameterType="userReserDto" resultType="reserDto">
-		SELECT * from reserve where rowid in (select max(rowid) from reserve  where reserveLine='왕복' group by airline) and reserveLine=#{reserveLine} and startCity=#{startCity}
-		and endCity=#{endCity} and startDate=#{startDate} and endDate=#{endDate}
+		SELECT * from reserve where rowid in (select max(rowid) from reserve  where reserveLine='왕복' group by airline) 
+		and startCity2=#{endCity} and endCity2=#{startCity} and startDate2=#{endDate}
 	</select>
 	
 	<select id="searchReserveList" parameterType="hdto" resultType="reserDto">
@@ -38,18 +50,32 @@
 	</select>
 	
 	<insert id="reserveComplete" parameterType="ComDto">
-		insert into userReservation(comreservenum,reservenum,airline,startcity,startdate,starttime,endTime,adult,child,toddle,adultTax,childTax,toddleTax,id,tax,mileage,reserveLine) values(seq_userReserve.nextval,#{reserveNum},#{airLine},#{startCity},#{startDate},#{startTime},#{endTime},
+		insert into userReservation(comreservenum,reservenum,airline,startcity,startdate,starttime,endcity,endTime,adult,child,toddle,adultTax,childTax,toddleTax,id,tax,mileage,reserveLine) values(seq_userReserve.nextval,#{reserveNum},#{airLine},#{startCity},#{startDate},#{startTime},#{endCity},#{endTime},
 		#{adult},#{child},#{toddle},#{adultTax},#{childTax},#{toddleTax},#{id},#{tax},#{mileage},#{reserveLine})
+	</insert>
+	<insert id="reserveComplete2" parameterType="ComDto">
+		insert into userReservation(comreservenum2,resernum2,startcity2,startdate2,starttime2,endTime2,adult2,child2,toddle2,adultTax2,childTax2,toddleTax2,tax2,mileage2) 
+		values(seq_userReserve.nextval,#{reserveNum},#{startCity2},#{startDate2},#{startTime2},#{endTime2},
+		#{adult2},#{child2},#{toddle2},#{adultTax2},#{childTax2},#{toddleTax2},#{tax2},#{mileage2})
 	</insert>
 	
 	<update id="updateSeat" parameterType="ComDto">
 		update reserve set seat = seat - (#{adult}+#{child}+#{toddle}) where resernum=#{reserveNum}
 	</update>
+	<update id="updateSeat2" parameterType="ComDto">
+		update reserve set seat2 = seat2 - (#{adult2}+#{child2}+#{toddle2}) where resernum2=#{reserveNum2}
+	</update>
 	<update id="updateNum" parameterType="ComDto">
 		update reserve set num = num + (#{adult}+#{child}+#{toddle}) where resernum=#{reserveNum}
 	</update>
+	<update id="updateNum2" parameterType="ComDto">
+		update reserve set num2 = num2 + (#{adult2}+#{child2}+#{toddle2}) where resernum2=#{reserveNum2}
+	</update>
 	<update id="updateMileage" parameterType="ComDto">
 		update tbluser set mileage = mileage + #{mileage} where id=#{id}
+	</update>
+	<update id="updateMileage2" parameterType="ComDto">
+		update tbluser set mileage2 = mileage2 + #{mileage2} where id=#{id}
 	</update>
 	
 </mapper>

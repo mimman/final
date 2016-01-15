@@ -40,7 +40,8 @@ private List domesitList;
    }
    @RequestMapping("reserSearch.action")
    public String Search(userReservationDto userReserDto,HttpSession session){//
-		
+	   System.out.println("u"+userReserDto.getReserveLine());
+	   System.out.println("u"+userReserDto.getSeat());
       /*
       System.out.println(userReserDto.getReserveLine());
       System.out.println(userReserDto.getStartCity());
@@ -53,6 +54,11 @@ private List domesitList;
       System.out.println(userReserDto.getToddle());
         */
       List list = reservationService.searchReser(userReserDto);
+      List list2 = null;
+      if(userReserDto.getReserveLine().equals("¿Õº¹")){
+    	  list2 = reservationService.searchReser(userReserDto);
+      }
+      
       if(list != null){
          
       
@@ -70,6 +76,10 @@ private List domesitList;
       }
       session.setAttribute("userReserDto", userReserDto);
       session.setAttribute("reserSearchList", domesitList);
+      
+      if(userReserDto.getReserveLine().equals("¿Õº¹")){
+    	  session.setAttribute("reserSearchList2", list2);
+      }
       }
       else{
          throw new NullListException();

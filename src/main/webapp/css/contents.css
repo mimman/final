@@ -22,16 +22,26 @@ div.con_box i.fa-compass{color:#f53838;font-size:23px;}
 ul.flight_list li{float:left;}
 div.top_con div.city_w ul li{padding:10px 0 25px;position:relative;}
 div.top_con div.city_w ul li label{padding-right:30px;font-weight:500;}
-div.top_con div.city_w ul li a.compass{text-indent:-9999px;display:inline-block;width:18px;height:22px;background:url(../img/reservation/img_compass.png) no-repeat 0 0;position:absolute;left:240px;top:14px;}
+div.top_con div.city_w ul li a.compass{pointer-events:none;text-indent:-9999px;display:inline-block;width:18px;height:22px;background:url(../img/reservation/img_compass.png) no-repeat 0 0;position:absolute;left:240px;top:14px;}
 div.top_con div.city_w{width:300px;}
 div.top_con div.city_w ul li input{width:140px;border:1px solid #ececec;height:30px;padding:0 28px 0 5px;}
 div.top_con div.flight_w{width:736px;}
 div.top_con div.flight_w ul.flight_list li{float:left;margin:10px 30px 10px 10px;color:#5b5b5b;}
 
+div.top_con div.city_w ul li select{
+-webkit-appearance: none;  /* 네이티브 외형 감추기 */
+-moz-appearance: none;
+appearance: none;
+background: url(../img/reservation/img_compass.png) no-repeat 150px 4px; /* 화살표 모양의 이미지 */
+width:175px;border:1px solid #ececec;height:32px;padding:0 28px 0 5px;font-size:14px;}
+
+
 div.top_con div.flight_w ul.flight_list.out li{padding-right:15px;margin:13px 0 13px 15px;border-right:1px solid #d1d1d1;}
 div.top_con div.flight_w ul.flight_list.out li.end{border-right:0;}
 div.bot_con h4{font-size:18px;color:#2c2c2c;font-weight:500;}
+div.bot_con .hasDatepicker{width:140px;border:1px solid #ECECEC;;height:30px;padding:0 28px 0 5px;}
 div.bot_con div.fl{margin-right:40px;}
+div.bot_con div.fl label{padding-right:30px;font-weight:500;}
 div.bot_con div.fl ul.radio_w2{width:140px;}
 div.bot_con div.fl ul.radio_w2 li{line-height:40px;}
 div.bot_con div.fl ul.radio_w2 li:after{clear:both;display:block;content:"";height:0;visibility:hidden;}
@@ -39,8 +49,9 @@ div.bot_con div.fl ul.radio_w2 li label{margin-left:5px;}
 div.bot_con div.fl ul.radio_w2 li p{display:inline-block;float:left;margin-right:10px;}
 div.bot_con div.fl ul.radio_w2 li input[type="button"]{border:1px solid #d1d1d1;background:#f1f2f4 !important;width:25px;height:25px;line-height:18px;color:#969696;float:left;margin-top:7px;}
 div.bot_con div.fl ul.radio_w2 li input.count{width:25px;height:23px;border:1px solid #fff;border-color:#d1d1d1 #fff #d1d1d1 #fff;text-align:center;line-height:23px;float:left;margin-top:7px;}
-div.bot_con div.fl.ta_c, div.bot_con div.fl.clearfix{width:450px;margin-right:0;}
-div.bot_con div.fl input.btn_sch{display:inline-block;width:220px;height:46px;background:url(../img/reservation/btn_sch.jpg) no-repeat 0 0 !important;border:0;color:#fff;font-weight:600;font-size:20px;}
+div.bot_con div.fl.clearfix{width:450px;margin-right:0;}
+div.con_box div.fl.ta_c{margin-right:0;}
+div.con_box input.btn_sch{display:inline-block;width:220px;height:46px;background:url(../img/reservation/btn_sch.jpg) no-repeat 0 0 !important;border:0;color:#fff;font-weight:600;font-size:20px;}
 div.bot_con div.city_w ul li{padding:10px 0 25px;position:relative;}
 div.bot_con div.city_w ul li label{padding-right:30px;font-weight:500;}
 div.bot_con div.city_w{width:300px;}
@@ -155,6 +166,18 @@ h3{font-size:50px;font-weight:600;}
 .quick_w ul.quick li i.fa-money{color:#194169;}
 .quick_w ul.quick li em{display:inline-block;font-size:28px;font-weight:600;color:#333;margin:27px 0 29px}
 .quick_w ul.quick li span{display:inline-block;line-height:1.8;font-size:13px;color:#545454;}
+
+/* 마일리지 */
+.mile_w{width:1032px;height:340px;margin:0 auto;background:url(../img/mypage/bg_quick.png) no-repeat 0 0;padding:64px 4px 4px;}
+.mile_w ul.mile>li{display:inline-block;float:left;margin-right:5px;width:254px;height:339px;background:url(../img/mypage/bg_con.png) no-repeat 0 0;text-align:center;}
+.mile_w ul.mile>li:last-child{margin-right:0;}
+.mile_w ul.mile li i{display:block;margin-top:30px;}
+.mile_w ul.mile li i.fa-user{color:#F53739;}
+.mile_w ul.mile li i.fa-plane{color:#13bae4;}
+.mile_w ul.mile li i.fa-pencil-square-o{color:#02b99b;}
+.mile_w ul.mile li i.fa-money{color:#194169;}
+.mile_w ul.mile li em{display:inline-block;font-size:28px;font-weight:600;color:#333;margin:27px 0 29px}
+.mile_w ul.mile li span{display:inline-block;line-height:1.8;font-size:13px;color:#545454;}
 
 /* list_v1 ( ㆍ ) */
 ul.list_v1{color:#222;font-size:13px;}

@@ -117,7 +117,7 @@ function tax(adultTax,adult,childTax,child,toddleTax,toddle){
    <div class="pop_wrap_h">
       <div class="pop_tit">
       <h1>국내 실시간 항공권</h1>
-      <p class="mt_5">원하시는 항공 여정을 선택해 주세요.</p>
+      <p class="mt_5">원하시는 항공 여정을 선택해 주세요. </p>
       </div>
    </div>
    <!-- //pop_wrap_h -->
@@ -173,15 +173,15 @@ function tax(adultTax,adult,childTax,child,toddleTax,toddle){
       </div>
       <!-- //tbl_sch -->
       
-      <c:if test="${popDto.getReserveLine() eq '왕복' }">
+      <c:if test="${userReserDto.getReserveLine() eq '왕복' }">
       <div class="taxbox_w v2 clear mt_30">
          <p class="fl">오는항공</p>
          <p class="fl">
-            <em>제주 → 김포</em>
-            (2016년 1월 29일)<br />
-            <span>성인 <strong>1</strong>명, 소아 <strong>0</strong>명, 유아 <strong>0</strong>명</span>
+            <em>${userReserDto.getEndCity()} → ${userReserDto.getStartCity()}</em>
+            (${userReserDto.getEndDate() })<br />
+            <span>성인 <strong>${userReserDto.getAdult2()}</strong>명, 소아 <strong>${userReserDto.getChild2()}</strong>명, 유아 <strong>${userReserDto.getToddle2() }</strong>명</span>
          </p>
-         <p class="fr"><em>0</em> 원</p>
+         <p class="fr"><em id="tax" name="tax">0</em> 원</p>
       </div>
 
       <div class="tbl_sch_box">
@@ -207,50 +207,17 @@ function tax(adultTax,adult,childTax,child,toddleTax,toddle){
          </thead>
          <tbody>
          
+         <c:forEach var="dto" items="${reserveDto}">
          <tr>
-         <td class="first">KE1001</td>
-         <td>07:30</td>
-         <td>08:25</td>
-         <td>141,000 원</td>
-         <td>9 석</td>
+         <td class="first">${dto.getAircraftCode2() }</td>
+         <td>${dto.getStartTime2() }</td>
+         <td>${dto.getEndTime2() }</td>
+         <td>${dto.getAdultTax2() * hdto.getAdult2() + dto.getChildTax2()*hdto.getChild2() +dto.getToddleTax2()*hdto.getToddle2()} 원</td>
+         <td>${dto.getSeat2() } 석</td>
          <td class="pd_10 end"><label for="sel2_1" class="blind">항공편 선택</label><input type="radio" id="sel2_1" name="sel_air2" /></td>
          </tr>
+         </c:forEach>
          
-         <tr>
-         <td class="first">KE1001</td>
-         <td>08:05</td>
-         <td>09:00</td>
-         <td>141,000 원</td>
-         <td>9 석</td>
-         <td class="pd_10 end"><label for="sel2_2" class="blind">항공편 선택</label><input type="radio" id="sel2_2" name="sel_air2" /></td>
-         </tr>
-         
-         <tr>
-         <td class="first">KE1001</td>
-         <td>10:40</td>
-         <td>11:35</td>
-         <td>141,000 원</td>
-         <td>9 석</td>
-         <td class="pd_10 end"><label for="sel2_3" class="blind">항공편 선택</label><input type="radio" id="sel2_3" name="sel_air2" /></td>
-         </tr>
-         
-         <tr>
-         <td class="first">KE1001</td>
-         <td>15:00</td>
-         <td>15:55</td>
-         <td>141,000 원</td>
-         <td>9 석</td>
-         <td class="pd_10 end"><label for="sel2_4" class="blind">항공편 선택</label><input type="radio" id="sel2_4" name="sel_air2" /></td>
-         </tr>
-         
-         <tr>
-         <td class="first">KE1001</td>
-         <td>19:05</td>
-         <td>20:00</td>
-         <td>141,000 원</td>
-         <td>9 석</td>
-         <td class="pd_10 end"><label for="sel2_5" class="blind">항공편 선택</label><input type="radio" id="sel2_5" name="sel_air2" /></td>
-         </tr>
          
          </tbody>
          </table>

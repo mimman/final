@@ -20,4 +20,6 @@ public interface ReservationService {
 	public List searchReserveList(HumanNumDto hdto);
 
 	public ReserveCompleteDto completReserve(ReserveCompleteDto reserComDto);
+
+	
 }

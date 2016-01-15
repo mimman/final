@@ -36,8 +36,15 @@ public class reserveManager {
 	public static void addReserve(ReserveDto reserDto){
 
 		SqlSession session = sqlFactory.openSession();
-	
-		session.insert("addReserve",reserDto); 
+		System.out.println("«◊∞¯øπ∏≈√ﬂ∞°:"+reserDto.getReserveLine());
+		if(reserDto.getReserveLine().equals("∆Ìµµ")){
+			session.insert("addReserve",reserDto);
+		}
+		else if(reserDto.getReserveLine().equals("ø’∫π")){
+			session.insert("addReserveShuttle",reserDto);
+		}
+		
+		 
 		session.commit();
 	}
 	
@@ -58,7 +65,7 @@ public class reserveManager {
 		if("ø’∫π".equals(userReserDto.getReserveLine())){
 			System.out.println("ø’∫π");
 			list = session.selectList("searchReserShuttle", userReserDto);
-			System.out.println(list.size());
+			System.out.println("ø’∫π∏ÆΩ∫∆Æ:"+list.size());
 		}
 		
 
@@ -78,29 +85,40 @@ public class reserveManager {
 		
 		List list = null;
 		SqlSession session = sqlFactory.openSession();
+		System.out.println(hdto.getReserveLine());
 		if(hdto.getReserveLine().equals("∆Ìµµ")){
 			list = session.selectList("searchReserveList",hdto);
 		}
 		else if(hdto.getReserveLine().equals("ø’∫π")){
 			list = session.selectList("searchShttleList",hdto);
 		}
-		
+		System.out.println("searchReserveList ªÁ¿Ã¡Ó:"+list.size());
 		
 		return list;
 	}
+	
 
 	public static ReserveCompleteDto completeReserve(ReserveCompleteDto reserComDto) {
 		SqlSession session = sqlFactory.openSession();
-		
+		System.out.println(reserComDto.getEndCity());
 		session.insert("reserveComplete",reserComDto);
 		session.update("updateSeat",reserComDto);
 		session.update("updateNum",reserComDto);
 		session.update("updateMileage",reserComDto);
+		
+		if(reserComDto.getReserveLine().equals("ø’∫π")){
+			session.insert("reserveComplete2",reserComDto);
+			session.update("updateSeat2",reserComDto);
+			session.update("updateNum2",reserComDto);
+			session.update("updateMileage2",reserComDto);
+		}
 		System.out.println(reserComDto.getReserveNum());
 		ReserveCompleteDto comDto = session.selectOne("selectNum", reserComDto);
 		session.commit();
 		return comDto;
 	}
+
+	
 
 		   
 }

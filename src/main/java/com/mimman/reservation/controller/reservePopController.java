@@ -47,16 +47,19 @@ public class reservePopController {
 		hdto.setStartDate(userDto.getStartDate());
 		hdto.setEndDate(userDto.getEndDate());
 		hdto.setReserveLine(userDto.getReserveLine());
-		if(hdto.getReserveLine().equals("Æíµµ")){
-			List list = reservationService.searchReserveList(hdto);
-			
-			session.setAttribute("reserveDto", list);
-			session.setAttribute("hdto", hdto);
-		}
-		else if(hdto.getReserveLine().equals("¿Õº¹")){
-			System.out.println("¿Õº¹");
-		}
 		
+		hdto.setAdult2(userDto.getAdult());
+		hdto.setChild2(userDto.getChild());
+		hdto.setToddle2(userDto.getToddle());
+		hdto.setStartCity2(userDto.getEndCity());
+		hdto.setEndCity2(userDto.getStartCity());
+		hdto.setStartDate2(userDto.getEndDate());
+		
+
+		List list = reservationService.searchReserveList(hdto);
+	
+		session.setAttribute("reserveDto", list);
+		session.setAttribute("hdto", hdto);
 		return "/WEB-INF/views/reservation/pop_tax.jsp";
 	}
 }

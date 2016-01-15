@@ -11,18 +11,6 @@ public class ReserveCompleteDto {
 	private String endCity;
 	private String endDate;
 	private String endTime;
-	private String startCity2;
-	private String startDate2;
-	private String startTime2;
-	private String endCity2;
-	private String endDate2;
-	private String endTime2;
-	private String startCity3;
-	private String startDate3;
-	private String startTime3;
-	private String endCity3;
-	private String endDate3;
-	private String endTime3;
 	private int adult;
 	private int child;
 	private int toddle;
@@ -33,6 +21,83 @@ public class ReserveCompleteDto {
 	private int tax;
 	private int mileage;
 	
+	private String comReserveNum2;
+	private String reserveNum2;
+	private String startCity2;
+	private String startDate2;
+	private String startTime2;
+	private String endCity2;
+	private String endDate2;
+	private String endTime2;
+	private int adult2;
+	private int child2;
+	private int toddle2;
+	private int adultTax2;
+	private int childTax2;
+	private int toddleTax2;
+	private int tax2;
+	private int mileage2;
+	
+	public String getComReserveNum2() {
+		return comReserveNum2;
+	}
+	public void setComReserveNum2(String comReserveNum2) {
+		this.comReserveNum2 = comReserveNum2;
+	}
+	public String getReserveNum2() {
+		return reserveNum2;
+	}
+	public void setReserveNum2(String reserveNum2) {
+		this.reserveNum2 = reserveNum2;
+	}
+	public int getAdult2() {
+		return adult2;
+	}
+	public void setAdult2(int adult2) {
+		this.adult2 = adult2;
+	}
+	public int getChild2() {
+		return child2;
+	}
+	public void setChild2(int child2) {
+		this.child2 = child2;
+	}
+	public int getToddle2() {
+		return toddle2;
+	}
+	public void setToddle2(int toddle2) {
+		this.toddle2 = toddle2;
+	}
+	public int getAdultTax2() {
+		return adultTax2;
+	}
+	public void setAdultTax2(int adultTax2) {
+		this.adultTax2 = adultTax2;
+	}
+	public int getChildTax2() {
+		return childTax2;
+	}
+	public void setChildTax2(int childTax2) {
+		this.childTax2 = childTax2;
+	}
+	public int getToddleTax2() {
+		return toddleTax2;
+	}
+	public void setToddleTax2(int toddleTax2) {
+		this.toddleTax2 = toddleTax2;
+	}
+	public int getTax2() {
+		return tax2;
+	}
+	public void setTax2(int tax2) {
+		this.tax2 = tax2;
+	}
+	public int getMileage2() {
+		return mileage2;
+	}
+	public void setMileage2(int mileage2) {
+		this.mileage2 = mileage2;
+	}
 	public String getStartCity() {
 		return startCity;
 	}
@@ -87,42 +152,7 @@ public class ReserveCompleteDto {
 	public void setEndTime2(String endTime2) {
 		this.endTime2 = endTime2;
 	}
-	public String getStartCity3() {
-		return startCity3;
-	}
-	public void setStartCity3(String startCity3) {
-		this.startCity3 = startCity3;
-	}
-	public String getStartDate3() {
-		return startDate3;
-	}
-	public void setStartDate3(String startDate3) {
-		this.startDate3 = startDate3;
-	}
-	public String getStartTime3() {
-		return startTime3;
-	}
-	public void setStartTime3(String startTime3) {
-		this.startTime3 = startTime3;
-	}
-	public String getEndCity3() {
-		return endCity3;
-	}
-	public void setEndCity3(String endCity3) {
-		this.endCity3 = endCity3;
-	}
-	public String getEndDate3() {
-		return endDate3;
-	}
-	public void setEndDate3(String endDate3) {
-		this.endDate3 = endDate3;
-	}
-	public String getEndTime3() {
-		return endTime3;
-	}
-	public void setEndTime3(String endTime3) {
-		this.endTime3 = endTime3;
-	}
+	
 	public String getComReserveNum() {
 		return comReserveNum;
 	}

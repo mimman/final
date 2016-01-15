@@ -35,7 +35,7 @@ function insertEndCity(city){
    document.getElementById("endCity").value= city;
 }
 function nullCheck(){
-   var reserveLine = document.getElementById("reserveLine");
+  
    var startCity = document.getElementById("startCity");
    var endCity = document.getElementById("endCity");
    var startDate = document.getElementById("startDate");
@@ -43,7 +43,8 @@ function nullCheck(){
    var adult = document.getElementById("adult").value;
    var child = document.getElementById("child").value;
    var toddle = document.getElementById("toddle").value;
-  
+   var reserveLine = $(':radio[name="reserveLine"]:checked');
+
      if(startCity == null ||startCity == undefined || startCity.value ==""){
          alert("출발지를  입력해주세요");
       }
@@ -68,10 +69,9 @@ function nullCheck(){
          startDate.value = "";
          startDate.focus();
       }
-      else if(reserveLine == "왕복"){
-      if(endDate == null ||endDate == undefined || endDate.value ==""){
+      else if(reserveLine.val() == '왕복' && (endDate == null ||endDate == undefined || endDate.value =="")){
+
             alert("도착일을  입력해주세요");
-         }
       }
       else if(endDate.value.length > 15){
             alert("15자 미만으로 입력해주세요");
@@ -178,30 +178,56 @@ $(document).ready(function(){
                </div>
                <!-- //tab_w -->
                <form method="post" action="reserSearch.action" name="domestic" id="domestic">
-                  <input type="hidden" id="sDate" name="sDate">
+                  
                   <div class="con_box">
 
                      <ul class="radio_w clearfix">
-                        <li><input type="radio" name="reserveLine" id="reserveLine"
+                        <li><input type="radio" name="reserveLine" id="oneWay"
                            value="편도" checked="checked" onclick="blockEndDate();"/><label for="oneWay">편도</label></li>
-                        <li><input type="radio" name="reserveLine" id="reserveLine"
+                        <li><input type="radio" name="reserveLine" id="roundTrip"
                            value="왕복" onclick="blockShuttleEndDate();"/><label for="roundTrip">왕복</label></li>
-                        <li><input type="radio" name="reserveLine" id="reserveLine"
+                        <li><input type="radio" name="reserveLine" id="manyWay"
                            value="다구간여정" /><label for="manyWay">다구간여정</label></li>
                      </ul>
                      <!-- //radio_w -->
 
                      <div class="top_con clearfix mt_25">
-                        <div class="fl city_w">
+                        <div class="city_w">
                            <ul>
-                              <li><label for="">출발도시</label><input type="text"
-                                 name="startCity" id="startCity" placeholder="출발지" /><a class="compass">출발도시 선택</a></li>
-                              <li><label for="">도착도시</label><input type="text"
-                                 name="endCity" id="endCity" placeholder="도착지"/><a class="compass">도착도시 선택</a></li>
-                           </ul>
+                        <li>
+                           <label for="startCity">출발도시</label>
+                           <select name="startCity" id="startCity">
+                           <option value="" selected="selected"></option>
+                           <option value="인천">인천</option>
+                           <option value="김포">김포</option>
+                           <option value="부산">부산</option>
+                           <option value="제주">제주</option>
+                           <option value="광주">광주</option>
+                           <option value="대구">대구</option>
+                           <option value="울산">울산</option>
+                           <option value="청주">청주</option>
+                           <option value="포항">포항</option>
+                           </select>
+                        </li>
+                        <li>
+                           <label for="endCity">도착도시</label>
+                           <select name="endCity" id="endCity">
+                           <option value="" selected="selected"></option>
+                           <option value="인천">인천</option>
+                           <option value="김포">김포</option>
+                           <option value="부산">부산</option>
+                           <option value="제주">제주</option>
+                           <option value="광주">광주</option>
+                           <option value="대구">대구</option>
+                           <option value="울산">울산</option>
+                           <option value="청주">청주</option>
+                           <option value="포항">포항</option>
+                           </select>
+                        </li>
+                     </ul>
                         </div>
                         <!-- //city_w -->
-
+						 <!--
                         <div class="fl flight_w">
                            <ul class="flight_list out clearfix">
                               <li><a href="javascript:insertStartCity('인천');">인천</a></li>
@@ -252,51 +278,40 @@ $(document).ready(function(){
                               <li class="end"><a href="">시드니</a></li>
                            </ul>
                         </div>
-                        <!-- //flight_w -->
-
+                         //flight_w 
+                         -->
+                        
+  
                      </div>
 
                      <div class="bot_con clearfix mt_25">
-                        <div class="fl city_w">
+                        <div class="fl">
                         
                         
 <ul>
-                           <li><label for="" >출발일</label><input type="text" name="startDate" id="startDate" size="10"
+                           <li><label for="startDate" >출발일</label><input type="text" name="startDate" id="startDate" size="10"
                               maxlength="10" placeholder="yyyy-mm-dd" /></li>
                            <li></li>
                         </ul>
                         <ul>
-                           <li id="bl" style="display:none"><label id="endDatoLabel"  for="">귀국일</label><input type="text" name="endDate" id="endDate" size="10"
+                           <li id="bl" style="display:none"><label for="endDate">귀국일</label><input type="text" name="endDate" id="endDate" size="10"
                               maxlength="10" placeholder="yyyy-mm-dd" /></li>
                            <li></li>
                         </ul>
-                        
-                           
-                              
-                           <!-- <div id="datepicker" class="ll-skin-santiago mt_10"
-                              name="startDate"></div> -->
+        
                         </div>
 
-                        <!-- <div class="fl">
-                           <h4>귀국일</h4>
-                           
-
-                           <div id="datepicker2" class="ll-skin-santiago mt_10"
-                              name="endDate"></div> 
-                        </div>
-                         -->
-
-
+          
                         <div class="fl clearfix">
 
                            <div class="fl ml_75">
                               <h4>좌석선택</h4>
                               <ul class="radio_w2 mt_10">
-                                 <li><input type="radio" name="seat" id="seat"
+                                 <li><input type="radio" name="seat" id="general"
                                     checked="checked" value="일반석" /><label for="general">일반석</label></li>
-                                 <li><input type="radio" name="seat" id="seat"
+                                 <li><input type="radio" name="seat" id="business"
                                     value="비즈니스석" /><label for="business">비즈니스석</label></li>
-                                 <li><input type="radio" name="seat" id="seat"
+                                 <li><input type="radio" name="seat" id="firstclass"
                                     value="일등석" /><label for="firstclass">일등석</label></li>
                               </ul>
                            </div>
@@ -325,16 +340,16 @@ $(document).ready(function(){
                         </div>
                         <!-- //clearfix -->
 
-                        <div class="fl ta_c mt_20">
-                           <input type="button" class="btn_sch clearfix" value="항공편 조회"
-                              onclick="nullCheck()" />
-                        </div>
-
                      </div>
                      <!-- //clearfix -->
 
+                     <div class="fl ta_c mt_20">
+                        <input type="button" class="btn_sch clearfix" value="항공편 조회"
+                           onclick="nullCheck()" />
+                     </div>
+
                   </div>
-                  <form>
+                  </form>
                      <!-- //con_box -->
 
 
@@ -348,7 +363,9 @@ $(document).ready(function(){
                               <col width="13%">
                               <col width="*">
                               <col width="15%">
+                              <c:if test="${userReserDto.getReserveLine() eq '왕복' }">
                               <col width="15%">
+                              </c:if>
                               <col width="13%">
                               <col width="13%">
                            </colgroup>
@@ -362,7 +379,7 @@ $(document).ready(function(){
                                  </c:if>
                                  <th scope="col">총요금</th>
                                  <th scope="col">유효기간</th>
-                                 <th scope="col">예상TAX</th>
+                                 
                                  <th scope="col" class="end">예약하기</th>
                               </tr>
                            </thead>
@@ -381,7 +398,6 @@ $(document).ready(function(){
                                     </c:if>
                                     <td>${adult+child+toddle}</td>
                                     <td>${dto.getExDate() }</td>
-                                    <td class="pd_10"><a href="" class="btn_tax">TAX</a></td>
                                     <td class="pd_10 end"><a href="reservePop.action?adult=${userReserDto.getAdult()}&child=${userReserDto.getChild()}&toddle=${userReserDto.getToddle()}&airLine=${dto.getAirLine()}"
                                     " class="btn_reser">예약</a></td>
                                  </tr>

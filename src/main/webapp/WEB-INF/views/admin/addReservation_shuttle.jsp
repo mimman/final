@@ -34,6 +34,7 @@ $(document).ready(function () {
 	$.datepicker.setDefaults($.datepicker.regional['ko']);
 	
 	$('#exDate').datepicker();
+	$('#exDate2').datepicker();
 	
 	$('#startDate').datepicker();
 	$('#startDate').datepicker("option", "maxDate", $("#endDate").val());
@@ -46,6 +47,18 @@ $(document).ready(function () {
 	$('#endDate').datepicker("option", "onClose", function ( selectedDate ) {
 		$("#startDate").datepicker( "option", "maxDate", selectedDate );
 	});
+	
+	  $('#startDate2').datepicker();
+	   $('#startDate2').datepicker("option", "maxDate", $("#endDate2").val());
+	   $('#startDate2').datepicker("option", "onClose", function ( selectedDate ) {
+	      $("#endDate2").datepicker( "option", "minDate", selectedDate );
+	   });
+
+	   $('#endDate2').datepicker();
+	   $('#endDate2').datepicker("option", "minDate", $("#startDate2").val());
+	   $('#endDate2').datepicker("option", "onClose", function ( selectedDate ) {
+	      $("#startDate2").datepicker( "option", "maxDate", selectedDate );
+	   });
 });
 </script>
 </head>
@@ -64,8 +77,8 @@ $(document).ready(function () {
 
       <div class="tab_w clearfix v2">
          <ul>
-            <li class="current"><a href="addReser.action">편도</a></li>
-            <li class=""><a href="addReserShuttle.action">왕복</a></li>
+            <li class=""><a href="addReser.action">편도</a></li>
+            <li class="current"><a href="addReserShuttle.action">왕복</a></li>
             <li class=""><a href="addReserMulti.action">다구간</a></li>
          </ul>
       </div>
@@ -79,8 +92,8 @@ $(document).ready(function () {
             
             <h3>항공예매 추가</h3>
             
-            <ul class="mt_50">
-            
+            <div class="clear mt_50">
+            <ul class="fl">
              <li>
                   <label for="aircraftCode">항공기 코드</label>
                   <input  type="text"  id="aircraftCode" name="aircraftCode" placeholder="항공기 코드" />
@@ -182,8 +195,103 @@ $(document).ready(function () {
               
             </ul>
             
+            <ul class="fr">
+             <li>
+                  <label for="aircraftCode2">항공기 코드</label>
+                  <input  type="text"  id="aircraftCode2" name="aircraftCode2" placeholder="항공기 코드" />
+               </li>
+               <li>
+                  <label for="reserveCode2">국내/국제선</label>
+                  <select id="reserveCode2" name="reserveCode2">
+                  	<option value="국내">국내</option>
+                  	<option value="국제">국제</option>
+                  </select>
+               </li>
+               <li>                 
+                  <label for="startCity2">출발도시</label>
+                  <select id="startCity2" name="startCity2" placeholder="출발도시">
+                  	<option value="서울/김포">서울/김포</option>
+                  	<option value="부산/김해">부산/김해</option>
+                  	<option value="제주">제주</option>
+                  	<option value="광주">광주</option>
+                  	<option value="군산">군산</option>
+                  	<option value="대구">대구</option>
+                  	<option value="서울/인천">서울/인천</option>
+                  	<option value="여수/순천">여수/순천</option>
+                  	<option value="울산">울산</option>
+                  	<option value="원주">원주</option>
+                  	<option value="진주/사천">진주/사천</option>
+                  	<option value="청주">청주</option>
+                  </select>               
+               </li>
+              <li>
+                  <label for="endCity2">도착도시</label>
+                  <select id="endCity2" name="endCity2" placeholder="도착국가">
+                  	<option value="서울/김포">서울/김포</option>
+                  	<option value="부산/김해">부산/김해</option>
+                  	<option value="제주">제주</option>
+                  	<option value="광주">광주</option>
+                  	<option value="군산">군산</option>
+                  	<option value="대구">대구</option>
+                  	<option value="서울/인천">서울/인천</option>
+                  	<option value="여수/순천">여수/순천</option>
+                  	<option value="울산">울산</option>
+                  	<option value="원주">원주</option>
+                  	<option value="진주/사천">진주/사천</option>
+                  	<option value="청주">청주</option>
+                  </select>
+               </li>
+               <li>
+                  <label for="startDate2">출발일</label>
+                  <input  type="text"  id="startDate2" name="startDate2" placeholder="출발일" />
+               </li>
+                <li>
+                  <label for="endDate2">도착일</label>
+                  <input  type="text"  id="endDate2" name="endDate2" placeholder="도착일" />
+               </li>
+                <li>
+                  <label for="startTime2">출발시각</label>
+                  <input  type="text"  id="startTime2" name="startTime2" placeholder="출발시각" />
+               </li>
+               <li>
+                  <label for="endTime2">도착시각</label>
+                  <input  type="text"  id="endTime2" name="endTime2" placeholder="도착시각" />
+               </li>
+               
+               <li>
+                  <label for="exDate2">유효기간</label>
+                  <input  type="text" id="exDate2" name="exDate2" placeholder="유효기간" />
+               </li>
+               <li>
+                  <label for="seat2">좌석</label>
+                  <input type="text" id="seat2" name="seat2" placeholder="좌석" />
+               </li>
+               <li>
+                  <label for="num2">총 인원</label>
+                  <input type="text" id="num2" name="num2" placeholder="인원" />
+               </li>
+               <li>
+                  <label for="airLine2">항공사</label>
+                  <input type="text" id="airLine2" name="airLine2" placeholder="항공사" />
+               </li>
+               <li>
+                  <label for="adultTax2">성인요금</label>
+                  <input type="text" id="adultTax2" name="adultTax2" placeholder="성인요금" />
+               </li>
+               <li>
+                  <label for="childTax2">소아요금</label>
+                  <input type="text" id="childTax2" name="childTax2" placeholder="소아요금" />
+               </li>
+               <li>
+                  <label for="toddleTax2">유아요금</label>
+                  <input type="text" id="toddleTax2" name="toddleTax2" placeholder="유아요금" />
+               </li>
+              
+            </ul>
+            </div>
+            
             <div class="ta_c">
-            	<input type="submit" value="확인"  class="btn_m mt_20" />
+            	<input type="submit" value="확인"  class="btn_m mt_50" />
       		</div>
       
          </div>
