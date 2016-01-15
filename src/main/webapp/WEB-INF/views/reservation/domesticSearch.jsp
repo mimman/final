@@ -20,7 +20,7 @@ function blockEndDate(){
 }
 
 function blockShuttleEndDate(){
-
+  
    var bl = document.getElementById("bl")
    if(bl.style.display=="none"){bl.style.display="block"}
 }
@@ -40,7 +40,10 @@ function nullCheck(){
    var endCity = document.getElementById("endCity");
    var startDate = document.getElementById("startDate");
    var endDate = document.getElementById("endDate");
-   
+   var adult = document.getElementById("adult").value;
+   var child = document.getElementById("child").value;
+   var toddle = document.getElementById("toddle").value;
+  
      if(startCity == null ||startCity == undefined || startCity.value ==""){
          alert("출발지를  입력해주세요");
       }
@@ -75,7 +78,9 @@ function nullCheck(){
             endDate.value = "";
             endDate.focus();
          }
-      
+      else if(adult == 0 && child == 0 && toddle == 0 ){
+    	  alert("예약 인원이 없습니다");
+      }
       else{
          document.domestic.submit();
       }
@@ -262,7 +267,7 @@ $(document).ready(function(){
                         </ul>
                         <ul>
                            <li id="bl" style="display:none"><label id="endDatoLabel"  for="">귀국일</label><input type="text" name="endDate" id="endDate" size="10"
-                              maxlength="10" /></li>
+                              maxlength="10" placeholder="yyyy-mm-dd" /></li>
                            <li></li>
                         </ul>
                         
@@ -301,17 +306,17 @@ $(document).ready(function(){
                               <ul class="radio_w2 mt_10">
                                  <li class="count_range">
                                     <p>성인</p> <input value="-" type="button" count_range="m">
-                                    <input class="count" value="1" readonly="" name="adult">
+                                    <input class="count" value="1" readonly="" id="adult" name="adult">
                                     <input value="+" type="button" count_range="p">
                                  </li>
                                  <li class="count_range">
                                     <p>소아</p> <input value="-" type="button" count_range="m">
-                                    <input class="count" value="0" readonly="" name="child">
+                                    <input class="count" value="0" readonly="" id="child" name="child">
                                     <input value="+" type="button" count_range="p">
                                  </li>
                                  <li class="count_range">
                                     <p>유아</p> <input value="-" type="button" count_range="m">
-                                    <input class="count" value="0" readonly="" name="toddle">
+                                    <input class="count" value="0" readonly="" id="toddle" name="toddle">
                                     <input value="+" type="button" count_range="p">
                                  </li>
                               </ul>
@@ -351,7 +356,10 @@ $(document).ready(function(){
                               <tr>
                                  <th scope="col" class="first">도시</th>
                                  <th scope="col">항공사</th>
-                                 <th scope="col">출발기간</th>
+                                 <th scope="col">출발일</th>
+                                 <c:if test="${userReserDto.getReserveLine() eq '왕복' }">
+                                 	<th scope="col">귀국일</th>
+                                 </c:if>
                                  <th scope="col">총요금</th>
                                  <th scope="col">유효기간</th>
                                  <th scope="col">예상TAX</th>
@@ -367,7 +375,10 @@ $(document).ready(function(){
                                  <tr>
                                     <td class="first">${dto.getEndCity()}</td>
                                     <td>${dto.getAirLine() }</td>
-                                    <td>${dto.getStartDate()}~${dto.getEndDate() }</td>
+                                    <td>${dto.getStartDate()}</td>
+                                    <c:if test="${dto.getReserveLine() eq '왕복' }">
+                                    <td>${dto.getEndDate()} </td>
+                                    </c:if>
                                     <td>${adult+child+toddle}</td>
                                     <td>${dto.getExDate() }</td>
                                     <td class="pd_10"><a href="" class="btn_tax">TAX</a></td>

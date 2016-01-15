@@ -28,7 +28,6 @@ div.top_con div.city_w ul li input{width:140px;border:1px solid #ececec;height:3
 div.top_con div.flight_w{width:736px;}
 div.top_con div.flight_w ul.flight_list li{float:left;margin:10px 30px 10px 10px;color:#5b5b5b;}
 
-/*div.top_con div.flight_w ul.flight_list.in{border-bottom:1px solid #d1d1d1;}*/
 div.top_con div.flight_w ul.flight_list.out li{padding-right:15px;margin:13px 0 13px 15px;border-right:1px solid #d1d1d1;}
 div.top_con div.flight_w ul.flight_list.out li.end{border-right:0;}
 div.bot_con h4{font-size:18px;color:#2c2c2c;font-weight:500;}
@@ -48,6 +47,7 @@ div.bot_con div.city_w{width:300px;}
 div.bot_con div.city_w ul li input{width:140px;border:1px solid #ececec;height:30px;padding:0 28px 0 5px;margin-left: 14px;}
 div.bot_con div.flight_w{width:736px;}
 div.bot_con div.flight_w ul.flight_list li{float:left;margin:10px 30px 10px 10px;color:#5b5b5b;}
+
 /* datepicker */
 .ll-skin-santiago { font-size: 90%; }
 .ll-skin-santiago .ui-widget { font-family: Helvetica Trebuchet MS,Tahoma,Verdana,Arial,sans-serif; }
@@ -72,6 +72,14 @@ div.bot_con div.flight_w ul.flight_list li{float:left;margin:10px 30px 10px 10px
 .ll-skin-santiago .ui-datepicker .ui-datepicker-next span { background-image: url(../img/common/ui-icons_ffffff_256x240.png); background-position: -32px -16px; }
 .ll-skin-santiago .ui-datepicker .ui-datepicker-prev span { background-image: url(../img/common/ui-icons_ffffff_256x240.png); background-position: -96px -16px; }
 
+/* 예약 확인 */
+div.reser_ok{width:750px;margin:0 auto;border:4px solid #eee;padding:50px;font-size:15px;}
+div.reser_ok h3{font-size:18px;}
+div.reser_ok strong{font-weight:600;}
+div.reser_ok p.tit{font-size:25px;}
+div.reser_ok ul.list_v1{border-bottom:2px solid #BFBFBF;border-top:2px solid #BFBFBF;padding:10px;font-size:14px;}
+div.reser_ok ul.list_v1 li span{display:inline-block;width:120px;}
+div.reser_ok p.lh{line-height:22px;color:#464646;}
 
 /* membership */
 div.login_box_w{width:auto;height:auto;background:#fff;position:relative;margin:0 auto;padding:0 56px;}
@@ -152,7 +160,6 @@ h3{font-size:50px;font-weight:600;}
 ul.list_v1{color:#222;font-size:13px;}
 ul.list_v1:after{display:block;clear:both;content:''}
 ul.list_v1 li{display:block;clear:both;width:auto;padding-left:10px;line-height:1.8;background:url(../img/common/bu_dot01.gif) no-repeat 0 12px;text-align:left;}
-
 ul.list_v1.mg{color:#222;font-size:13px;margin:25px 80px;}
 
 div.comment{display:none;position:relative;width:724px;height:auto;overflow:hidden;padding:10px 0 10px 50px;}
@@ -182,5 +189,4 @@ div.pop_wrap_b div.taxbox_w p:nth-child(3){line-height:47px;color:#f83030;}
 div.pop_wrap_b div.taxbox_w p:nth-child(3) em{font-size:20px;font-weight:600;}
 
 div.pop_wrap_b div.taxbox_w.v2 p:nth-child(1){border:1px solid #1a4a78;display:inline-block;background:#fff;padding:5px;margin-right:10px;color:#1a4a78;font-weight:600;}
-
 

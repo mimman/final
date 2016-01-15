@@ -20,6 +20,8 @@
 		<typeAlias type="com.mimman.comment.repository.commentDto" alias="commentDto"/>
 		<typeAlias type="com.mimman.reservation.repository.ReserveDto" alias="reserDto"/>
 		<typeAlias type="com.mimman.reservation.repository.userReservationDto" alias="userReserDto" />
+		<typeAlias type="com.mimman.reservation.repository.HumanNumDto" alias="hdto" />
+		<typeAlias type="com.mimman.reservation.repository.ReserveCompleteDto" alias="comDto" />
 	</typeAliases>
 	
 	<environments default="development">

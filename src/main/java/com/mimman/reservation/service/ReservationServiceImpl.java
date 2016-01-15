@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.mimman.exception.IdPasswordNotMachingException;
 import com.mimman.mybatis.reserveManager;
+import com.mimman.reservation.repository.HumanNumDto;
+import com.mimman.reservation.repository.ReserveCompleteDto;
 import com.mimman.reservation.repository.ReserveDto;
 import com.mimman.reservation.repository.userReservationDto;
 
@@ -27,6 +29,16 @@ public class ReservationServiceImpl implements ReservationService {
 	public List reservePop(int reserNum) {
 		
 		return reserveManager.reservePop(reserNum);
+	}
+
+	public List searchReserveList(HumanNumDto hdto) {
+		
+		return reserveManager.searchReserveList(hdto);
+	}
+
+	public ReserveCompleteDto completReserve(ReserveCompleteDto reserComDto) {
+		
+		return reserveManager.completeReserve(reserComDto);
 	}
 
 }

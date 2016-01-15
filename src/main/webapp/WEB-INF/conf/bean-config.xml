@@ -103,12 +103,17 @@
 	</bean>
 	
 	<bean class="com.mimman.reservation.controller.reservePopController">
-		
+		<property name="reservationService" ref="reservationService"></property>
+	</bean>
+	<bean class="com.mimman.reservation.controller.reserveOkController">
+		<property name="reservationService" ref="reservationService"></property>
 	</bean>
 	
     <bean class="com.mimman.membership.controller.MemberDetailController">
       <property name="memberService" ref="memberService"></property>
    </bean>
+   
+   
   	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
   	
 </beans>

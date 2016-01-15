@@ -13,6 +13,8 @@ import com.mimman.membership.repository.Login;
 import com.mimman.membership.repository.Member;
 import com.mimman.membership.repository.Search;
 import com.mimman.membership.repository.pwSearch;
+import com.mimman.reservation.repository.HumanNumDto;
+import com.mimman.reservation.repository.ReserveCompleteDto;
 import com.mimman.reservation.repository.ReserveDto;
 import com.mimman.reservation.repository.userReservationDto;
 import com.mimman.membership.repository.Update;
@@ -50,8 +52,15 @@ public class reserveManager {
 		List list = null;
 		SqlSession session = sqlFactory.openSession();
 		if("Æíµµ".equals(userReserDto.getReserveLine())){
+			System.out.println("Æíµµ");
 			list = session.selectList("searchReser", userReserDto);
 		}
+		if("¿Õº¹".equals(userReserDto.getReserveLine())){
+			System.out.println("¿Õº¹");
+			list = session.selectList("searchReserShuttle", userReserDto);
+			System.out.println(list.size());
+		}
+		
 
 		return list;
 		
@@ -62,6 +71,35 @@ public class reserveManager {
 		SqlSession session = sqlFactory.openSession();
 		list = session.selectList("searchReser", reserNum);
 		return list;
+	}
+
+	public static List searchReserveList(HumanNumDto hdto) {
+		
+		
+		List list = null;
+		SqlSession session = sqlFactory.openSession();
+		if(hdto.getReserveLine().equals("Æíµµ")){
+			list = session.selectList("searchReserveList",hdto);
+		}
+		else if(hdto.getReserveLine().equals("¿Õº¹")){
+			list = session.selectList("searchShttleList",hdto);
+		}
+		
+		
+		return list;
+	}
+
+	public static ReserveCompleteDto completeReserve(ReserveCompleteDto reserComDto) {
+		SqlSession session = sqlFactory.openSession();
+		
+		session.insert("reserveComplete",reserComDto);
+		session.update("updateSeat",reserComDto);
+		session.update("updateNum",reserComDto);
+		session.update("updateMileage",reserComDto);
+		System.out.println(reserComDto.getReserveNum());
+		ReserveCompleteDto comDto = session.selectOne("selectNum", reserComDto);
+		session.commit();
+		return comDto;
 	}
 
 		   

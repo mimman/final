@@ -40,7 +40,7 @@ private List domesitList;
    }
    @RequestMapping("reserSearch.action")
    public String Search(userReservationDto userReserDto,HttpSession session){//
-		  
+		
       /*
       System.out.println(userReserDto.getReserveLine());
       System.out.println(userReserDto.getStartCity());

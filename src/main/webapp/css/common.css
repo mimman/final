@@ -1,23 +1,7 @@
 @charset "utf-8";
 
-@font-face {
-   font-family: 'Nanum Gothic';
-   font-style: normal;
-   font-weight: 400;
-   src: url('webfont/NanumGothic-Regular.eot');
-   src: url('webfont/NanumGothic-Regular.eot?#iefix') format('embedded-opentype'),
-   url('webfont/NanumGothic-Regular.woff') format('woff'),
-   url('webfont/NanumGothic-Regular.ttf') format('truetype');
-}
-@font-face {
-   font-family: 'Nanum Gothic';
-   font-style: normal;
-   font-weight: 700;
-   src: url('webfont/NanumGothic-Bold.eot');
-   src: url('webfont/NanumGothic-Bold.eot?#iefix') format('embedded-opentype'),
-   url('webfont/NanumGothic-Bold.woff') format('woff'),
-   url('webfont/NanumGothic-Bold.ttf') format('truetype');
-}
+@font-face {font-family:'Nanum Gothic';src:url('css/NanumGothic.eot');}
+@font-face {font-family:'Nanum Gothic';src:url('css/NanumGothic.woff');}
 
 /* Common */
 html{overflow-y:scroll}
@@ -88,6 +72,7 @@ input{background:#fff !important}
 
 /* font */
 .f_bold{font-weight:600;}
+.fz_13{font-size:13px;}
 .fz_20{font-size:20px;}
 
 /* dvice show/hide */
@@ -163,7 +148,6 @@ ul.pagination li{display:inline-block;float:left;}
 
 ul.ib{display:inline-block;}
 ul.ib li:last-child{margin-left:5px;}
-
 
 
 

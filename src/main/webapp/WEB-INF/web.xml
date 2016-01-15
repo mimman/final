@@ -63,6 +63,10 @@
    		<exception-type>com.mimman.exception.NullListException</exception-type>
    		<location>/WEB-INF/views/err/nullList.jsp</location>
    </error-page>
+    <error-page>
+   		<exception-type>org.apache.ibatis.exceptions.TooManyResultsException</exception-type>
+   		<location>/WEB-INF/views/err/reserveRepetitionErr.jsp</location>
+   </error-page>
    
    <!--  
     <error-page>

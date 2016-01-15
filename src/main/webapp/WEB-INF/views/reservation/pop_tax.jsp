@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,103 @@ html{overflow-y:auto !important;margin:0;padding:0;}
 body#pop{margin:0;padding:20px;}
 </style>
 <script src="/Air/js/jquery-1.11.2.min.js"></script>
+<Script>
+function post_to_url(path,startTime,endTime,airLine,adultTax,childTax,toddleTax,reserNum,method){
+	if(confirm("예약을 하시겠습니까?")){
+		method = method || "post";
+		
+		var form = document.createElement("form");
+		form.setAttribute("method", method);
+		form.setAttribute("action", path);
+		
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", "startTime");
+		hiddenField.setAttribute("id", "startTime");
+		hiddenField.setAttribute("value", startTime);
+		
+		var hiddenField2 = document.createElement("input");
+		hiddenField2.setAttribute("type", "hidden");
+		hiddenField2.setAttribute("name", "endTime");
+		hiddenField2.setAttribute("id", "endTime");
+		hiddenField2.setAttribute("value", endTime);
+		
+		var hiddenField3 = document.createElement("input");
+		hiddenField3.setAttribute("type", "hidden");
+		hiddenField3.setAttribute("name", "airLine");
+		hiddenField3.setAttribute("id", "airLine");
+		hiddenField3.setAttribute("value", airLine);
+		
+		var hiddenField4 = document.createElement("input");
+		hiddenField4.setAttribute("type", "hidden");
+		hiddenField4.setAttribute("name", "adultTax");
+		hiddenField4.setAttribute("id", "adultTax");
+		hiddenField4.setAttribute("value", adultTax);
+		
+		var hiddenField5 = document.createElement("input");
+		hiddenField5.setAttribute("type", "hidden");
+		hiddenField5.setAttribute("name", "childTax");
+		hiddenField5.setAttribute("id", "childTax");
+		hiddenField5.setAttribute("value", childTax);
+		
+		var hiddenField6 = document.createElement("input");
+		hiddenField6.setAttribute("type", "hidden");
+		hiddenField6.setAttribute("name", "toddleTax");
+		hiddenField6.setAttribute("id", "toddleTax");
+		hiddenField6.setAttribute("value", toddleTax);
+		
+		var hiddenField7 = document.createElement("input");
+		hiddenField7.setAttribute("type", "hidden");
+		hiddenField7.setAttribute("name", "reserveNum");
+		hiddenField7.setAttribute("id", "reserveNum");
+		hiddenField7.setAttribute("value", reserNum);
+		
+		form.appendChild(hiddenField);
+		form.appendChild(hiddenField2);
+		form.appendChild(hiddenField3);
+		form.appendChild(hiddenField4);
+		form.appendChild(hiddenField5);
+		form.appendChild(hiddenField6);
+		form.appendChild(hiddenField7);
+		
+		document.body.appendChild(form);
+		form.submit();
+	}
+	
+}
+
+
+function tax(adultTax,adult,childTax,child,toddleTax,toddle){
+	//document.getElementById("tax").html(tax);
+	//$('#tax').html(Tax);
+	
+	if(child == 0 && toddle == 0){
+		$('#tax').html('('+adultTax + '*'+ adult+')'+ '=' + adultTax*adult);
+	}
+	else if(adult == 0 && toddle == 0){
+		$('#tax').html('('+childTax + '*'+ child+')'+ '=' + childTax*child);
+	}
+	else if(adult == 0 && child == 0){
+		$('#tax').html('('+toddleTax + '*'+ toddle+')'+ '=' + toddleTax*toddle);
+	}
+	else if(toddle == 0){
+		$('#tax').html('('+adultTax + '*'+ adult+')'+'+'+'('+childTax + '*'+ child+')'+ '=' + adultTax*adult+childTax*child);
+	}
+	else if(child == 0){
+		$('#tax').html('('+adultTax + '*'+ adult+')'+'+'+'('+toddleTax + '*'+ toddle+')'+ '=' + adultTax*adult+toddleTax*toddle);
+	}
+	else if(adult == 0){
+		$('#tax').html('('+childTax + '*'+ child+')'+'+'+'('+toddleTax + '*'+ toddle+')'+ '=' + childTax*child+toddleTax*toddle);
+	}
+	else{
+		$('#tax').html('('+adultTax + '*'+ adult+')'+'+'+'('+childTax + '*'+ child+')'+'+'+'('+toddleTax + '*'+ toddle+')'+ '=' + ((adultTax*adult)+(childTax*child)+(toddleTax*toddle)));
+	}
+	
+	
+	
+	
+}
+</Script>
 </head>
 <body id="pop">
 <div class="pop_s">
@@ -29,11 +127,11 @@ body#pop{margin:0;padding:20px;}
       <div class="taxbox_w clear">
          <p class="fl">가는항공 </p>
          <p class="fl">
-            <em> ${hdto.getStartCity()} → ${hdto.getEndCity()} </em>
-            (2016년 1월 20일)<br />
-            <span>성인 <strong>1</strong>명, 소아 <strong>0</strong>명, 유아 <strong>0</strong>명</span>
+            <em> ${userReserDto.getStartCity()} → ${userReserDto.getEndCity()} </em>
+            (${userReserDto.getStartDate() })<br />
+            <span>성인 <strong>${userReserDto.getAdult()}</strong>명, 소아 <strong>${userReserDto.getChild()}</strong>명, 유아 <strong>${userReserDto.getToddle() }</strong>명</span>
          </p>
-         <p class="fr"><em>0</em> 원</p>
+         <p class="fr"><em id="tax" name="tax">0</em> 원</p>
       </div>
 
       <div class="tbl_sch_box">
@@ -59,51 +157,17 @@ body#pop{margin:0;padding:20px;}
          </thead>
          <tbody>
          
+         <c:forEach var="dto" items="${reserveDto}">
          <tr>
-         <td class="first">KE1001</td>
-         <td>07:30</td>
-         <td>08:25</td>
-         <td>141,000 원</td>
-         <td>9 석</td>
-         <td class="pd_10 end"><label for="sel1_1" class="blind">항공편 선택</label><input type="radio" id="sel1_1" name="sel_air" /></td>
+         <td class="first">${dto.getAircraftCode() }</td>
+         <td>${dto.getStartTime() }</td>
+         <td>${dto.getEndTime() }</td>
+         <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}원</td>
+         <td>${dto.getSeat() } 석</td>
+         <!--  <td class="pd_10 end"><label for="sel1_1" class="blind">항공편 선택</label><input type="radio" id="sel1_1" name="sel_air" onclick="tax(${dto.getAdultTax()}, ${hdto.getAdult() }, ${dto.getChildTax() },${hdto.getChild() },${dto.getToddleTax() },${hdto.getToddle() });post_to_url('reserveOk.action','${dto.getStartTime() }','${dto.getEndTime()}','${dto.getAircraftCode()}',${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()})" /></td> -->
+         <td class="pd_10 end"><label for="sel1_1" class="blind">항공편 선택</label><input type="radio" id="sel1_1" name="sel_air" onclick="tax(${dto.getAdultTax()}, ${hdto.getAdult() }, ${dto.getChildTax() },${hdto.getChild() },${dto.getToddleTax() },${hdto.getToddle() });post_to_url('reserveOk.action','${dto.getStartTime() }','${dto.getEndTime()}','${dto.getAirLine()}',${dto.getAdultTax()}, ${dto.getChildTax()},${dto.getToddleTax()},${dto.getReserNum() })" /></td>
          </tr>
-         
-         <tr>
-         <td class="first">KE1001</td>
-         <td>08:05</td>
-         <td>09:00</td>
-         <td>141,000 원</td>
-         <td>9 석</td>
-         <td class="pd_10 end"><label for="sel1_2" class="blind">항공편 선택</label><input type="radio" id="sel1_2" name="sel_air" /></td>
-         </tr>
-         
-         <tr>
-         <td class="first">KE1001</td>
-         <td>10:40</td>
-         <td>11:35</td>
-         <td>141,000 원</td>
-         <td>9 석</td>
-         <td class="pd_10 end"><label for="sel1_3" class="blind">항공편 선택</label><input type="radio" id="sel1_3" name="sel_air" /></td>
-         </tr>
-         
-         <tr>
-         <td class="first">KE1001</td>
-         <td>15:00</td>
-         <td>15:55</td>
-         <td>141,000 원</td>
-         <td>9 석</td>
-         <td class="pd_10 end"><label for="sel1_4" class="blind">항공편 선택</label><input type="radio" id="sel1_4" name="sel_air" /></td>
-         </tr>
-         
-         <tr>
-         <td class="first">KE1001</td>
-         <td>19:05</td>
-         <td>20:00</td>
-         <td>141,000 원</td>
-         <td>9 석</td>
-         <td class="pd_10 end"><label for="sel1_5" class="blind">항공편 선택</label><input type="radio" id="sel1_5" name="sel_air" /></td>
-         </tr>
-         
+     	</c:forEach>
          </tbody>
          </table>
       </div>
@@ -193,7 +257,9 @@ body#pop{margin:0;padding:20px;}
       </div>
       </c:if>
       <!-- //tbl_sch -->
-
+      
+      
+		
    </div>
    <!-- //pop_wrap_b -->
 

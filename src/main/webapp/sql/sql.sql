@@ -92,7 +92,7 @@ CREATE TABLE reserve
    reserveCode          VARCHAR2(20) NULL,
    reserveLine          VARCHAR2(20) NULL,
    startCity            VARCHAR2(30) NULL,
-   endCity              VARCHAR(30) NULL,
+   endCity              VARCHAR2(30) NULL,
    startDate            DATE NULL,
    endDate              DATE NULL,
    exDate               DATE NULL,
@@ -104,13 +104,84 @@ CREATE TABLE reserve
    toddleTax            NUMBER NULL
 );
 
+select * from reserve
 CREATE SEQUENCE SEQ_RESERNUM;
 alter table reserve add(startTime varchar2(15));
 alter table reserve add(endTime varchar2(15));
 alter table reserve add(aircraftCode varchar2(30));
+alter table reserve rename column reserveNum to reserNum
 alter table reserve drop(comebackDate);
 select distinct airline from reserve
 
 select DISTINCT airline,resernum,reservecode,reserveline,startcity,endcity,startdate,enddate,exdate,seat,num,adulttax,childtax,toddletax,starttime,endtime,aircraftcode from reserve where reserveLine='편도' and startCity='제주' and endCity='대구'
 select DISTINCT airline,resernum from reserve where reserveLine='편도' and startCity='제주' and endCity='대구'
 SELECT * from reserve where rowid in (select max(rowid) from reserve group by airline) and reserveLine='편도' and startCity='제주' and endCity='대구'
+
+select * from reserve where airLine='대한항공' and startCity='제주'
+		and endCity='대구' and startdate='2016-1-1' and seat >= 6
+		
+drop table userReservation
+create table userReservation(
+	comReserveNum number not null primary key, 
+	reserveNum Number NOT NULL,
+	reserveLine varchar2(50) not null,
+	airLine varchar2(50) not null,
+	startCity varchar2(30) not null,
+	startDate varchar2(30) not null,
+	startTime varchar2(30) not null,
+	endTime varchar2(30) not null,
+	adult number not null,
+	child number not null,
+	toddle number not null,
+	adultTax number not null,
+	childTax number not null,
+	toddleTax number not null,
+	id varchar2(50) not null,
+	tax number not null,
+	mileage number not null,
+	startCity2 varchar2(30) default null,
+	startDate2 varchar2(30) default null,
+	startTime2 varchar2(30) default null,
+	endCity2 varchar2(30) default null,
+	endDate2 varchar2(30) default null,
+	endTime2 varchar2(30) default null
+);
+create sequence seq_userReserve;
+select * from userReservation
+delete from userReservation
+alter table userReservation add(comReserveNum number);
+alter table userReservation add(startCity varchar2(30));
+alter table userReservation add(endCity varchar2(30));
+alter table userReservation modify (endCity default null)
+alter table userReservation modify(startTime varchar(30))
+alter table userReservation modify(endTime varchar(30))
+
+select comReserveNum from userReservation where id='1' and startDate='2016-01-01' and startTime='8:10'
+and reserveNum='44'
+
+SELECT * from reserve where rowid in (select max(rowid) from reserve where reserveLine='왕복' group by airline) and reserveLine='왕복'
+SELECT * from reserve where reserveLine='왕복'
+
+select distinct airline from reserve where reserveLine='왕복'
+
+select distinct airline,resernum,reservecode,reserveline,startcity,endcity,startdate,enddate,exdate,seat,num,adulttax,childtax,toddletax,starttime,endtime,aircraftcode from reserve where reserveLine='왕복'
+SELECT * from reserve where rowid in (select max(rowid) from reserve where reserveLine='편도' group by airline) and reserveLine='편도' and startCity='제주' and endCity='청주' and startDate ='2016-01-01'
+SELECT * from reserve where reserveLine='편도'
+
+select * from (select ROW_NUMBER() OVER (PARTITION BY airLine ORDER BY airLine)
+as num from reserve) where num>2
+select * from reserve where reserveLine='왕복' group by airLine having count(*) > 0
+
+select distinct airline,resernum,reservecode,reserveline,startcity,endcity,startdate,enddate,exdate,seat,num,adulttax,childtax,toddletax,starttime,endtime,aircraftcode from reserve where rownum =1 and reserveLine='왕복';
+
+select distinct airline,resernum from reserve where reserveLine='왕복'
+
+SELECT * from reserve where rowid in (select max(rowid) from reserve  where reserveLine='왕복' group by airline) and reserveLine='왕복' and startCity='제주' and endCity='청주'
+and startDate = '2016-01-01' and endDate = '2016-01-01'
+	
+		
+select * from reserve where rowid in (select max(rowid) from reserve  where reserveLine='왕복' group by airline) and reserveLine='왕복' and startCity='제주' and endCity='청주' and startDate ='2016-01-01' and endDate='2016-01-01'
+select * from reserve where endDate = '2016-01-01'
+select * from reserve where reserveLine ='왕복' and startCity='제주'
+select comReserveNum from userReservation where reserveNum='44'
+alter table userReservation add(reserveLine varchar2(20));
