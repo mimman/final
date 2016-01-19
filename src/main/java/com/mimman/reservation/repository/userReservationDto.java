@@ -6,6 +6,58 @@ public class userReservationDto {
 	private String endCity;
 	private String startDate;
 	private String endDate;
+	private String startCity1;
+	private String endCity1;
+	private String startDate1;
+	public String getStartCity1() {
+		return startCity1;
+	}
+	public void setStartCity1(String startCity1) {
+		this.startCity1 = startCity1;
+	}
+	public String getEndCity1() {
+		return endCity1;
+	}
+	public void setEndCity1(String endCity1) {
+		this.endCity1 = endCity1;
+	}
+	public String getStartDate1() {
+		return startDate1;
+	}
+	public void setStartDate1(String startDate1) {
+		this.startDate1 = startDate1;
+	}
+	public String getEndDate1() {
+		return endDate1;
+	}
+	public void setEndDate1(String endDate1) {
+		this.endDate1 = endDate1;
+	}
+	public String getSeat3() {
+		return seat3;
+	}
+	public void setSeat3(String seat3) {
+		this.seat3 = seat3;
+	}
+	public int getAdult3() {
+		return adult3;
+	}
+	public void setAdult3(int adult3) {
+		this.adult3 = adult3;
+	}
+	public int getChild3() {
+		return child3;
+	}
+	public void setChild3(int child3) {
+		this.child3 = child3;
+	}
+	public int getToddle3() {
+		return toddle3;
+	}
+	public void setToddle3(int toddle3) {
+		this.toddle3 = toddle3;
+	}
+	private String endDate1;
 	private String startCity2;
 	private String endCity2;
 	private String startDate2;
@@ -16,12 +68,16 @@ public class userReservationDto {
 	private String endDate3;
 	private String seat;
 	private String seat2;
+	private String seat3;
 	private int adult;
 	private int child;
 	private int toddle;
 	private int adult2;
 	private int child2;
 	private int toddle2;
+	private int adult3;
+	private int child3;
+	private int toddle3;
 	
 	public String getSeat2() {
 		return seat2;

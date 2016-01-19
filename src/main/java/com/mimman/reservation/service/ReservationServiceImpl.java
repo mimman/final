@@ -35,10 +35,55 @@ public class ReservationServiceImpl implements ReservationService {
 		
 		return reserveManager.searchReserveList(hdto);
 	}
+	
+public List searchReserveList2(HumanNumDto hdto) {
+		
+		return reserveManager.searchReserveList2(hdto);
+	}
 
 	public ReserveCompleteDto completReserve(ReserveCompleteDto reserComDto) {
 		
 		return reserveManager.completeReserve(reserComDto);
+	}
+
+	public List searchMultiReser(userReservationDto userReserDto) {
+		List list = reserveManager.searchMultiReser(userReserDto);
+		
+		return list;
+	}
+
+	public List searchMultiReser2(userReservationDto userReserDto) {
+		List list = reserveManager.searchMultiReser2(userReserDto);
+		
+		return list;
+	}
+
+	public List searchMultiReser3(userReservationDto userReserDto) {
+		List list = reserveManager.searchMultiReser3(userReserDto);
+		
+		return list;
+	}
+
+	public List searchMulitReserveList1(HumanNumDto hdto) {
+		List list = reserveManager.searchMulitReserveList1(hdto);
+		
+		return list;
+	}
+
+	public List searchMulitReserveList2(HumanNumDto hdto) {
+		List list = reserveManager.searchMulitReserveList2(hdto);
+		
+		return list;
+	}
+
+	public List searchMulitReserveList3(HumanNumDto hdto) {
+		List list = reserveManager.searchMulitReserveList3(hdto);
+		
+		return list;
+	}
+
+	public ReserveCompleteDto completMultiReserve(ReserveCompleteDto reserComDto) {
+		return reserveManager.completMultiReserve(reserComDto);
 	}
 
 	

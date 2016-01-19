@@ -67,7 +67,7 @@
 								</li>
 
 								<li>
-									<a class="menu" href="">마일리지</a>
+									<a class="menu" href="mileage.action">마일리지</a>
 									<ul>
 										<li><a href="">마일리지 메뉴1</a></li>
 										<li><a href="">마일리지 메뉴2</a></li>

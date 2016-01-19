@@ -13,6 +13,16 @@ public class HumanNumDto {
 	private int child;
 	private int toddle;
 	
+	private String startCity1;
+	private String endCity1;
+	private String startDate1;
+	private String endDate1;
+	private String startTime1;
+	private String endTime1;
+	private int adult1;
+	private int child1;
+	private int toddle1;
+	
 	private String startCity2;
 	private String endCity2;
 	private String startDate2;
@@ -22,6 +32,127 @@ public class HumanNumDto {
 	private int adult2;
 	private int child2;
 	private int toddle2;
+	
+	public String getStartCity1() {
+		return startCity1;
+	}
+	public void setStartCity1(String startCity1) {
+		this.startCity1 = startCity1;
+	}
+	public String getEndCity1() {
+		return endCity1;
+	}
+	public void setEndCity1(String endCity1) {
+		this.endCity1 = endCity1;
+	}
+	public String getStartDate1() {
+		return startDate1;
+	}
+	public void setStartDate1(String startDate1) {
+		this.startDate1 = startDate1;
+	}
+	public String getEndDate1() {
+		return endDate1;
+	}
+	public void setEndDate1(String endDate1) {
+		this.endDate1 = endDate1;
+	}
+	public String getStartTime1() {
+		return startTime1;
+	}
+	public void setStartTime1(String startTime1) {
+		this.startTime1 = startTime1;
+	}
+	public String getEndTime1() {
+		return endTime1;
+	}
+	public void setEndTime1(String endTime1) {
+		this.endTime1 = endTime1;
+	}
+	public int getAdult1() {
+		return adult1;
+	}
+	public void setAdult1(int adult1) {
+		this.adult1 = adult1;
+	}
+	public int getChild1() {
+		return child1;
+	}
+	public void setChild1(int child1) {
+		this.child1 = child1;
+	}
+	public int getToddle1() {
+		return toddle1;
+	}
+	public void setToddle1(int toddle1) {
+		this.toddle1 = toddle1;
+	}
+	public String getStartCity3() {
+		return startCity3;
+	}
+	public void setStartCity3(String startCity3) {
+		this.startCity3 = startCity3;
+	}
+	public String getEndCity3() {
+		return endCity3;
+	}
+	public void setEndCity3(String endCity3) {
+		this.endCity3 = endCity3;
+	}
+	public String getStartDate3() {
+		return startDate3;
+	}
+	public void setStartDate3(String startDate3) {
+		this.startDate3 = startDate3;
+	}
+	public String getEndDate3() {
+		return endDate3;
+	}
+	public void setEndDate3(String endDate3) {
+		this.endDate3 = endDate3;
+	}
+	public String getStartTime3() {
+		return startTime3;
+	}
+	public void setStartTime3(String startTime3) {
+		this.startTime3 = startTime3;
+	}
+	public String getEndTime3() {
+		return endTime3;
+	}
+	public void setEndTime3(String endTime3) {
+		this.endTime3 = endTime3;
+	}
+	public int getAdult3() {
+		return adult3;
+	}
+	public void setAdult3(int adult3) {
+		this.adult3 = adult3;
+	}
+	public int getChild3() {
+		return child3;
+	}
+	public void setChild3(int child3) {
+		this.child3 = child3;
+	}
+	public int getToddle3() {
+		return toddle3;
+	}
+	public void setToddle3(int toddle3) {
+		this.toddle3 = toddle3;
+	}
+	private String startCity3;
+	private String endCity3;
+	private String startDate3;
+	private String endDate3;
+	private String startTime3;
+	private String endTime3;
+	private int adult3;
+	private int child3;
+	private int toddle3;
+	
+
+	
 	
 	
 	public String getStartCity2() {

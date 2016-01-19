@@ -57,7 +57,7 @@
 				<!-- 내용 -->
 
 	
-				<form method="post" action="eventReplyOk.action">
+				<form method="post" action="eventReplyOk.action" enctype="multipart/form-data">
 					<table class="tbl_board">
             <caption>상품 등록</caption>
             <colgroup>
@@ -105,10 +105,8 @@
                   <th scope="row">첨부파일</th>
                   <td>
                      <div class="form-group file">
-                        <p>
-                          
-                        </p>
-                        <input type="file" id="img" name="img" />
+                       
+                        <input type="file" id="upFile" name="upFile" />
                      </div>
                   </td>
                </tr>

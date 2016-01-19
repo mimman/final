@@ -29,9 +29,9 @@
             
                <p class="tit"><strong>예약</strong>이 <strong>완료</strong>되었습니다.
                
-               <c:if test="${hdto.getReserveLine() eq '편도' }">
+               
                <ul class="list_v1 mt_20">
-                  <li><span>예약번호</span> <strong>Air-${completDto.getComReserveNum()}</strong></li>
+                  <li><span>예약번호</span> <strong>${completDto.getComReserveNum()}</strong></li>
                   <li><span>출발일</span> <strong>${completDto.getStartDate()} </strong></li>
                   <li><span>출발시각</span> <strong>${completDto.getStartTime() } </strong></li>
                   <li><span>도착시각</span> <strong>${completDto.getEndTime() }</strong></li>
@@ -40,6 +40,18 @@
                   	유아 <strong>${completDto.getToddle() }</strong>명 </li>
                   <li><span>총 요금</span> <strong>${completDto.getTax() }</strong> 원</li>
                   <li><span>적립 마일리지</span> <strong>${completDto.getMileage() }</strong> point</li>
+               </ul>
+               <c:if test="${hdto.getReserveLine() eq '왕복' }">
+               <ul class="list_v1 mt_20">
+                  <li><span>예약번호</span> <strong>${completDto.getComReserveNum()+1}</strong></li>
+                  <li><span>출발일</span> <strong>${completDto.getStartDate2()} </strong></li>
+                  <li><span>출발시각</span> <strong>${completDto.getStartTime2() } </strong></li>
+                  <li><span>도착시각</span> <strong>${completDto.getEndTime2() }</strong></li>
+                  <li><span>예약인원</span> <strong>(일반석)</strong> 성인 <strong>${completDto.getAdult2() }</strong>명
+                  	소아 <strong>${completDto.getChild2() }</strong>명  
+                  	유아 <strong>${completDto.getToddle2() }</strong>명 </li>
+                  <li><span>총 요금</span> <strong>${completDto.getTax2() }</strong> 원</li>
+                  <li><span>적립 마일리지</span> <strong>${completDto.getMileage2() }</strong> point</li>
                </ul>
                </c:if>
                <p class="lh mt_20 fz_13">홈페이지에서 구매하신 항공권은 홈페이지에서 예약 조회를 하실 수 있으며, <br />

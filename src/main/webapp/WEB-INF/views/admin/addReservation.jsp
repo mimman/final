@@ -103,35 +103,53 @@ $(document).ready(function () {
                <li>                 
                   <label for="startCity">출발도시</label>
                   <select id="startCity" name="startCity" placeholder="출발도시">
-                  	<option value="서울/김포">서울/김포</option>
-                  	<option value="부산/김해">부산/김해</option>
+                  	<option value="서울">서울</option>
+                  	<option value="부산">부산</option>
                   	<option value="제주">제주</option>
                   	<option value="광주">광주</option>
                   	<option value="군산">군산</option>
                   	<option value="대구">대구</option>
-                  	<option value="서울/인천">서울/인천</option>
-                  	<option value="여수/순천">여수/순천</option>
+                  	<option value="인천">인천</option>
+                  	<option value="여수">여수</option>
                   	<option value="울산">울산</option>
                   	<option value="원주">원주</option>
-                  	<option value="진주/사천">진주/사천</option>
+                  	<option value="진주">진주</option>
                   	<option value="청주">청주</option>
+                  	 <option value="일본">일본</option>
+                           <option value="중국">중국</option>
+                           <option value="미국">미국</option>
+                           <option value="독일">독일</option>
+                           <option value="터키">터키</option>
+                           <option value="아프리카">아프리카</option>
+                           <option value="프랑스">프랑스</option>
+                           <option value="러시아">러시아</option>
+                           <option value="인도">인도</option>
                   </select>               
                </li>
               <li>
                   <label for="endCity">도착도시</label>
                   <select id="endCity" name="endCity" placeholder="도착국가">
-                  	<option value="서울/김포">서울/김포</option>
-                  	<option value="부산/김해">부산/김해</option>
+             	<option value="서울">서울</option>
+                  	<option value="부산">부산</option>
                   	<option value="제주">제주</option>
                   	<option value="광주">광주</option>
                   	<option value="군산">군산</option>
                   	<option value="대구">대구</option>
-                  	<option value="서울/인천">서울/인천</option>
-                  	<option value="여수/순천">여수/순천</option>
+                  	<option value="인천">인천</option>
+                  	<option value="여수">여수</option>
                   	<option value="울산">울산</option>
                   	<option value="원주">원주</option>
-                  	<option value="진주/사천">진주/사천</option>
+                  	<option value="진주">진주</option>
                   	<option value="청주">청주</option>
+                  	 <option value="일본">일본</option>
+                           <option value="중국">중국</option>
+                           <option value="미국">미국</option>
+                           <option value="독일">독일</option>
+                           <option value="터키">터키</option>
+                           <option value="아프리카">아프리카</option>
+                           <option value="프랑스">프랑스</option>
+                           <option value="러시아">러시아</option>
+                           <option value="인도">인도</option>
                   </select>
                </li>
                <li>

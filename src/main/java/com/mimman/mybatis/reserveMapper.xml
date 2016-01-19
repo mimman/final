@@ -26,56 +26,100 @@
 	</select>
 	
 	<select id="searchReser" parameterType="userReserDto" resultType="reserDto">
-		SELECT * from reserve where rowid in (select max(rowid) from reserve where reserveLine='편도' group by airline) and reserveLine=#{reserveLine} and startCity=#{startCity}
+		SELECT * from reserve where rowid in (select max(rowid) from reserve where startcity=#{startCity} and endCity=#{endCity} and startdate=#{startDate} group by airline) and startCity=#{startCity}
 		and endCity=#{endCity} and startDate=#{startDate}
 	</select>
 	
 	<select id="searchReserShuttle" parameterType="userReserDto" resultType="reserDto">
-		SELECT * from reserve where rowid in (select max(rowid) from reserve  where reserveLine='왕복' group by airline) 
-		and startCity2=#{endCity} and endCity2=#{startCity} and startDate2=#{endDate}
+		SELECT * from reserve where rowid in (select max(rowid) from reserve  where startcity=#{endCity} and endCity=#{startCity} and startdate=#{endDate} group by airline) 
+		and startCity=#{endCity} and endCity=#{startCity} and startDate=#{endDate}
+	</select>
+	<select id="searchMultiReser" parameterType="userReserDto" resultType="reserDto">
+		SELECT * from reserve where rowid in (select max(rowid) from reserve where startcity=#{startCity1} and endCity=#{endCity1} and startdate=#{startDate1} group by airline) and startCity=#{startCity1}
+		and endCity=#{endCity1} and startDate=#{startDate1}
+	</select>
+	<select id="searchMultiReser2" parameterType="userReserDto" resultType="reserDto">
+		SELECT * from reserve where rowid in (select max(rowid) from reserve where startcity=#{startCity2} and endCity=#{endCity2} and startdate=#{startDate2} group by airline) and startCity=#{startCity2}
+		and endCity=#{endCity2} and startDate=#{startDate2}
+	</select>
+		<select id="searchMultiReser3" parameterType="userReserDto" resultType="reserDto">
+		SELECT * from reserve where rowid in (select max(rowid) from reserve where startcity=#{startCity3} and endCity=#{endCity3} and startdate=#{startDate3} group by airline) and startCity=#{startCity3}
+		and endCity=#{endCity3} and startDate=#{startDate3}
 	</select>
 	
+	
 	<select id="searchReserveList" parameterType="hdto" resultType="reserDto">
-		select * from reserve where airLine=#{airLine} and reserveLine=#{reserveLine} and startCity=#{startCity}
+		select * from reserve where airLine=#{airLine} and startCity=#{startCity}
 		and endCity=#{endCity} and startDate=#{startDate} and seat <![CDATA[>=]]> #{adult}+#{child}+#{toddle}
 	</select>
 	
 	<select id="searchShttleList" parameterType="hdto" resultType="reserDto">
-		select * from reserve where airLine=#{airLine} and reserveLine=#{reserveLine} and startCity=#{startCity}
-		and endCity=#{endCity} and startDate=#{startDate} and endDate=#{endDate} and seat <![CDATA[>=]]> #{adult}+#{child}+#{toddle}
+		select * from reserve where airLine=#{airLine} and startCity=#{endCity}
+		and endCity=#{startCity} and startDate=#{endDate} and seat <![CDATA[>=]]> #{adult}+#{child}+#{toddle}
 	</select>
 	
+	<select id="searchMulitReserveList1" parameterType="hdto" resultType="reserDto">
+		select * from reserve where airLine=#{airLine} and startCity=#{startCity1}
+		and endCity=#{endCity1} and startDate=#{startDate1} and seat <![CDATA[>=]]> #{adult}+#{child}+#{toddle}
+	</select>
+	
+	<select id="searchMulitReserveList2" parameterType="hdto" resultType="reserDto">
+		select * from reserve where airLine=#{airLine} and startCity=#{startCity2}
+		and endCity=#{endCity2} and startDate=#{startDate2} and seat <![CDATA[>=]]> #{adult}+#{child}+#{toddle}
+	</select>
+	
+	<select id="searchMulitReserveList3" parameterType="hdto" resultType="reserDto">
+		select * from reserve where airLine=#{airLine} and startCity=#{startCity3}
+		and endCity=#{endCity3} and startDate=#{startDate3} and seat <![CDATA[>=]]> #{adult}+#{child}+#{toddle}
+	</select>
+	
+	
 	<select id="selectNum" parameterType="ComDto" resultType="ComDto">
-		select * from userReservation where id=#{id} and startDate=#{startDate} and reserveLine=#{reserveLine} and startTime=#{startTime}
+		select * from userReservation where id=#{id} and startDate=#{startDate} and reserveLine=#{reserveLine} and startTime=#{startTime} and startCity=#{startCity} and endCity=#{endCity}
 	</select>
 	
 	<insert id="reserveComplete" parameterType="ComDto">
-		insert into userReservation(comreservenum,reservenum,airline,startcity,startdate,starttime,endcity,endTime,adult,child,toddle,adultTax,childTax,toddleTax,id,tax,mileage,reserveLine) values(seq_userReserve.nextval,#{reserveNum},#{airLine},#{startCity},#{startDate},#{startTime},#{endCity},#{endTime},
+		insert into userReservation(comreservenum,reservenum,airline,startcity,startdate,starttime,endcity,endTime,adult,child,toddle,adultTax,childTax,toddleTax,id,tax,mileage,reserveLine) 
+		values(seq_userReserve.nextval,#{reserveNum},#{airLine},#{startCity},#{startDate},#{startTime},#{endCity},#{endTime},
 		#{adult},#{child},#{toddle},#{adultTax},#{childTax},#{toddleTax},#{id},#{tax},#{mileage},#{reserveLine})
 	</insert>
 	<insert id="reserveComplete2" parameterType="ComDto">
-		insert into userReservation(comreservenum2,resernum2,startcity2,startdate2,starttime2,endTime2,adult2,child2,toddle2,adultTax2,childTax2,toddleTax2,tax2,mileage2) 
-		values(seq_userReserve.nextval,#{reserveNum},#{startCity2},#{startDate2},#{startTime2},#{endTime2},
-		#{adult2},#{child2},#{toddle2},#{adultTax2},#{childTax2},#{toddleTax2},#{tax2},#{mileage2})
+		insert into userReservation(comreservenum,reservenum,airline,startcity,startdate,starttime,endcity,endTime,adult,child,toddle,adultTax,childTax,toddleTax,id,tax,mileage,reserveLine) 
+		values(seq_userReserve.nextval,#{reserveNum2},#{airLine2},#{startCity2},#{startDate2},#{startTime2},#{endCity2},#{endTime2},
+		#{adult2},#{child2},#{toddle2},#{adultTax2},#{childTax2},#{toddleTax2},#{id2},#{tax2},#{mileage2},#{reserveLine})
+	</insert>
+	<insert id="reserveComplete3" parameterType="ComDto">
+		insert into userReservation(comreservenum,reservenum,airline,startcity,startdate,starttime,endcity,endTime,adult,child,toddle,adultTax,childTax,toddleTax,id,tax,mileage,reserveLine) 
+		values(seq_userReserve.nextval,#{reserveNum3},#{airLine3},#{startCity3},#{startDate3},#{startTime3},#{endCity3},#{endTime3},
+		#{adult3},#{child3},#{toddle3},#{adultTax3},#{childTax3},#{toddleTax3},#{id3},#{tax3},#{mileage3},#{reserveLine})
 	</insert>
 	
 	<update id="updateSeat" parameterType="ComDto">
 		update reserve set seat = seat - (#{adult}+#{child}+#{toddle}) where resernum=#{reserveNum}
 	</update>
 	<update id="updateSeat2" parameterType="ComDto">
-		update reserve set seat2 = seat2 - (#{adult2}+#{child2}+#{toddle2}) where resernum2=#{reserveNum2}
+		update reserve set seat = seat - (#{adult2}+#{child2}+#{toddle2}) where resernum=#{reserveNum2}
+	</update>
+	<update id="updateSeat3" parameterType="ComDto">
+		update reserve set seat = seat - (#{adult3}+#{child3}+#{toddle3}) where resernum=#{reserveNum3}
 	</update>
 	<update id="updateNum" parameterType="ComDto">
 		update reserve set num = num + (#{adult}+#{child}+#{toddle}) where resernum=#{reserveNum}
 	</update>
 	<update id="updateNum2" parameterType="ComDto">
-		update reserve set num2 = num2 + (#{adult2}+#{child2}+#{toddle2}) where resernum2=#{reserveNum2}
+		update reserve set num = num + (#{adult2}+#{child2}+#{toddle2}) where resernum=#{reserveNum2}
+	</update>
+	<update id="updateNum3" parameterType="ComDto">
+		update reserve set num = num + (#{adult3}+#{child3}+#{toddle3}) where resernum=#{reserveNum3}
 	</update>
 	<update id="updateMileage" parameterType="ComDto">
 		update tbluser set mileage = mileage + #{mileage} where id=#{id}
 	</update>
 	<update id="updateMileage2" parameterType="ComDto">
-		update tbluser set mileage2 = mileage2 + #{mileage2} where id=#{id}
+		update tbluser set mileage = mileage + #{mileage2} where id=#{id}
+	</update>
+	<update id="updateMileage2" parameterType="ComDto">
+		update tbluser set mileage = mileage + #{mileage3} where id=#{id}
 	</update>
 	
 </mapper>

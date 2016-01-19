@@ -17,47 +17,42 @@ div.tab_w.v2 ul li.current a{color:#f53838;}
 /* 항공권 예매 */
 div.con_box{border:2px solid #dfdfdf;margin-top:-2px;padding:50px;font-size:15px;}
 div.con_box ul.radio_w li{position:relative;display:inline-block;float:left;margin-right:25px;}
-div.con_box ul.radio_w li label{margin-left:10px;font-weight:500;}
-div.con_box i.fa-compass{color:#f53838;font-size:23px;}
-ul.flight_list li{float:left;}
-div.top_con div.city_w ul li{padding:10px 0 25px;position:relative;}
-div.top_con div.city_w ul li label{padding-right:30px;font-weight:500;}
-div.top_con div.city_w ul li a.compass{pointer-events:none;text-indent:-9999px;display:inline-block;width:18px;height:22px;background:url(../img/reservation/img_compass.png) no-repeat 0 0;position:absolute;left:240px;top:14px;}
-div.top_con div.city_w{width:300px;}
-div.top_con div.city_w ul li input{width:140px;border:1px solid #ececec;height:30px;padding:0 28px 0 5px;}
-div.top_con div.flight_w{width:736px;}
-div.top_con div.flight_w ul.flight_list li{float:left;margin:10px 30px 10px 10px;color:#5b5b5b;}
+div.con_box ul.radio_w li label{margin-left:10px;font-weight:500;}/*
+div.sch_air div.city_w ul li, 
+div.sch_air div.fl ul li{padding:10px 0 25px;position:relative;}*/
+div.sch_air div.city_w ul li label{padding-right:30px;font-weight:500;}
+div.sch_air div.city_w ul li a.compass{pointer-events:none;text-indent:-9999px;display:inline-block;width:18px;height:22px;background:url(../img/reservation/img_compass.png) no-repeat 0 0;position:absolute;left:240px;top:14px;}
+div.sch_air div.city_w{width:auto;display:inline-block;}
+div.sch_air div.city_w.many{width:100%;}
+div.sch_air div.city_w ul li input{width:140px;border:1px solid #ececec;height:30px;padding:0 28px 0 5px;}
 
-div.top_con div.city_w ul li select{
+div.sch_air div.city_w ul li select{
 -webkit-appearance: none;  /* 네이티브 외형 감추기 */
 -moz-appearance: none;
 appearance: none;
 background: url(../img/reservation/img_compass.png) no-repeat 150px 4px; /* 화살표 모양의 이미지 */
 width:175px;border:1px solid #ececec;height:32px;padding:0 28px 0 5px;font-size:14px;}
 
-
-div.top_con div.flight_w ul.flight_list.out li{padding-right:15px;margin:13px 0 13px 15px;border-right:1px solid #d1d1d1;}
-div.top_con div.flight_w ul.flight_list.out li.end{border-right:0;}
-div.bot_con h4{font-size:18px;color:#2c2c2c;font-weight:500;}
-div.bot_con .hasDatepicker{width:140px;border:1px solid #ECECEC;;height:30px;padding:0 28px 0 5px;}
-div.bot_con div.fl{margin-right:40px;}
-div.bot_con div.fl label{padding-right:30px;font-weight:500;}
-div.bot_con div.fl ul.radio_w2{width:140px;}
-div.bot_con div.fl ul.radio_w2 li{line-height:40px;}
-div.bot_con div.fl ul.radio_w2 li:after{clear:both;display:block;content:"";height:0;visibility:hidden;}
-div.bot_con div.fl ul.radio_w2 li label{margin-left:5px;}
-div.bot_con div.fl ul.radio_w2 li p{display:inline-block;float:left;margin-right:10px;}
-div.bot_con div.fl ul.radio_w2 li input[type="button"]{border:1px solid #d1d1d1;background:#f1f2f4 !important;width:25px;height:25px;line-height:18px;color:#969696;float:left;margin-top:7px;}
-div.bot_con div.fl ul.radio_w2 li input.count{width:25px;height:23px;border:1px solid #fff;border-color:#d1d1d1 #fff #d1d1d1 #fff;text-align:center;line-height:23px;float:left;margin-top:7px;}
-div.bot_con div.fl.clearfix{width:450px;margin-right:0;}
+div.sch_air h4{font-size:18px;color:#2c2c2c;font-weight:500;}
+div.sch_air .hasDatepicker{width:140px;border:1px solid #ECECEC;;height:30px;padding:0 28px 0 5px;}
+div.sch_air div.fl{margin-right:40px;}
+div.sch_air div.fl label{padding-right:30px;font-weight:500;}
+div.sch_air div.fl ul.radio_w2{width:140px;}
+div.sch_air div.fl ul.radio_w2 li{line-height:40px;padding:0;}
+div.sch_air div.fl ul.radio_w2 li:after{clear:both;display:block;content:"";height:0;visibility:hidden;}
+div.sch_air div.fl ul.radio_w2 li label{margin-left:5px;}
+div.sch_air div.fl ul.radio_w2 li p{display:inline-block;float:left;margin-right:10px;}
+div.sch_air div.fl ul.radio_w2 li input[type="button"]{border:1px solid #d1d1d1;background:#f1f2f4 !important;width:25px;height:25px;line-height:18px;color:#969696;float:left;margin-top:7px;}
+div.sch_air div.fl ul.radio_w2 li input.count{width:25px;height:23px;border:1px solid #fff;border-color:#d1d1d1 #fff #d1d1d1 #fff;text-align:center;line-height:23px;float:left;margin-top:7px;}
+div.sch_air div.fl.clearfix{width:450px;margin-right:0;}
 div.con_box div.fl.ta_c{margin-right:0;}
 div.con_box input.btn_sch{display:inline-block;width:220px;height:46px;background:url(../img/reservation/btn_sch.jpg) no-repeat 0 0 !important;border:0;color:#fff;font-weight:600;font-size:20px;}
-div.bot_con div.city_w ul li{padding:10px 0 25px;position:relative;}
-div.bot_con div.city_w ul li label{padding-right:30px;font-weight:500;}
-div.bot_con div.city_w{width:300px;}
-div.bot_con div.city_w ul li input{width:140px;border:1px solid #ececec;height:30px;padding:0 28px 0 5px;margin-left: 14px;}
-div.bot_con div.flight_w{width:736px;}
-div.bot_con div.flight_w ul.flight_list li{float:left;margin:10px 30px 10px 10px;color:#5b5b5b;}
+div.sch_air div.city_w ul li{padding:10px 0 25px;margin-right:50px;position:relative;}
+div.sch_air div.city_w ul.many li{float:left;}
+div.sch_air div.city_w ul li label{padding-right:30px;font-weight:500;}
+div.sch_air div.city_w ul li input{width:140px;border:1px solid #ececec;height:30px;padding:0 28px 0 5px;margin-left: 14px;}
+div.sch_air div.flight_w{width:736px;}
+div.sch_air div.flight_w ul.flight_list li{float:left;margin:10px 30px 10px 10px;color:#5b5b5b;}
 
 /* datepicker */
 .ll-skin-santiago { font-size: 90%; }
@@ -212,4 +207,3 @@ div.pop_wrap_b div.taxbox_w p:nth-child(3){line-height:47px;color:#f83030;}
 div.pop_wrap_b div.taxbox_w p:nth-child(3) em{font-size:20px;font-weight:600;}
 
 div.pop_wrap_b div.taxbox_w.v2 p:nth-child(1){border:1px solid #1a4a78;display:inline-block;background:#fff;padding:5px;margin-right:10px;color:#1a4a78;font-weight:600;}
-

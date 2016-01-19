@@ -18,8 +18,24 @@ public interface ReservationService {
 	public List reservePop(int reserNum);
 
 	public List searchReserveList(HumanNumDto hdto);
+	
+	public List searchReserveList2(HumanNumDto hdto);
 
 	public ReserveCompleteDto completReserve(ReserveCompleteDto reserComDto);
+
+	public List searchMultiReser(userReservationDto userReserDto);
+
+	public List searchMultiReser2(userReservationDto userReserDto);
+
+	public List searchMultiReser3(userReservationDto userReserDto);
+
+	public List searchMulitReserveList1(HumanNumDto hdto);
+
+	public List searchMulitReserveList2(HumanNumDto hdto);
+
+	public List searchMulitReserveList3(HumanNumDto hdto);
+
+	public ReserveCompleteDto completMultiReserve(ReserveCompleteDto reserComDto);
 
 	
 }

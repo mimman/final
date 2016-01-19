@@ -85,6 +85,7 @@ foreign key(articleno)
 
 
 alter table tblcomment modify(regdate date not null)
+alter table reserve modify(exdate varchar(30))
 drop table reserve
 CREATE TABLE reserve
 (
@@ -97,31 +98,14 @@ CREATE TABLE reserve
    endDate              VARCHAR2(30) NULL,
    startTime			VARCHAR2(30) NULL,
    endTime				VARCHAR2(30) NULL,
-   exDate               DATE NULL,
+   exDate               VARCHAR2(30) NULL,
    seat                 NUMBER NULL,
    num                  NUMBER NULL,
    airLine              VARCHAR2(30) NULL,
    adultTax             NUMBER NULL,
    childTax             NUMBER NULL,
    toddleTax            NUMBER NULL,
-   aircraftCode			varchar2(30),
-    reserNum2             NUMBER  NULL ,
-   reserveCode2          VARCHAR2(20) NULL,
-   reserveLine2          VARCHAR2(20) NULL,
-   startCity2            VARCHAR2(30) NULL,
-   endCity2              VARCHAR2(30) NULL,
-   startDate2            VARCHAR2(30) NULL,
-   endDate2              VARCHAR2(30) NULL,
-   startTime2			VARCHAR2(30) NULL,
-   endTime2				VARCHAR2(30) NULL,
-   exDate2               DATE NULL,
-   seat2                 NUMBER NULL,
-   num2                  NUMBER NULL,
-   airLine2              VARCHAR2(30) NULL,
-   adultTax2             NUMBER NULL,
-   childTax2             NUMBER NULL,
-   toddleTax2            NUMBER NULL,
-   aircraftCode2			varchar2(30) 
+   aircraftCode			varchar2(30)
 );
 commit
 select * from reserve
@@ -160,29 +144,14 @@ create table userReservation(
 	toddleTax number not null,
 	id varchar2(50) not null,
 	tax number not null,
-	mileage number not null,
+	mileage number not null
 	
-	comReserveNum2 number  null , 
-	reserveNum2 Number  NULL,
-	startCity2 varchar2(30)  null,
-	startDate2 varchar2(30)  null,
-	startTime2 varchar2(30)  null,
-	endCity2 varchar2(30)  null,
-	endDate2 varchar2(30)  null,
-	endTime2 varchar2(30)  null,
-	adult2 number  null,
-	child2 number  null,
-	toddle2 number  null,
-	adultTax2 number  null,
-	childTax2 number  null,
-	toddleTax2 number  null,
-	tax2 number  null,
-	mileage2 number  null
 );
 select * from reserve;
 create sequence seq_userReserve;
 select * from userReservation
 delete from userReservation
+alter table reserve modify (exdate varchar2(30))
 alter table userReservation add(comReserveNum number);
 alter table userReservation add(startCity varchar2(30));
 alter table userReservation add(endCity varchar2(30));
@@ -245,3 +214,22 @@ select * from reserve where  rowid in(select max(rowid) from reserve where reser
 		
 		select * from reserve where airLine='眉农亲傍' and reserveLine='空汗' and startCity='力林'
 		and endCity='没林' and startDate='2016-01-01' and endDate='2016-01-01' and seat >= 1
+		
+		
+delete from reserve;
+
+SELECT * from reserve where  
+		 startCity='措备' and endCity='力林' and startDate='2016-01-02'
+		 
+		 SELECT * from reserve where rowid in (select max(rowid) from reserve where startcity='措备' and endcity='力林' group by airline) and reserveLine='祈档' and startCity='措备'
+		and endCity='力林' and startDate='2016-01-02'
+		
+		SELECT * from reserve where rowid in (select max(rowid) from reserve where startcity='力林' and endcity='措备' group by airline) and reserveLine='祈档' and startCity='力林'
+		and endCity='措备' and startDate='2016-01-01'
+		
+select * from userReservation
+
+select * from reserve where airLine='措茄亲傍' and startCity='力林'
+		and endCity='措备' and startDate='2016-01-01' and seat >= 1
+		
+		select * from userReservation

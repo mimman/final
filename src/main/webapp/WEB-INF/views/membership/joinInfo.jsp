@@ -188,6 +188,7 @@ $(function() {
                <li>
                   <label for="inputEmail">이메일</label><input type="email" id="email" name="email" placeholder="이메일" />
                </li>
+              
                <li>
                   <label for="inputAddress">주소</label><input type="text" id="address" name="address" placeholder="주소" />
                </li>

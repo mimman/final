@@ -50,7 +50,7 @@
 		delete from tblcomment where articleno=#{articleno}
 	</delete>
 	<update id="EventBoardModify" parameterType="EventModifyDto">
-		update article set title=#{title},content=#{content} where articleno=#{articleno}
+		update article set title=#{title},content=#{content},img=#{img} where articleno=#{articleno}
 	</update>
 	<update id="EventBoardInsert">
 		update article set pos=pos+1 where pos <![CDATA[>=]]> #{pos}

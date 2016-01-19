@@ -115,5 +115,5 @@
    
    
   	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
-  	
+  	<bean class="com.mimman.mileage.controller.mileageController"></bean>
 </beans>
