@@ -60,6 +60,18 @@ $(document).ready(function () {
             <li class="current"><a href="eventBoard.action?boardcd=qna">Q&A</a></li>
          </ul>
       </c:if>
+       <c:if test="${boardcd eq 'travel'}">
+      <ul>
+            <li class="current"><a href="eventBoard.action?boardcd=travel">여행에세이</a></li>
+            <li class=""><a href="eventBoard.action?boardcd=photo">포토에세이</a></li>
+         </ul>
+      </c:if>
+      <c:if test="${boardcd eq 'photo'}">
+      <ul>
+            <li class=""><a href="eventBoard.action?boardcd=travel">여행에세이</a></li>
+            <li class="current"><a href="eventBoard.action?boardcd=photo">포토에세이</a></li>
+         </ul>
+      </c:if>
       </div>
 
 

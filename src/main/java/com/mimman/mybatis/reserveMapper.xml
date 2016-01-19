@@ -118,7 +118,7 @@
 	<update id="updateMileage2" parameterType="ComDto">
 		update tbluser set mileage = mileage + #{mileage2} where id=#{id}
 	</update>
-	<update id="updateMileage2" parameterType="ComDto">
+	<update id="updateMileage3" parameterType="ComDto">
 		update tbluser set mileage = mileage + #{mileage3} where id=#{id}
 	</update>
 	

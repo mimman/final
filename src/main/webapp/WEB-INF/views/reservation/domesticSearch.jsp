@@ -229,9 +229,9 @@ $(document).ready(function(){
                      </ul>
                      <!-- //radio_w -->
 
-                     <div class="sch_air clear mt_25" id="bl1" style="display:block" >
-                        <div class="city_w fl clear">
-                           <ul class="fl">
+                     <div class="sch_air clear mt_25">
+                        <div class="city_w fl clear" style="margin-right:0;">
+                           <ul class="fl" id="bl1" style="display:block;" >
                         <li>
                            <label for="startCity">출발도시</label>
                            <select name="startCity" id="startCity">
@@ -269,34 +269,32 @@ $(document).ready(function(){
                            </select>
                         </li>
                      </ul>
-                        </div>
-  
-                     </div>
-
-                     <div class="bot_con clearfix mt_25" >
-                        
-                        
-                  <ul id="bl2" style="display:block">
-                           <li><label for="startDate" >출발일</label><input type="text" name="startDate" id="startDate" size="10"
-                              maxlength="10" placeholder="yyyy-mm-dd" /></li>
-                           <li></li>
-                 
-                           <li id="bl" style="display:none"><label for="endDate">귀국일</label><input type="text" name="endDate" id="endDate" size="10"
-                              maxlength="10" placeholder="yyyy-mm-dd" /></li>
-                           <li></li>
-                        </ul>
+                     
+	                <ul id="bl2" class="fl" style="display:block">
+					<li><label for="startDate" >출발일</label><input type="text" name="startDate" id="startDate" size="10"
+					   maxlength="10" placeholder="yyyy-mm-dd" /></li>
+					
+					
+					<li id="bl" style="display:none"><label for="endDate">귀국일</label><input type="text" name="endDate" id="endDate" size="10"
+					      maxlength="10" placeholder="yyyy-mm-dd" /></li>
+					  
+					</ul>
+                     
+                     
                     </div>
-                        
-                        <div class="city_w fl many" id="bl3" style="display:none">
-                        
-                          <ul class="clear">
+                    <!-- //편도/왕복 -->
 
-                        <li class="fl">
-                           <label for="startCity">출발도시</label>
-                           <select name="startCity1" id="startCity1">
-                           <option value="" selected="selected"></option>
-                           
-                    	<option value="서울">서울</option>
+                        
+              <div class="city_w fl many" id="bl3" style="display:none;">
+              
+                <ul class="clear">
+
+              <li class="fl">
+                 <label for="startCity">출발도시</label>
+                 <select name="startCity1" id="startCity1">
+                 <option value="" selected="selected"></option>
+                 
+         			<option value="서울">서울</option>
                   	<option value="부산">부산</option>
                   	<option value="제주">제주</option>
                   	<option value="광주">광주</option>
@@ -434,9 +432,9 @@ $(document).ready(function(){
                    <!-- //city_w(다구간여정) -->
 
           
-                        <div class="fl clearfix">
-
-                           <div class="fl ml_75">
+                        <div class="fl">
+						<div class="clear">
+                           <div class="fl">
                               <h4>좌석선택</h4>
                               <ul class="radio_w2 mt_10">
                                  <li><input type="radio" name="seat" id="general"
@@ -471,18 +469,21 @@ $(document).ready(function(){
                            
 
                         </div>
-                        <!-- //clearfix -->
+                        
+                        </div>
+                        <!-- //clear -->
+                        
 
                      </div>
                      
-                     <!-- //clearfix -->
+                     <!-- //sch_air -->
 
-                     <div class="fl ta_c mt_20">
+                     <div class="ta_c mt_50">
                         <input type="button" class="btn_sch clearfix" value="항공편 조회"
                            onclick="nullCheck()" />
                      </div>
 
-                  </div>
+                 	</div>
                   </form>
                      <!-- //con_box -->
 

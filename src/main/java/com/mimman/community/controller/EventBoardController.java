@@ -30,10 +30,10 @@ public class EventBoardController {
 	}
 
 	@RequestMapping("eventBoard.action")
-	public ModelAndView eventPage(String boardcd,HttpServletRequest req,HttpSession session){
+	public String eventPage(String boardcd,HttpServletRequest req,HttpSession session){
 		
 		System.out.println("보드리스트 동작"+boardcd);
-		ModelAndView mav = new ModelAndView("/WEB-INF/views/community/eventBoard.jsp");
+		
 		List list = pageService.getBoardList(boardcd);
 		int totalRecord = list.size();
 		
@@ -76,7 +76,10 @@ public class EventBoardController {
 	      session.setAttribute("list", list);
 	      session.setAttribute("pagedto", pageDto);
 	      session.setAttribute("boardcd", boardcd);
-		return mav;
+	      if(boardcd.equals("travel") || boardcd.equals("photo")){
+	            return "/WEB-INF/views/essay/essayBoard.jsp";
+	         }
+		return "/WEB-INF/views/community/eventBoard.jsp";
 		
 		
 	}

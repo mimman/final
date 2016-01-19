@@ -50,10 +50,10 @@
 								</li>
 
 								<li>
-									<a class="menu" href="">여행 에세이</a>
+									<a class="menu" href="eventBoard.action?boardcd=travel">여행 에세이</a>
 									<ul>
-										<li><a href="">여행 에세이</a></li>
-										<li><a href="">포토 에세이</a></li>
+										<li><a href="eventBoard.action?boardcd=travel">여행 에세이</a></li>
+										<li><a href="eventBoard.action?boardcd=photo">포토 에세이</a></li>
 									</ul>
 								</li>
 

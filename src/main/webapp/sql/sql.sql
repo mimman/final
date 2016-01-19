@@ -227,8 +227,8 @@ SELECT * from reserve where
 		SELECT * from reserve where rowid in (select max(rowid) from reserve where startcity='力林' and endcity='措备' group by airline) and reserveLine='祈档' and startCity='力林'
 		and endCity='措备' and startDate='2016-01-01'
 		
-select * from userReservation
-
+		select * from userReservation
+		alter table userReservation drop(enddate)
 select * from reserve where airLine='措茄亲傍' and startCity='力林'
 		and endCity='措备' and startDate='2016-01-01' and seat >= 1
 		

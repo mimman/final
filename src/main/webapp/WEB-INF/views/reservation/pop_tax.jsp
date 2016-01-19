@@ -31,17 +31,7 @@ function post_to_url(startTime,endTime,airLine,adultTax,childTax,toddleTax,reser
 
 }
 
-function post_to_url1(startTime,endTime,airLine,adultTax,childTax,toddleTax,reserNum){
-	
-	document.getElementById("startTime1").value = startTime;
-	document.getElementById("endTime1").value = endTime;
-	document.getElementById("airLine1").value = airLine;
-	document.getElementById("adultTax1").value = adultTax;
-	document.getElementById("childTax1").value = childTax;
-	document.getElementById("toddleTax1").value = toddleTax;
-	document.getElementById("reserveNum1").value = reserNum;
 
-}
 
 function post_to_url2(startTime,endTime,airLine,adultTax,childTax,toddleTax,reserNum){
 	
@@ -292,6 +282,7 @@ function tax3(adultTax,adult,childTax,child,toddleTax,toddle){
          </table>
       </div>
       </c:if>
+      <!-- 다구간여정 -->
       <c:if test="${userReserDto.getReserveLine() eq '다구간여정' }">
       <div class="taxbox_w clear">
          <p class="fl">첫번째 항공 </p>
@@ -334,7 +325,7 @@ function tax3(adultTax,adult,childTax,child,toddleTax,toddle){
          	<td>${dto.getEndTime() }</td>
         	 <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}원</td>
          	<td>${dto.getSeat() } 석</td>
-         	<td class="pd_10 end"><label for="sel2_1" class="blind">항공편 선택</label><input type="radio" id="sel2_1" name="sel_air2" 
+         	<td class="pd_10 end"><label for="sel1" class="blind">항공편 선택</label><input type="radio" id="sel1" name="sel1" 
          onclick="tax1(${dto.getAdultTax()}, ${hdto.getAdult() }, ${dto.getChildTax() },${hdto.getChild() },${dto.getToddleTax() },${hdto.getToddle() });post_to_url('${dto.getStartTime() }','${dto.getEndTime()}','${dto.getAirLine()}',${dto.getAdultTax()}, ${dto.getChildTax()},${dto.getToddleTax()},${dto.getReserNum() })"/></td>
          </tr>
          </c:forEach>
@@ -347,7 +338,7 @@ function tax3(adultTax,adult,childTax,child,toddleTax,toddle){
       
       <!-- //tbl_sch -->
       
-        <div class="taxbox_w clear">
+        <div class="taxbox_w clear mt_20">
          <p class="fl">두번째 항공 </p>
          <p class="fl">
             <em> ${userReserDto.getStartCity2()} → ${userReserDto.getEndCity2()} </em>
@@ -388,7 +379,7 @@ function tax3(adultTax,adult,childTax,child,toddleTax,toddle){
          	<td>${dto.getEndTime() }</td>
         	 <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}원</td>
          	<td>${dto.getSeat() } 석</td>
-         	<td class="pd_10 end"><label for="sel2_1" class="blind">항공편 선택</label><input type="radio" id="sel2_1" name="sel_air2" 
+         	<td class="pd_10 end"><label for="sel2" class="blind">항공편 선택</label><input type="radio" id="sel2" name="sel2" 
          onclick="tax2(${dto.getAdultTax()}, ${hdto.getAdult() }, ${dto.getChildTax() },${hdto.getChild() },${dto.getToddleTax() },${hdto.getToddle() });post_to_url2('${dto.getStartTime() }','${dto.getEndTime()}','${dto.getAirLine()}',${dto.getAdultTax()}, ${dto.getChildTax()},${dto.getToddleTax()},${dto.getReserNum() })"/></td>
          </tr>
          </c:forEach>
@@ -401,7 +392,7 @@ function tax3(adultTax,adult,childTax,child,toddleTax,toddle){
       
       <!-- //tbl_sch -->
       
-        <div class="taxbox_w clear">
+        <div class="taxbox_w clear mt_20">
          <p class="fl">세번째 항공 </p>
          <p class="fl">
             <em> ${userReserDto.getStartCity3()} → ${userReserDto.getEndCity3()} </em>
@@ -442,7 +433,7 @@ function tax3(adultTax,adult,childTax,child,toddleTax,toddle){
          	<td>${dto.getEndTime() }</td>
         	 <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}원</td>
          	<td>${dto.getSeat() } 석</td>
-         	<td class="pd_10 end"><label for="sel2_1" class="blind">항공편 선택</label><input type="radio" id="sel2_1" name="sel_air2" 
+         	<td class="pd_10 end"><label for="sel3" class="blind">항공편 선택</label><input type="radio" id="sel3" name="sel3" 
          onclick="tax3(${dto.getAdultTax()}, ${hdto.getAdult() }, ${dto.getChildTax() },${hdto.getChild() },${dto.getToddleTax() },${hdto.getToddle() });post_to_url3('${dto.getStartTime() }','${dto.getEndTime()}','${dto.getAirLine()}',${dto.getAdultTax()}, ${dto.getChildTax()},${dto.getToddleTax()},${dto.getReserNum() })"/></td>
          </tr>
          </c:forEach>
@@ -480,13 +471,13 @@ function tax3(adultTax,adult,childTax,child,toddleTax,toddle){
       	<input type="hidden" id="reserveNum2" name="reserveNum2" value="" />
       	</c:if>
       		<c:if test="${userReserDto.getReserveLine() eq '다구간여정'}">
-      			<input type="hidden" id="startTime1" name="startTime1" value="" />
-      	<input type="hidden" id="endTime1" name="endTime1" value="" />
-      	<input type="hidden" id="airLine1" name="airLine1" value="" />
-      	<input type="hidden" id="adultTax1" name="adultTax1" value="" />
-      	<input type="hidden" id="childTax1" name="childTax1" value="" />
-      	<input type="hidden" id="toddleTax1" name="toddleTax1" value="" />
-      	<input type="hidden" id="reserveNum1" name="reserveNum1" value="" />
+      			<input type="hidden" id="startTime" name="startTime" value="" />
+      	<input type="hidden" id="endTime" name="endTime" value="" />
+      	<input type="hidden" id="airLine" name="airLine" value="" />
+      	<input type="hidden" id="adultTax" name="adultTax" value="" />
+      	<input type="hidden" id="childTax" name="childTax" value="" />
+      	<input type="hidden" id="toddleTax" name="toddleTax" value="" />
+      	<input type="hidden" id="reserveNum" name="reserveNum" value="" />
         
         <input type="hidden" id="startTime2" name="startTime2" value="" />
       	<input type="hidden" id="endTime2" name="endTime2" value="" />

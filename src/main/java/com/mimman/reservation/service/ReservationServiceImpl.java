@@ -2,7 +2,7 @@ package com.mimman.reservation.service;
 
 import java.util.List;
 
-import com.mimman.exception.IdPasswordNotMachingException;
+
 import com.mimman.mybatis.reserveManager;
 import com.mimman.reservation.repository.HumanNumDto;
 import com.mimman.reservation.repository.ReserveCompleteDto;

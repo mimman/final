@@ -83,6 +83,10 @@ public class EventBoardSearchController {
 	      
 	      session.setAttribute("list", list);
 	      session.setAttribute("pagedto", pageDto);
+	      
+	      if(boardcd.equals("travel") || boardcd.equals("photo")){
+	            return "/WEB-INF/views/essay/essayBoard.jsp";
+	         }
 		return "/WEB-INF/views/community/eventBoard.jsp";
 		
 		

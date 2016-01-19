@@ -35,7 +35,7 @@ private ReservationService reservationService;
 		int tax3 = (reserComDto.getAdultTax3()*userDto.getAdult())+(reserComDto.getChildTax3()*userDto.getChild())+
 				(reserComDto.getToddleTax3()*userDto.getToddle());
 		int mileage3 = (int) (tax3*0.05);
-		
+		/*
 		System.out.println("tax:"+tax);
 		System.out.println("mileage:"+mileage);
 		System.out.println("tax:"+tax2);
@@ -47,7 +47,10 @@ private ReservationService reservationService;
 		System.out.println("childTax:"+reserComDto.getChildTax());
 		System.out.println("toddleTax:"+reserComDto.getToddleTax());
 		System.out.println("reserNum:"+reserComDto.getReserveNum());
-		
+		*/
+		System.out.println(userDto.getStartCity1());
+		System.out.println(userDto.getStartCity2());
+		System.out.println(userDto.getStartCity3());
 		
 		if(userDto.getReserveLine().equals("편도") || userDto.getReserveLine().equals("왕복")){
 			//1번 항공
@@ -79,13 +82,13 @@ private ReservationService reservationService;
 		if(userDto.getReserveLine().equals("다구간여정")){
 		//3번항공
 			reserComDto.setId(id);
-			reserComDto.setStartCity(userDto.getStartCity());
-			reserComDto.setEndCity(userDto.getEndCity());
+			reserComDto.setStartCity(userDto.getStartCity1());
+			reserComDto.setEndCity(userDto.getEndCity1());
 			reserComDto.setAdult(userDto.getAdult());
 			reserComDto.setChild(userDto.getChild());
 			reserComDto.setToddle(userDto.getToddle());
 			reserComDto.setReserveLine(userDto.getReserveLine());
-			reserComDto.setStartDate(userDto.getStartDate());
+			reserComDto.setStartDate(userDto.getStartDate1());
 			reserComDto.setTax(tax);
 			reserComDto.setMileage(mileage);
 			

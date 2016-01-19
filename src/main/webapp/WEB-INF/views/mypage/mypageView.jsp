@@ -90,6 +90,12 @@
             <c:if test="${dto.getBoardcd() eq 'qna'}">
              	<td class="">Q&A</td>
             </c:if>
+              <c:if test="${dto.getBoardcd() eq 'travel'}">
+             	<td class="">여행에세이</td>
+            </c:if>
+             <c:if test="${dto.getBoardcd() eq 'photo'}">
+             	<td class="">포토에세이</td>
+            </c:if>
             <td class=><a href="eventRead.action?articleno=${dto.getArticleno()}">${dto.getTitle()}</a></td> 
             <td class="">${dto.getWriter()}</td>
             <td class="">${dto.getRegdate()}</td>

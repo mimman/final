@@ -12,6 +12,33 @@
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script>
+function blockFormRelese3(){
+    var bl3 = document.getElementById("bl3");
+
+    if(bl3.style.display=="none"){bl3.style.display="block"}  
+}
+function blockFormRelese12(){
+    var bl1 = document.getElementById("bl1");
+    var bl2 = document.getElementById("bl2");
+    var bl3 = document.getElementById("bl3");
+    if(bl1.style.display=="none"){bl1.style.display="block"}  
+    if(bl2.style.display=="none"){bl2.style.display="block"}  
+    if(bl3.style.display=="block"){bl3.style.display="none"}  
+}
+function blockFormRelese1(){
+    var bl1 = document.getElementById("bl1");
+    var bl2 = document.getElementById("bl2");
+    var bl3 = document.getElementById("bl3");
+    if(bl1.style.display=="none"){bl1.style.display="block"}  
+    bl2.style.display="block"; 
+    bl3.style.display="none";
+}
+function blockForm(){
+    var bl1 = document.getElementById("bl1");
+    var bl2 = document.getElementById("bl2");
+    if(bl1.style.display=="block"){bl1.style.display="none"}  
+    if(bl2.style.display=="block"){bl2.style.display="none"}  
+}
 function blockEndDate(){
    var bl = document.getElementById("bl")
    
@@ -44,6 +71,8 @@ function nullCheck(){
    var child = document.getElementById("child").value;
    var toddle = document.getElementById("toddle").value;
    var reserveLine = $(':radio[name="reserveLine"]:checked');
+	if(reserveLine.val() == '왕복' || reserveLine.val() == '편도'){
+		
 
      if(startCity == null ||startCity == undefined || startCity.value ==""){
          alert("출발지를  입력해주세요");
@@ -79,11 +108,13 @@ function nullCheck(){
             endDate.focus();
          }
       else if(adult == 0 && child == 0 && toddle == 0 ){
-    	  alert("예약 인원이 없습니다");
+         alert("예약 인원이 없습니다");
       }
       else{
          document.domestic.submit();
       }
+	}
+	 document.domestic.submit();
 }
 $(document).ready(function () {
    $.datepicker.regional['ko'] = {
@@ -121,6 +152,13 @@ $(document).ready(function () {
    $('#endDate').datepicker("option", "onClose", function ( selectedDate ) {
       $("#startDate").datepicker( "option", "maxDate", selectedDate );
    });
+   
+   $('#startDate1').datepicker();
+   $('#startDate2').datepicker();
+   $('#startDate3').datepicker();
+   
+
+  
 });
 
 $(document).ready(function(){
@@ -171,102 +209,408 @@ $(document).ready(function(){
                <div class="tab_w clearfix">
 
                   <ul>
-                     <li class="tab1"><a href="domestic.action">국내선항공권</a></li>
+                     <li class="tab1 "><a href="domestic.action">국내선
+                           항공권</a></li>
                      <li class="tab2 current"><a href="inter.action">국제선 항공권</a></li>
                   </ul>
                </div>
                <!-- //tab_w -->
                <form method="post" action="reserSearch.action" name="domestic" id="domestic">
                   <input type="hidden" name="reserveCode" value="국제" >
-                  <div class="con_box">
+                  <div class="con_box" >
 
                      <ul class="radio_w clearfix">
                         <li><input type="radio" name="reserveLine" id="oneWay"
-                           value="편도" checked="checked" onclick="blockEndDate();"/><label for="oneWay">편도</label></li>
+                           value="편도" checked="checked" onclick="blockEndDate();blockFormRelese1();"/><label for="oneWay">편도</label></li>
                         <li><input type="radio" name="reserveLine" id="roundTrip"
-                           value="왕복" onclick="blockShuttleEndDate();"/><label for="roundTrip">왕복</label></li>
+                           value="왕복" onclick="blockShuttleEndDate();blockFormRelese12();"/><label for="roundTrip">왕복</label></li>
                         <li><input type="radio" name="reserveLine" id="manyWay"
-                           value="다구간여정" /><label for="manyWay">다구간여정</label></li>
+                           value="다구간여정" onclick="blockForm();blockFormRelese3();" /><label for="manyWay">다구간여정</label></li>
                      </ul>
                      <!-- //radio_w -->
 
-                     <div class="top_con clearfix mt_25">
-                        <div class="city_w">
-                           <ul>
+                     <div class="sch_air clear mt_25">
+                        <div class="city_w fl clear" style="margin-right:0;">
+                           <ul class="fl" id="bl1" style="display:block;" >
                         <li>
                            <label for="startCity">출발도시</label>
                            <select name="startCity" id="startCity">
                            <option value="" selected="selected"></option>
-                           <option value="인천">인천</option>
-                           <option value="김포">김포</option>
-                           <option value="부산">부산</option>
-                           <option value="제주">제주</option>
-                           <option value="광주">광주</option>
-                           <option value="대구">대구</option>
-                           <option value="울산">울산</option>
-                           <option value="청주">청주</option>
-                           <option value="포항">포항</option>
-                           <option value="일본">일본</option>
-                           <option value="중국">중국</option>
-                           <option value="미국">미국</option>
-                           <option value="독일">독일</option>
-                           <option value="터키">터키</option>
-                           <option value="아프리카">아프리카</option>
-                           <option value="프랑스">프랑스</option>
-                           <option value="러시아">러시아</option>
-                           <option value="인도">인도</option>
+                        	<option value="서울">서울</option>
+                  	<option value="부산">부산</option>
+                  	<option value="제주">제주</option>
+                  	<option value="광주">광주</option>
+                  	<option value="군산">군산</option>
+                  	<option value="대구">대구</option>
+                  	<option value="인천">인천</option>
+                  	<option value="여수">여수</option>
+                  	<option value="울산">울산</option>
+                  	<option value="원주">원주</option>
+                  	<option value="진주">진주</option>
+                  	<option value="청주">청주</option>
+                  	<option value="도쿄(나리타)">도쿄(나리타)</option>
+                     <option value="도쿄(하네다)">도쿄(하네다)</option>
+                     <option value="오사카">오사카</option>
+                     <option value="삿포로">삿포로</option>
+                     <option value="나고야">나고야</option>
+                     <option value="후쿠오카">후쿠오카</option>
+                     <option value="방콕">방콕</option>
+                     <option value="푸켓">푸켓</option>
+                     <option value="싱가포르">싱가포르</option>
+                     <option value="마닐라">마닐라</option>
+                     <option value="토론토">토론토</option>
+                     <option value="뉴욕(JFK)">뉴욕(JFK)</option>
+                     <option value="LA">LA</option>
+                     <option value="런던">런던</option>
+                     <option value="파리">파리</option>
+                     <option value="상해(푸동)">상해(푸동)</option>
+                     <option value="상해(홍교)">상해(홍교)</option>
+                     <option value="북경">북경</option>
+                     <option value="홍콩">홍콩</option>
+                     <option value="하노이">하노이</option>
+                     <option value="호치민">호치민</option>
+                     <option value="시드니">시드니</option>
                            </select>
                         </li>
                         <li>
                            <label for="endCity">도착도시</label>
                            <select name="endCity" id="endCity">
                            <option value="" selected="selected"></option>
-                           <option value="인천">인천</option>
-                           <option value="김포">김포</option>
-                           <option value="부산">부산</option>
-                           <option value="제주">제주</option>
-                           <option value="광주">광주</option>
-                           <option value="대구">대구</option>
-                           <option value="울산">울산</option>
-                           <option value="청주">청주</option>
-                           <option value="포항">포항</option>
-                          <option value="일본">일본</option>
-                           <option value="중국">중국</option>
-                           <option value="미국">미국</option>
-                           <option value="독일">독일</option>
-                           <option value="터키">터키</option>
-                           <option value="아프리카">아프리카</option>
-                           <option value="프랑스">프랑스</option>
-                           <option value="러시아">러시아</option>
-                           <option value="인도">인도</option>
+                          	<option value="서울">서울</option>
+                  	<option value="부산">부산</option>
+                  	<option value="제주">제주</option>
+                  	<option value="광주">광주</option>
+                  	<option value="군산">군산</option>
+                  	<option value="대구">대구</option>
+                  	<option value="인천">인천</option>
+                  	<option value="여수">여수</option>
+                  	<option value="울산">울산</option>
+                  	<option value="원주">원주</option>
+                  	<option value="진주">진주</option>
+                  	<option value="청주">청주</option>
+                  	<option value="도쿄(나리타)">도쿄(나리타)</option>
+                     <option value="도쿄(하네다)">도쿄(하네다)</option>
+                     <option value="오사카">오사카</option>
+                     <option value="삿포로">삿포로</option>
+                     <option value="나고야">나고야</option>
+                     <option value="후쿠오카">후쿠오카</option>
+                     <option value="방콕">방콕</option>
+                     <option value="푸켓">푸켓</option>
+                     <option value="싱가포르">싱가포르</option>
+                     <option value="마닐라">마닐라</option>
+                     <option value="토론토">토론토</option>
+                     <option value="뉴욕(JFK)">뉴욕(JFK)</option>
+                     <option value="LA">LA</option>
+                     <option value="런던">런던</option>
+                     <option value="파리">파리</option>
+                     <option value="상해(푸동)">상해(푸동)</option>
+                     <option value="상해(홍교)">상해(홍교)</option>
+                     <option value="북경">북경</option>
+                     <option value="홍콩">홍콩</option>
+                     <option value="하노이">하노이</option>
+                     <option value="호치민">호치민</option>
+                     <option value="시드니">시드니</option>
                            </select>
                         </li>
                      </ul>
-                        </div>
+                     
+	                <ul id="bl2" class="fl" style="display:block">
+					<li><label for="startDate" >출발일</label><input type="text" name="startDate" id="startDate" size="10"
+					   maxlength="10" placeholder="yyyy-mm-dd" /></li>
+					
+					
+					<li id="bl" style="display:none"><label for="endDate">귀국일</label><input type="text" name="endDate" id="endDate" size="10"
+					      maxlength="10" placeholder="yyyy-mm-dd" /></li>
+					  
+					</ul>
+                     
+                     
+                    </div>
+                    <!-- //편도/왕복 -->
 
-                     </div>
+                        
+              <div class="city_w fl many" id="bl3" style="display:none;">
+              
+                <ul class="clear">
 
-                     <div class="bot_con clearfix mt_25">
-                        <div class="fl">
+              <li class="fl">
+                 <label for="startCity">출발도시</label>
+                 <select name="startCity1" id="startCity1">
+                 <option value="" selected="selected"></option>
+                 
+         			<option value="서울">서울</option>
+                  	<option value="부산">부산</option>
+                  	<option value="제주">제주</option>
+                  	<option value="광주">광주</option>
+                  	<option value="군산">군산</option>
+                  	<option value="대구">대구</option>
+                  	<option value="인천">인천</option>
+                  	<option value="여수">여수</option>
+                  	<option value="울산">울산</option>
+                  	<option value="원주">원주</option>
+                  	<option value="진주">진주</option>
+                  	<option value="청주">청주</option>
+                  	<option value="도쿄(나리타)">도쿄(나리타)</option>
+                     <option value="도쿄(하네다)">도쿄(하네다)</option>
+                     <option value="오사카">오사카</option>
+                     <option value="삿포로">삿포로</option>
+                     <option value="나고야">나고야</option>
+                     <option value="후쿠오카">후쿠오카</option>
+                     <option value="방콕">방콕</option>
+                     <option value="푸켓">푸켓</option>
+                     <option value="싱가포르">싱가포르</option>
+                     <option value="마닐라">마닐라</option>
+                     <option value="토론토">토론토</option>
+                     <option value="뉴욕(JFK)">뉴욕(JFK)</option>
+                     <option value="LA">LA</option>
+                     <option value="런던">런던</option>
+                     <option value="파리">파리</option>
+                     <option value="상해(푸동)">상해(푸동)</option>
+                     <option value="상해(홍교)">상해(홍교)</option>
+                     <option value="북경">북경</option>
+                     <option value="홍콩">홍콩</option>
+                     <option value="하노이">하노이</option>
+                     <option value="호치민">호치민</option>
+                     <option value="시드니">시드니</option>
+                           </select>
+                        </li>
+                        <li class="fl">
+                           <label for="endCity1">도착도시</label>
+                           <select name="endCity1" id="endCity1">
+                           <option value="" selected="selected"></option>
                         
+                    	<option value="서울">서울</option>
+                  	<option value="부산">부산</option>
+                  	<option value="제주">제주</option>
+                  	<option value="광주">광주</option>
+                  	<option value="군산">군산</option>
+                  	<option value="대구">대구</option>
+                  	<option value="인천">인천</option>
+                  	<option value="여수">여수</option>
+                  	<option value="울산">울산</option>
+                  	<option value="원주">원주</option>
+                  	<option value="진주">진주</option>
+                  	<option value="청주">청주</option>
+                  	<option value="도쿄(나리타)">도쿄(나리타)</option>
+                     <option value="도쿄(하네다)">도쿄(하네다)</option>
+                     <option value="오사카">오사카</option>
+                     <option value="삿포로">삿포로</option>
+                     <option value="나고야">나고야</option>
+                     <option value="후쿠오카">후쿠오카</option>
+                     <option value="방콕">방콕</option>
+                     <option value="푸켓">푸켓</option>
+                     <option value="싱가포르">싱가포르</option>
+                     <option value="마닐라">마닐라</option>
+                     <option value="토론토">토론토</option>
+                     <option value="뉴욕(JFK)">뉴욕(JFK)</option>
+                     <option value="LA">LA</option>
+                     <option value="런던">런던</option>
+                     <option value="파리">파리</option>
+                     <option value="상해(푸동)">상해(푸동)</option>
+                     <option value="상해(홍교)">상해(홍교)</option>
+                     <option value="북경">북경</option>
+                     <option value="홍콩">홍콩</option>
+                     <option value="하노이">하노이</option>
+                     <option value="호치민">호치민</option>
+                     <option value="시드니">시드니</option>
+                           </select>
+                        </li>
                         
-<ul>
-                           <li><label for="startDate" >출발일</label><input type="text" name="startDate" id="startDate" size="10"
-                              maxlength="10" placeholder="yyyy-mm-dd" /></li>
-                           <li></li>
-                        </ul>
-                        <ul>
-                           <li id="bl" style="display:none"><label for="endDate">귀국일</label><input type="text" name="endDate" id="endDate" size="10"
-                              maxlength="10" placeholder="yyyy-mm-dd" /></li>
-                           <li></li>
-                        </ul>
-        
-                        </div>
+                  <li class="fl">
+                     <label for="startDate" >탑승일</label>
+                     <input type="text" name="startDate1" id="startDate1" size="10" maxlength="10" placeholder="yyyy-mm-dd" />
+                  </li>
+               </ul>
+               <!-- //clear -->
+                        
+                          <ul class="clear">
+
+                        <li class="fl">
+                           <label for="startCity">출발도시</label>
+                           <select name="startCity2" id="startCity2">
+                           <option value="" selected="selected"></option>
+                          
+                    	<option value="서울">서울</option>
+                  	<option value="부산">부산</option>
+                  	<option value="제주">제주</option>
+                  	<option value="광주">광주</option>
+                  	<option value="군산">군산</option>
+                  	<option value="대구">대구</option>
+                  	<option value="인천">인천</option>
+                  	<option value="여수">여수</option>
+                  	<option value="울산">울산</option>
+                  	<option value="원주">원주</option>
+                  	<option value="진주">진주</option>
+                  	<option value="청주">청주</option>
+                  	<option value="도쿄(나리타)">도쿄(나리타)</option>
+                     <option value="도쿄(하네다)">도쿄(하네다)</option>
+                     <option value="오사카">오사카</option>
+                     <option value="삿포로">삿포로</option>
+                     <option value="나고야">나고야</option>
+                     <option value="후쿠오카">후쿠오카</option>
+                     <option value="방콕">방콕</option>
+                     <option value="푸켓">푸켓</option>
+                     <option value="싱가포르">싱가포르</option>
+                     <option value="마닐라">마닐라</option>
+                     <option value="토론토">토론토</option>
+                     <option value="뉴욕(JFK)">뉴욕(JFK)</option>
+                     <option value="LA">LA</option>
+                     <option value="런던">런던</option>
+                     <option value="파리">파리</option>
+                     <option value="상해(푸동)">상해(푸동)</option>
+                     <option value="상해(홍교)">상해(홍교)</option>
+                     <option value="북경">북경</option>
+                     <option value="홍콩">홍콩</option>
+                     <option value="하노이">하노이</option>
+                     <option value="호치민">호치민</option>
+                     <option value="시드니">시드니</option>
+                           </select>
+                        </li>
+                        <li class="fl">
+                           <label for="endCity">도착도시</label>
+                           <select name="endCity2" id="endCity2">
+                           <option value="" selected="selected"></option>
+                          	<option value="서울">서울</option>
+                  	<option value="부산">부산</option>
+                  	<option value="제주">제주</option>
+                  	<option value="광주">광주</option>
+                  	<option value="군산">군산</option>
+                  	<option value="대구">대구</option>
+                  	<option value="인천">인천</option>
+                  	<option value="여수">여수</option>
+                  	<option value="울산">울산</option>
+                  	<option value="원주">원주</option>
+                  	<option value="진주">진주</option>
+                  	<option value="청주">청주</option>
+                  	<option value="도쿄(나리타)">도쿄(나리타)</option>
+                     <option value="도쿄(하네다)">도쿄(하네다)</option>
+                     <option value="오사카">오사카</option>
+                     <option value="삿포로">삿포로</option>
+                     <option value="나고야">나고야</option>
+                     <option value="후쿠오카">후쿠오카</option>
+                     <option value="방콕">방콕</option>
+                     <option value="푸켓">푸켓</option>
+                     <option value="싱가포르">싱가포르</option>
+                     <option value="마닐라">마닐라</option>
+                     <option value="토론토">토론토</option>
+                     <option value="뉴욕(JFK)">뉴욕(JFK)</option>
+                     <option value="LA">LA</option>
+                     <option value="런던">런던</option>
+                     <option value="파리">파리</option>
+                     <option value="상해(푸동)">상해(푸동)</option>
+                     <option value="상해(홍교)">상해(홍교)</option>
+                     <option value="북경">북경</option>
+                     <option value="홍콩">홍콩</option>
+                     <option value="하노이">하노이</option>
+                     <option value="호치민">호치민</option>
+                     <option value="시드니">시드니</option>
+                           </select>
+                        </li>
+                        
+                  <li class="fl">
+                     <label for="startDate" >탑승일</label>
+                     <input type="text" name="startDate2" id="startDate2" size="10" maxlength="10" placeholder="yyyy-mm-dd" />
+                  </li>
+               </ul>
+               <!-- //clear -->
+                        
+                          <ul class="clear">
+
+                        <li class="fl">
+                           <label for="startCity">출발도시</label>
+                           <select name="startCity3" id="startCity3">
+                           <option value="" selected="selected"></option>
+                          	<option value="서울">서울</option>
+                  	<option value="부산">부산</option>
+                  	<option value="제주">제주</option>
+                  	<option value="광주">광주</option>
+                  	<option value="군산">군산</option>
+                  	<option value="대구">대구</option>
+                  	<option value="인천">인천</option>
+                  	<option value="여수">여수</option>
+                  	<option value="울산">울산</option>
+                  	<option value="원주">원주</option>
+                  	<option value="진주">진주</option>
+                  	<option value="청주">청주</option>
+                  	<option value="도쿄(나리타)">도쿄(나리타)</option>
+                     <option value="도쿄(하네다)">도쿄(하네다)</option>
+                     <option value="오사카">오사카</option>
+                     <option value="삿포로">삿포로</option>
+                     <option value="나고야">나고야</option>
+                     <option value="후쿠오카">후쿠오카</option>
+                     <option value="방콕">방콕</option>
+                     <option value="푸켓">푸켓</option>
+                     <option value="싱가포르">싱가포르</option>
+                     <option value="마닐라">마닐라</option>
+                     <option value="토론토">토론토</option>
+                     <option value="뉴욕(JFK)">뉴욕(JFK)</option>
+                     <option value="LA">LA</option>
+                     <option value="런던">런던</option>
+                     <option value="파리">파리</option>
+                     <option value="상해(푸동)">상해(푸동)</option>
+                     <option value="상해(홍교)">상해(홍교)</option>
+                     <option value="북경">북경</option>
+                     <option value="홍콩">홍콩</option>
+                     <option value="하노이">하노이</option>
+                     <option value="호치민">호치민</option>
+                     <option value="시드니">시드니</option>
+                           </select>
+                        </li>
+                        <li class="fl">
+                           <label for="endCity">도착도시</label>
+                           <select name="endCity3" id="endCity3">
+                           <option value="" selected="selected"></option>
+                          	<option value="서울">서울</option>
+                  	<option value="부산">부산</option>
+                  	<option value="제주">제주</option>
+                  	<option value="광주">광주</option>
+                  	<option value="군산">군산</option>
+                  	<option value="대구">대구</option>
+                  	<option value="인천">인천</option>
+                  	<option value="여수">여수</option>
+                  	<option value="울산">울산</option>
+                  	<option value="원주">원주</option>
+                  	<option value="진주">진주</option>
+                  	<option value="청주">청주</option>
+                  	<option value="도쿄(나리타)">도쿄(나리타)</option>
+                     <option value="도쿄(하네다)">도쿄(하네다)</option>
+                     <option value="오사카">오사카</option>
+                     <option value="삿포로">삿포로</option>
+                     <option value="나고야">나고야</option>
+                     <option value="후쿠오카">후쿠오카</option>
+                     <option value="방콕">방콕</option>
+                     <option value="푸켓">푸켓</option>
+                     <option value="싱가포르">싱가포르</option>
+                     <option value="마닐라">마닐라</option>
+                     <option value="토론토">토론토</option>
+                     <option value="뉴욕(JFK)">뉴욕(JFK)</option>
+                     <option value="LA">LA</option>
+                     <option value="런던">런던</option>
+                     <option value="파리">파리</option>
+                     <option value="상해(푸동)">상해(푸동)</option>
+                     <option value="상해(홍교)">상해(홍교)</option>
+                     <option value="북경">북경</option>
+                     <option value="홍콩">홍콩</option>
+                     <option value="하노이">하노이</option>
+                     <option value="호치민">호치민</option>
+                     <option value="시드니">시드니</option>
+                           </select>
+                        </li>
+                        
+                  <li class="fl">
+                     <label for="startDate" >탑승일</label>
+                     <input type="text" name="startDate3" id="startDate3" size="10" maxlength="10" placeholder="yyyy-mm-dd" />
+                  </li>
+               </ul>
+               <!-- //clear -->
+               
+                   </div>
+                   <!-- //city_w(다구간여정) -->
 
           
-                        <div class="fl clearfix">
-
-                           <div class="fl ml_75">
+                        <div class="fl">
+						<div class="clear">
+                           <div class="fl">
                               <h4>좌석선택</h4>
                               <ul class="radio_w2 mt_10">
                                  <li><input type="radio" name="seat" id="general"
@@ -298,19 +642,24 @@ $(document).ready(function(){
                                  </li>
                               </ul>
                            </div>
+                           
 
                         </div>
-                        <!-- //clearfix -->
+                        
+                        </div>
+                        <!-- //clear -->
+                        
 
                      </div>
-                     <!-- //clearfix -->
+                     
+                     <!-- //sch_air -->
 
-                     <div class="fl ta_c mt_20">
+                     <div class="ta_c mt_50">
                         <input type="button" class="btn_sch clearfix" value="항공편 조회"
                            onclick="nullCheck()" />
                      </div>
 
-                  </div>
+                 	</div>
                   </form>
                      <!-- //con_box -->
 
@@ -337,7 +686,7 @@ $(document).ready(function(){
                                  <th scope="col">항공사</th>
                                  <th scope="col">출발일</th>
                                  <c:if test="${userReserDto.getReserveLine() eq '왕복' }">
-                                 	<th scope="col">귀국일</th>
+                                    <th scope="col">귀국일</th>
                                  </c:if>
                                  <th scope="col">총요금</th>
                                  <th scope="col">유효기간</th>
@@ -364,7 +713,7 @@ $(document).ready(function(){
                                     " class="btn_reser">예약</a></td>
                                  </tr>
                               </c:forEach>
-							
+                     
 
                            </tbody>
                         </table>

@@ -177,17 +177,17 @@ public class reserveManager {
 	}
 	public static ReserveCompleteDto completMultiReserve(ReserveCompleteDto reserComDto) {
 		SqlSession session = sqlFactory.openSession();
-		session.insert("ReserveComplete",reserComDto);
+		session.insert("reserveComplete",reserComDto);
 		session.update("updateSeat",reserComDto);
 		session.update("updateNum",reserComDto);
 		session.update("updateMileage",reserComDto);
 		
-		session.insert("ReserveComplete2",reserComDto);
+		session.insert("reserveComplete2",reserComDto);
 		session.update("updateSeat2",reserComDto);
 		session.update("updateNum2",reserComDto);
 		session.update("updateMileage2",reserComDto);
 		
-		session.insert("ReserveComplete3",reserComDto);
+		session.insert("reserveComplete3",reserComDto);
 		session.update("updateSeat3",reserComDto);
 		session.update("updateNum3",reserComDto);
 		session.update("updateMileage3",reserComDto);
