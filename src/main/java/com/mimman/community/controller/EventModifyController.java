@@ -43,13 +43,15 @@ public class EventModifyController {
 			dto.setImg(Path);
 			pageService.writeFile(file, realPath, file.getOriginalFilename());
 			pageService.BoardModify(dto);
+			
 		}
 		
 		else{
 			System.out.println("권한이 없는 사용자입니다");
+			
 		}
 	
 		
-		return "eventBoard.action";
+		return "eventBoard.action?boardcd="+boardcd;
 	}
 }

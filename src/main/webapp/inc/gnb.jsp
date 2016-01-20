@@ -42,9 +42,9 @@
 								</li>
 
 								<li>
-									<a class="menu" href="">여행 가이드</a>
+									<a class="menu" href="cityBoard.action">여행 가이드</a>
 									<ul>
-										<li><a href="">도시 가이드</a></li>
+										<li><a href="cityBoard.action">도시 가이드</a></li>
 										<li><a href="">테마 가이드</a></li>
 									</ul>
 								</li>

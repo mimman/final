@@ -30,7 +30,7 @@ public class EventDeleteController {
 		}
 		
 		
-		return "eventBoard.action?"+boardcd;
+		return "eventBoard.action?boardcd="+boardcd;
 	}
 
 }

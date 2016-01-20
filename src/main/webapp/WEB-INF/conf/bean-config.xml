@@ -119,4 +119,5 @@
   	<bean class="com.mimman.reservation.controller.reserSearchController">
   		<property name="reservationService" ref="reservationService"></property>
   	</bean>
+  	<bean class="com.mimman.guide.controller.CityBoardController"></bean>
 </beans>
