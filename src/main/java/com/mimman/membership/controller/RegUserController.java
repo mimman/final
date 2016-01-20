@@ -1,11 +1,17 @@
 package com.mimman.membership.controller;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.WebUtils;
 
 import com.mimman.exception.AlreadyExistingMemberException;
 import com.mimman.membership.repository.Member;
@@ -21,11 +27,19 @@ public class RegUserController {
 	}
 	
 	@RequestMapping("joinCheck.action")
-	public String joinCheck(String id,String password,String name, String birth,
-			String email,String address, String nation, String phone){
+	public String joinCheck(Member dto,HttpServletRequest req) throws FileNotFoundException{
 	
 		try{
-			Member dto = new Member(id,password,name,birth,email,address,nation,phone);
+			
+			
+			MultipartFile file = dto.getUpFile();
+			
+			String realPath = WebUtils.getRealPath(req.getSession().getServletContext(),"/img/membership");
+			String Path ="/Air/img/membership/"+ File.separator + file.getOriginalFilename();
+			dto.setImg(Path);
+			
+			memberService.writeFile(file, realPath, file.getOriginalFilename());
+			
 			memberService.getList(dto);
 			return "/WEB-INF/views/membership/joinOk.jsp";
 		}
@@ -34,15 +48,7 @@ public class RegUserController {
 		}
 		
 	}
-	/*
-	@RequestMapping("membership.action")
-	public ModelAndView pageHandler2(){
-		System.out.println("membership.action");
-		ModelAndView mav = new ModelAndView("/WEB-INF/views/membership/joinInfo.jsp");
-		
-		return mav;
-	}
-	*/
+	
 	@RequestMapping("membership.action")
 	public String pageHandler2(){
 

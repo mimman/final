@@ -37,5 +37,9 @@ public interface ReservationService {
 
 	public ReserveCompleteDto completMultiReserve(ReserveCompleteDto reserComDto);
 
+	public ReserveCompleteDto searchReservation(ReserveCompleteDto comReserveNum);
+
+	public void reservationDelete(ReserveCompleteDto comReserveNum);
+
 	
 }

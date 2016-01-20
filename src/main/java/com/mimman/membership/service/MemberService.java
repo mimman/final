@@ -1,5 +1,7 @@
 package com.mimman.membership.service;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.mimman.membership.repository.Login;
 import com.mimman.membership.repository.Member;
 import com.mimman.membership.repository.Search;
@@ -14,4 +16,6 @@ public interface MemberService {
 	public void withdraw(String id);
 	public String idSearch(Search search);
 	public String pwSearch(pwSearch search);
+	public void writeFile(MultipartFile file, String realPath, String originalFilename);
+	
 }

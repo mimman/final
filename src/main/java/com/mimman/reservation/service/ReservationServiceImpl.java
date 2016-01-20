@@ -86,6 +86,16 @@ public List searchReserveList2(HumanNumDto hdto) {
 		return reserveManager.completMultiReserve(reserComDto);
 	}
 
+	public ReserveCompleteDto searchReservation(ReserveCompleteDto comReserveNum) {
+		return reserveManager.searchReservation(comReserveNum);
+		
+	}
+
+	public void reservationDelete(ReserveCompleteDto comReserveNum) {
+		reserveManager.reservationDelete(comReserveNum);
+		
+	}
+
 	
 
 }

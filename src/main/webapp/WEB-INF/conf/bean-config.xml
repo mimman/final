@@ -116,4 +116,7 @@
    
   	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
   	<bean class="com.mimman.mileage.controller.mileageController"></bean>
+  	<bean class="com.mimman.reservation.controller.reserSearchController">
+  		<property name="reservationService" ref="reservationService"></property>
+  	</bean>
 </beans>

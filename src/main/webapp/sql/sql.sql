@@ -11,7 +11,7 @@ create table tbluser(
 
 );
 alter table article modify(img default null)
-
+alter table tbluser add (img varchar(100))
 alter table tbluser add constraint pk_id primary key(id)
 select * from tbluser
 delete from TBLUSER where id= 'mimman2'
@@ -233,3 +233,7 @@ select * from reserve where airLine='대한항공' and startCity='제주'
 		and endCity='대구' and startDate='2016-01-01' and seat >= 1
 		
 		select * from userReservation
+		select * from tbluser where id='m7'
+		select commentno,articleno,boardcd,content,writer,pos,dept,regdate,img from tblcomment left join tbluser on tblcomment.writer = tbluser.id where articleno = 288
+		
+		select commentno,articleno,boardcd,content,writer,pos,dept,regdate,img from tblcomment left join tbluser on tblcomment.writer = tbluser.id where articleno = 341 order by pos desc, dept asc

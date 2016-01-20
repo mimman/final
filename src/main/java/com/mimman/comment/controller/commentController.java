@@ -43,7 +43,7 @@ public class commentController {
 			System.out.println(param);
 		
 		
-		return "/WEB-INF/views/community/eventRead.jsp";
+		return "eventRead.action";
 	}
 	
 	

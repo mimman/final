@@ -185,7 +185,8 @@ div.comment .btn_cmt{border:1px solid #ddd;border-radius:5px;position:absolute;t
 
 /* 게시판 */
 div.reply{border-top:1px solid #ddd;padding:10px;position:relative;}
-div.reply ul li.profile{display:inline-block;width:88px;height:88px;padding:5px;border:1px solid #ddd;background:url(../img/community/profile.png) no-repeat 5px 5px;background-size:90px auto;}
+div.reply ul li.profile{display:inline-block;width:88px;height:88px;padding:5px;border:1px solid #ddd;background:url(../img/community/profile.png) no-repeat 5px 5px;background-size:88px auto;}
+div.reply ul li.profile img{width:88px;height:88px;}
 div.reply ul li.txt{padding:10px;width:1000px;}
 div.reply ul li.txt strong{color:#333;padding:0 5px 0 0;}
 div.reply.child ul li.profile{display:inline-block;width:29px;height:12px;background:url(../img/community/re.gif) no-repeat 0 10px;}
@@ -212,3 +213,11 @@ div.pop_wrap_b div.taxbox_w p:nth-child(3){line-height:47px;color:#f83030;}
 div.pop_wrap_b div.taxbox_w p:nth-child(3) em{font-size:20px;font-weight:600;}
 
 div.pop_wrap_b div.taxbox_w.v2 p:nth-child(1){border:1px solid #1a4a78;display:inline-block;background:#fff;padding:5px;margin-right:10px;color:#1a4a78;font-weight:600;}
+
+/* 마일리지 */
+.mile_w{width:auto;height:340px;margin:0 auto;padding:0 4px;background:none;}
+.mile_w ul.mile>li{display:inline-block;float:left;margin-right:36px;background:none;}
+.mile_w ul.mile>li a{display:inline-block;width:254px;height:270px;padding:35px 0;border:1px solid #e6e3e3;text-align:center;}
+.mile_w ul.mile>li:last-child{margin-right:0;}
+.mile_w ul.mile li em{display:inline-block;font-size:28px;font-weight:600;color:#333;margin:27px 0 29px}
+.mile_w ul.mile>li ul.list_v1{margin:0;padding:0 0 0 50px;}

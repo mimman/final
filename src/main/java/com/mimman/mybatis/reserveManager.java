@@ -227,6 +227,20 @@ public class reserveManager {
 		return list;
 	}
 
+	public static ReserveCompleteDto searchReservation(ReserveCompleteDto comReserveNum) {
+		ReserveCompleteDto dto = null;
+		SqlSession session = sqlFactory.openSession();
+		dto = session.selectOne("searchReservation",comReserveNum);
+		return dto;
+	}
+
+	public static void reservationDelete(ReserveCompleteDto comReserveNum) {
+		SqlSession session = sqlFactory.openSession();
+		session.delete("reservationDelete",comReserveNum);
+		session.commit();
+		
+	}
+
 	
 
 	

@@ -33,6 +33,7 @@
          <h3>회원 정보</h3>
       
          <ul class="mt_50">
+         	<li><label for="inputProfile">프로필</label><p><img src="${dto.getImg()}" style="width:200px;height:auto;"></p></li>
             <li><label for="inputName">이름</label><p>${dto.getName() }</p></li>
             <li><label for="inputBirth">생년월일</label><p>${dto.getBirth() }</p></li>
             <li><label for="inputEmail">이메일</label><p>${dto.getEmail() }</p></li>

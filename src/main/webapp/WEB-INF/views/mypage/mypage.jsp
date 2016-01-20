@@ -50,8 +50,9 @@
             확인하실 수 있습니다.</span>
             
             <ul class="list_v1 mg">
-               <li><a href="">예약 조회</a></li>
-               <li><a href="">항공권 조회</a></li>
+               <li><a href="reservationSearch.action">예약 조회</a></li>
+               <li><a href="">예약 내역</a></li>
+               <li><a href="reservationDeletePage.action">예약 취소</a></li>
             </ul>
          </li>
          

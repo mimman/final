@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8" isELIgnored="false"%>
+<%@ page contentType="text/html; charset=utf-8" isELIgnored="false" isErrorPage="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <jsp:include page="/inc/header1.jsp" flush="true" />
@@ -32,22 +32,37 @@
             </ul>
          </div>
          
-            <h3>예약번호 조회</h3>
+            <h3>예약조회 결과</h3>
 
             <!-- 본문영역 -->
             <div id="contentG">
             <!-- 내용 -->
-			<form method="post" action="reservationOk.action">
-            <div class="reser_sch">
+
+            <div class="joininfo member">
+
+         <h3>예약 정보</h3>
+      
+         <ul class="mt_50">
+         	<li><label for="inputcomReserveNum">예약번호</label><p>${userReserDto.getComReserveNum() }</p></li>
+            <li><label for="inputReserveNum">예매번호</label><p>${userReserDto.getReserveNum() }</p></li>
+            <li><label for="inputReserveLine">여정</label><p>${userReserDto.getReserveLine() }</p></li>
+            <li><label for="inputAirLine">항공사</label><p>${userReserDto.getAirLine() }</p></li>
+            <li><label for="inputStartCity">출발도시</label><p>${userReserDto.getStartCity() }</p></li>
+            <li><label for="inputEndCity">도착도시</label><p>${userReserDto.getEndCity() }</p></li>
+            <li><label for="inputStartDate">출발일</label><p>${userReserDto.getStartDate() }</p></li>
+            <li><label for="inputTime">출발시간</label><p>${userReserDto.getStartTime() }</p></li>
+            <li><label for="inputAdult">성인</label><p>${userReserDto.getAdult() }명</p></li>
+            <li><label for="inputChild">소아</label><p>${userReserDto.getChild() }명</p></li>
+            <li><label for="inputToddle">유아</label><p>${userReserDto.getToddle() }명</p></li>
+            <li><label for="inputTax">총 비용</label><p>${userReserDto.getTax() }원</p></li>
+            <li><label for="inputMileage">적립 마일리지</label><p>${userReserDto.getMileage() } Point</p></li>
+         </ul>
+      
+      </div>
+      <!-- //joininfo -->
             
-               <label for="num" style="margin:0 20px 0 10px;">예약번호 조회</label><input type="text" id="comReserveNum" name="comReserveNum" />
-            
-            </div>
-            
-            <div style="margin:20px 10px;;">
-               <input type="submit" value="찾기" class="btn_m" />
-         </div>
-			</form>
+          
+
             <!-- //내용 -->
             </div>
             <!-- //contentG -->

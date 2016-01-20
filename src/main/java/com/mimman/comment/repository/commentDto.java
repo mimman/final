@@ -11,7 +11,14 @@ public class commentDto {
 	private int pos;
 	private int dept;
 	private String regdate;
+	private String img;
 	
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
 	public int getCommentno() {
 		return commentno;
 	}

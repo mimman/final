@@ -17,11 +17,12 @@
       <h2 class="blind">본문 영역</h2>
 
       <div class="tab_w clearfix v2">
-         <ul>
-            <li class="current"><a href="domesticSearch.jsp">회원가입</a></li>
-            <li class=""><a href="interSearch.jsp">국제선 항공권</a></li>
-         </ul>
-      </div>
+            <ul>
+               <li class="current"><a href="reservationSearch.action">예약 조회</a></li>
+               <li class=""><a class="" href="">예약 내역</a></li>
+               <li class=""><a class="" href="">예약 취소</a></li>
+            </ul>
+         </div>
 
       <h3 class="blind">시설현황</h3>
 
@@ -29,7 +30,7 @@
          <div id="contentG">
          
             <!-- 내용 -->
-
+검색결과가 없습니다
 
             <!-- //내용 -->
 

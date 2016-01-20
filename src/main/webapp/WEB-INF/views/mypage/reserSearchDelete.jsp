@@ -26,21 +26,21 @@
             
          <div class="tab_w clearfix v2">
             <ul>
-               <li class="current"><a href="reservationSearch.action">예약 조회</a></li>
+               <li class=""><a href="reservationSearch.action">예약 조회</a></li>
                <li class=""><a class="" href="">예약 내역</a></li>
-               <li class=""><a class="" href="reservationDeletePage.action">예약 취소</a></li>
+               <li class="current"><a class="" href="reservationDeletePage.action">예약 취소</a></li>
             </ul>
          </div>
          
-            <h3>예약번호 조회</h3>
+            <h3>예약취소</h3>
 
             <!-- 본문영역 -->
             <div id="contentG">
             <!-- 내용 -->
-			<form method="post" action="reservationOk.action">
+			<form method="post" action="reservationDelete.action">
             <div class="reser_sch">
             
-               <label for="num" style="margin:0 20px 0 10px;">예약번호 조회</label><input type="text" id="comReserveNum" name="comReserveNum" />
+               <label for="num" style="margin:0 20px 0 10px;">예약번호</label><input type="text" id="comReserveNum" name="comReserveNum" />
             
             </div>
             

@@ -161,7 +161,7 @@ $(function() {
       
          <!-- 내용 -->
          
-         <form action="joinCheck.action" method="post" class="join" name="join">
+         <form action="joinCheck.action" method="post" class="join" name="join" enctype="multipart/form-data">
          <div class="joininfo">
             
             <h3>회원가입</h3>
@@ -214,6 +214,9 @@ $(function() {
                </li>
                <li>
                   <label for="inputPhone">phone</label><input type="text" id="phone" name="phone" placeholder="전화번호" />
+               </li>
+                <li>
+                  <label for="inputProfile">profile</label><input type="file" id="upFile" name="upFile" />
                </li>
             </ul>
             

@@ -77,6 +77,9 @@
 	<select id="selectNum" parameterType="ComDto" resultType="ComDto">
 		select * from userReservation where id=#{id} and startDate=#{startDate} and reserveLine=#{reserveLine} and startTime=#{startTime} and startCity=#{startCity} and endCity=#{endCity}
 	</select>
+	<select id="searchReservation" parameterType="ComDto" resultType="ComDto">
+		select * from userReservation where comreservenum=#{comReserveNum} and id=#{id}
+	</select>
 	
 	<insert id="reserveComplete" parameterType="ComDto">
 		insert into userReservation(comreservenum,reservenum,airline,startcity,startdate,starttime,endcity,endTime,adult,child,toddle,adultTax,childTax,toddleTax,id,tax,mileage,reserveLine) 
@@ -121,5 +124,9 @@
 	<update id="updateMileage3" parameterType="ComDto">
 		update tbluser set mileage = mileage + #{mileage3} where id=#{id}
 	</update>
+	<delete id="reservationDelete" parameterType="ComDto">
+	delete from userReservation where comreservenum=#{comReserveNum} and id=#{id} 
+	
+	</delete>
 	
 </mapper>

@@ -135,8 +135,15 @@
          <form action="eventWrite.action" name="board" method="post">
          <div class="ta_r mt_10">
          <c:if test="${id ne null }">
-            <input class="btn_m" type="submit" value="글쓰기" >     
-          </c:if>       
+         	
+         	<c:if test="${id eq 'mimman'}">
+           		 <input class="btn_m" type="submit" value="글쓰기" >  
+            </c:if>
+             <c:if test="${boardcd eq 'qna' and id ne 'mimman'}">
+           		 <input class="btn_m" type="submit" value="글쓰기" >  
+            </c:if>
+            	   
+         </c:if>       
          </div>
          <!-- //ta_r -->
          </form>

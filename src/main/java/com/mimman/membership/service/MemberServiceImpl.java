@@ -1,5 +1,11 @@
 package com.mimman.membership.service;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import org.springframework.web.multipart.MultipartFile;
+
 import com.mimman.exception.IdPasswordNotMachingException;
 import com.mimman.membership.repository.Login;
 import com.mimman.membership.repository.Member;
@@ -9,11 +15,10 @@ import com.mimman.membership.repository.Update;
 import com.mimman.mybatis.memberManager;
 
 public class MemberServiceImpl implements MemberService {
-
+	private FileOutputStream fout;
+	
 	public void getList(Member dto) {
-		System.out.println("getList ¡¯¿‘");
 		memberManager.addUser(dto);
-		System.out.println("getList ≥°");
 	}
 	
 	public Member authenticate(Login login){
@@ -61,4 +66,25 @@ public class MemberServiceImpl implements MemberService {
 	      String dto=memberManager.pwSearch(search);
 	      return dto;
 	   }
+
+	public void writeFile(MultipartFile file, String realPath, String originalFilename) {
+		  try {
+		         byte fileData[] = file.getBytes();
+		         fout = new FileOutputStream(realPath + File.separator + originalFilename);
+		         fout.write(fileData);
+		      } catch (IOException err) {
+		         err.printStackTrace();
+		      } finally {
+		         try {
+					fout.close();
+				} catch (IOException e) {
+					
+					e.printStackTrace();
+				}
+		      }
+		
+	}
+	   
+		
+		
 }

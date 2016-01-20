@@ -103,11 +103,20 @@ $(document).ready(function () {
           <th>조회수</th>
          <td class="ta_r">${boardDto.getHit() } </td>
       </tr>
+      
       <tr> 
+      
          <td colspan="4" style="padding:20px">
-         <img src="${boardDto.getImg()}">
-         ${boardDto.getContent() }</td>
+         <c:if test="${boardDto.getImg() ne '/Air/img/board/\'}">
+         <img src="${boardDto.getImg()}"> 
+         </c:if>
+          <br />${boardDto.getContent() }
+         </td>
+       
+      
       </tr>
+      
+      
      
       </table>
       
@@ -131,7 +140,7 @@ $(document).ready(function () {
            <form method="post" action="comment.action">
              <input type="hidden" name="param" value="comment">
              <input type="hidden" name="articleno" value="${boardDto.getArticleno() }" >
-            <input type="hidden" name="writer" value="${boardDto.getWriter() }">
+            <input type="hidden" name="writer" value="${id }">
             <input type="hidden" name="boardcd" value="${boardDto.getBoardcd()}">
             <label for="t_comment" class="blind">의견등록</label>
             <textarea cols="70" rows="23" id="t_comment" name="content" class="textarea_s1" style="width:890px;height:45px;"></textarea>
@@ -144,13 +153,13 @@ $(document).ready(function () {
    <div class="reply_w">
    <c:if test="${dto.getDept() > 0 }">
             	<c:forEach  begin="1" end="${dto.getDept()}"><p class="pl_15"></p></c:forEach>
-            	<img src="/Air/img/common/re.gif">
+            	
             </c:if>
       <div class="reply">
  
   
          <ul class="clear">
-            <li class="profile fl"></li>
+            <li class="profile fl"><img src="${dto.getImg() }"></li>
             <li class="txt fl">
                <strong>${dto.getWriter()}</strong> | 작성일 : ${dto.getRegdate()}
                <c:if test="${id eq dto.getWriter()}">

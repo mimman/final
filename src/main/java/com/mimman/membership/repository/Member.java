@@ -2,6 +2,8 @@ package com.mimman.membership.repository;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Member {
 	private String id;
 	private String name;
@@ -12,18 +14,22 @@ public class Member {
 	private String phone;
 	private String password;
 	private int mileage;
+	private MultipartFile upFile;
+	private String img;
 	
-	public Member(){}
-	public Member(String id,String password,String name,String birth,
-			String email,String address,String nation,String phone){
-		this.id = id;
-		this.password = password;
-		this.name = name;
-		this.birth = birth;
-		this.email = email;
-		this.address = address;
-		this.nation = nation;
-		this.phone = phone;
+
+	
+	public MultipartFile getUpFile() {
+		return upFile;
+	}
+	public void setUpFile(MultipartFile upFile) {
+		this.upFile = upFile;
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
 	}
 	public String getId() {
 		return id;

@@ -67,14 +67,14 @@ function emailCheck(){
 			<div id="containerG_w" class="sub01">
 				<h2 class="blind">본문 영역</h2>
 
-			  <div class="tab_w clearfix v2">
-               <ul>
-                  <li class=""><a href="memberDetail.action">회원 정보</a></li>
-                  <li class="current"><a href="updateUser.action">회원정보 수정</a></li>
-                  <li class=""><a href="withdraw.action">회원 탈퇴</a></li>
-               </ul>
-            </div>
-            <!-- //tab_w -->
+				<div class="tab_w clearfix v2">
+					<ul>
+						<li class=""><a href="memberDetail.action">회원 정보</a></li>
+						<li class="current"><a href="updateUser.action">회원정보 수정</a></li>
+						<li class=""><a href="withdraw.action">회원 탈퇴</a></li>
+					</ul>
+				</div>
+				<!-- //tab_w -->
 
 				<h3 class="blind">시설현황</h3>
 
@@ -83,9 +83,9 @@ function emailCheck(){
 
 					<!-- 내용 -->
 					<form action="updateUser.action" method="post" class="join"
-						name="join">
+						name="join" enctype="multipart/form-data">
 						<input type="hidden" name="id" value="${id}">
-						
+
 						<div class="joininfo">
 
 							<h3>회원 수정</h3>
@@ -107,6 +107,8 @@ function emailCheck(){
 								</li>
 								<li><label for="inputPhone">phone</label><input type="text"
 									id="phone" name="phone" value="${dto.getPhone() }"></li>
+								<li><label for="inputProfile">profile</label><input
+									type="file" id="upFile" name="upFile" } /></li>
 							</ul>
 
 							<input type="button" value="확인" onclick="nullCheck()"

@@ -40,7 +40,7 @@ public class EventWriteController {
 		
 		String id = (String)session.getAttribute("id");
 		dto.setWriter(id);
-		System.out.println(dto.getTitle());
+		System.out.println(dto.getUpFile());
 		MultipartFile file = dto.getUpFile();
 		
 		String realPath = WebUtils.getRealPath(req.getSession().getServletContext(),"/img/board");

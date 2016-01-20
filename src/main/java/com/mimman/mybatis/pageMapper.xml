@@ -16,7 +16,7 @@
 		select * from tblcomment where articleno = #{articleno} order by pos desc, dept asc
 	</select>
 	<select id="getCommentList" parameterType="int" resultType="commentDto">
-		select * from tblcomment where articleno = #{articleno} order by pos desc, dept asc
+		select commentno,articleno,boardcd,content,writer,pos,dept,regdate,img from tblcomment left join tbluser on tblcomment.writer = tbluser.id where articleno = #{articleno} order by pos desc, dept asc
 	</select>
 	<insert id="EventboardWrite" parameterType="EventDto">
 		insert into article values(seq_article.nextval,#{boardcd},

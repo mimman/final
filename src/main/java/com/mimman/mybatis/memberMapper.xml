@@ -5,9 +5,9 @@
 <mapper namespace="mybatis.memberMapper">
 	<insert id="addUser" parameterType="Member">
 		insert into tbluser(id,name,birth,email,address,nation,phone,
-		password,mileage) 
+		password,mileage,img) 
 		values(#{id},#{name},#{birth},#{email},#{address},#{nation},#{phone},
-		#{password},0)
+		#{password},0,#{img})
 	</insert>
 	
 	<select id="selectByEmail" parameterType="Login" resultType="Member">
@@ -21,7 +21,7 @@
 	
 	<update id="update" parameterType="Update">
 		update tbluser set name=#{name},birth=#{birth},email=#{email},address=#{address}
-		,nation=#{nation},phone=#{phone} where id=#{id}
+		,nation=#{nation},phone=#{phone},img=#{img} where id=#{id}
 	</update>
 	
 	<delete id="drop" parameterType="String">

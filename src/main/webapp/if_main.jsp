@@ -234,12 +234,12 @@
 					
 					<div class="contents">
 						<ul class="list_v1">
-							<li><a href="#">국제선 유류할증료 안내 (16년 1월 1일 부)<span>2015.12.16</span></a></li>
-							<li><a href="#">국내선 유류할증료 안내 (16년 1월 1일 부)<span>2015.12.07</span></a></li>
-							<li><a href="#">MIRACLEAIR 부산/타이베이 운항 안내<span>2015.12.05</span></a></li>
-							<li><a href="#">캐나다 사전 전자여행허가제 시행 안내<span>2015.12.02</span></a></li>
-							<li><a href="#">Fine Thanks! SKYPASS 이벤트 당첨자 발표<span>2015.11.30</span></a></li>
-							<li><a href="#">‘하늘천사 김장나눔’ 행사로 훈훈한 연말 준비<span>2015.11.22</span></a></li>
+							<li><a href="eventRead.action?articleno=387" target="parent">캐나다 사전 전자여행허가제 시행 안내<span>2016.01.20</span></a></li>
+							<li><a href="eventRead.action?articleno=386" target="parent">국제선 유류할증료 안내<span>2016.01.20</span></a></li>
+							<li><a href="eventRead.action?articleno=385" target="parent">국내선 유류할증료 안내<span>2016.01.20</span></a></li>
+							<li><a href="eventRead.action?articleno=384" target="parent">MIRACLEAIR 부산/타이베이 운항 안내<span>2016.01.20</span></a></li>
+							<li><a href="eventRead.action?articleno=383" target="parent">Fine Thanks! SKYPASS 이벤트 당첨자 발표<span>2016.01.20</span></a></li>
+							<li><a href="eventRead.action?articleno=382" target="parent">‘하늘천사 김장나눔’ 행사로 훈훈한 연말 준비<span>2016.01.20</span></a></li>
 						</ul>
 					</div>
 				</div>

@@ -104,7 +104,10 @@ public class pageServiceImpl implements PageService {
 	         err.printStackTrace();
 	      } finally {
 	         try {
-				fout.close();
+	        	 if(fout != null){
+	        		 fout.close();
+	        	 }
+				
 			} catch (IOException e) {
 				
 				e.printStackTrace();
