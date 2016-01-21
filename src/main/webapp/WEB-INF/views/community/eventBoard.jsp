@@ -152,9 +152,11 @@
       
 	    <div class="bbsP mt_20">
                   <ul class="clear">
+                  <c:if test="${fn:length(list) ne 0 }">
                      <c:if test="${nowBlock eq 0}">
                         <li><img src="/Air/img/board/btn_prev.gif" alt="이전" /></li>
                      </c:if>
+                    </c:if>
 
 
       <c:if test="${nowBlock > 0}">

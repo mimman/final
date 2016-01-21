@@ -16,7 +16,7 @@ public class EventDeleteController {
 	}
 	
 	@RequestMapping("evevBoardDelete.action")
-	public String EventDelete(int articleno,String writer,String boardcd,HttpSession session){
+	public String EventDelete(int articleno,String writer,HttpSession session){
 	
 		String id = (String)session.getAttribute("id");
 	
@@ -30,7 +30,7 @@ public class EventDeleteController {
 		}
 		
 		
-		return "eventBoard.action?boardcd="+boardcd;
+		return "eventBoard.action";
 	}
 
 }

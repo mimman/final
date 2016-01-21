@@ -69,9 +69,9 @@
 
 				<!-- 내용 -->
 
-	
+
 				<form method="post" action="eventBoardModify.action" enctype="multipart/form-data">
-					<input type="hidden" name="boardcd" value="${boardDto.getBoardcd() }" >
+					
 					<input type="hidden" name="articleno" value="${boardDto.getArticleno() }" >
 					<input type="hidden" name="writer" value="${boardDto.getWriter() }">
 					<table class="tbl_board">

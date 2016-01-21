@@ -7,7 +7,8 @@ create table tbluser(
    nation   varchar2(40),
    phone   varchar2(30),
    password varchar2(30),
-   mileage   number(10)
+   mileage   number(10),
+   img varchar2(100)
 
 );
 alter table article modify(img default null)
@@ -30,15 +31,13 @@ create table article(
 	articleno number,
 	boardcd varchar2(20),
 	title varchar2(200) not null,
-	boardpw varchar2(50),
 	content varchar2(500),
 	regdate date,
-	hit number(5),
-	dept number(5),
-	img varchar2(20),
+	hit number,
+	dept number,
+	img varchar2(100),
 	writer varchar2(30),
-	pos number,
-	dept number
+	pos number
 );
 alter table article Modify (img varchar2(100));
 commit
@@ -62,7 +61,7 @@ select * from article where boardcd='event' and writer LIKE '%'||1||'%' order by
 update article set img='abc' where img is null
 
 create table tblcomment(
-commentno number primary key,
+	commentno number primary key,
 	articleno number not null,
 	boardcd varchar2(20)not null,
 	content varchar2(200)not null,

@@ -220,7 +220,6 @@ public class reserveManager {
 	public static List searchMulitReserveList3(HumanNumDto hdto) {
 		List list = null;
 		SqlSession session = sqlFactory.openSession();
-		System.out.println(hdto.getReserveLine());
 		list = session.selectList("searchMulitReserveList3",hdto);
 		System.out.println("searchMulitReserveList3 ªÁ¿Ã¡Ó:"+list.size());
 		
@@ -239,6 +238,14 @@ public class reserveManager {
 		session.delete("reservationDelete",comReserveNum);
 		session.commit();
 		
+	}
+
+	public static List reservationList(String id) {
+		List list = null;
+		SqlSession session = sqlFactory.openSession();
+		list = session.selectList("reservationList",id);
+
+		return list;
 	}
 
 	

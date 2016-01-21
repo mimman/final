@@ -27,7 +27,7 @@
          <div class="tab_w clearfix v2">
             <ul>
                <li class="current"><a href="reservationSearch.action">예약 조회</a></li>
-               <li class=""><a class="" href="">예약 내역</a></li>
+               <li class=""><a class="" href="reservationList.action">예약 내역</a></li>
                <li class=""><a class="" href="reservationDeletePage.action">예약 취소</a></li>
             </ul>
          </div>

@@ -80,6 +80,9 @@
 	<select id="searchReservation" parameterType="ComDto" resultType="ComDto">
 		select * from userReservation where comreservenum=#{comReserveNum} and id=#{id}
 	</select>
+	<select id="reservationList" parameterType="String" resultType="ComDto">
+		select * from userReservation where id=#{id} order by comreservenum desc
+	</select>
 	
 	<insert id="reserveComplete" parameterType="ComDto">
 		insert into userReservation(comreservenum,reservenum,airline,startcity,startdate,starttime,endcity,endTime,adult,child,toddle,adultTax,childTax,toddleTax,id,tax,mileage,reserveLine) 

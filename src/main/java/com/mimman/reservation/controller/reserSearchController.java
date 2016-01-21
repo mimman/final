@@ -1,5 +1,7 @@
 package com.mimman.reservation.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -48,5 +50,14 @@ public class reserSearchController {
 		reservationService.reservationDelete(comReserveNum);
 		return "/WEB-INF/views/mypage/mypage.jsp";
 	}
+	
+	@RequestMapping("reservationList.action")
+	public String reserSearchViewPage(HttpSession session){
+		String id = (String) session.getAttribute("id");
+		List list = reservationService.reservationList(id);
+		session.setAttribute("idSearchList", list);
+		return "/WEB-INF/views/mypage/reserSearchBoardView.jsp";
+	}
+	
 	
 }

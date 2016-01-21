@@ -101,7 +101,7 @@ public class pageServiceImpl implements PageService {
 	         fout = new FileOutputStream(path + File.separator + originalFilename);
 	         fout.write(fileData);
 	      } catch (IOException err) {
-	         err.printStackTrace();
+	         System.out.println(err);
 	      } finally {
 	         try {
 	        	 if(fout != null){

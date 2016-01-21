@@ -7,6 +7,7 @@ import java.io.IOException;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.mimman.exception.IdPasswordNotMachingException;
+import com.mimman.exception.NullPointException;
 import com.mimman.membership.repository.Login;
 import com.mimman.membership.repository.Member;
 import com.mimman.membership.repository.Search;
@@ -72,16 +73,15 @@ public class MemberServiceImpl implements MemberService {
 		         byte fileData[] = file.getBytes();
 		         fout = new FileOutputStream(realPath + File.separator + originalFilename);
 		         fout.write(fileData);
+		         if(fout == null){
+		        	
+		         }
+		         else{
+		        	 fout.close();
+		         }
 		      } catch (IOException err) {
 		         err.printStackTrace();
-		      } finally {
-		         try {
-					fout.close();
-				} catch (IOException e) {
-					
-					e.printStackTrace();
-				}
-		      }
+		      } 
 		
 	}
 	   

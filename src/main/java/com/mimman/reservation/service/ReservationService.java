@@ -41,5 +41,7 @@ public interface ReservationService {
 
 	public void reservationDelete(ReserveCompleteDto comReserveNum);
 
+	public List reservationList(String id);
+
 	
 }

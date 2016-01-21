@@ -96,6 +96,11 @@ public List searchReserveList2(HumanNumDto hdto) {
 		
 	}
 
+	public List reservationList(String id) {
+		List list = reserveManager.reservationList(id);
+		return list;
+	} 
+
 	
 
 }

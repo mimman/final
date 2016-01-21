@@ -31,10 +31,10 @@ public class EventModifyController {
 	}
 	
 	@RequestMapping("eventBoardModify.action")
-	public String Modify(HttpSession session,EventModifyDto dto,String boardcd,HttpServletRequest req) throws FileNotFoundException{
+	public String Modify(HttpSession session,EventModifyDto dto,HttpServletRequest req) throws FileNotFoundException{
 		
 		String id = (String)session.getAttribute("id");
-	
+		session.removeAttribute("boardcd");
 		if(dto.getWriter().equals(id)){
 			MultipartFile file = dto.getUpFile();
 			
@@ -43,15 +43,12 @@ public class EventModifyController {
 			dto.setImg(Path);
 			pageService.writeFile(file, realPath, file.getOriginalFilename());
 			pageService.BoardModify(dto);
-			
 		}
 		
 		else{
-			System.out.println("권한이 없는 사용자입니다");
-			
+			System.out.println("권한이 없는 사용자입니다");		
 		}
-	
-		
-		return "eventBoard.action?boardcd="+boardcd;
+
+		return "eventBoard.action";
 	}
 }
