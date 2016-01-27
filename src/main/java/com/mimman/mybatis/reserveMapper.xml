@@ -85,19 +85,19 @@
 	</select>
 	
 	<insert id="reserveComplete" parameterType="ComDto">
-		insert into userReservation(comreservenum,reservenum,airline,startcity,startdate,starttime,endcity,endTime,adult,child,toddle,adultTax,childTax,toddleTax,id,tax,mileage,reserveLine) 
+		insert into userReservation(comreservenum,reservenum,airline,startcity,startdate,starttime,endcity,endTime,adult,child,toddle,adultTax,childTax,toddleTax,id,tax,mileage,reserveLine,seat) 
 		values(seq_userReserve.nextval,#{reserveNum},#{airLine},#{startCity},#{startDate},#{startTime},#{endCity},#{endTime},
-		#{adult},#{child},#{toddle},#{adultTax},#{childTax},#{toddleTax},#{id},#{tax},#{mileage},#{reserveLine})
+		#{adult},#{child},#{toddle},#{adultTax},#{childTax},#{toddleTax},#{id},#{tax},#{mileage},#{reserveLine},#{seat})
 	</insert>
 	<insert id="reserveComplete2" parameterType="ComDto">
-		insert into userReservation(comreservenum,reservenum,airline,startcity,startdate,starttime,endcity,endTime,adult,child,toddle,adultTax,childTax,toddleTax,id,tax,mileage,reserveLine) 
+		insert into userReservation(comreservenum,reservenum,airline,startcity,startdate,starttime,endcity,endTime,adult,child,toddle,adultTax,childTax,toddleTax,id,tax,mileage,reserveLine,seat) 
 		values(seq_userReserve.nextval,#{reserveNum2},#{airLine2},#{startCity2},#{startDate2},#{startTime2},#{endCity2},#{endTime2},
-		#{adult2},#{child2},#{toddle2},#{adultTax2},#{childTax2},#{toddleTax2},#{id2},#{tax2},#{mileage2},#{reserveLine})
+		#{adult2},#{child2},#{toddle2},#{adultTax2},#{childTax2},#{toddleTax2},#{id2},#{tax2},#{mileage2},#{reserveLine},#{seat})
 	</insert>
 	<insert id="reserveComplete3" parameterType="ComDto">
-		insert into userReservation(comreservenum,reservenum,airline,startcity,startdate,starttime,endcity,endTime,adult,child,toddle,adultTax,childTax,toddleTax,id,tax,mileage,reserveLine) 
+		insert into userReservation(comreservenum,reservenum,airline,startcity,startdate,starttime,endcity,endTime,adult,child,toddle,adultTax,childTax,toddleTax,id,tax,mileage,reserveLine,seat) 
 		values(seq_userReserve.nextval,#{reserveNum3},#{airLine3},#{startCity3},#{startDate3},#{startTime3},#{endCity3},#{endTime3},
-		#{adult3},#{child3},#{toddle3},#{adultTax3},#{childTax3},#{toddleTax3},#{id3},#{tax3},#{mileage3},#{reserveLine})
+		#{adult3},#{child3},#{toddle3},#{adultTax3},#{childTax3},#{toddleTax3},#{id3},#{tax3},#{mileage3},#{reserveLine},#{seat})
 	</insert>
 	
 	<update id="updateSeat" parameterType="ComDto">
@@ -126,6 +126,12 @@
 	</update>
 	<update id="updateMileage3" parameterType="ComDto">
 		update tbluser set mileage = mileage + #{mileage3} where id=#{id}
+	</update>
+	<update id="seatUpgrade" parameterType="seatDto">
+		update userReservation set seat = #{seat} where (select mileage from tbluser where id=#{id}) <![CDATA[>=]]> #{mileage}*#{num} and id=#{id} and comreservenum=#{comnum}
+	</update>
+	<update id="mileageUse" parameterType="seatDto">
+		update tbluser set mileage = mileage - #{mileage}*#{num} where id=#{id}
 	</update>
 	<delete id="reservationDelete" parameterType="ComDto">
 	delete from userReservation where comreservenum=#{comReserveNum} and id=#{id} 

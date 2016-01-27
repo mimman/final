@@ -95,7 +95,7 @@ function initialize() {
       <div class="tab_w clearfix v2">
          <ul>
             <li class="current"><a href="cityBoard.action">도시가이드</a></li>
-            <li class=""><a href="">테마가이드</a></li>
+            
          </ul>
       </div>
 

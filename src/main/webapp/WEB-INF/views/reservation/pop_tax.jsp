@@ -169,6 +169,7 @@ function tax3(adultTax,adult,childTax,child,toddleTax,toddle){
 </head>
 <body id="pop">
 <div class="pop_s">
+
    <div class="pop_wrap_h">
       <div class="pop_tit">
       <h1>국내 실시간 항공권</h1>
@@ -212,13 +213,21 @@ function tax3(adultTax,adult,childTax,child,toddleTax,toddle){
          </thead>
          <tbody>
          
-       
+         <c:set var="num" value="${userReserDto.getAdult()+ userReserDto.getChild()+userReserDto.getToddle()}"></c:set>
          <c:forEach var="dto" items="${reserveDto}">
          <tr>
          <td class="first">${dto.getAircraftCode() }</td>
          <td>${dto.getStartTime() }</td>
          <td>${dto.getEndTime() }</td>
+         <c:if test="${userReserDto.getSeat() eq '일반석' }">
          <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}원</td>
+         </c:if>
+          <c:if test="${userReserDto.getSeat() eq '비즈니스석' }">
+         <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()} +${num*100000}원</td>
+         </c:if>
+          <c:if test="${userReserDto.getSeat() eq '일등석' }">
+         <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()} +${num*200000}원</td>
+         </c:if>
          <td>${dto.getSeat() } 석</td>
          <td class="pd_10 end"><label for="sel1_1" class="blind">항공편 선택</label><input type="radio" id="sel1_1" name="sel_air" onclick="tax(${dto.getAdultTax()}, ${hdto.getAdult() }, ${dto.getChildTax() },${hdto.getChild() },${dto.getToddleTax() },${hdto.getToddle() });post_to_url('${dto.getStartTime() }','${dto.getEndTime()}','${dto.getAirLine()}',${dto.getAdultTax()}, ${dto.getChildTax()},${dto.getToddleTax()},${dto.getReserNum() },'${userReserDto.getReserveLine()}')" /></td>
          </tr>
@@ -270,7 +279,16 @@ function tax3(adultTax,adult,childTax,child,toddleTax,toddle){
         <td class="first">${dto.getAircraftCode() }</td>
          <td>${dto.getStartTime() }</td>
          <td>${dto.getEndTime() }</td>
+         <c:if test="${userReserDto.getSeat() eq '일반석' }">
          <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}원</td>
+         </c:if>
+          <c:if test="${userReserDto.getSeat() eq '비즈니스석' }">
+         <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}+${num*100000}원</td>
+         </c:if>
+          <c:if test="${userReserDto.getSeat() eq '일등석' }">
+         <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}+${num*200000}원</td>
+         </c:if>
+         
          <td>${dto.getSeat() } 석</td>
          <td class="pd_10 end"><label for="sel2_1" class="blind">항공편 선택</label><input type="radio" id="sel2_1" name="sel_air2" 
          onclick="tax2(${dto.getAdultTax()}, ${hdto.getAdult() }, ${dto.getChildTax() },${hdto.getChild() },${dto.getToddleTax() },${hdto.getToddle() });post_to_url2('${dto.getStartTime() }','${dto.getEndTime()}','${dto.getAirLine()}',${dto.getAdultTax()}, ${dto.getChildTax()},${dto.getToddleTax()},${dto.getReserNum() })"/></td>
@@ -323,7 +341,15 @@ function tax3(adultTax,adult,childTax,child,toddleTax,toddle){
          	<td class="first">${dto.getAircraftCode()} </td>
          	<td>${dto.getStartTime() }</td>
          	<td>${dto.getEndTime() }</td>
-        	 <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}원</td>
+        	 <c:if test="${userReserDto.getSeat() eq '일반석' }">
+         <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}원</td>
+         </c:if>
+          <c:if test="${userReserDto.getSeat() eq '비즈니스석' }">
+         <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()} + ${num*100000} 원</td>
+         </c:if>
+          <c:if test="${userReserDto.getSeat() eq '일등석' }">
+         <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}  + ${num*200000} 원</td>
+         </c:if>
          	<td>${dto.getSeat() } 석</td>
          	<td class="pd_10 end"><label for="sel1" class="blind">항공편 선택</label><input type="radio" id="sel1" name="sel1" 
          onclick="tax1(${dto.getAdultTax()}, ${hdto.getAdult() }, ${dto.getChildTax() },${hdto.getChild() },${dto.getToddleTax() },${hdto.getToddle() });post_to_url('${dto.getStartTime() }','${dto.getEndTime()}','${dto.getAirLine()}',${dto.getAdultTax()}, ${dto.getChildTax()},${dto.getToddleTax()},${dto.getReserNum() })"/></td>
@@ -377,7 +403,15 @@ function tax3(adultTax,adult,childTax,child,toddleTax,toddle){
          	<td class="first">${dto.getAircraftCode() }</td>
          	<td>${dto.getStartTime() }</td>
          	<td>${dto.getEndTime() }</td>
-        	 <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}원</td>
+        	 <c:if test="${userReserDto.getSeat() eq '일반석' }">
+         <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}원</td>
+         </c:if>
+          <c:if test="${userReserDto.getSeat() eq '비즈니스석' }">
+         <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}  + ${num*100000} 원</td>
+         </c:if>
+          <c:if test="${userReserDto.getSeat() eq '일등석' }">
+         <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}  + ${num*200000} 원</td>
+         </c:if>
          	<td>${dto.getSeat() } 석</td>
          	<td class="pd_10 end"><label for="sel2" class="blind">항공편 선택</label><input type="radio" id="sel2" name="sel2" 
          onclick="tax2(${dto.getAdultTax()}, ${hdto.getAdult() }, ${dto.getChildTax() },${hdto.getChild() },${dto.getToddleTax() },${hdto.getToddle() });post_to_url2('${dto.getStartTime() }','${dto.getEndTime()}','${dto.getAirLine()}',${dto.getAdultTax()}, ${dto.getChildTax()},${dto.getToddleTax()},${dto.getReserNum() })"/></td>
@@ -431,7 +465,15 @@ function tax3(adultTax,adult,childTax,child,toddleTax,toddle){
          	<td class="first">${dto.getAircraftCode() }</td>
          	<td>${dto.getStartTime() }</td>
          	<td>${dto.getEndTime() }</td>
-        	 <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}원</td>
+        	 <c:if test="${userReserDto.getSeat() eq '일반석' }">
+         <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}원</td>
+         </c:if>
+          <c:if test="${userReserDto.getSeat() eq '비즈니스석' }">
+         <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()}  + ${num*100000} 원</td>
+         </c:if>
+          <c:if test="${userReserDto.getSeat() eq '일등석' }">
+         <td>${dto.getAdultTax() * hdto.getAdult() + dto.getChildTax()*hdto.getChild() +dto.getToddleTax()*hdto.getToddle()} + ${num*200000} 원</td>
+         </c:if>
          	<td>${dto.getSeat() } 석</td>
          	<td class="pd_10 end"><label for="sel3" class="blind">항공편 선택</label><input type="radio" id="sel3" name="sel3" 
          onclick="tax3(${dto.getAdultTax()}, ${hdto.getAdult() }, ${dto.getChildTax() },${hdto.getChild() },${dto.getToddleTax() },${hdto.getToddle() });post_to_url3('${dto.getStartTime() }','${dto.getEndTime()}','${dto.getAirLine()}',${dto.getAdultTax()}, ${dto.getChildTax()},${dto.getToddleTax()},${dto.getReserNum() })"/></td>

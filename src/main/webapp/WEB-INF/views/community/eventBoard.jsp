@@ -58,7 +58,7 @@
 <c:set var="totalBlock" value="${sessionScope.pagedto.getTotalBlock()}" />
 <c:set var="nowBlock" value="${sessionScope.pagedto.getNowBlock()}" />
 
-	<div class="ta_r">
+	<div class="t_sch2">
       <div class="item1 clear mt_30">
       <form method="post" action="boardSearch.action?boardcd=${boardcd}">
       

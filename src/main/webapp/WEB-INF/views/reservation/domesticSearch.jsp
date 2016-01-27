@@ -524,6 +524,8 @@ $(document).ready(function(){
                               <c:set var="adult" value="${dto.getAdultTax() * userReserDto.getAdult()}"></c:set>
                               <c:set var="child" value="${dto.getChildTax() * userReserDto.getChild()}"></c:set>
                               <c:set var="toddle" value="${dto.getToddleTax() * userReserDto.getToddle()}"></c:set>
+                              <c:set var="num" value="${userReserDto.getAdult()+ userReserDto.getChild()+userReserDto.getToddle()}"></c:set>
+                         
                                  <tr>
                                     <td class="first">${dto.getEndCity()}</td>
                                     <td>${dto.getAirLine() }</td>
@@ -531,7 +533,15 @@ $(document).ready(function(){
                                     <c:if test="${userReserDto.getReserveLine() eq '왕복' }">
                                     <td>${userReserDto.getEndDate()}</td>
                                     </c:if>
+                                    <c:if test="${userReserDto.getSeat() eq '일반석'}">
                                     <td>${adult+child+toddle } </td>
+                                    </c:if>
+                                      <c:if test="${userReserDto.getSeat() eq '비즈니스석'}">
+                                    <td>${adult+child+toddle+(num*100000) } </td>
+                                    </c:if>
+                                      <c:if test="${userReserDto.getSeat() eq '일등석'}">
+                                    <td>${adult+child+toddle+(num*200000) } </td>
+                                    </c:if>
                                     <td>${dto.getExDate() }</td>
                                     <td class="pd_10 end"><a href="reservePop.action?adult=${userReserDto.getAdult()}&child=${userReserDto.getChild()}&toddle=${userReserDto.getToddle()}&airLine=${dto.getAirLine()}"
                                     " class="btn_reser">예약</a></td>

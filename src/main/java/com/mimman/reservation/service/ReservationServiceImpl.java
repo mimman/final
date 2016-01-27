@@ -7,6 +7,7 @@ import com.mimman.mybatis.reserveManager;
 import com.mimman.reservation.repository.HumanNumDto;
 import com.mimman.reservation.repository.ReserveCompleteDto;
 import com.mimman.reservation.repository.ReserveDto;
+import com.mimman.reservation.repository.seatUpgradeDto;
 import com.mimman.reservation.repository.userReservationDto;
 
 public class ReservationServiceImpl implements ReservationService {
@@ -99,6 +100,11 @@ public List searchReserveList2(HumanNumDto hdto) {
 	public List reservationList(String id) {
 		List list = reserveManager.reservationList(id);
 		return list;
+	}
+
+	public void seatUpgrade(seatUpgradeDto dto) {
+		reserveManager.seatUpgrade(dto);
+		
 	} 
 
 	

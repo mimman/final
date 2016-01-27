@@ -1,26 +1,34 @@
 package com.mimman.reservation.repository;
 
 public class ReserveCompleteDto {
-	private String comReserveNum;
-	private String reserveNum;
-	private String reserveLine;
-	private String AirLine;
-	private String startCity;
-	private String startDate;
-	private String startTime;
-	private String endCity;
-	private String endDate;
-	private String endTime;
-	private int adult;
-	private int child;
-	private int toddle;
-	private int adultTax;
-	private int childTax;
-	private int toddleTax;
-	private String id;
-	private int tax;
-	private int mileage;
+	private String comReserveNum;  //예약번호
+	private String reserveNum;   //항공번호
+	private String reserveLine;  //편도/왕복/다구간
+	private String AirLine;   //항공사
+	private String startCity;  //출발도시
+	private String startDate;  //출발날짜
+	private String startTime;  //출발시간
+	private String endCity;   //도착도시
+	private String endDate;		//도착날짜
+	private String endTime;		//도착시간
+	private int adult;  //어른수
+	private int child;  //소아수
+	private int toddle; //유아수
+	private int adultTax; //어른 요금
+	private int childTax; //소아요금
+	private int toddleTax; //유아요금
+	private String id;  //예약자 
+	private int tax;  //총 요금
+	private int mileage;  //적립 마일리지
+	private String seat;  //좌석등급
 	
+	
+	public String getSeat() {
+		return seat;
+	}
+	public void setSeat(String seat) {
+		this.seat = seat;
+	}
 	private String comReserveNum2;
 	private String reserveNum2;
 	private String reserveLine2;

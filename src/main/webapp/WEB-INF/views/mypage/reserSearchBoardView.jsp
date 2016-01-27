@@ -38,67 +38,74 @@
             <div id="contentG">
             <!-- 내용 -->
 
-            <div class="joininfo member">
+			<div class="joininfo member">
 
-        <h3>예약내역</h3>
-       <div class="tbl_sch_box mt_30">
-                        <table cellspacing="0" border="1"
-                           summary="도시,항공사,출발기간,총요금,유효기간,예상TAX,예약하기 정보 전달" width="100%"
-                           cellpadding="0" class="tbl_sch">
-                           <caption>항공편 글목록</caption>
-                           <colgroup>
-                              <col width="12%">
-                              <col width="12%">
-                              <col width="12%">
-                              <col width="12%">
-                              <col width="12%">
-                              <col width="16%">
-                              <col width="12%">
-                              <col width="12%">
-                           </colgroup>
-                           <thead>
-                              <tr>
-                                 <th scope="col" class="first">예약번호</th>                              
-                                 <th scope="col">출발도시</th>
-                                 <th scope="col">도착도시</th>
-                                 <th scope="col">탑승일</th>
-                          		 <th scope="col">출발시간</th>
-                          		 <th scope="col">인원</th>
-                                 <th scope="col">총요금</th>
-                                 
-                                 
-                                 <th scope="col" class="end">항공사</th>
-                              </tr>
-                           </thead>
-                           <tbody>
+				<h3>예약내역</h3>
+				<div class="tbl_sch_box mt_30">
+					<table cellspacing="0" border="1"
+						summary="도시,항공사,출발기간,총요금,유효기간,예상TAX,예약하기 정보 전달" width="100%"
+						cellpadding="0" class="tbl_sch">
+						<caption>항공편 글목록</caption>
+						<colgroup>
+							<col width="11%">
+							<col width="11%">
+							<col width="11%">
+							<col width="11%">
+							<col width="11%">
+							<col width="11%">
+							<col width="11%">
+							<col width="11%">
+							<col width="11%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="first">예약번호</th>
+								<th scope="col">출발도시</th>
+								<th scope="col">도착도시</th>
+								<th scope="col">탑승일</th>
+								<th scope="col">출발시간</th>
+								<th scope="col">인원</th>
+								<th scope="col">총요금</th>
+								<th scope="col">좌석 등급</th>
+								<th scope="col" class="end">항공사</th>
+							</tr>
+						</thead>
+						<tbody>
 
-                              <c:forEach var="dto" items="${idSearchList }">
-                              
-                                 <tr>
-                                    <td class="first">${dto.getComReserveNum()}</td>
-                                    <td>${dto.getStartCity() }</td>
-                                    <td>${dto.getEndCity()}</td>
-                                    <td>${dto.getStartDate() }</td>   
-                                    <td>${dto.getStartTime()}</td>               
-                                    <td>성인 ${dto.getAdult() }명,소아 ${dto.getChild()}명,유아${dto.getToddle()}명 </td>
-                                    <td>${dto.getTax() }</td>
-                                    <td class="pd_10 end">${dto.getAirLine() }</td>
-                                 </tr>
-                              </c:forEach>
-                     
+							<c:forEach var="dto" items="${idSearchList }">
 
-                           </tbody>
-                        </table>
-                     </div>
-                     <!-- //tbl_sch -->
-       
-      
-      </div>
-      <!-- //joininfo -->
-            
-          
+								<tr>
+									<td class="first">${dto.getComReserveNum()}</td>
+									<td>${dto.getStartCity() }</td>
+									<td>${dto.getEndCity()}</td>
+									<td>${dto.getStartDate() }</td>
+									<td>${dto.getStartTime()}</td>
+									<td>성인 ${dto.getAdult() }명,소아
+										${dto.getChild()}명,유아${dto.getToddle()}명</td>
+									<td>${dto.getTax() }</td>
+									<td>${dto.getSeat() }
+									<c:if test="${dto.getSeat() ne '일등석' }">
+									<a href="seatUpgrade2.action?seatLevel=${dto.getSeat()}
+									&num=${dto.getAdult() + dto.getChild() + dto.getToddle()}&comnum=${dto.getComReserveNum()}">좌석 승급</a>
+									</c:if>
+									</td>
+									<td class="pd_10 end">${dto.getAirLine() }</td>
+								</tr>
+							</c:forEach>
 
-            <!-- //내용 -->
+
+						</tbody>
+					</table>
+				</div>
+				<!-- //tbl_sch -->
+
+
+			</div>
+			<!-- //joininfo -->
+
+
+
+			<!-- //내용 -->
             </div>
             <!-- //contentG -->
 

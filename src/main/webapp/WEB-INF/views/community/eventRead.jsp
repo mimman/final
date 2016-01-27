@@ -107,10 +107,12 @@ $(document).ready(function () {
       <tr> 
       
          <td colspan="4" style="padding:20px">
-         <c:if test="${boardDto.getImg() ne '/Air/img/board/\'}">
-         <img src="${boardDto.getImg()}"> 
-         </c:if>
+         <!-- <c:if test="${boardDto.getImg() ne '/Air/img/board/\'} ">
+        
+         </c:if> -->
+          <img src="${boardDto.getImg()}"> 
           <br />${boardDto.getContent() }
+        
          </td>
        
       

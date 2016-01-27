@@ -21,6 +21,7 @@ import com.mimman.membership.repository.pwSearch;
 import com.mimman.reservation.repository.HumanNumDto;
 import com.mimman.reservation.repository.ReserveCompleteDto;
 import com.mimman.reservation.repository.ReserveDto;
+import com.mimman.reservation.repository.seatUpgradeDto;
 import com.mimman.reservation.repository.userReservationDto;
 import com.mimman.membership.repository.Update;
 
@@ -246,6 +247,14 @@ public class reserveManager {
 		list = session.selectList("reservationList",id);
 
 		return list;
+	}
+
+	public static void seatUpgrade(seatUpgradeDto dto) {
+		SqlSession session = sqlFactory.openSession();
+		session.update("seatUpgrade",dto);
+		session.update("mileageUse",dto);
+		session.commit();
+		
 	}
 
 	

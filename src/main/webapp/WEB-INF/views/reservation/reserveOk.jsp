@@ -32,23 +32,28 @@
                <c:if test="${hdto.getReserveLine() ne '다구간여정' }">
                <ul class="list_v1 mt_20">
                   <li><span>예약번호</span> <strong>${completDto.getComReserveNum()}</strong></li>
+                  <li><span>출발도시</span> <strong>${completDto.getStartCity()} </strong></li>
+                  <li><span>도착도시</span> <strong>${completDto.getEndCity()} </strong></li>
                   <li><span>출발일</span> <strong>${completDto.getStartDate()} </strong></li>
                   <li><span>출발시각</span> <strong>${completDto.getStartTime() } </strong></li>
                   <li><span>도착시각</span> <strong>${completDto.getEndTime() }</strong></li>
-                  <li><span>예약인원</span> <strong>(일반석)</strong> 성인 <strong>${completDto.getAdult() }</strong>명
+                  <li><span>예약인원</span>  성인 <strong>${completDto.getAdult() }</strong>명
                   	소아 <strong>${completDto.getChild() }</strong>명  
                   	유아 <strong>${completDto.getToddle() }</strong>명 </li>
                   <li><span>총 요금</span> <strong>${completDto.getTax() }</strong> 원</li>
                   <li><span>적립 마일리지</span> <strong>${completDto.getMileage() }</strong> point</li>
+                  <li><span>좌석 등급</span> <strong>${userReserDto.getSeat()}</strong></li>
                </ul>
                </c:if>
                <c:if test="${hdto.getReserveLine() eq '왕복' }">
                <ul class="list_v1 mt_20">
                   <li><span>예약번호</span> <strong>${completDto.getComReserveNum()+1}</strong></li>
+                  <li><span>출발도시</span> <strong>${completDto.getStartCity()} </strong></li>
+                  <li><span>도착도시</span> <strong>${completDto.getEndCity()} </strong></li>
                   <li><span>출발일</span> <strong>${completDto.getStartDate2()} </strong></li>
                   <li><span>출발시각</span> <strong>${completDto.getStartTime2() } </strong></li>
                   <li><span>도착시각</span> <strong>${completDto.getEndTime2() }</strong></li>
-                  <li><span>예약인원</span> <strong>(일반석)</strong> 성인 <strong>${completDto.getAdult2() }</strong>명
+                  <li><span>예약인원</span>  성인 <strong>${completDto.getAdult2() }</strong>명
                   	소아 <strong>${completDto.getChild2() }</strong>명  
                   	유아 <strong>${completDto.getToddle2() }</strong>명 </li>
                   <li><span>총 요금</span> <strong>${completDto.getTax2() }</strong> 원</li>
@@ -58,10 +63,12 @@
                <c:if test="${hdto.getReserveLine() eq '다구간여정' }">
                <ul class="list_v1 mt_20">
                   <li><span>예약번호</span> <strong>${completDto.getComReserveNum()}</strong></li>
+                  <li><span>출발도시</span> <strong>${completDto.getStartCity()} </strong></li>
+                  <li><span>도착도시</span> <strong>${completDto.getEndCity()} </strong></li>
                   <li><span>출발일</span> <strong>${completDto.getStartDate()} </strong></li>
                   <li><span>출발시각</span> <strong>${completDto.getStartTime() } </strong></li>
                   <li><span>도착시각</span> <strong>${completDto.getEndTime() }</strong></li>
-                  <li><span>예약인원</span> <strong>(일반석)</strong> 성인 <strong>${completDto.getAdult() }</strong>명
+                  <li><span>예약인원</span>  성인 <strong>${completDto.getAdult() }</strong>명
                   	소아 <strong>${completDto.getChild() }</strong>명  
                   	유아 <strong>${completDto.getToddle() }</strong>명 </li>
                   <li><span>총 요금</span> <strong>${completDto.getTax() }</strong> 원</li>
@@ -69,10 +76,12 @@
                </ul>
                <ul class="list_v1 mt_20">
                   <li><span>예약번호</span> <strong>${completDto.getComReserveNum()+1}</strong></li>
+                  <li><span>출발도시</span> <strong>${completDto.getStartCity()} </strong></li>
+                  <li><span>도착도시</span> <strong>${completDto.getEndCity()} </strong></li>
                   <li><span>출발일</span> <strong>${completDto.getStartDate2()} </strong></li>
                   <li><span>출발시각</span> <strong>${completDto.getStartTime2() } </strong></li>
                   <li><span>도착시각</span> <strong>${completDto.getEndTime2() }</strong></li>
-                  <li><span>예약인원</span> <strong>(일반석)</strong> 성인 <strong>${completDto.getAdult2() }</strong>명
+                  <li><span>예약인원</span>  성인 <strong>${completDto.getAdult2() }</strong>명
                   	소아 <strong>${completDto.getChild2() }</strong>명  
                   	유아 <strong>${completDto.getToddle2() }</strong>명 </li>
                   <li><span>총 요금</span> <strong>${completDto.getTax2() }</strong> 원</li>
@@ -80,10 +89,12 @@
                </ul>
                <ul class="list_v1 mt_20">
                   <li><span>예약번호</span> <strong>${completDto.getComReserveNum()+2}</strong></li>
+                  <li><span>출발도시</span> <strong>${completDto.getStartCity()} </strong></li>
+                  <li><span>도착도시</span> <strong>${completDto.getEndCity()} </strong></li>
                   <li><span>출발일</span> <strong>${completDto.getStartDate3()} </strong></li>
                   <li><span>출발시각</span> <strong>${completDto.getStartTime3() } </strong></li>
                   <li><span>도착시각</span> <strong>${completDto.getEndTime3() }</strong></li>
-                  <li><span>예약인원</span> <strong>(일반석)</strong> 성인 <strong>${completDto.getAdult3() }</strong>명
+                  <li><span>예약인원</span>  성인 <strong>${completDto.getAdult3() }</strong>명
                   	소아 <strong>${completDto.getChild3() }</strong>명  
                   	유아 <strong>${completDto.getToddle3() }</strong>명 </li>
                   <li><span>총 요금</span> <strong>${completDto.getTax3() }</strong> 원</li>

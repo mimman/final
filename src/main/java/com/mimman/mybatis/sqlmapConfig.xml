@@ -22,6 +22,7 @@
 		<typeAlias type="com.mimman.reservation.repository.userReservationDto" alias="userReserDto" />
 		<typeAlias type="com.mimman.reservation.repository.HumanNumDto" alias="hdto" />
 		<typeAlias type="com.mimman.reservation.repository.ReserveCompleteDto" alias="comDto" />
+		<typeAlias type="com.mimman.reservation.repository.seatUpgradeDto" alias="seatDto" />
 	</typeAliases>
 	
 	<environments default="development">

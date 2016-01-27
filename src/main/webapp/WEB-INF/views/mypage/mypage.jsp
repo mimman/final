@@ -74,9 +74,8 @@
             확인하실 수 있습니다.</span>
             
             <ul class="list_v1 mg">
-               <li><a href="">나의 마일리지</a></li>
-               <li><a href="">보너스 항공권</a></li>
-               <li><a href="">좌석승급</a></li>
+               <li><a href="myMileage.action">나의 마일리지</a></li>
+              
             </ul>
          </li>
       </ul>

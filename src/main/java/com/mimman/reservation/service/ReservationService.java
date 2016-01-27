@@ -5,6 +5,7 @@ import java.util.List;
 import com.mimman.reservation.repository.HumanNumDto;
 import com.mimman.reservation.repository.ReserveCompleteDto;
 import com.mimman.reservation.repository.ReserveDto;
+import com.mimman.reservation.repository.seatUpgradeDto;
 import com.mimman.reservation.repository.userReservationDto;
 
 public interface ReservationService {
@@ -42,6 +43,8 @@ public interface ReservationService {
 	public void reservationDelete(ReserveCompleteDto comReserveNum);
 
 	public List reservationList(String id);
+
+	public void seatUpgrade(seatUpgradeDto dto);
 
 	
 }

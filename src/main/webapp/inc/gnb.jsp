@@ -45,7 +45,7 @@
 									<a class="menu" href="cityBoard.action">여행 가이드</a>
 									<ul>
 										<li><a href="cityBoard.action">도시 가이드</a></li>
-										<li><a href="">테마 가이드</a></li>
+										
 									</ul>
 								</li>
 
@@ -69,8 +69,9 @@
 								<li>
 									<a class="menu" href="mileage.action">마일리지</a>
 									<ul>
-										<li><a href="">마일리지 메뉴1</a></li>
-										<li><a href="">마일리지 메뉴2</a></li>
+										<li><a href="bonusAir.action">보너스 항공권</a></li>
+										<li><a href="seatUpgrade.action">좌석승급</a></li>
+										<li><a href="worldTour.action">세계일주 보너스</a></li>
 										
 									</ul>
 								</li>

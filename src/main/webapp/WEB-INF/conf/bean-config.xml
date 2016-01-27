@@ -108,6 +108,9 @@
 	<bean class="com.mimman.reservation.controller.reserveOkController">
 		<property name="reservationService" ref="reservationService"></property>
 	</bean>
+	<bean class="com.mimman.reservation.controller.seatUpgrade">
+		<property name="reservationService" ref="reservationService"></property>
+	</bean>
 	
     <bean class="com.mimman.membership.controller.MemberDetailController">
       <property name="memberService" ref="memberService"></property>
@@ -120,4 +123,18 @@
   		<property name="reservationService" ref="reservationService"></property>
   	</bean>
   	<bean class="com.mimman.guide.controller.CityBoardController"></bean>
+  	<bean id="MileageService" class="com.mimman.mileage.service.MileageServiceImpl"></bean>
+     
+     
+     
+     <bean class="com.mimman.mileage.controller.MyMileageController">
+        <property name="mileageService" ref="MileageService"></property>
+        <property name="reservationService" ref="reservationService"></property>
+     </bean>
+     
+     <bean class="com.mimman.mileage.controller.BonusAirController"></bean>
+     
+     <bean class="com.mimman.mileage.controller.SeatUpgradeController"></bean>
+     
+     <bean class="com.mimman.mileage.controller.WorldTourController"></bean>
 </beans>

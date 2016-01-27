@@ -43,7 +43,11 @@ public class LoginController {
 				session.removeAttribute("saveId");
 			}
 			
-			
+			if("guide".equals(session.getAttribute("page"))){
+				session.removeAttribute("page");
+				return "/WEB-INF/views/guide/cityBoard.jsp";
+			}
+			else
 			return "/index.jsp";
 		}
 		return "/WEB-INF/views/membership/login.jsp";

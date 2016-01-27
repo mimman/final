@@ -1,5 +1,7 @@
 package com.mimman.guide.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -7,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CityBoardController {
 
    @RequestMapping("cityBoard.action")
-   public String CityBoard(){
+   public String CityBoard(HttpSession session){
    
+	   session.setAttribute("page", "guide");
       return "/WEB-INF/views/guide/cityBoard.jsp";
    }
    

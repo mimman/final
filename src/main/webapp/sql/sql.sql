@@ -154,6 +154,7 @@ alter table reserve modify (exdate varchar2(30))
 alter table userReservation add(comReserveNum number);
 alter table userReservation add(startCity varchar2(30));
 alter table userReservation add(endCity varchar2(30));
+alter table userReservation add(seat varchar2(30));
 alter table userReservation modify (endCity default null)
 alter table userReservation modify(startTime varchar(30))
 alter table userReservation modify(endTime varchar(30))

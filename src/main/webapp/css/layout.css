@@ -46,8 +46,11 @@ nav>ul{list-style:none;list-style-image:none;/*margin:21px 0 0;*/}
 #containerG_w{width:1140px;margin:0 auto;padding:50px 0 70px;}
 #containerG_w.mypage{width:1040px;}
 .container{margin:0 auto;float:none;}
-div#contentG{padding:80px 0;}
-div#contentG_v2{padding:0 0 80px;}
+div#contentG{padding:80px 0;position:relative;}
+div#contentG_v2{padding:0 0 80px;position:relative;}
+
+div.t_sch{position:absolute;top:-68px;right:0;}
+div.t_sch2{position:absolute;top:-88px;right:0;}
 
 ul.f_menu:after{content:" ";display:block;clear:both;}
 ul.f_menu li{float:left;display:inline-block;}
@@ -59,21 +62,4 @@ div#footer_w div.footer{background:#eee;border-top:1px solid #e5e5e5;padding:20p
 div#footer_w div.footer div.copy_w{width:1140px;margin:0 auto;color:#666;font-size:14px;line-height:28px;}
 div#footer_w div.footer div.copy_w p.logo{font-weight:600;}
 div#footer_w ul.f_menu{width:1140px;margin:0 auto;padding:0 !important;}
-
-/* TOP BUTTON 
-.topbtn{position:fixed; right:30px; bottom: 30px; width:70px; height: 59px; background: url('/content/dam/happybath/images/common/topbtn-bg.png') left top no-repeat; z-index: 99; }
-.topbtn a{display:block; width:100%; height: 100%;}*/
-/* 리본팝업 
-.ribbon-slider-box {margin:0 auto; overflow: hidden; position: relative; max-width:1600px;}
-.ribbon-close-btn{position: absolute;z-index:2;top:50%;margin-top: -30px;right:2%;}
-.ribbon-slider-box .opacity-con li a img {width:100%;}
-.ribbon-slider-box .ri-indicates .indicate-lists li button{height:10px; width:10px;  background:url('/content/dam/happybath/images/common/ribbon-indicate.png') no-repeat left center;}
-.ribbon-slider-box .ri-indicates .indicate-lists li.active button {background:url('/content/dam/happybath/images/common/ribbon-indicate-active.png') no-repeat left center; width:24px; }
-.ribbon-slider-box .opacity-slide .ri-controller button.pause {background:url('/content/dam/happybath/images/common/ribbon-pause.png') no-repeat left center; width:11px; height:9px;}
-.ribbon-slider-box .opacity-slide .control-area {bottom:2px;}
-.ribbon-slider-box .opacity-slide .all-controll button {top:4px;}*/
-
-
-/* 20151229 추가 
-#containerG_w{width:1140px;margin:0 auto;padding:50px 0;}*/
 

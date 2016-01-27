@@ -26,31 +26,28 @@ private ReservationService reservationService;
 		userReservationDto userDto = (userReservationDto) session.getAttribute("userReserDto");
 		int tax = (reserComDto.getAdultTax()*userDto.getAdult())+(reserComDto.getChildTax()*userDto.getChild())+
 				(reserComDto.getToddleTax()*userDto.getToddle());
-		int mileage = (int) (tax*0.05);
 		
 		int tax2 = (reserComDto.getAdultTax2()*userDto.getAdult())+(reserComDto.getChildTax2()*userDto.getChild())+
 				(reserComDto.getToddleTax2()*userDto.getToddle());
-		int mileage2 = (int) (tax2*0.05);
 		
 		int tax3 = (reserComDto.getAdultTax3()*userDto.getAdult())+(reserComDto.getChildTax3()*userDto.getChild())+
 				(reserComDto.getToddleTax3()*userDto.getToddle());
+		
+		int num = userDto.getAdult()+userDto.getChild()+userDto.getToddle();
+		if(userDto.getSeat().equals("비즈니스석")){
+			tax = tax+(num*100000);
+			tax2 = tax2+(num*100000);
+			tax3 = tax3+(num*100000);
+		}
+		else if(userDto.getSeat().equals("일등석")){
+			tax = tax+(num*200000);
+			tax2 = tax2+(num*200000);
+			tax3 = tax3+(num*200000);
+		}
+		
+		int mileage = (int) (tax*0.05);
+		int mileage2 = (int) (tax2*0.05);
 		int mileage3 = (int) (tax3*0.05);
-		/*
-		System.out.println("tax:"+tax);
-		System.out.println("mileage:"+mileage);
-		System.out.println("tax:"+tax2);
-		System.out.println("mileage:"+mileage2);
-		System.out.println("startTime:"+reserComDto.getStartTime());
-		System.out.println("endTime:"+reserComDto.getEndTime());
-		System.out.println("airLine:"+reserComDto.getAirLine());
-		System.out.println("adultTax:"+reserComDto.getAdultTax());
-		System.out.println("childTax:"+reserComDto.getChildTax());
-		System.out.println("toddleTax:"+reserComDto.getToddleTax());
-		System.out.println("reserNum:"+reserComDto.getReserveNum());
-		*/
-		System.out.println(userDto.getStartCity1());
-		System.out.println(userDto.getStartCity2());
-		System.out.println(userDto.getStartCity3());
 		
 		if(userDto.getReserveLine().equals("편도") || userDto.getReserveLine().equals("왕복")){
 			//1번 항공
@@ -64,6 +61,7 @@ private ReservationService reservationService;
 			reserComDto.setStartDate(userDto.getStartDate());
 			reserComDto.setTax(tax);
 			reserComDto.setMileage(mileage);
+			reserComDto.setSeat(userDto.getSeat());
 		}
 		
 		if(userDto.getReserveLine().equals("왕복")){
@@ -91,6 +89,7 @@ private ReservationService reservationService;
 			reserComDto.setStartDate(userDto.getStartDate1());
 			reserComDto.setTax(tax);
 			reserComDto.setMileage(mileage);
+			reserComDto.setSeat(userDto.getSeat());
 			
 			reserComDto.setId2(id);
 			reserComDto.setStartCity2(userDto.getStartCity2());

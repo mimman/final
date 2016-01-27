@@ -1,6 +1,7 @@
 @CHARSET "utf-8";
-div#contentG_w{width:1140px;margin:0 auto;}
+
 /* tab */
+div.tab_w ul:after{clear:both;display:block;content:"";height:0;visibility:hidden;}
 div.tab_w ul li{display:inline-block;float:left;}
 div.tab_w ul li a{display:inline-block;width:160px;height:60px;line-height:60px;text-align:center;font-size:15px;color:#fff;font-weight:600;}
 div.tab_w ul li.current a{color:#2c2c2c;}
@@ -34,7 +35,6 @@ width:175px;border:1px solid #ececec;height:32px;padding:0 28px 0 5px;font-size:
 div.sch_air h4{font-size:18px;color:#2c2c2c;font-weight:500;}
 div.sch_air .hasDatepicker{width:140px;border:1px solid #ECECEC;;height:30px;padding:0 28px 0 5px;}
 div.sch_air div.fl{margin-right:32px;}
-/*div.sch_air div.fl label{padding-right:30px;font-weight:500;}*/
 div.sch_air div.fl ul.radio_w2{width:140px;}
 div.sch_air div.fl ul.radio_w2 li{line-height:40px;padding:0;}
 div.sch_air div.fl ul.radio_w2 li:after{clear:both;display:block;content:"";height:0;visibility:hidden;}
@@ -47,7 +47,6 @@ div.con_box div.fl.ta_c{margin-right:0;}
 div.con_box input.btn_sch{display:inline-block;width:220px;height:46px;background:url(../img/reservation/btn_sch.jpg) no-repeat 0 0 !important;border:0;color:#fff;font-weight:600;font-size:20px;}
 div.sch_air div.city_w ul li{padding:10px 0 25px;margin-right:50px;position:relative;}
 div.sch_air div.city_w ul.many li{float:left;}
-/*div.sch_air div.city_w ul li label{padding-right:30px;font-weight:500;}*/
 div.sch_air div.city_w ul li input[type="text"]{width:140px;border:1px solid #ececec;height:30px;padding:0 28px 0 5px;margin-left: 14px;}
 div.sch_air div.flight_w{width:736px;}
 div.sch_air div.flight_w ul.flight_list li{float:left;margin:10px 30px 10px 10px;color:#5b5b5b;}
@@ -130,8 +129,6 @@ div.joininfo input[type="button"]{display:block;width:80px;height: 30px;margin:0
 
 div.joininfo.member ul li label{font-weight:600;}
 div.joininfo.member ul li p{display:inline-block;float:right;width:300px;padding:3px 10px;line-height:28px;margin-bottom:20px;letter-spacing:0.05em;word-break:break-word;}
-/*div.joininfo.member ul.clear{width:auto !important;display:inline-block;}
-div.joininfo.member ul.clear li:last-child{margin-left:5px;}*/
 
 .sch_box{border:1px solid #dcdcdc;border-top:2px solid #676767;padding:60px 0;margin-bottom:50px}
 .sch_box p{width:385px;margin:0 auto;padding-left:90px;margin-bottom:5px;}
@@ -160,7 +157,7 @@ h3{font-size:50px;font-weight:600;}
 .quick_w ul.quick li em{display:inline-block;font-size:28px;font-weight:600;color:#333;margin:27px 0 29px}
 .quick_w ul.quick li span{display:inline-block;line-height:1.8;font-size:13px;color:#545454;}
 
-/* 마일리지 */
+/* 마이페이지>마일리지 */
 .mile_w{width:1032px;height:340px;margin:0 auto;background:url(../img/mypage/bg_quick.png) no-repeat 0 0;padding:64px 4px 4px;}
 .mile_w ul.mile>li{display:inline-block;float:left;margin-right:5px;width:254px;height:339px;background:url(../img/mypage/bg_con.png) no-repeat 0 0;text-align:center;}
 .mile_w ul.mile>li:last-child{margin-right:0;}
@@ -171,6 +168,23 @@ h3{font-size:50px;font-weight:600;}
 .mile_w ul.mile li i.fa-money{color:#194169;}
 .mile_w ul.mile li em{display:inline-block;font-size:28px;font-weight:600;color:#333;margin:27px 0 29px}
 .mile_w ul.mile li span{display:inline-block;line-height:1.8;font-size:13px;color:#545454;}
+
+/* 마일리지 */
+.mymile_w{width:auto;height:340px;margin:0 auto;padding:0 4px;}
+.mymile_w.v2{background:url(../img/mileage/mymile.png) no-repeat 600px 0px;padding:0 40px;font-size:30px;font-weight:600;color:#255788;}
+.mymile_w ul.mile>li{display:inline-block;float:left;margin-right:36px;background:none;}
+.mymile_w ul.mile>li a{display:inline-block;width:254px;height:270px;padding:35px 0;border:1px solid #e6e3e3;text-align:center;}
+.mymile_w ul.mile>li:last-child{margin-right:0;}
+.mymile_w ul.mile li em{display:inline-block;font-size:28px;font-weight:600;color:#333;margin:27px 0 29px}
+.mymile_w ul.mile>li ul.list_v1{margin:0;padding:0 0 0 50px;}
+.mymile_w a.btn_mile{display:block;width:140px;height:34px;line-height:34px;background:#ececec;border:1px solid #b9b9b9;border-radius:5px;font-size:15px;text-align:center;}
+
+div.world_box{background:url(../img/mileage/world.png) no-repeat 700px 30px;padding:50px 515px 50px 10px;line-height:1.6}
+div.world_box p{font-size:19px;font-weight:600;color:#255788;}
+div.world_box ul.list_v1 li{font-size:14px;}
+
+p.city_tit{font-size:20px;color:#255788;font-weight:500;}
+#map_canvas{width:1000px;height:600px;border:1px solid #ddd;margin-top:20px;}
 
 /* list_v1 ( ㆍ ) */
 ul.list_v1{color:#222;font-size:13px;}
@@ -214,10 +228,5 @@ div.pop_wrap_b div.taxbox_w p:nth-child(3) em{font-size:20px;font-weight:600;}
 
 div.pop_wrap_b div.taxbox_w.v2 p:nth-child(1){border:1px solid #1a4a78;display:inline-block;background:#fff;padding:5px;margin-right:10px;color:#1a4a78;font-weight:600;}
 
-/* 마일리지 */
-.mile_w{width:auto;height:340px;margin:0 auto;padding:0 4px;background:none;}
-.mile_w ul.mile>li{display:inline-block;float:left;margin-right:36px;background:none;}
-.mile_w ul.mile>li a{display:inline-block;width:254px;height:270px;padding:35px 0;border:1px solid #e6e3e3;text-align:center;}
-.mile_w ul.mile>li:last-child{margin-right:0;}
-.mile_w ul.mile li em{display:inline-block;font-size:28px;font-weight:600;color:#333;margin:27px 0 29px}
-.mile_w ul.mile>li ul.list_v1{margin:0;padding:0 0 0 50px;}
+
+

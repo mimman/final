@@ -45,7 +45,7 @@
             </div>
             
             <div style="margin:20px 10px;;">
-               <input type="submit" value="찾기" class="btn_m" />
+               <input type="submit" value="삭제" class="btn_m" />
          </div>
 			</form>
             <!-- //내용 -->

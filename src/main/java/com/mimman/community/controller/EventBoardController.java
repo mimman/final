@@ -34,6 +34,7 @@ public class EventBoardController {
 		
 		System.out.println("보드리스트 동작"+boardcd);
 		
+		
 		List list = pageService.getBoardList(boardcd);
 		int totalRecord = list.size();
 		

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <jsp:include page="/inc/header1.jsp" flush="true" />
-<title>MIRACLE AIR &gt; 마일리지 &gt; 마일리지홈</title>
+<title>MIRACLE AIR &gt; 마일리지 &gt; 마일리지 홈</title>
 <jsp:include page="/inc/header2.jsp" flush="true" />
 </head>
 <body id="sub">
@@ -28,11 +28,11 @@
       회원님께서 적립하신 마일리지는 항공 탑승 또는 제휴사 이용 이외에 추가적인 경제적 대가를 지불함이 없이 무상으로 제공되며, <br />
       마일리지 항공권 발급 등으로 마일리지를 사용하는 시점에 바로 그 가치가 결정됩니다.</div>
       
-      <div class="mile_w clear mt_50">
+      <div class="mymile_w clear mt_50">
       
       <ul class="mile">
          <li>
-         <a href="">
+         <a href="myMileage.action">
               <img src="/Air/img/mileage/img_mileage1.jpg" alt="" />
             <em>나의 마일리지</em>
             
@@ -44,7 +44,7 @@
          </a>           
          </li>
          <li>
-         <a href="">
+         <a href="bonusAir.action">
               <img src="/Air/img/mileage/img_mileage2.jpg" alt="" />
             <em>보너스 항공권</em>
             
@@ -56,7 +56,7 @@
          </a>           
          </li>
          <li>
-         <a href="">
+         <a href="seatUpgrade.action">
               <img src="/Air/img/mileage/img_mileage3.jpg" alt="" /><br />
             <em>좌석승급</em>
             
@@ -68,7 +68,7 @@
          </a>
          </li>
          <li>
-         <a href="">
+         <a href="worldTour.action">
               <img src="/Air/img/mileage/img_mileage4.jpg" alt="" /><br />
             <em>세계일주 보너스</em>
             
